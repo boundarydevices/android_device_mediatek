@@ -16,7 +16,7 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 $(call inherit-product, device/mediatek/mt8183/device.mk)
 
-PRODUCT_NAME := full_mt8183
+PRODUCT_NAME := mt8183
 PRODUCT_DEVICE := mt8183
 PRODUCT_BRAND := Android
 PRODUCT_MODEL := mt8183

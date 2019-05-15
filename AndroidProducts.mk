@@ -14,4 +14,4 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := $(LOCAL_DIR)/full_mt8183.mk
+PRODUCT_MAKEFILES := $(LOCAL_DIR)/mt8183.mk

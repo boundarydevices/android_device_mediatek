@@ -45,3 +45,6 @@ BOARD_MKBOOTIMG_ARGS := \
   --ramdisk_offset $(BOARD_RAMDISK_OFFSET) \
   --tags_offset $(BOARD_TAGS_OFFSET) \
   --header_version 1
+
+# kernel commandline
+BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2

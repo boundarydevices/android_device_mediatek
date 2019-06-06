@@ -15,3 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := $(LOCAL_DIR)/aosp_opal.mk
+COMMON_LUNCH_CHOICES :=  aosp_opal-userdebug

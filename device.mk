@@ -74,3 +74,8 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.effect@2.0-impl \
     audio.stub.default \
     audio_policy.stub \
+
+# Memtrack
+PRODUCT_PACKAGES += memtrack.default \
+    android.hardware.memtrack@1.0-service \
+    android.hardware.memtrack@1.0-impl

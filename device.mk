@@ -66,3 +66,11 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=360
+
+# Audio
+PRODUCT_PACKAGES += \
+    android.hardware.audio@2.0-service \
+    android.hardware.audio@2.0-impl \
+    android.hardware.audio.effect@2.0-impl \
+    audio.stub.default \
+    audio_policy.stub \

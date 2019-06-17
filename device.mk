@@ -63,3 +63,6 @@ PRODUCT_COPY_FILES += \
     device/mediatek/mt8183/binaries/lib64/egl/libEGL_swiftshader.so:$(TARGET_COPY_OUT_VENDOR)/lib64/egl/libEGL_swiftshader.so \
     device/mediatek/mt8183/binaries/lib64/egl/libGLESv1_CM_swiftshader.so:$(TARGET_COPY_OUT_VENDOR)/lib64/egl/libGLESv1_CM_swiftshader.so \
     device/mediatek/mt8183/binaries/lib64/egl/libGLESv2_swiftshader.so:$(TARGET_COPY_OUT_VENDOR)/lib64/egl/libGLESv2_swiftshader.so \
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sf.lcd_density=360

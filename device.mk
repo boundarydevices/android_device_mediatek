@@ -79,3 +79,23 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += memtrack.default \
     android.hardware.memtrack@1.0-service \
     android.hardware.memtrack@1.0-impl
+
+# Wifi
+PRODUCT_PACKAGES += \
+    libwpa_client \
+    wpa_supplicant \
+    hostapd \
+    wificond \
+    wifilogd \
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    wifi.interface=wlan0 \
+    wifi.supplicant_scan_interval=15 \
+
+PRODUCT_PACKAGES += \
+    android.hardware.wifi@1.0-service \
+    android.hardware.wifi@1.0 \
+    wifi-service \
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.wifi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.xml \

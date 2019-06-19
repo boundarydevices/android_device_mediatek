@@ -23,4 +23,8 @@ endif
 PRODUCT_COPY_FILES := \
 	$(LOCAL_KERNEL):kernel
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/init.mt8183.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.mt8183.rc \
+    $(LOCAL_PATH)/fstab.mt8183:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8183
+
 $(call inherit-product-if-exists, vendor/mediatek/mt8183/device-vendor.mk)

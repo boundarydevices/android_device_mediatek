@@ -51,3 +51,9 @@ BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE  := ext4
 BOARD_CACHEIMAGE_PARTITION_SIZE    := 16777216
 
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
+
+BOARD_SEPOLICY_DIRS += \
+        device/mediatek/mt8167/sepolicy
+
+DEVICE_MANIFEST_FILE := device/mediatek/mt8167/manifest.xml
+

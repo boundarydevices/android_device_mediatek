@@ -29,3 +29,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/fstab.mt8183:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8183
 
 $(call inherit-product-if-exists, vendor/mediatek/mt8183/device-vendor.mk)
+
+# Health
+PRODUCT_PACKAGES += \
+    android.hardware.health@2.0-service \
+    android.hardware.health@2.0-service.default

@@ -60,3 +60,8 @@ BOARD_CACHEIMAGE_PARTITION_SIZE    := 16777216
 
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 
+BOARD_SEPOLICY_DIRS += \
+        device/mediatek/mt8183/sepolicy
+
+DEVICE_MANIFEST_FILE := device/mediatek/mt8183/manifest.xml
+

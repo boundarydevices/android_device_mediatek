@@ -34,6 +34,9 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 TARGET_IS_64_BIT := true
 TARGET_USES_64_BIT_BINDER := true
 
+# Enable vndk
+BOARD_VNDK_VERSION := current
+
 # kernel commandline
 BOARD_KERNEL_CMDLINE := \
     firmware_class.path=/vendor/firmware \
@@ -57,6 +60,9 @@ BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 
 # prebuild dtbo file
 BOARD_PREBUILT_DTBOIMAGE := device/mediatek/mt8167-kernel/dtbo.img
+
+# Use mke2fs to create ext4 images
+TARGET_USES_MKE2FS := true
 
 BOARD_SEPOLICY_DIRS += \
         device/mediatek/mt8167/sepolicy

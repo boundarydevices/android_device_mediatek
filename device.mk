@@ -75,6 +75,11 @@ PRODUCT_PACKAGES += \
     audio.stub.default \
     audio_policy.stub \
 
+# DRM (Digital Rights Management)
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.1-service.clearkey \
+    android.hardware.drm@1.1-service.widevine
+
 # Memtrack
 PRODUCT_PACKAGES += memtrack.default \
     android.hardware.memtrack@1.0-service \

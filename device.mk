@@ -23,4 +23,89 @@ endif
 PRODUCT_COPY_FILES := \
 	$(LOCAL_KERNEL):kernel
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/init.mt8183.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.mt8183.rc \
+    $(LOCAL_PATH)/init.mt8183.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.mt8183.usb.rc \
+    $(LOCAL_PATH)/fstab.mt8183:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8183
+
 $(call inherit-product-if-exists, vendor/mediatek/mt8183/device-vendor.mk)
+
+# Health
+PRODUCT_PACKAGES += \
+    android.hardware.health@2.0-service \
+    android.hardware.health@2.0-service.default
+
+# Security
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@3.0-impl \
+    android.hardware.keymaster@3.0-service
+
+PRODUCT_PACKAGES += \
+    gatekeeper.mtk \
+    android.hardware.gatekeeper@1.0-impl \
+    android.hardware.gatekeeper@1.0-service
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.hardware.gatekeeper=mtk
+
+# 3D CPU renderer
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.composer@2.1-impl \
+    android.hardware.graphics.composer@2.1-service \
+    android.hardware.graphics.mapper@2.0-impl \
+    android.hardware.graphics.allocator@2.0-service \
+    android.hardware.graphics.allocator@2.0-impl \
+
+# graphics bringup with swiftshader from Q preview
+PRODUCT_COPY_FILES += \
+    device/mediatek/mt8183/binaries/lib/egl/libEGL_swiftshader.so:$(TARGET_COPY_OUT_VENDOR)/lib/egl/libEGL_swiftshader.so \
+    device/mediatek/mt8183/binaries/lib/egl/libGLESv1_CM_swiftshader.so:$(TARGET_COPY_OUT_VENDOR)/lib/egl/libGLESv1_CM_swiftshader.so \
+    device/mediatek/mt8183/binaries/lib/egl/libGLESv2_swiftshader.so:$(TARGET_COPY_OUT_VENDOR)/lib/egl/libGLESv2_swiftshader.so \
+    device/mediatek/mt8183/binaries/lib64/egl/libEGL_swiftshader.so:$(TARGET_COPY_OUT_VENDOR)/lib64/egl/libEGL_swiftshader.so \
+    device/mediatek/mt8183/binaries/lib64/egl/libGLESv1_CM_swiftshader.so:$(TARGET_COPY_OUT_VENDOR)/lib64/egl/libGLESv1_CM_swiftshader.so \
+    device/mediatek/mt8183/binaries/lib64/egl/libGLESv2_swiftshader.so:$(TARGET_COPY_OUT_VENDOR)/lib64/egl/libGLESv2_swiftshader.so \
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sf.lcd_density=360
+
+# Audio
+PRODUCT_PACKAGES += \
+    android.hardware.audio@2.0-service \
+    android.hardware.audio@2.0-impl \
+    android.hardware.audio.effect@2.0-impl \
+    audio.stub.default \
+    audio_policy.stub \
+
+# Memtrack
+PRODUCT_PACKAGES += memtrack.default \
+    android.hardware.memtrack@1.0-service \
+    android.hardware.memtrack@1.0-impl
+
+# Wifi
+PRODUCT_PACKAGES += \
+    libwpa_client \
+    wpa_supplicant \
+    hostapd \
+    wificond \
+    wifilogd \
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    wifi.interface=wlan0 \
+    wifi.supplicant_scan_interval=15 \
+
+PRODUCT_PACKAGES += \
+    android.hardware.wifi@1.0-service \
+    android.hardware.wifi@1.0 \
+    wifi-service \
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.wifi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.xml \
+
+# Flashing binaries
+PRODUCT_COPY_FILES += \
+    device/mediatek/mt8183/binaries/images/preloader_aiv8183m1_64_bsp.bin:$(TARGET_OUT)/preloader_aiv8183m1_64_bsp.bin \
+    device/mediatek/mt8183/binaries/images/lk.img:$(TARGET_OUT)/lk.img \
+    device/mediatek/mt8183/binaries/images/tee.img:$(TARGET_OUT)/tee.img \
+    device/mediatek/mt8183/binaries/images/sspm.img:$(TARGET_OUT)/sspm.img \
+    device/mediatek/mt8183/binaries/images/logo.bin:$(TARGET_OUT)/logo.bin \
+    device/mediatek/mt8183/binaries/images/userdata.img:$(TARGET_OUT)/userdata.img \
+    device/mediatek/mt8183/binaries/images/MT8183_full_scatter.txt:$(TARGET_OUT)/MT8183_full_scatter.txt \

@@ -16,6 +16,8 @@ https://source.android.com/setup/build/downloading
 
 ## Building
 
+For more build system related topics, see [build_system.md](./docs/build_system.md)
+
 ### {boot,system,vendor,cache}.img
 Now, start the usual Android build setup:
 

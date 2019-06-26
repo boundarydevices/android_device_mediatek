@@ -35,7 +35,7 @@ PRODUCT_COPY_FILES += \
 
 # Health
 PRODUCT_PACKAGES += \
-    android.hardware.health@2.0-service \
+    android.hardware.health@2.0-service.batteryless \
 
 # Security
 PRODUCT_PACKAGES += \

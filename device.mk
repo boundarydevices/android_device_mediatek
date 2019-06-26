@@ -20,6 +20,9 @@ else
 LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
 
+# Shipping API level to Android P (28)
+PRODUCT_SHIPPING_API_LEVEL := 28
+
 PRODUCT_COPY_FILES := \
 	$(LOCAL_KERNEL):kernel
 
@@ -70,10 +73,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-service \
-    android.hardware.audio@2.0-impl \
-    android.hardware.audio.effect@2.0-impl \
+    android.hardware.audio@4.0-impl \
+    android.hardware.audio.effect@4.0-impl \
     audio.stub.default \
     audio_policy.stub \
+
+# DRM (Digital Rights Management)
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.1-service.clearkey \
+    android.hardware.drm@1.1-service.widevine
 
 # Memtrack
 PRODUCT_PACKAGES += memtrack.default \

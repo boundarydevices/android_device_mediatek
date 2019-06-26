@@ -34,6 +34,9 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 TARGET_IS_64_BIT := true
 TARGET_USES_64_BIT_BINDER := true
 
+# Enable vndk
+BOARD_VNDK_VERSION := current
+
 # bootimage generation
 BOARD_KERNEL_BASE = 0x40000000
 BOARD_KERNEL_OFFSET = 0x00080000
@@ -65,3 +68,5 @@ BOARD_SEPOLICY_DIRS += \
 
 DEVICE_MANIFEST_FILE := device/mediatek/mt8183/manifest.xml
 
+# Use mke2fs to create ext4 images
+TARGET_USES_MKE2FS := true

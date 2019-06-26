@@ -65,7 +65,8 @@ BOARD_PREBUILT_DTBOIMAGE := device/mediatek/mt8167-kernel/dtbo.img
 TARGET_USES_MKE2FS := true
 
 BOARD_SEPOLICY_DIRS += \
-        device/mediatek/mt8167/sepolicy
+        device/mediatek/mt8167/sepolicy/ \
+        device/mediatek/common/sepolicy/vendor \
 
 DEVICE_MANIFEST_FILE := device/mediatek/mt8167/manifest.xml
 

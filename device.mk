@@ -69,6 +69,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=360
 
+# Backlight/brightness
+PRODUCT_PACKAGES += \
+    android.hardware.light@2.0-service.mediatek \
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-service \

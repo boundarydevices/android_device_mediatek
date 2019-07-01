@@ -84,6 +84,7 @@ PRODUCT_COPY_FILES += \
     device/mediatek/mt8183/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
     device/mediatek/mt8183/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
     device/mediatek/mt8183/audio/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
+    device/mediatek/mt8183/audio/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
 
 # DRM (Digital Rights Management)
 PRODUCT_PACKAGES += \

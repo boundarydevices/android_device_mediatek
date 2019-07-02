@@ -50,7 +50,8 @@ BOARD_MKBOOTIMG_ARGS := \
   --header_version 1
 
 # kernel commandline
-BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
+BOARD_KERNEL_CMDLINE := \
+    bootopt=64S3,32N2,64N2 firmware_class.path=/vendor/firmware
 
 # FS configuration
 BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 2147483648

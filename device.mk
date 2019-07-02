@@ -15,10 +15,16 @@
 #
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-LOCAL_KERNEL := device/mediatek/mt8183-kernel/kernel
+LOCAL_KERNEL := device/mediatek/mt8183-kernel/Image.gz-dtb
 else
 LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
+
+BOARD_VENDOR_KERNEL_MODULES := \
+    device/mediatek/mt8183-kernel/goodix.ko \
+
+BOARD_RECOVERY_KERNEL_MODULES := \
+    device/mediatek/mt8183-kernel/goodix.ko \
 
 # Shipping API level to Android P (28)
 PRODUCT_SHIPPING_API_LEVEL := 28
@@ -107,6 +113,11 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.xml \
+
+# Touchscreen
+PRODUCT_COPY_FILES += \
+    device/mediatek/mt8183/touchscreen/goodix_5688_cfg.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/goodix_5688_cfg.bin \
+    device/mediatek/mt8183/touchscreen/init.goodix.rc:$(TARGET_COPY_OUT_VENDOR)//etc/init/init.goodix.rc \
 
 # Flashing binaries
 PRODUCT_COPY_FILES += \

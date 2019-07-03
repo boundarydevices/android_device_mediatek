@@ -41,8 +41,7 @@ $(call inherit-product-if-exists, vendor/mediatek/mt8183/device-vendor.mk)
 
 # Health
 PRODUCT_PACKAGES += \
-    android.hardware.health@2.0-service \
-    android.hardware.health@2.0-service.default
+    android.hardware.health@2.0-service.batteryless \
 
 # Security
 PRODUCT_PACKAGES += \

@@ -16,6 +16,7 @@
 
 # Use the non-open-source parts, if they're present
 -include vendor/mediatek/mt8183/BoardConfigVendor.mk
+-include vendor/mediatek/mt7668/BoardConfig-mt7668.mk
 
 # Primary Arch
 TARGET_ARCH := arm64
@@ -55,6 +56,7 @@ BOARD_KERNEL_CMDLINE := \
 
 BOARD_VENDOR_KERNEL_MODULES := \
     device/mediatek/mt8183-kernel/goodix.ko \
+    device/mediatek/mt8183-kernel/wlan_mt7668_sdio.ko \
 
 BOARD_RECOVERY_KERNEL_MODULES := \
     device/mediatek/mt8183-kernel/goodix.ko \

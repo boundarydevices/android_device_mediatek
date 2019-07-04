@@ -53,6 +53,12 @@ BOARD_MKBOOTIMG_ARGS := \
 BOARD_KERNEL_CMDLINE := \
     bootopt=64S3,32N2,64N2 firmware_class.path=/vendor/firmware
 
+BOARD_VENDOR_KERNEL_MODULES := \
+    device/mediatek/mt8183-kernel/goodix.ko \
+
+BOARD_RECOVERY_KERNEL_MODULES := \
+    device/mediatek/mt8183-kernel/goodix.ko \
+
 # FS configuration
 BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 2147483648
 TARGET_USERIMAGES_USE_EXT4         := true

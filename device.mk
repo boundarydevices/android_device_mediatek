@@ -20,12 +20,6 @@ else
 LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
 
-BOARD_VENDOR_KERNEL_MODULES := \
-    device/mediatek/mt8183-kernel/goodix.ko \
-
-BOARD_RECOVERY_KERNEL_MODULES := \
-    device/mediatek/mt8183-kernel/goodix.ko \
-
 # Shipping API level to Android P (28)
 PRODUCT_SHIPPING_API_LEVEL := 28
 

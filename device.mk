@@ -20,12 +20,6 @@ else
 LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
 
-BOARD_VENDOR_KERNEL_MODULES := \
-    device/mediatek/mt8183-kernel/goodix.ko \
-
-BOARD_RECOVERY_KERNEL_MODULES := \
-    device/mediatek/mt8183-kernel/goodix.ko \
-
 # Shipping API level to Android P (28)
 PRODUCT_SHIPPING_API_LEVEL := 28
 
@@ -131,3 +125,6 @@ PRODUCT_COPY_FILES += \
     device/mediatek/mt8183/binaries/images/logo.bin:$(TARGET_OUT)/logo.bin \
     device/mediatek/mt8183/binaries/images/userdata.img:$(TARGET_OUT)/userdata.img \
     device/mediatek/mt8183/binaries/images/MT8183_full_scatter.txt:$(TARGET_OUT)/MT8183_full_scatter.txt \
+
+# Add support of MT7668 WiFi module
+$(call inherit-product-if-exists, vendor/mediatek/mt7668/mt7668.mk)

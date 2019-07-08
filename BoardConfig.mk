@@ -16,6 +16,7 @@
 
 # Use the non-open-source parts, if they're present
 -include vendor/mediatek/mt8183/BoardConfigVendor.mk
+-include vendor/mediatek/mt7668/BoardConfig-mt7668.mk
 
 # Primary Arch
 TARGET_ARCH := arm64
@@ -52,6 +53,13 @@ BOARD_MKBOOTIMG_ARGS := \
 # kernel commandline
 BOARD_KERNEL_CMDLINE := \
     bootopt=64S3,32N2,64N2 firmware_class.path=/vendor/firmware
+
+BOARD_VENDOR_KERNEL_MODULES := \
+    device/mediatek/mt8183-kernel/goodix.ko \
+    device/mediatek/mt8183-kernel/wlan_mt7668_sdio.ko \
+
+BOARD_RECOVERY_KERNEL_MODULES := \
+    device/mediatek/mt8183-kernel/goodix.ko \
 
 # FS configuration
 BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 2147483648

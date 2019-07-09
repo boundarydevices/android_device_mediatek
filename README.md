@@ -39,16 +39,11 @@ mkdtimg create out/target/product/mt8183/dtbo.img ~/src/june-master/device/media
 To re-build the kernel, we can do the following:
 
 ```sh
-cd ~/src/june-master/linux/
-# toolchain for building kernel
-export PATH="$PATH:~/src/june-master/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin"
-# defconfig copy
-make ARCH=arm64 CROSS_COMPILE=aarch64-linux-androidkernel- mt8183_android_defconfig
-# build kernel
-make DTC_FLAGS="-@" ARCH=arm64 CROSS_COMPILE=aarch64-linux-androidkernel- -j40 && \
-    cat arch/arm64/boot/Image.gz arch/arm64/boot/dts/mediatek/mt8183.dtb > myImage.gz && \
-    cp myImage.gz ~/src/june/device/mediatek/mt8183-kernel/kernel && \
-    cp arch/arm64/boot/dts/mediatek/mt8183-evb.dtb ~/src/aosp/june/mediatek/mt8183-kernel/mt8183-evb.dtb
+cd ~/src/june-master/
+source build/envsetup.sh
+lunch mt8183-userdebug
+cd kernel
+DIST_DIR=$ANDROID_BUILD_TOP/device/mediatek/mt8183-kernel/ BUILD_CONFIG=linux/build.config.mt8183 build/build.sh
 ```
 
 Note that this is *optional*, as some prebuild kernel binaries

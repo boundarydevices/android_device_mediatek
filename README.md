@@ -84,24 +84,19 @@ In order to fully flash the device, run the following command:
 ```
 
 ## Tips
-### wakelock
+### stay awake
 As soon as the device boots, the screen will go off and it will go into suspend.
 When that happens, the UART console is blocked as well.
-To avoid that, you can hold a wakelock via the commandline.
+
+To avoid that, you can tell the power manager to stay awake:
+
+```sh
+svc power stayon true
+```
+
+Alternatively, you can hold a wakelock via the commandline:
 
 ```sh
 echo lock_me > /sys/power/wake_lock
 echo lock_me > /sys/power/wake_unlock
 ```
-
-### fake touch events
-As the touch panel is not functional yet, it is quite hard to interact with the device.
-Fortunately, android has the the `input` command we can use to simulate inputs:
-
-```sh
-input keyevent 3 # home button
-input keyevent 26 # power button
-input keyevent 82 # unlock lock screen
-```
-For more input codes, see:
-https://developer.android.com/reference/android/view/KeyEvent#KEYCODE_BACK

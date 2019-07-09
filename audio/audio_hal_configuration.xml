@@ -1,0 +1,24 @@
+<!--
+On the target device this file must be located in /vendor/etc and named
+audio_hal_configuration.xml
+
+Syntax is based on TinyHAL:
+  https://github.com/CirrusLogic/tinyhal/blob/master/audio.example.xml
+
+Note: not xml elements from TinyHAL are supported.
+-->
+<audiohal>
+    <!-- mixer element _must_ appear before any of the other definitions.
+    The 'card' attribute is optional and sets the ALSA card number of the mixer
+    device - if not given it defaults to 0 -->
+        <mixer card="0">
+        <!-- init element lists control settings required to initialize the
+        hardware and driver. These settings are applied only once when primary HAL
+        is first loaded during boot -->
+        <init>
+            <ctl name="ADDA_DL_CH1 DL1_CH1" val="1" />
+            <ctl name="HPL Mux" val="Audio Playback"/>
+            <ctl name="HPR Mux" val="Audio Playback"/>
+        </init>
+        </mixer>
+</audiohal>

@@ -39,16 +39,11 @@ mkdtimg create out/target/product/mt8183/dtbo.img ~/src/june-master/device/media
 To re-build the kernel, we can do the following:
 
 ```sh
-cd ~/src/june-master/linux/
-# toolchain for building kernel
-export PATH="$PATH:~/src/june-master/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin"
-# defconfig copy
-make ARCH=arm64 CROSS_COMPILE=aarch64-linux-androidkernel- mt8183_android_defconfig
-# build kernel
-make DTC_FLAGS="-@" ARCH=arm64 CROSS_COMPILE=aarch64-linux-androidkernel- -j40 && \
-    cat arch/arm64/boot/Image.gz arch/arm64/boot/dts/mediatek/mt8183.dtb > myImage.gz && \
-    cp myImage.gz ~/src/june/device/mediatek/mt8183-kernel/kernel && \
-    cp arch/arm64/boot/dts/mediatek/mt8183-evb.dtb ~/src/aosp/june/mediatek/mt8183-kernel/mt8183-evb.dtb
+cd ~/src/june-master/
+source build/envsetup.sh
+lunch mt8183-userdebug
+cd kernel
+DIST_DIR=$ANDROID_BUILD_TOP/device/mediatek/mt8183-kernel/ BUILD_CONFIG=linux/build.config.mt8183 build/build.sh
 ```
 
 Note that this is *optional*, as some prebuild kernel binaries
@@ -84,24 +79,19 @@ In order to fully flash the device, run the following command:
 ```
 
 ## Tips
-### wakelock
+### stay awake
 As soon as the device boots, the screen will go off and it will go into suspend.
 When that happens, the UART console is blocked as well.
-To avoid that, you can hold a wakelock via the commandline.
+
+To avoid that, you can tell the power manager to stay awake:
+
+```sh
+svc power stayon true
+```
+
+Alternatively, you can hold a wakelock via the commandline:
 
 ```sh
 echo lock_me > /sys/power/wake_lock
 echo lock_me > /sys/power/wake_unlock
 ```
-
-### fake touch events
-As the touch panel is not functional yet, it is quite hard to interact with the device.
-Fortunately, android has the the `input` command we can use to simulate inputs:
-
-```sh
-input keyevent 3 # home button
-input keyevent 26 # power button
-input keyevent 82 # unlock lock screen
-```
-For more input codes, see:
-https://developer.android.com/reference/android/view/KeyEvent#KEYCODE_BACK

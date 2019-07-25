@@ -1,0 +1,14 @@
+on init
+   start watchdogd
+
+on fs
+    mount_all /vendor/etc/fstab.mt8167
+    start console
+
+on post-fs-data
+    setprop vold.post_fs_data_done 1
+
+service watchdogd /sbin/watchdogd 10 20
+    class core
+    oneshot
+    seclabel u:r:watchdogd:s0

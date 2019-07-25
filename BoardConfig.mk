@@ -33,3 +33,9 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 
 TARGET_IS_64_BIT := true
 TARGET_USES_64_BIT_BINDER := true
+
+# kernel commandline
+BOARD_KERNEL_CMDLINE := \
+    firmware_class.path=/vendor/firmware \
+    androidboot.selinux=permissive printk.devkmsg=on \
+    ro rootwait skip_initramfs init=/init \

@@ -39,3 +39,15 @@ BOARD_KERNEL_CMDLINE := \
     firmware_class.path=/vendor/firmware \
     androidboot.selinux=permissive printk.devkmsg=on \
     ro rootwait skip_initramfs init=/init \
+
+# FS configuration
+BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 2147483648
+TARGET_USERIMAGES_USE_EXT4         := true
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 1073741824
+TARGET_COPY_OUT_VENDOR             := vendor
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_VENDORIMAGE_PARTITION_SIZE   := 134217728
+BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE  := ext4
+BOARD_CACHEIMAGE_PARTITION_SIZE    := 16777216
+
+BOARD_BUILD_SYSTEM_ROOT_IMAGE := true

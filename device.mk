@@ -24,3 +24,7 @@ PRODUCT_COPY_FILES := \
 	$(LOCAL_KERNEL):kernel
 
 $(call inherit-product-if-exists, vendor/mediatek/mt8167/device-vendor.mk)
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/init.mt8167.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.mt8167.rc \
+    $(LOCAL_PATH)/fstab.mt8167:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8167

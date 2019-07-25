@@ -55,6 +55,9 @@ BOARD_DTBOIMG_PARTITION_SIZE       := 4194304
 
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 
+# prebuild dtbo file
+BOARD_PREBUILT_DTBOIMAGE := device/mediatek/mt8167-kernel/dtbo.img
+
 BOARD_SEPOLICY_DIRS += \
         device/mediatek/mt8167/sepolicy
 

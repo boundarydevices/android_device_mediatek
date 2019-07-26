@@ -123,7 +123,6 @@ PRODUCT_COPY_FILES += \
     device/mediatek/mt8183/binaries/images/tee.img:$(TARGET_OUT)/tee.img \
     device/mediatek/mt8183/binaries/images/sspm.img:$(TARGET_OUT)/sspm.img \
     device/mediatek/mt8183/binaries/images/logo.bin:$(TARGET_OUT)/logo.bin \
-    device/mediatek/mt8183/binaries/images/userdata.img:$(TARGET_OUT)/userdata.img \
     device/mediatek/mt8183/binaries/images/MT8183_full_scatter.txt:$(TARGET_OUT)/MT8183_full_scatter.txt \
 
 # Add support of MT7668 WiFi module

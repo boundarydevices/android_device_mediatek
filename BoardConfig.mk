@@ -56,6 +56,7 @@ BOARD_KERNEL_CMDLINE := \
 
 BOARD_VENDOR_KERNEL_MODULES := \
     device/mediatek/mt8183-kernel/goodix.ko \
+    device/mediatek/mt8183-kernel/cfg80211.ko \
     device/mediatek/mt8183-kernel/wlan_mt7668_sdio.ko \
 
 BOARD_RECOVERY_KERNEL_MODULES := \

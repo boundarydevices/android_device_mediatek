@@ -80,3 +80,6 @@ DEVICE_MANIFEST_FILE := device/mediatek/mt8183/manifest.xml
 
 # Use mke2fs to create ext4 images
 TARGET_USES_MKE2FS := true
+
+# audio, use XML policy format
+USE_XML_AUDIO_POLICY_CONF := 1

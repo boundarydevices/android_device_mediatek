@@ -129,5 +129,13 @@ PRODUCT_COPY_FILES += \
     device/mediatek/mt8183/binaries/images/logo.bin:$(TARGET_OUT)/logo.bin \
     device/mediatek/mt8183/binaries/images/MT8183_full_scatter.txt:$(TARGET_OUT)/MT8183_full_scatter.txt \
 
+# Flashing tool
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/flashimage/flashimage.py:flashimage.py \
+    $(LOCAL_PATH)/flashimage/flashproc.py:flashproc.py \
+    $(LOCAL_PATH)/flashimage/fbtool.py:fbtool.py \
+    $(LOCAL_PATH)/flashimage/fastboot-darwin:fastboot-darwin \
+    $(LOCAL_PATH)/flashimage/fastboot-linux-x86_64:fastboot-linux-x86_64 \
+
 # Add support of MT7668 WiFi module
 $(call inherit-product-if-exists, vendor/mediatek/mt7668/mt7668.mk)

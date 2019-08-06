@@ -122,12 +122,11 @@ PRODUCT_COPY_FILES += \
 
 # Flashing binaries
 PRODUCT_COPY_FILES += \
-    device/mediatek/mt8183/binaries/images/preloader_aiv8183m1_64_bsp.bin:$(TARGET_OUT)/preloader_aiv8183m1_64_bsp.bin \
-    device/mediatek/mt8183/binaries/images/lk.img:$(TARGET_OUT)/lk.img \
-    device/mediatek/mt8183/binaries/images/tee.img:$(TARGET_OUT)/tee.img \
-    device/mediatek/mt8183/binaries/images/sspm.img:$(TARGET_OUT)/sspm.img \
-    device/mediatek/mt8183/binaries/images/logo.bin:$(TARGET_OUT)/logo.bin \
-    device/mediatek/mt8183/binaries/images/MT8183_full_scatter.txt:$(TARGET_OUT)/MT8183_full_scatter.txt \
+    device/mediatek/mt8183/binaries/images/lk.bin:$(TARGET_OUT)/lk.bin \
+    device/mediatek/mt8183/binaries/images/fip.bin:$(TARGET_OUT)/fip.bin \
+    device/mediatek/mt8183/binaries/images/bl2.img:$(TARGET_OUT)/bl2.img \
+    device/mediatek/mt8183/binaries/images/dl_addr.ini:$(TARGET_OUT)/dl_addr.ini \
+    device/mediatek/mt8183/binaries/images/MBR_EMMC:$(TARGET_OUT)/MBR_EMMC \
 
 # Flashing tool
 PRODUCT_COPY_FILES += \

@@ -52,7 +52,9 @@ BOARD_MKBOOTIMG_ARGS := \
 
 # kernel commandline
 BOARD_KERNEL_CMDLINE := \
-    bootopt=64S3,32N2,64N2 firmware_class.path=/vendor/firmware
+    root=/dev/mmcblk0p10 printk.devkmsg=on ro rootwait skip_initramfs \
+    init=/init firmware_class.path=/vendor/firmware \
+    androidboot.selinux=permissive \
 
 BOARD_VENDOR_KERNEL_MODULES := \
     device/mediatek/mt8183-kernel/goodix.ko \

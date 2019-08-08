@@ -64,6 +64,8 @@ BOARD_VENDOR_KERNEL_MODULES := \
 BOARD_RECOVERY_KERNEL_MODULES := \
     device/mediatek/mt8183-kernel/goodix.ko \
 
+BOARD_PREBUILT_DTBOIMAGE := device/mediatek/mt8183-kernel/dtbo.img
+
 # FS configuration
 BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 2147483648
 TARGET_USERIMAGES_USE_EXT4         := true

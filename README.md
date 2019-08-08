@@ -32,8 +32,12 @@ make bootimage systemimage vendorimage cacheimage -j40
 To build the device tree overlay (dtbo) image, we can use `mkdtimg`:
 
 ```sh
-mkdtimg create out/target/product/mt8183/dtbo.img ~/src/june-master/device/mediatek/mt8183-kernel/mt8183-evb.dtb
+mkdtimg create out/target/product/mt8183/dtbo.img \
+  ~/src/june-master/device/mediatek/mt8183-kernel/mt8183.dtb
+  ~/src/june-master/device/mediatek/mt8183-kernel/mt8183-evb.dtb
 ```
+Note: currently, the SoC device tree (`mt8183.dtb`) is also part of the `dtbo.img`.
+This will change when we re-partition.
 
 ### kernel
 To re-build the kernel, we can do the following:
@@ -50,33 +54,24 @@ Note that this is *optional*, as some prebuild kernel binaries
 are available in: `src/june-master/device/mediatek/mt8183-kernel/`
 
 ## Flashing
-### Install SPFlashtool
-Flashing is done using SPFlashtool.
-Download SPFlashtool here:
-https://spflashtools.com/linux/sp-flash-tool-v5-1916-for-linux
-
-Then install it as following:
+Flashing is done using `flashimage.py` script. It requires `python2` and the `pyserial` module which can be
+installed with:
 
 ```sh
-cd ~/Downloads/
-unzip SP_Flash_Tool_v5.1916_Linux.zip
-cd SP_Flash_Tool_v5.1916_Linux
-chmod +x flash_tool
-chmod +x flash_tool.sh
+pip2 install --user pyserial
 ```
-
-More information on the official website:
-https://spflashtools.com/
-
-An useful XDA link about udev rules/conflicts with modemmanager on Ubuntu:
-https://forum.xda-developers.com/general/rooting-roms/tutorial-how-to-setup-spflashtoollinux-t3160802
 
 ### Flashing command
 In order to fully flash the device, run the following command:
 
 ```sh
-./flash_tool -s ~/src/june-master/out/target/product/mt8183/MT8183_full_scatter.txt -c format-download -r
+cd ~/src/june-master/out/target/product/mt8183/
+python2 flashimage.py
 ```
+The script waits for the board to go into DA (Download Agent) mode.
+To force the board into DA mode, perform the following:
+1. Press "volume UP + reset" buttons at the same time.
+2. release the reset button.
 
 ## Tips
 ### stay awake

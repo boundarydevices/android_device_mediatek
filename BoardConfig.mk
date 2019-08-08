@@ -52,7 +52,9 @@ BOARD_MKBOOTIMG_ARGS := \
 
 # kernel commandline
 BOARD_KERNEL_CMDLINE := \
-    bootopt=64S3,32N2,64N2 firmware_class.path=/vendor/firmware
+    root=/dev/mmcblk0p10 printk.devkmsg=on ro rootwait skip_initramfs \
+    init=/init firmware_class.path=/vendor/firmware \
+    androidboot.selinux=permissive \
 
 BOARD_VENDOR_KERNEL_MODULES := \
     device/mediatek/mt8183-kernel/goodix.ko \
@@ -61,6 +63,8 @@ BOARD_VENDOR_KERNEL_MODULES := \
 
 BOARD_RECOVERY_KERNEL_MODULES := \
     device/mediatek/mt8183-kernel/goodix.ko \
+
+BOARD_PREBUILT_DTBOIMAGE := device/mediatek/mt8183-kernel/dtbo.img
 
 # FS configuration
 BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 2147483648

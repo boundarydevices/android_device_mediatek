@@ -15,7 +15,7 @@
 #
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-LOCAL_KERNEL := device/mediatek/mt8183-kernel/Image.gz-dtb
+LOCAL_KERNEL := device/mediatek/mt8183-kernel/Image
 else
 LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
@@ -122,12 +122,19 @@ PRODUCT_COPY_FILES += \
 
 # Flashing binaries
 PRODUCT_COPY_FILES += \
-    device/mediatek/mt8183/binaries/images/preloader_aiv8183m1_64_bsp.bin:$(TARGET_OUT)/preloader_aiv8183m1_64_bsp.bin \
-    device/mediatek/mt8183/binaries/images/lk.img:$(TARGET_OUT)/lk.img \
-    device/mediatek/mt8183/binaries/images/tee.img:$(TARGET_OUT)/tee.img \
-    device/mediatek/mt8183/binaries/images/sspm.img:$(TARGET_OUT)/sspm.img \
-    device/mediatek/mt8183/binaries/images/logo.bin:$(TARGET_OUT)/logo.bin \
-    device/mediatek/mt8183/binaries/images/MT8183_full_scatter.txt:$(TARGET_OUT)/MT8183_full_scatter.txt \
+    device/mediatek/mt8183/binaries/images/lk.bin:$(TARGET_OUT)/lk.bin \
+    device/mediatek/mt8183/binaries/images/fip.bin:$(TARGET_OUT)/fip.bin \
+    device/mediatek/mt8183/binaries/images/bl2.img:$(TARGET_OUT)/bl2.img \
+    device/mediatek/mt8183/binaries/images/dl_addr.ini:$(TARGET_OUT)/dl_addr.ini \
+    device/mediatek/mt8183/binaries/images/MBR_EMMC:$(TARGET_OUT)/MBR_EMMC \
+
+# Flashing tool
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/flashimage/flashimage.py:flashimage.py \
+    $(LOCAL_PATH)/flashimage/flashproc.py:flashproc.py \
+    $(LOCAL_PATH)/flashimage/fbtool.py:fbtool.py \
+    $(LOCAL_PATH)/flashimage/fastboot-darwin:fastboot-darwin \
+    $(LOCAL_PATH)/flashimage/fastboot-linux-x86_64:fastboot-linux-x86_64 \
 
 # Add support of MT7668 WiFi module
 $(call inherit-product-if-exists, vendor/mediatek/mt7668/mt7668.mk)

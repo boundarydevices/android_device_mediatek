@@ -89,3 +89,7 @@ TARGET_USES_MKE2FS := true
 
 # audio, use XML policy format
 USE_XML_AUDIO_POLICY_CONF := 1
+
+# RecoveryOS
+TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
+TARGET_RECOVERY_FSTAB := device/mediatek/mt8183/fstab.mt8183

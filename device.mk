@@ -136,5 +136,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/flashimage/fastboot-darwin:fastboot-darwin \
     $(LOCAL_PATH)/flashimage/fastboot-linux-x86_64:fastboot-linux-x86_64 \
 
+# RecoveryOS
+PRODUCT_COPY_FILES += \
+    device/mediatek/mt8183/init.recovery.mt8183.rc:recovery/root/init.recovery.mt8183.rc
+
 # Add support of MT7668 WiFi module
 $(call inherit-product-if-exists, vendor/mediatek/mt7668/mt7668.mk)

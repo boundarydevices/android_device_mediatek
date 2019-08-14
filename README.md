@@ -75,6 +75,23 @@ This requires to run the pumpkin in download mode which could be achieved by
 holding VOL+ button while reseting or power cycling the board.
 
 ## Tips
+### stay awake
+As soon as the device boots, the screen will go off and it will go into suspend.
+When that happens, the UART console is blocked as well.
+
+To avoid that, you can tell the power manager to stay awake:
+
+```sh
+svc power stayon true
+```
+
+Alternatively, you can hold a wakelock via the commandline:
+
+```sh
+echo lock_me > /sys/power/wake_lock
+echo lock_me > /sys/power/wake_unlock
+```
+
 ### fake touch events
 As the touch panel is not functional yet, it is quite hard to interact with the device.
 Fortunately, android has the the `input` command we can use to simulate inputs:

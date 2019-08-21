@@ -63,6 +63,21 @@ DIST_DIR=$ANDROID_BUILD_TOP/device/mediatek/mt8167-kernel/ BUILD_CONFIG=linux/bu
 Note that this is *optional*, as some prebuild kernel binaries
 are available in: `~/src/june-master/device/mediatek/mt8167-kernel/`
 
+To incrementally re-build the kernel, for development, use the `SKIP_MRPROPER=1` option:
+
+```sh
+DIST_DIR=$ANDROID_BUILD_TOP/device/mediatek/mt8167-kernel/ BUILD_CONFIG=linux/build.config.mt8167 SKIP_MRPROPER=1 build/build.sh
+```
+
+To edit the kernel configuration, we can also use `build.sh`:
+
+```sh
+DIST_DIR=$ANDROID_BUILD_TOP/device/mediatek/mt8167-kernel/ \
+  BUILD_CONFIG=linux/build.config.menuconfig.mt8167 \
+  SKIP_MRPROPER=1 \
+  build/build.sh menuconfig
+```
+
 ## Flashing
 Flashing is done using `flashimage.py` script. It requires `python2` and the `pyserial` module which can be
 installed with:

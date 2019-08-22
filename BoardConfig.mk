@@ -37,6 +37,19 @@ TARGET_USES_64_BIT_BINDER := true
 # Enable vndk
 BOARD_VNDK_VERSION := current
 
+# bootimage generation
+BOARD_KERNEL_BASE = 0x40000000
+BOARD_KERNEL_OFFSET = 0x00080000
+BOARD_RAMDISK_OFFSET = 0x15000000
+BOARD_TAGS_OFFSET = 0x14000000
+
+BOARD_MKBOOTIMG_ARGS := \
+  --base $(BOARD_KERNEL_BASE) \
+  --kernel_offset $(BOARD_KERNEL_OFFSET) \
+  --ramdisk_offset $(BOARD_RAMDISK_OFFSET) \
+  --tags_offset $(BOARD_TAGS_OFFSET) \
+  --header_version 1
+
 # kernel commandline
 BOARD_KERNEL_CMDLINE := \
     firmware_class.path=/vendor/firmware \

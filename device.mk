@@ -119,3 +119,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/flashimage/bl2.img:bl2.img \
     $(LOCAL_PATH)/flashimage/MBR_EMMC:MBR_EMMC \
     $(LOCAL_PATH)/flashimage/fip.bin:fip.bin
+
+# DEVICE_PACKAGE_OVERLAYS for the device should be before
+# including common overlays since the one listed first
+# takes precedence.
+ifdef DEVICE_PACKAGE_OVERLAYS
+$(warning Overlays defined in '$(DEVICE_PACKAGE_OVERLAYS)' will override '$(PRODUCT_HARDWARE)' overlays)
+endif
+DEVICE_PACKAGE_OVERLAYS += device/mediatek/mt8167/overlay

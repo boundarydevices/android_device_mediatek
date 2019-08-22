@@ -86,3 +86,6 @@ DEVICE_MANIFEST_FILE := device/mediatek/mt8167/manifest.xml
 # enable AVB
 BOARD_AVB_ENABLE := true
 BOARD_AVB_ALGORITHM := SHA512_RSA4096
+
+BOARD_VENDOR_MEDIATEK := true
+MTK_PARTITIONS_YAML := device/mediatek/mt8167/partitions.yaml

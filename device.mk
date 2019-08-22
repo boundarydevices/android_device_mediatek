@@ -109,15 +109,10 @@ PRODUCT_COPY_FILES += \
 
 # Flashing tool + prebuilt binaries
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/flashimage/flashimage.py:flashimage.py \
-    $(LOCAL_PATH)/flashimage/flashproc.py:flashproc.py \
-    $(LOCAL_PATH)/flashimage/fbtool.py:fbtool.py \
-    $(LOCAL_PATH)/flashimage/fastboot-darwin:fastboot-darwin \
-    $(LOCAL_PATH)/flashimage/fastboot-linux-x86_64:fastboot-linux-x86_64 \
-    $(LOCAL_PATH)/flashimage/dl_addr.ini:dl_addr.ini \
-    $(LOCAL_PATH)/flashimage/lk.bin:lk.bin \
-    $(LOCAL_PATH)/flashimage/bl2.img:bl2.img \
-    $(LOCAL_PATH)/flashimage/fip.bin:fip.bin
+    $(LOCAL_PATH)/binaries/images/dl_addr.ini:dl_addr.ini \
+    $(LOCAL_PATH)/binaries/images/lk.bin:lk.bin \
+    $(LOCAL_PATH)/binaries/images/bl2.img:bl2.img \
+    $(LOCAL_PATH)/binaries/images/fip.bin:fip.bin
 
 # DEVICE_PACKAGE_OVERLAYS for the device should be before
 # including common overlays since the one listed first

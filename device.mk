@@ -127,14 +127,6 @@ PRODUCT_COPY_FILES += \
     device/mediatek/mt8183/binaries/images/bl2.img:$(TARGET_OUT)/bl2.img \
     device/mediatek/mt8183/binaries/images/dl_addr.ini:$(TARGET_OUT)/dl_addr.ini \
 
-# Flashing tool
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/flashimage/flashimage.py:flashimage.py \
-    $(LOCAL_PATH)/flashimage/flashproc.py:flashproc.py \
-    $(LOCAL_PATH)/flashimage/fbtool.py:fbtool.py \
-    $(LOCAL_PATH)/flashimage/fastboot-darwin:fastboot-darwin \
-    $(LOCAL_PATH)/flashimage/fastboot-linux-x86_64:fastboot-linux-x86_64 \
-
 # RecoveryOS
 PRODUCT_COPY_FILES += \
     device/mediatek/mt8183/init.recovery.mt8183.rc:recovery/root/init.recovery.mt8183.rc

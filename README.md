@@ -53,15 +53,11 @@ Notes:
 To re-build the kernel, we can do the following:
 
 ```sh
-cd ~/src/june-master/linux/
-# toolchain for building kernel
-export PATH="$PATH:~/src/june-master/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin"
-# defconfig copy
-make ARCH=arm64 CROSS_COMPILE=aarch64-linux-androidkernel- pumpkin_mt8167_defconfig
-# build kernel
-make DTC_FLAGS="-@" ARCH=arm64 CROSS_COMPILE=aarch64-linux-androidkernel- -j40 && \
-    cp arch/arm64/boot/Image ~/src/june/device/mediatek/mt8167-kernel/Image && \
-    cp arch/arm64/boot/dts/mediatek/*.dtb ~/src/june-master/device/mediatek/mt8167-kernel/
+cd ~/src/june-master/
+source build/envsetup.sh
+lunch mt8167-userdebug
+cd kernel
+DIST_DIR=$ANDROID_BUILD_TOP/device/mediatek/mt8167-kernel/ BUILD_CONFIG=linux/build.config.mt8167 build/build.sh
 ```
 
 Note that this is *optional*, as some prebuild kernel binaries

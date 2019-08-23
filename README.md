@@ -39,11 +39,15 @@ make vendorimage -j40
 To rebuild the device tree overlay (dtbo) image, we can use `mkdtimg`:
 
 ```sh
-mkdtimg create device/mediatek/mt8167-kernel/dtbo.img device/mediatek/mt8167-kernel/pumpkin8167s_emmc_yocto.dtb  device/mediatek/mt8167-kernel/pumpkin8516_emmc_android.dtb
+mkdtimg create device/mediatek/mt8167-kernel/dtbo.img \
+  device/mediatek/mt8167-kernel/mt8167.dtb \
+  device/mediatek/mt8167-kernel/mt8167-pumpkin.dtb
 ```
 
-Note that this is *optional*, as some prebuild kernel binaries
-are available in: `src/june-master/device/mediatek/mt8167-kernel/`
+Notes:
+ - Currently, the SoC device tree (`mt8167.dtb`) is also part of the `dtbo.img`.
+   This will change when we re-partition.
+ - This step part of the kernel build scripts so does not need to be done manually
 
 ### kernel
 To re-build the kernel, we can do the following:

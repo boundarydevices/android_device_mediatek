@@ -64,9 +64,9 @@ Note that this is *optional*, as some prebuild kernel binaries
 are available in: `~/src/june-master/device/mediatek/mt8167-kernel/`
 
 ## Flashing
-### Install the flashing tool
-The flashing tools is delivered as part of the build.
-Still this requires to install some dependencies:
+Flashing is done using `flashimage.py` script. It requires `python2` and the `pyserial` module which can be
+installed with:
+
 ```sh
 pip2 install --user pyserial
 ```

@@ -18,7 +18,7 @@ https://source.android.com/setup/build/downloading
 
 For more build system related topics, see [build_system.md](./docs/build_system.md)
 
-### {boot,system,vendor,cache}.img
+### {boot,system,vendor,cache,userdata,recovery,vbmeta}.img
 Now, start the usual Android build setup:
 
 ```sh
@@ -26,6 +26,13 @@ cd ~/src/june-master
 source build/envsetup.sh
 lunch mt8167-userdebug
 make -j40
+```
+
+Note: to only rebuild a particular image, run `make <name>image`.
+For example, for `vendor.img`:
+
+```sh
+make vendorimage -j40
 ```
 
 ### dtbo.img

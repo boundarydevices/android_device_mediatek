@@ -14,6 +14,7 @@ procedures = {
                     ['fastboot', 'flash', 'vendor', 'vendor.img'],
                     ['fastboot', 'flash', 'userdata', 'userdata.img'],
                     ['fastboot', 'flash', 'cache', 'cache.img'],
+                    ['fastboot', 'flash', 'recovery', 'recovery.img'],
                     ['fastboot', 'flash', 'system', 'system.img'] ]
 }
 

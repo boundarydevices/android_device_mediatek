@@ -18,7 +18,7 @@ https://source.android.com/setup/build/downloading
 
 For more build system related topics, see [build_system.md](./docs/build_system.md)
 
-### {boot,system,vendor,cache}.img
+### {boot,system,vendor,cache,userdata,recovery,vbmeta}.img
 Now, start the usual Android build setup:
 
 ```sh
@@ -28,38 +28,60 @@ lunch mt8167-userdebug
 make -j40
 ```
 
+Note: to only rebuild a particular image, run `make <name>image`.
+For example, for `vendor.img`:
+
+```sh
+make vendorimage -j40
+```
+
 ### dtbo.img
 To rebuild the device tree overlay (dtbo) image, we can use `mkdtimg`:
 
 ```sh
-mkdtimg create device/mediatek/mt8167-kernel/dtbo.img device/mediatek/mt8167-kernel/pumpkin8167s_emmc_yocto.dtb  device/mediatek/mt8167-kernel/pumpkin8516_emmc_android.dtb
+mkdtimg create device/mediatek/mt8167-kernel/dtbo.img \
+  device/mediatek/mt8167-kernel/mt8167.dtb \
+  device/mediatek/mt8167-kernel/mt8167-pumpkin.dtb
 ```
 
-Note that this is *optional*, as some prebuild kernel binaries
-are available in: `src/june-master/device/mediatek/mt8167-kernel/`
+Notes:
+ - Currently, the SoC device tree (`mt8167.dtb`) is also part of the `dtbo.img`.
+   This will change when we re-partition.
+ - This step part of the kernel build scripts so does not need to be done manually
 
 ### kernel
 To re-build the kernel, we can do the following:
 
 ```sh
-cd ~/src/june-master/linux/
-# toolchain for building kernel
-export PATH="$PATH:~/src/june-master/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin"
-# defconfig copy
-make ARCH=arm64 CROSS_COMPILE=aarch64-linux-androidkernel- pumpkin_mt8167_defconfig
-# build kernel
-make DTC_FLAGS="-@" ARCH=arm64 CROSS_COMPILE=aarch64-linux-androidkernel- -j40 && \
-    cp arch/arm64/boot/Image ~/src/june/device/mediatek/mt8167-kernel/Image && \
-    cp arch/arm64/boot/dts/mediatek/*.dtb ~/src/june-master/device/mediatek/mt8167-kernel/
+cd ~/src/june-master/
+source build/envsetup.sh
+lunch mt8167-userdebug
+cd kernel
+DIST_DIR=$ANDROID_BUILD_TOP/device/mediatek/mt8167-kernel/ BUILD_CONFIG=linux/build.config.mt8167 build/build.sh
 ```
 
 Note that this is *optional*, as some prebuild kernel binaries
 are available in: `~/src/june-master/device/mediatek/mt8167-kernel/`
 
+To incrementally re-build the kernel, for development, use the `SKIP_MRPROPER=1` option:
+
+```sh
+DIST_DIR=$ANDROID_BUILD_TOP/device/mediatek/mt8167-kernel/ BUILD_CONFIG=linux/build.config.mt8167 SKIP_MRPROPER=1 build/build.sh
+```
+
+To edit the kernel configuration, we can also use `build.sh`:
+
+```sh
+DIST_DIR=$ANDROID_BUILD_TOP/device/mediatek/mt8167-kernel/ \
+  BUILD_CONFIG=linux/build.config.menuconfig.mt8167 \
+  SKIP_MRPROPER=1 \
+  build/build.sh menuconfig
+```
+
 ## Flashing
-### Install the flashing tool
-The flashing tools is delivered as part of the build.
-Still this requires to install some dependencies:
+Flashing is done using `flashimage.py` script. It requires `python2` and the `pyserial` module which can be
+installed with:
+
 ```sh
 pip2 install --user pyserial
 ```

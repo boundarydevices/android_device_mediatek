@@ -126,6 +126,7 @@ PRODUCT_COPY_FILES += \
     device/mediatek/mt8183/binaries/images/fip.bin:$(TARGET_OUT)/fip.bin \
     device/mediatek/mt8183/binaries/images/bl2.img:$(TARGET_OUT)/bl2.img \
     device/mediatek/mt8183/binaries/images/dl_addr.ini:$(TARGET_OUT)/dl_addr.ini \
+    device/mediatek/mt8183/binaries/images/u-boot-initial-env:$(TARGET_OUT)/u-boot-initial-env \
 
 # RecoveryOS
 PRODUCT_COPY_FILES += \

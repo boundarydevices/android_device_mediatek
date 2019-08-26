@@ -1,0 +1,16 @@
+bootcmd=run distro_bootcmd
+bootdelay=2
+baudrate=921600
+kerneladdr=0x4A000000
+bootargs= console=tty0 console=ttyS0,921600n1 earlycon=uart8250,mmio32,0x11002000
+ mmcdev=0
+dtb_index=0
+dtbo_index=1
+loadaddr=0x50000000
+load_dtb=part start mmc ${mmcdev} dtbo dtbo_part_start;part size mmc ${mmcdev} dtbo dtbo_part_size;mmc read ${loadaddr} ${dtbo_part_start} ${dtbo_part_size};dtimg select ${loadaddr} ${dtb_index};dtimg merge ${loadaddr} ${dtbo_index}; 
+load_bootimg=part start mmc ${mmcdev} boot boot_part_start;part size mmc ${mmcdev} boot boot_part_size;mmc read ${loadaddr} ${boot_part_start} ${boot_part_size}; 
+load_recoveryimg=part start mmc ${mmcdev} recovery recovery_part_start;part size mmc ${mmcdev} recovery recovery_part_size;mmc read ${loadaddr} ${recovery_part_start} ${recovery_part_size}; 
+mmcboot=if bcb load ${mmcdev} persist; then if bcb test command = boot-recovery; then bcb clear command; bcb store;run load_dtb;run load_recoveryimg;bootm ${loadaddr};fi;fi;run load_dtb;run load_bootimg;bootm ${loadaddr}; 
+bootcmd=run mmcboot
+
+

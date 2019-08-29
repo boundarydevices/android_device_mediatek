@@ -120,6 +120,10 @@ PRODUCT_COPY_FILES += \
     device/mediatek/mt8183/touchscreen/goodix_5688_cfg.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/goodix_5688_cfg.bin \
     device/mediatek/mt8183/touchscreen/init.goodix.rc:$(TARGET_COPY_OUT_VENDOR)//etc/init/init.goodix.rc \
 
+# Usb
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.usb.accessory.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.usb.accessory.xml \
+
 # Flashing binaries
 PRODUCT_COPY_FILES += \
     device/mediatek/mt8183/binaries/images/lk.bin:$(TARGET_OUT)/lk.bin \

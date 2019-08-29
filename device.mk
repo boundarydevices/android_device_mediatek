@@ -115,6 +115,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/binaries/images/fip.bin:fip.bin \
     $(LOCAL_PATH)/binaries/images/u-boot-initial-env:u-boot-initial-env
 
+# Usb
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.usb.accessory.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.usb.accessory.xml \
+
 # DEVICE_PACKAGE_OVERLAYS for the device should be before
 # including common overlays since the one listed first
 # takes precedence.

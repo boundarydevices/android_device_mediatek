@@ -119,6 +119,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.usb.accessory.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.usb.accessory.xml \
 
+# app widget, needed for default launcher3
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.software.app_widgets.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.app_widgets.xml \
+
 # DEVICE_PACKAGE_OVERLAYS for the device should be before
 # including common overlays since the one listed first
 # takes precedence.

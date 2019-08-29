@@ -120,6 +120,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/flashimage/MBR_EMMC:MBR_EMMC \
     $(LOCAL_PATH)/flashimage/fip.bin:fip.bin
 
+# Usb
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.usb.accessory.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.usb.accessory.xml \
+
 # DEVICE_PACKAGE_OVERLAYS for the device should be before
 # including common overlays since the one listed first
 # takes precedence.

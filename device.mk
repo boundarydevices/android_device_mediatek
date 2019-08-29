@@ -144,5 +144,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/mediatek/mt8183/init.recovery.mt8183.rc:recovery/root/init.recovery.mt8183.rc
 
+# app widget, needed for default launcher3
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.software.app_widgets.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.app_widgets.xml \
+
 # Add support of MT7668 WiFi module
 $(call inherit-product-if-exists, vendor/mediatek/mt7668/mt7668.mk)

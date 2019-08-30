@@ -120,6 +120,10 @@ PRODUCT_COPY_FILES += \
     device/mediatek/mt8183/touchscreen/goodix_5688_cfg.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/goodix_5688_cfg.bin \
     device/mediatek/mt8183/touchscreen/init.goodix.rc:$(TARGET_COPY_OUT_VENDOR)//etc/init/init.goodix.rc \
 
+# Usb
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.usb.accessory.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.usb.accessory.xml \
+
 # Flashing binaries
 PRODUCT_COPY_FILES += \
     device/mediatek/mt8183/binaries/images/lk.bin:$(TARGET_OUT)/lk.bin \
@@ -139,6 +143,10 @@ PRODUCT_COPY_FILES += \
 # RecoveryOS
 PRODUCT_COPY_FILES += \
     device/mediatek/mt8183/init.recovery.mt8183.rc:recovery/root/init.recovery.mt8183.rc
+
+# app widget, needed for default launcher3
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.software.app_widgets.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.app_widgets.xml \
 
 # Add support of MT7668 WiFi module
 $(call inherit-product-if-exists, vendor/mediatek/mt7668/mt7668.mk)

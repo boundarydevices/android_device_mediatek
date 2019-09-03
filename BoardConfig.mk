@@ -52,7 +52,7 @@ BOARD_MKBOOTIMG_ARGS := \
 
 # kernel commandline
 BOARD_KERNEL_CMDLINE := \
-    root=/dev/mmcblk0p10 printk.devkmsg=on ro rootwait skip_initramfs \
+    root=/dev/mmcblk0p5 printk.devkmsg=on ro rootwait skip_initramfs \
     init=/init firmware_class.path=/vendor/firmware \
     androidboot.selinux=permissive \
 
@@ -75,6 +75,9 @@ BOARD_VENDORIMAGE_PARTITION_SIZE   := 134217728
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE  := ext4
 BOARD_CACHEIMAGE_PARTITION_SIZE    := 16777216
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 3221225472
+BOARD_DTBOIMG_PARTITION_SIZE       := 1048576
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
+BOARD_BOOTIMAGE_PARTITION_SIZE     := 33554432
 
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 
@@ -93,3 +96,6 @@ USE_XML_AUDIO_POLICY_CONF := 1
 # RecoveryOS
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_RECOVERY_FSTAB := device/mediatek/mt8183/fstab.mt8183
+
+BOARD_VENDOR_MEDIATEK := true
+MTK_PARTITIONS_YAML := device/mediatek/mt8183/partitions.yaml

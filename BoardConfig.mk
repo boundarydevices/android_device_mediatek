@@ -52,7 +52,7 @@ BOARD_MKBOOTIMG_ARGS := \
 
 # kernel commandline
 BOARD_KERNEL_CMDLINE := \
-    root=/dev/mmcblk0p5 printk.devkmsg=on ro rootwait skip_initramfs \
+    root=/dev/mmcblk0p6 printk.devkmsg=on ro rootwait skip_initramfs \
     init=/init firmware_class.path=/vendor/firmware \
     androidboot.selinux=permissive \
 

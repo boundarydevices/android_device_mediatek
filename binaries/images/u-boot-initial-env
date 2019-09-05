@@ -7,10 +7,12 @@ bootargs= console=tty0 console=ttyS0,921600n1 earlycon=uart8250,mmio32,0x1100200
 dtb_index=0
 dtbo_index=1
 loadaddr=0x50000000
+splashscreen_loadaddr=0x60000000
 load_dtb=part start mmc ${mmcdev} dtbo dtbo_part_start;part size mmc ${mmcdev} dtbo dtbo_part_size;mmc read ${loadaddr} ${dtbo_part_start} ${dtbo_part_size};dtimg select ${loadaddr} ${dtb_index};dtimg merge ${loadaddr} ${dtbo_index}; 
 load_bootimg=part start mmc ${mmcdev} boot boot_part_start;part size mmc ${mmcdev} boot boot_part_size;mmc read ${loadaddr} ${boot_part_start} ${boot_part_size}; 
 load_recoveryimg=part start mmc ${mmcdev} recovery recovery_part_start;part size mmc ${mmcdev} recovery recovery_part_size;mmc read ${loadaddr} ${recovery_part_start} ${recovery_part_size}; 
-mmcboot=if bcb load ${mmcdev} persist; then if bcb test command = boot-recovery; then bcb clear command; bcb store;run load_dtb;run load_recoveryimg;bootm ${loadaddr};fi;fi;run load_dtb;run load_bootimg;bootm ${loadaddr}; 
+load_splashscreen=part start mmc ${mmcdev} splashscreen splashscreen_part_start;mmc read ${splashscreen_loadaddr} ${splashscreen_part_start} 0x3fc0;splashscreen;
+mmcboot=run load_splashscreen;if bcb load ${mmcdev} persist; then if bcb test command = boot-recovery; then bcb clear command; bcb store;run load_dtb;run load_recoveryimg;bootm ${loadaddr};fi;fi;run load_dtb;run load_bootimg;bootm ${loadaddr}; 
 bootcmd=run mmcboot
 
 

@@ -88,7 +88,9 @@ PRODUCT_COPY_FILES += \
 # DRM (Digital Rights Management)
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.1-service.clearkey \
-    android.hardware.drm@1.1-service.widevine
+    android.hardware.drm@1.1-service.widevine \
+    android.hardware.drm@1.0-service \
+    android.hardware.drm@1.0-impl
 
 # Memtrack
 PRODUCT_PACKAGES += memtrack.default \

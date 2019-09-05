@@ -20,6 +20,8 @@ else
 LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
 
+PRODUCT_UBOOT_SPLASHSCREEN ?= device/mediatek/mt8183/binaries/images/splashscreen.raw
+
 # Shipping API level to Android P (28)
 PRODUCT_SHIPPING_API_LEVEL := 28
 
@@ -130,6 +132,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/mediatek/mt8183/binaries/images/lk.bin:$(TARGET_OUT)/lk.bin \
     device/mediatek/mt8183/binaries/images/fip.bin:$(TARGET_OUT)/fip.bin \
+    $(PRODUCT_UBOOT_SPLASHSCREEN):$(TARGET_OUT)/splashscreen.raw \
     device/mediatek/mt8183/binaries/images/bl2.img:$(TARGET_OUT)/bl2.img \
     device/mediatek/mt8183/binaries/images/dl_addr.ini:$(TARGET_OUT)/dl_addr.ini \
     device/mediatek/mt8183/binaries/images/u-boot-initial-env:$(TARGET_OUT)/u-boot-initial-env \

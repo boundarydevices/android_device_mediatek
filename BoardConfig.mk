@@ -52,7 +52,7 @@ BOARD_MKBOOTIMG_ARGS := \
 
 # kernel commandline
 BOARD_KERNEL_CMDLINE := \
-    root=/dev/mmcblk0p6 printk.devkmsg=on ro rootwait skip_initramfs \
+    root=/dev/mmcblk0p7 printk.devkmsg=on ro rootwait skip_initramfs \
     init=/init firmware_class.path=/vendor/firmware \
     androidboot.selinux=permissive \
 
@@ -79,6 +79,7 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 3221225472
 BOARD_DTBOIMG_PARTITION_SIZE       := 1048576
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
 BOARD_BOOTIMAGE_PARTITION_SIZE     := 33554432
+BOARD_PERSISTIMAGE_PARTITION_SIZE  := 33554432
 
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 

@@ -40,11 +40,13 @@ To build the device tree overlay (dtbo) image, we can use `mkdtimg`:
 
 ```sh
 mkdtimg create out/target/product/mt8183/dtbo.img \
-  ~/src/june-master/device/mediatek/mt8183-kernel/mt8183.dtb
+  ~/src/june-master/device/mediatek/mt8183-kernel/mt8183.dtb \
   ~/src/june-master/device/mediatek/mt8183-kernel/mt8183-evb.dtb
 ```
-Note: currently, the SoC device tree (`mt8183.dtb`) is also part of the `dtbo.img`.
-This will change when we re-partition.
+Notes:
+ - Currently, the SoC device tree (`mt8183.dtb`) is also part of the `dtbo.img`.
+   This will change when we re-partition.
+ - This step is part of the kernel build scripts so does not need to be done manually.
 
 ### kernel
 To re-build the kernel, we can do the following:

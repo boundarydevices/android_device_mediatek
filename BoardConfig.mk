@@ -98,6 +98,7 @@ USE_XML_AUDIO_POLICY_CONF := 1
 # RecoveryOS
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_RECOVERY_FSTAB := device/mediatek/mt8183/fstab.recovery.mt8183
+TARGET_RELEASETOOLS_EXTENSIONS := device/mediatek/mt8183
 
 BOARD_VENDOR_MEDIATEK := true
 MTK_PARTITIONS_YAML := device/mediatek/mt8183/partitions.yaml

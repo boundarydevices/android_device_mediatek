@@ -147,3 +147,6 @@ PRODUCT_COPY_FILES += \
 
 # Add support of MT7668 WiFi module
 $(call inherit-product-if-exists, vendor/mediatek/mt7668/mt7668.mk)
+
+# Add support for common utils: vendor ueventd.rc and (optional) debug tools
+$(call inherit-product, device/mediatek/common/utils/utils.mk)

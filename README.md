@@ -48,7 +48,8 @@ To re-build the device tree overlay (dtbo) image, we can use `mkdtimg`:
 mkdtimg create \
   ~/src/mediatek/device/mediatek/mt8183-kernel/dtbo.img \
   ~/src/mediatek/device/mediatek/mt8183-kernel/mt8183.dtb \
-  ~/src/mediatek/device/mediatek/mt8183-kernel/mt8183-evb.dtb
+  ~/src/mediatek/device/mediatek/mt8183-kernel/mt8183-evb.dtb \
+  ~/src/mediatek/device/mediatek/mt8183-kernel/penguin.dtb
 ```
 
 Notes:
@@ -110,15 +111,15 @@ In order to fully flash the device, run the following command:
 
 ``` {.sh}
 cd ~/src/mediatek/out/target/product/mt8183/
-python2 flashimage.py
+python2 flashimage.py --update dtbo_index 1
 ```
 
 Once you see *Waiting for DA mode*:
 
 1)  press the *reset* and *volume up* buttons **simultaneously**
 2)  then release only the *reset* button
-3)  release the *volume* button once you see that the image is getting
-    flashed.
+3)  release the *volume up* button once you see that the image is
+    getting flashed.
 
 Tips
 ----

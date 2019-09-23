@@ -15,6 +15,16 @@ repo sync
 For more instructions about `repo`, please visit Android's official
 documentation: https://source.android.com/setup/build/downloading
 
+Additional dependencies
+-----------------------
+
+The flash/partitioning tools, which are generated at build time depend
+on `pyyaml`. This can be installed with:
+
+``` {.sh}
+pip2 install --user pyyaml
+```
+
 Building
 --------
 

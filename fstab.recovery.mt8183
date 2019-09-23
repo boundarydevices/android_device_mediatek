@@ -9,3 +9,4 @@
 /dev/block/platform/soc/11230000.mmc/by-name/cache		/cache		ext4	noatime,nosuid,nodev	wait,check,quota
 /dev/block/platform/soc/11230000.mmc/by-name/boot		/boot		emmc	""	""
 /dev/block/platform/soc/11230000.mmc/by-name/dtbo		/dtbo		emmc	""	""
+/dev/block/platform/soc/11230000.mmc/by-name/persist		/misc		emmc	defaults	defaults

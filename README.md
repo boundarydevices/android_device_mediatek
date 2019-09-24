@@ -99,10 +99,8 @@ DIST_DIR=$ANDROID_BUILD_TOP/device/mediatek/mt8183-kernel/ \
 To edit the kernel configuration, we can also use `build.sh`:
 
 ``` {.sh}
-DIST_DIR=$ANDROID_BUILD_TOP/device/mediatek/mt8183-kernel/ \
   BUILD_CONFIG=linux/build.config.menuconfig.mt8183 \
-  SKIP_MRPROPER=1 \
-  build/build.sh menuconfig
+  build/build.sh
 ```
 
 Flashing

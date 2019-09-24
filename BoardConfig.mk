@@ -14,8 +14,6 @@
 # limitations under the License.
 #
 
--include vendor/mediatek/mt7668/BoardConfig-mt7668.mk
-
 # Primary Arch
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -101,3 +99,7 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/mediatek/mt8183
 BOARD_VENDOR_MEDIATEK := true
 MTK_PARTITIONS_YAML := device/mediatek/mt8183/partitions.yaml
 
+# Additional hardware features
+# NOTE: must be called last, as they append Board variables such
+# as DEVICE_MANIFEST_FILE
+-include vendor/mediatek/mt7668/BoardConfig-mt7668.mk

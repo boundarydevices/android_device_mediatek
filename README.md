@@ -99,10 +99,8 @@ DIST_DIR=$ANDROID_BUILD_TOP/device/mediatek/mt8167-kernel/ \
 To edit the kernel configuration, we can also use `build.sh`:
 
 ``` {.sh}
-DIST_DIR=$ANDROID_BUILD_TOP/device/mediatek/mt8167-kernel/ \
   BUILD_CONFIG=linux/build.config.menuconfig.mt8167 \
-  SKIP_MRPROPER=1 \
-  build/build.sh menuconfig
+  build/build.sh
 ```
 
 Flashing
@@ -130,4 +128,3 @@ Once you see *Waiting for DA mode*:
 2)  then release only the *reset* button
 3)  release the *volume up* button once you see that the image is
     getting flashed.
-

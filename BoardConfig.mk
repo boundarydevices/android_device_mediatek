@@ -72,7 +72,7 @@ BOARD_DTBOIMG_PARTITION_SIZE       := 4194304
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 
 # prebuild dtbo file
-BOARD_PREBUILT_DTBOIMAGE := device/mediatek/mt8167-kernel/dtbo.img
+BOARD_PREBUILT_DTBOIMAGE := device/mediatek/common-kernel/dtbo.img
 
 # Use mke2fs to create ext4 images
 TARGET_USES_MKE2FS := true

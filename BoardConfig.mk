@@ -14,8 +14,6 @@
 # limitations under the License.
 #
 
-# Use the non-open-source parts, if they're present
--include vendor/mediatek/mt8183/BoardConfigVendor.mk
 -include vendor/mediatek/mt7668/BoardConfig-mt7668.mk
 
 # Primary Arch
@@ -102,3 +100,4 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/mediatek/mt8183
 
 BOARD_VENDOR_MEDIATEK := true
 MTK_PARTITIONS_YAML := device/mediatek/mt8183/partitions.yaml
+

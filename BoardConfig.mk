@@ -14,10 +14,6 @@
 # limitations under the License.
 #
 
-# Use the non-open-source parts, if they're present
--include vendor/mediatek/mt8183/BoardConfigVendor.mk
--include vendor/mediatek/mt7668/BoardConfig-mt7668.mk
-
 # Primary Arch
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -58,9 +54,6 @@ BOARD_KERNEL_CMDLINE := \
 
 BOARD_VENDOR_KERNEL_MODULES := \
     device/mediatek/mt8183-kernel/goodix.ko \
-    device/mediatek/mt8183-kernel/cfg80211.ko \
-    device/mediatek/mt8183-kernel/wlan_mt7668_sdio.ko \
-    device/mediatek/mt8183-kernel/btmtksdio.ko \
 
 BOARD_RECOVERY_KERNEL_MODULES := \
     device/mediatek/mt8183-kernel/goodix.ko \
@@ -102,3 +95,8 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/mediatek/mt8183
 
 BOARD_VENDOR_MEDIATEK := true
 MTK_PARTITIONS_YAML := device/mediatek/mt8183/partitions.yaml
+
+# Additional hardware features
+# NOTE: must be called last, as they append Board variables such
+# as DEVICE_MANIFEST_FILE
+-include vendor/mediatek/mt7668/BoardConfig-mt7668.mk

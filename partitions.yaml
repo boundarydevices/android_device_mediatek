@@ -8,6 +8,8 @@ partitions:
   vbmeta:
     size: 64K
     file: vbmeta.img
+  misc:
+    size: 0
   boot:
     start: 64M
     size: 0

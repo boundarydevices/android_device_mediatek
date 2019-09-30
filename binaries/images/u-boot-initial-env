@@ -2,7 +2,6 @@
 baudrate=921600
 bootargs= console=tty0 console=ttyS0,921600n1 earlycon=uart8250,mmio32,0x11005000
 bootcmd=gpio input 42;if test $? -eq 0 || test "${force_fastboot}" -eq 1; then setenv force_fastboot 0; saveenv;run fastboot;run mmcboot;else run mmcboot;fi
-bootcmd=run distro_bootcmd
 bootdelay=2
 dtb_index=0
 dtbo_index=1

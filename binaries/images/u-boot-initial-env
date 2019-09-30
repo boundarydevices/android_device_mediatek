@@ -1,7 +1,6 @@
 
 baudrate=921600
 bootargs= console=tty0 console=ttyS0,921600n1 earlycon=uart8250,mmio32,0x11002000
-bootcmd=run distro_bootcmd
 bootcmd=run mmcboot
 bootdelay=2
 dtb_index=0

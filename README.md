@@ -119,7 +119,7 @@ In order to fully flash the device, run the following command:
 
 ``` {.sh}
 cd ~/src/mediatek/out/target/product/mt8167/
-python2 flashimage.py --update dtbo_index 1
+python2 flashimage.py --update dtbo_index 1 --env-size 262144
 ```
 
 Once you see *Waiting for DA mode*:

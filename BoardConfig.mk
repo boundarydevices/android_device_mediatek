@@ -53,12 +53,12 @@ BOARD_KERNEL_CMDLINE := \
     androidboot.selinux=permissive \
 
 BOARD_VENDOR_KERNEL_MODULES := \
-    device/mediatek/mt8183-kernel/goodix.ko \
+    device/mediatek/common-kernel/goodix.ko \
 
 BOARD_RECOVERY_KERNEL_MODULES := \
-    device/mediatek/mt8183-kernel/goodix.ko \
+    device/mediatek/common-kernel/goodix.ko \
 
-BOARD_PREBUILT_DTBOIMAGE := device/mediatek/mt8183-kernel/dtbo.img
+BOARD_PREBUILT_DTBOIMAGE := device/mediatek/common-kernel/dtbo.img
 
 # FS configuration
 BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 2147483648

@@ -67,7 +67,7 @@ PRODUCT_COPY_FILES += \
     device/mediatek/mt8167/binaries/lib64/egl/libGLESv2_swiftshader.so:$(TARGET_COPY_OUT_VENDOR)/lib64/egl/libGLESv2_swiftshader.so \
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=360
+    ro.sf.lcd_density=180
 
 # Audio
 PRODUCT_PACKAGES += \

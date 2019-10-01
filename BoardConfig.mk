@@ -56,6 +56,9 @@ BOARD_KERNEL_CMDLINE := \
     androidboot.selinux=permissive printk.devkmsg=on \
     ro rootwait skip_initramfs init=/init \
 
+BOARD_VENDOR_KERNEL_MODULES := \
+    device/mediatek/common-kernel/panel-rpi-pumpkin-touchscreen.ko \
+
 # FS configuration
 BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 2147483648
 TARGET_USERIMAGES_USE_EXT4         := true

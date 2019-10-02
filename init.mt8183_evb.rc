@@ -1,2 +1,2 @@
 on fs
-    mount_all /vendor/etc/fstab.mt8183
+    mount_all /vendor/etc/fstab.mt8183_evb

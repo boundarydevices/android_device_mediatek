@@ -28,8 +28,6 @@ BOARD_VENDOR_KERNEL_MODULES := \
 BOARD_RECOVERY_KERNEL_MODULES := \
     device/mediatek/common-kernel/goodix.ko \
 
-BOARD_PREBUILT_DTBOIMAGE := device/mediatek/common-kernel/dtbo.img
-
 # FS configuration
 BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 2147483648
 TARGET_USERIMAGES_USE_EXT4         := true
@@ -45,9 +43,6 @@ BOARD_BOOTIMAGE_PARTITION_SIZE     := 33554432
 BOARD_PERSISTIMAGE_PARTITION_SIZE  := 33554432
 
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
-
-# Use mke2fs to create ext4 images
-TARGET_USES_MKE2FS := true
 
 # RecoveryOS
 TARGET_RECOVERY_FSTAB := device/mediatek/mt8183_evb/fstab.recovery.mt8183_evb

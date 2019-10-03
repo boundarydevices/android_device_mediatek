@@ -15,10 +15,20 @@
 #
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
-$(call inherit-product, device/mediatek/mt8167/device.mk)
+$(call inherit-product, device/mediatek/common/soc/mt8167/mt8167.mk)
 
-PRODUCT_NAME := mt8167
-PRODUCT_DEVICE := mt8167
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/init.pumpkin.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.pumpkin.rc \
+    $(LOCAL_PATH)/fstab.pumpkin:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.pumpkin
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sf.lcd_density=180
+
+PRODUCT_NAME := pumpkin
+PRODUCT_DEVICE := pumpkin
 PRODUCT_BRAND := Android
-PRODUCT_MODEL := mt8167
+PRODUCT_MODEL := pumpkin
 PRODUCT_MANUFACTURER := mediatek
+
+# Additional hardware features
+$(call inherit-product-if-exists, vendor/mediatek/mt7668/mt7668.mk)

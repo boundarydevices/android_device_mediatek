@@ -29,6 +29,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/touchscreen/goodix_5688_cfg.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/goodix_5688_cfg.bin \
     $(LOCAL_PATH)/touchscreen/init.goodix.rc:$(TARGET_COPY_OUT_VENDOR)//etc/init/init.goodix.rc \
 
+# Splashscreen: use default one
+PRODUCT_COPY_FILES += \
+     device/mediatek/common/soc/mt8183/binaries/images/splashscreen.raw:splashscreen.raw
+
 PRODUCT_NAME := mt8183_evb
 PRODUCT_DEVICE := mt8183_evb
 PRODUCT_BRAND := Android

@@ -45,3 +45,8 @@ BOARD_AVB_ENABLE := true
 BOARD_AVB_ALGORITHM := SHA512_RSA4096
 
 MTK_PARTITIONS_YAML := device/mediatek/pumpkin/partitions.yaml
+
+# Additional hardware features
+# NOTE: must be called last, as they append Board variables such
+# as DEVICE_MANIFEST_FILE
+-include vendor/mediatek/mt7668/BoardConfig-mt7668.mk

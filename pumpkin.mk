@@ -24,6 +24,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=180
 
+PRODUCT_PACKAGE_OVERLAYS := device/mediatek/pumpkin/overlay
+
 PRODUCT_NAME := pumpkin
 PRODUCT_DEVICE := pumpkin
 PRODUCT_BRAND := Android

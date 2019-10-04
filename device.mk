@@ -21,14 +21,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=360
 
-# Touchscreen
-PRODUCT_COPY_FILES += \
-    vendor/goodix/goodix5688/goodix_5688_cfg.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/goodix_5688_cfg.bin \
-    vendor/goodix/goodix5688/init.goodix.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.goodix.rc \
-
 # Splashscreen: use default one
 PRODUCT_COPY_FILES += \
      device/mediatek/common/soc/mt8183/binaries/images/splashscreen.raw:splashscreen.raw
 
 # Additional hardware features
 $(call inherit-product-if-exists, vendor/mediatek/mt7668/mt7668.mk)
+# Touchscreen
+$(call inherit-product, vendor/goodix/goodix5688/goodix5688.mk)

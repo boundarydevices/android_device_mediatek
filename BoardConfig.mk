@@ -1,5 +1,5 @@
 #
-# Copyright 2014 The Android Open-Source Project
+# Copyright 2019 BayLibre SAS
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -42,12 +42,19 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
 BOARD_BOOTIMAGE_PARTITION_SIZE     := 33554432
 BOARD_PERSISTIMAGE_PARTITION_SIZE  := 33554432
 
-# RecoveryOS
-TARGET_RECOVERY_FSTAB := device/mediatek/mt8183_evb/fstab.recovery.mt8183_evb
+BOARD_SEPOLICY_DIRS += \
+    device/mediatek/opal/sepolicy
 
-MTK_PARTITIONS_YAML := device/mediatek/mt8183_evb/partitions.yaml
+BOARD_AVB_ENABLE := true
+BOARD_AVB_ALGORITHM := SHA512_RSA4096
+
+# RecoveryOS
+TARGET_RECOVERY_FSTAB := device/mediatek/opal/fstab.recovery.opal
+
+MTK_PARTITIONS_YAML := device/mediatek/opal/partitions.yaml
 
 # Additional hardware features
 # NOTE: must be called last, as they append Board variables such
 # as DEVICE_MANIFEST_FILE
 -include vendor/mediatek/mt7668/BoardConfig-mt7668.mk
+-include vendor/goodix/goodix5688/BoardConfig-goodix5688.mk

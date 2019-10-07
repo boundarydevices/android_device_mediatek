@@ -1,5 +1,5 @@
 #
-# Copyright 2019 BayLibre SAS
+# Copyright 2014 The Android Open-Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,5 +13,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
-PRODUCT_MAKEFILES := $(LOCAL_DIR)/aosp_opal.mk
+$(call inherit-product, device/mediatek/common/soc/mt8183/mt8183.mk)
+
+PRODUCT_NAME := aosp_opal
+PRODUCT_DEVICE := opal
+PRODUCT_BRAND := Android
+PRODUCT_MODEL := opal
+PRODUCT_MANUFACTURER := mediatek
+
+$(call inherit-product, device/mediatek/opal/device.mk)

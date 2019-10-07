@@ -14,37 +14,7 @@
 # limitations under the License.
 #
 
-# Primary Arch
-TARGET_ARCH := arm64
-TARGET_ARCH_VARIANT := armv8-a
-TARGET_CPU_ABI := arm64-v8a
-TARGET_CPU_ABI2 :=
-TARGET_CPU_VARIANT := cortex-a73
-
-# Secondary Arch
-TARGET_2ND_ARCH := arm
-TARGET_2ND_ARCH_VARIANT := armv8-a
-TARGET_2ND_CPU_ABI := armeabi-v7a
-TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := cortex-a53
-
-TARGET_IS_64_BIT := true
-TARGET_USES_64_BIT_BINDER := true
-
-# Enable vndk
-BOARD_VNDK_VERSION := current
-
-# bootimage generation
-BOARD_KERNEL_BASE = 0x40000000
-BOARD_KERNEL_OFFSET = 0x00080000
-BOARD_RAMDISK_OFFSET = 0x15000000
-BOARD_TAGS_OFFSET = 0x14000000
-
-BOARD_MKBOOTIMG_ARGS := \
-  --kernel_offset $(BOARD_KERNEL_OFFSET) \
-  --ramdisk_offset $(BOARD_RAMDISK_OFFSET) \
-  --tags_offset $(BOARD_TAGS_OFFSET) \
-  --header_version 1
+include device/mediatek/common/soc/mt8183/BoardConfig.mk
 
 # kernel commandline
 BOARD_KERNEL_CMDLINE := \
@@ -57,8 +27,6 @@ BOARD_VENDOR_KERNEL_MODULES := \
 
 BOARD_RECOVERY_KERNEL_MODULES := \
     device/mediatek/common-kernel/goodix.ko \
-
-BOARD_PREBUILT_DTBOIMAGE := device/mediatek/common-kernel/dtbo.img
 
 # FS configuration
 BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 2147483648
@@ -74,27 +42,10 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
 BOARD_BOOTIMAGE_PARTITION_SIZE     := 33554432
 BOARD_PERSISTIMAGE_PARTITION_SIZE  := 33554432
 
-BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
-
-BOARD_SEPOLICY_DIRS += \
-        device/mediatek/mt8183/sepolicy/ \
-        device/mediatek/common/sepolicy/vendor \
-
-DEVICE_MANIFEST_FILE := device/mediatek/mt8183/manifest.xml
-
-# Use mke2fs to create ext4 images
-TARGET_USES_MKE2FS := true
-
-# audio, use XML policy format
-USE_XML_AUDIO_POLICY_CONF := 1
-
 # RecoveryOS
-TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
-TARGET_RECOVERY_FSTAB := device/mediatek/mt8183/fstab.recovery.mt8183
-TARGET_RELEASETOOLS_EXTENSIONS := device/mediatek/mt8183
+TARGET_RECOVERY_FSTAB := device/mediatek/mt8183_evb/fstab.recovery.mt8183_evb
 
-BOARD_VENDOR_MEDIATEK := true
-MTK_PARTITIONS_YAML := device/mediatek/mt8183/partitions.yaml
+MTK_PARTITIONS_YAML := device/mediatek/mt8183_evb/partitions.yaml
 
 # Additional hardware features
 # NOTE: must be called last, as they append Board variables such

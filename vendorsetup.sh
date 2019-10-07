@@ -14,4 +14,4 @@
 # limitations under the License.
 #
 
-add_lunch_combo mt8183-userdebug
+add_lunch_combo mt8183_evb-userdebug

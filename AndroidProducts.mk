@@ -14,4 +14,4 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := $(LOCAL_DIR)/mt8167.mk
+PRODUCT_MAKEFILES := $(LOCAL_DIR)/pumpkin.mk

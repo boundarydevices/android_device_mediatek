@@ -13,24 +13,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
-$(call inherit-product, device/mediatek/common/soc/mt8167/mt8167.mk)
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init.pumpkin.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.pumpkin.rc \
-    $(LOCAL_PATH)/fstab.pumpkin:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.pumpkin
+    $(LOCAL_PATH)/init.onyx.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.onyx.rc \
+    $(LOCAL_PATH)/fstab.onyx:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.onyx
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=180
 
-PRODUCT_PACKAGE_OVERLAYS := device/mediatek/pumpkin/overlay
-
-PRODUCT_NAME := pumpkin
-PRODUCT_DEVICE := pumpkin
-PRODUCT_BRAND := Android
-PRODUCT_MODEL := pumpkin
-PRODUCT_MANUFACTURER := mediatek
+DEVICE_PACKAGE_OVERLAYS := device/mediatek/onyx/overlay
 
 # Additional hardware features
 $(call inherit-product-if-exists, vendor/mediatek/mt7668/mt7668.mk)
+$(call inherit-product, device/mediatek/common/uvc/uvc.mk)

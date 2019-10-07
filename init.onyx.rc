@@ -1,5 +1,5 @@
 on fs
-    mount_all /vendor/etc/fstab.pumpkin
+    mount_all /vendor/etc/fstab.onyx
 
 on early-init
     insmod /vendor/lib/modules/panel-rpi-pumpkin-touchscreen.ko

@@ -38,13 +38,17 @@ BOARD_DTBOIMG_PARTITION_SIZE       := 4194304
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 134217728
 BOARD_BOOTIMAGE_PARTITION_SIZE     := 33554432
 
+BOARD_SEPOLICY_DIRS += \
+    device/mediatek/onyx/sepolicy
+
 # enable AVB
 BOARD_AVB_ENABLE := true
 BOARD_AVB_ALGORITHM := SHA512_RSA4096
 
-MTK_PARTITIONS_YAML := device/mediatek/pumpkin/partitions.yaml
+MTK_PARTITIONS_YAML := device/mediatek/onyx/partitions.yaml
 
 # Additional hardware features
 # NOTE: must be called last, as they append Board variables such
 # as DEVICE_MANIFEST_FILE
+include device/mediatek/common/uvc/BoardConfig.mk
 -include vendor/mediatek/mt7668/BoardConfig-mt7668.mk

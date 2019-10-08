@@ -1,15 +1,18 @@
 Pumpkin {#board_name}
 =======
 
+Onyx is the device code name for mt8167 on pumpkin board.
+
 Get the code
 ------------
 
-First, fetch the code with `repo`:
+First, fetch the code with aosp_install.sh using `repo`:
 
 ``` {.sh}
-mkdir ~/src/mediatek/ && cd $_
-repo init -u https://gitlab.com/baylibre/june/android/manifest.git -b june-master
-repo sync
+mkdir ~/src/mediatek
+git clone https://gitlab.com/baylibre/aosp/mediatek/manifest.git -b mtk-android-9
+cd manifest
+./aosp_install.sh android-9.0.0_r45 onyx ~/src/mediatek/
 ```
 
 For more instructions about `repo`, please visit Android's official
@@ -38,9 +41,9 @@ Now, start the usual Android build setup:
 ``` {.sh}
 cd ~/src/mediatek/
 source build/envsetup.sh
-lunch mt8167-userdebug
+lunch aosp_onyx-userdebug
 make -j40
-make out/target/product/mt8167/dtbo.img
+make out/target/product/onyx/dtbo.img
 ```
 
 Note: to only rebuild a particular image, run `make <name>image`. For
@@ -56,10 +59,9 @@ To re-build the device tree overlay (dtbo) image, we can use `mkdtimg`:
 
 ``` {.sh}
 mkdtimg create \
-  ~/src/mediatek/device/mediatek/mt8167-kernel/dtbo.img \
-  ~/src/mediatek/device/mediatek/mt8167-kernel/mt8167.dtb \
-  ~/src/mediatek/device/mediatek/mt8167-kernel/mt8167-pumpkin.dtb \
-  ~/src/mediatek/device/mediatek/mt8167-kernel/mt8167-pumpkin.dtb
+  ~/src/mediatek/device/mediatek/common-kernel/dtbo.img \
+  ~/src/mediatek/device/mediatek/common-kernel/mt8167.dtb \
+  ~/src/mediatek/device/mediatek/common-kernel/mt8167-pumpkin.dtb
 ```
 
 Notes:
@@ -76,22 +78,22 @@ To re-build the kernel, we can do the following:
 ``` {.sh}
 cd ~/src/mediatek/
 source build/envsetup.sh
-lunch mt8167-userdebug
+lunch aosp_onyx-userdebug
 cd kernel
-DIST_DIR=$ANDROID_BUILD_TOP/device/mediatek/mt8167-kernel/ \
-    BUILD_CONFIG=linux/build.config.mt8167 \
+DIST_DIR=$ANDROID_BUILD_TOP/device/mediatek/common-kernel/ \
+    BUILD_CONFIG=src/build.config.mtk \
     build/build.sh
 ```
 
 Note that this is *optional*, as some prebuild kernel binaries are
-available in: `src/mediatek/device/mediatek/mt8167-kernel/`
+available in: `src/mediatek/device/mediatek/common-kernel/`
 
 To incrementally re-build the kernel, for development, use the
 `SKIP_MRPROPER=1` option:
 
 ``` {.sh}
-DIST_DIR=$ANDROID_BUILD_TOP/device/mediatek/mt8167-kernel/ \
-    BUILD_CONFIG=linux/build.config.mt8167 \
+DIST_DIR=$ANDROID_BUILD_TOP/device/mediatek/common-kernel/ \
+    BUILD_CONFIG=src/build.config.mtk \
     SKIP_MRPROPER=1 \
     build/build.sh
 ```
@@ -99,7 +101,7 @@ DIST_DIR=$ANDROID_BUILD_TOP/device/mediatek/mt8167-kernel/ \
 To edit the kernel configuration, we can also use `build.sh`:
 
 ``` {.sh}
-  BUILD_CONFIG=linux/build.config.menuconfig.mt8167 \
+  BUILD_CONFIG=src/build.config.menuconfig.mtk \
   build/build.sh
 ```
 
@@ -118,8 +120,8 @@ pip2 install --user pyserial
 In order to fully flash the device, run the following command:
 
 ``` {.sh}
-cd ~/src/mediatek/out/target/product/mt8167/
-python2 flashimage.py --update dtbo_index 1 --env-size 262144
+cd ~/src/mediatek/out/target/product/onyx/
+python2 flashimage.py --update dtbo_index 4 --update dtb_index 3 --env-size 262144
 ```
 
 Once you see *Waiting for DA mode*:

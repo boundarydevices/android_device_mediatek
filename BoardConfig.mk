@@ -50,5 +50,4 @@ MTK_PARTITIONS_YAML := device/mediatek/onyx/partitions.yaml
 # Additional hardware features
 # NOTE: must be called last, as they append Board variables such
 # as DEVICE_MANIFEST_FILE
-include device/mediatek/common/uvc/BoardConfig.mk
 -include vendor/mediatek/mt7668/BoardConfig-mt7668.mk

@@ -25,4 +25,3 @@ DEVICE_PACKAGE_OVERLAYS := device/mediatek/onyx/overlay
 
 # Additional hardware features
 $(call inherit-product-if-exists, vendor/mediatek/mt7668/mt7668.mk)
-$(call inherit-product, device/mediatek/common/uvc/uvc.mk)

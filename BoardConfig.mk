@@ -45,9 +45,6 @@ BOARD_PERSISTIMAGE_PARTITION_SIZE  := 33554432
 BOARD_SEPOLICY_DIRS += \
     device/mediatek/opal/sepolicy
 
-BOARD_AVB_ENABLE := true
-BOARD_AVB_ALGORITHM := SHA512_RSA4096
-
 # RecoveryOS
 TARGET_RECOVERY_FSTAB := device/mediatek/opal/fstab.recovery.opal
 

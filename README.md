@@ -1,19 +1,21 @@
 Pumpkin {#board_name}
 =======
 
-Onyx is the device code name for mt8167 on pumpkin board.
+onyx is the device code name for mt8167 on Pumpkin board.
 
 Get the code
 ------------
 
-First, fetch the code with aosp_install.sh using `repo`:
+First, fetch the code with `aosp_install.sh` using `repo`:
 
 ``` {.sh}
 mkdir ~/src/mediatek
 git clone https://gitlab.com/baylibre/aosp/mediatek/manifest.git -b mtk-android-9
 cd manifest
-./aosp_install.sh android-9.0.0_r45 onyx ~/src/mediatek/
+./aosp_install.sh android-9.0.0_r45 onyx ~/src/mediatek
 ```
+
+`aosp_install` will take care of doing `repo init` and `repo sync`.
 
 For more instructions about `repo`, please visit Android's official
 documentation: https://source.android.com/setup/build/downloading
@@ -53,52 +55,59 @@ example, for `vendor.img`:
 make vendorimage -j40
 ```
 
-### dtbo.img
-
-To re-build the device tree overlay (dtbo) image, we can use `mkdtimg`:
-
-``` {.sh}
-mkdtimg create \
-  ~/src/mediatek/device/mediatek/common-kernel/dtbo.img \
-  ~/src/mediatek/device/mediatek/common-kernel/mt8167.dtb \
-  ~/src/mediatek/device/mediatek/common-kernel/mt8167-pumpkin.dtb
-```
-
-Notes:
-
--   Currently, the SoC device tree (`mt8167.dtb`) is also part of the
-    `dtbo.img`. This will change when we re-partition.
--   This step is part of the kernel build scripts so does not need to be
-    done manually.
-
 ### kernel
 
-To re-build the kernel, we can do the following:
+By default, Android uses a prebuild (binary) kernel located in:
+`~/src/mediatek/device/mediatek/common-kernel/`
+
+To re-build the kernel, have to perform the following steps:
+
+1.  Fetch the kernel source code with `repo`:
+
+``` {.sh}
+mkdir ~/src/mediatek-kernel/ && cd $_
+repo init -u https://gitlab.com/baylibre/aosp/mediatek/manifest.git -m kernel.xml -b mtk-android-9
+repo sync
+```
+
+2.  Rebuild the kernel sources:
+
+``` {.sh}
+cd ~/src/mediatek-kernel/
+DIST_DIR=~/src/mediatek/device/mediatek/common-kernel/ \
+    BUILD_CONFIG=src/build.config.mtk \
+    build/build.sh
+```
+
+DTB/DTBO Notes:
+
+-   This also rebuilds the `dtbo.img`
+-   Currently, the SoC device tree (`mt8167.dtb`) is also part of the
+    `dtbo.img`. This will change when we re-partition.
+
+3.  Finally, rebuild the Android Images to test the changes:
 
 ``` {.sh}
 cd ~/src/mediatek/
 source build/envsetup.sh
 lunch aosp_onyx-userdebug
-cd kernel
-DIST_DIR=$ANDROID_BUILD_TOP/device/mediatek/common-kernel/ \
-    BUILD_CONFIG=src/build.config.mtk \
-    build/build.sh
+make -j40
+make bootimage vendorimage out/target/product/onyx/dtbo.img
 ```
 
-Note that this is *optional*, as some prebuild kernel binaries are
-available in: `src/mediatek/device/mediatek/common-kernel/`
+#### development tips
 
-To incrementally re-build the kernel, for development, use the
-`SKIP_MRPROPER=1` option:
+For incremental (faster) re-building the kernel, use the
+`SKIP_MRPROPER=1` flag:
 
 ``` {.sh}
-DIST_DIR=$ANDROID_BUILD_TOP/device/mediatek/common-kernel/ \
+DIST_DIR=~/src/mediatek/device/mediatek/common-kernel/ \
     BUILD_CONFIG=src/build.config.mtk \
     SKIP_MRPROPER=1 \
     build/build.sh
 ```
 
-To edit the kernel configuration, we can also use `build.sh`:
+To edit the kernel configuration (`make menuconfig`), use `build.sh`:
 
 ``` {.sh}
   BUILD_CONFIG=src/build.config.menuconfig.mtk \
@@ -121,7 +130,7 @@ In order to fully flash the device, run the following command:
 
 ``` {.sh}
 cd ~/src/mediatek/out/target/product/onyx/
-python2 flashimage.py --update dtbo_index 4 --update dtb_index 3 --env-size 262144
+python2 flashimage.py --update dtb_index 3 --update dtbo_index 4 --env-size 262144
 ```
 
 Once you see *Waiting for DA mode*:

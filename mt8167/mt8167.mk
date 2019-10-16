@@ -14,7 +14,6 @@
 # limitations under the License.
 #
 
-$(call inherit-product-if-exists, vendor/mediatek/mt8167/device-vendor.mk)
 $(call inherit-product, device/mediatek/common/soc/device-common.mk)
 
 # Flashing tool + prebuilt binaries

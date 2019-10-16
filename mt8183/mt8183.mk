@@ -47,3 +47,15 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/binaries/images/fip_noab.bin:$(TARGET_OUT)/fip.bin \
     $(LOCAL_PATH)/binaries/images/u-boot-initial-env_noab:$(TARGET_OUT)/u-boot-initial-env
 endif # eq $(TARGET_USE_AB_SLOT), true
+
+# Optional features
+ifeq ($(TARGET_USE_AB_SLOT), true)
+# A/B Ota support
+PRODUCT_PACKAGES += \
+    update_engine \
+    update_verifier \
+    android.hardware.boot@1.0-service.mediatek \
+
+PRODUCT_PACKAGES_DEBUG += \
+    bootctl
+endif # eq $(TARGET_USE_AB_SLOT), true

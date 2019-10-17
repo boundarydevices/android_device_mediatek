@@ -1,6 +1,5 @@
 
 baudrate=921600
-bootargs= console=tty0 console=ttyS0,921600n1 earlycon=uart8250,mmio32,0x11005000
 bootcmd=gpio input 42;if test $? -eq 0 || test "${force_fastboot}" -eq 1; then setenv force_fastboot 0; saveenv;run fastboot;run mmcboot;else run mmcboot;fi
 bootdelay=2
 dtb_index=0
@@ -12,4 +11,5 @@ loadaddr=0x50000000
 load_bootimg=part start mmc ${mmcdev} boot boot_part_start;part size mmc ${mmcdev} boot boot_part_size;mmc read ${loadaddr} ${boot_part_start} ${boot_part_size}; 
 load_dtb=part start mmc ${mmcdev} dtbo dtbo_part_start;part size mmc ${mmcdev} dtbo dtbo_part_size;mmc read ${loadaddr} ${dtbo_part_start} ${dtbo_part_size};dtimg select ${loadaddr} ${dtb_index};dtimg merge ${loadaddr} ${dtbo_index}; 
 mmcboot=avb init ${mmcdev};avb verify;setenv bootargs "${bootargs} ${avb_bootargs}";run load_dtb;run load_bootimg;bootm ${loadaddr}; 
- mmcdev=0
+mmcdev=0
+tftpboot=set ipaddr 192.168.0.100;tftpboot ${kerneladdr} 192.168.0.1:fitImage;bootm ${kerneladdr};

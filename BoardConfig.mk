@@ -19,6 +19,7 @@ include device/mediatek/common/soc/mt8167/BoardConfig.mk
 # kernel commandline
 BOARD_KERNEL_CMDLINE := \
     firmware_class.path=/vendor/firmware \
+    androidboot.serialno=77848167 \
     androidboot.selinux=permissive printk.devkmsg=on \
     ro rootwait skip_initramfs init=/init \
 

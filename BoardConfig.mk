@@ -18,6 +18,7 @@ include device/mediatek/common/soc/mt8183/BoardConfig.mk
 
 # kernel commandline
 BOARD_KERNEL_CMDLINE := \
+    androidboot.serialno=77848183 \
     root=/dev/mmcblk0p7 printk.devkmsg=on ro rootwait skip_initramfs \
     init=/init firmware_class.path=/vendor/firmware \
     androidboot.selinux=permissive \

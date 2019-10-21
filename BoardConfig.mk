@@ -53,3 +53,4 @@ MTK_PARTITIONS_YAML := device/mediatek/onyx/partitions.yaml
 # NOTE: must be called last, as they append Board variables such
 # as DEVICE_MANIFEST_FILE
 -include vendor/mediatek/mt7668/BoardConfig-mt7668.mk
+-include vendor/focaltech/ft5x06/BoardConfig-ft5x06.mk

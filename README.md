@@ -130,7 +130,7 @@ In order to fully flash the device, run the following command:
 
 ``` {.sh}
 cd ~/src/mediatek/out/target/product/onyx/
-python2 flashimage.py --update dtb_index 3 --update dtbo_index 4 --env-size 262144
+python2 flashimage.py --update dtb_index 2 --update dtbo_index 3 --env-size 262144
 ```
 
 Once you see *Waiting for DA mode*:

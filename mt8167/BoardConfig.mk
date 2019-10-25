@@ -47,6 +47,10 @@ BOARD_MKBOOTIMG_ARGS := \
   --tags_offset $(BOARD_TAGS_OFFSET) \
   --header_version 1
 
+BOARD_VENDOR_KERNEL_MODULES += \
+    device/mediatek/common-kernel/mediatek-drm.ko \
+    device/mediatek/common-kernel/mediatek-drm-hdmi.ko
+
 # prebuild dtbo file
 BOARD_PREBUILT_DTBOIMAGE := device/mediatek/common-kernel/dtbo.img
 

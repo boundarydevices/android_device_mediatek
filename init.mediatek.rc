@@ -1,5 +1,7 @@
 on init
    start watchdogd
+   insmod /vendor/lib/modules/mediatek-drm.ko
+   insmod /vendor/lib/modules/mediatek-drm-hdmi.ko
 
 on fs
     start console

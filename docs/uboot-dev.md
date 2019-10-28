@@ -8,7 +8,7 @@ Fetch the source
 
 ``` {.sh}
 mkdir ~/src/u-boot-mediatek
-git clone https://gitlab.com/baylibre/rich-iot/u-boot.git -b mtk-v2019.07-android-dev ~/src/u-boot-mediatek && cd $_
+git clone https://gitlab.com/baylibre/rich-iot/u-boot.git -b mtk-v2019.10 ~/src/u-boot-mediatek && cd $_
 ```
 
 Build and integrate into Android

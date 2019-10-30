@@ -51,6 +51,10 @@ BOARD_VENDOR_KERNEL_MODULES += \
     device/mediatek/common-kernel/mediatek-drm-hdmi.ko \
     device/mediatek/common-kernel/ntc_thermistor.ko
 
+BOARD_RECOVERY_KERNEL_MODULES += \
+    device/mediatek/common-kernel/mediatek-drm.ko \
+    device/mediatek/common-kernel/mediatek-drm-hdmi.ko
+
 BOARD_PREBUILT_DTBOIMAGE := device/mediatek/common-kernel/dtbo.img
 
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true

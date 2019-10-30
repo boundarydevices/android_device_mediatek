@@ -23,7 +23,7 @@ BOARD_KERNEL_CMDLINE := \
     androidboot.selinux=permissive printk.devkmsg=on \
     ro rootwait skip_initramfs init=/init \
 
-BOARD_VENDOR_KERNEL_MODULES := \
+BOARD_VENDOR_KERNEL_MODULES += \
     device/mediatek/common-kernel/panel-rpi-pumpkin-touchscreen.ko \
 
 # FS configuration

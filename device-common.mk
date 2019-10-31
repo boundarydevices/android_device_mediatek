@@ -123,5 +123,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.recovery.mediatek.rc:recovery/root/vendor/etc/init/init.recovery.mediatek.rc
 
+
+# Copy media codecs config file
+PRODUCT_COPY_FILES += \
+    device/mediatek/common/hal/media_xml/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml
+
 # Add support for common utils: vendor ueventd.rc and (optional) debug tools
 $(call inherit-product, device/mediatek/common/utils/utils.mk)

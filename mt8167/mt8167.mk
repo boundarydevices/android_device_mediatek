@@ -16,6 +16,10 @@
 
 $(call inherit-product, device/mediatek/common/soc/device-common.mk)
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/init.mt8167.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.mt8167.rc \
+    $(LOCAL_PATH)/fstab.mt8167:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8167
+
 # Flashing tool + prebuilt binaries
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/binaries/images/dl_addr.ini:dl_addr.ini \

@@ -40,9 +40,6 @@ BOARD_PERSISTIMAGE_PARTITION_SIZE  := 33554432
 BOARD_SEPOLICY_DIRS += \
     device/mediatek/opal/sepolicy
 
-# RecoveryOS
-TARGET_RECOVERY_FSTAB := device/mediatek/opal/fstab.recovery.opal
-
 MTK_PARTITIONS_YAML := device/mediatek/opal/partitions.yaml
 
 # Additional hardware features

@@ -14,10 +14,6 @@
 # limitations under the License.
 #
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init.opal.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.opal.rc \
-    $(LOCAL_PATH)/fstab.opal:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.opal
-
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=360
 

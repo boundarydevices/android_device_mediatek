@@ -16,7 +16,6 @@
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.onyx.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.onyx.rc \
-    $(LOCAL_PATH)/fstab.onyx:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.onyx
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=180

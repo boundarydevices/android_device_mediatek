@@ -6,16 +6,13 @@ onyx is the device code name for mt8167 on Pumpkin board.
 Get the code
 ------------
 
-First, fetch the code with `aosp_install.sh` using `repo`:
+First, fetch the code using `repo`:
 
 ``` {.sh}
-mkdir ~/src/mediatek
-git clone https://gitlab.com/baylibre/aosp/mediatek/manifest.git -b mtk-android-9
-cd manifest
-./aosp_install.sh android-9.0.0_r45 onyx ~/src/mediatek
+mkdir ~/src/mediatek && cd $_
+repo init -u https://gitlab.com/baylibre/aosp/mediatek/manifest.git -b mtk-android-9
+repo sync
 ```
-
-`aosp_install` will take care of doing `repo init` and `repo sync`.
 
 For more instructions about `repo`, please visit Android's official
 documentation: https://source.android.com/setup/build/downloading

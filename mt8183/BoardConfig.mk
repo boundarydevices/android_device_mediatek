@@ -70,6 +70,11 @@ DEVICE_MANIFEST_FILE := device/mediatek/common/soc/manifest.xml
 # RecoveryOS
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_RELEASETOOLS_EXTENSIONS := device/mediatek/common/soc/
+
+ifeq ($(TARGET_USE_AB_SLOT), true)
+TARGET_RECOVERY_FSTAB := device/mediatek/common/soc/mt8183/fstab.recovery_ab.mt8183
+else
 TARGET_RECOVERY_FSTAB := device/mediatek/common/soc/mt8183/fstab.recovery_noab.mt8183
+endif # eq $(TARGET_USE_AB_SLOT), true
 
 BOARD_VENDOR_MEDIATEK := true

@@ -22,7 +22,14 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.mt8183.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.mt8183.rc \
+
+ifeq ($(TARGET_USE_AB_SLOT), true)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/fstab.mt8183_ab:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8183
+else
+PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/fstab.mt8183_noab:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8183
+endif # eq $(TARGET_USE_AB_SLOT), true
 
 # Flashing binaries
 PRODUCT_COPY_FILES += \
@@ -31,6 +38,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/binaries/images/dl_addr.ini:$(TARGET_OUT)/dl_addr.ini \
 
 # U-Boot and env
+ifeq ($(TARGET_USE_AB_SLOT), true)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/binaries/images/fip_ab.bin:$(TARGET_OUT)/fip.bin \
+    $(LOCAL_PATH)/binaries/images/u-boot-initial-env_ab:$(TARGET_OUT)/u-boot-initial-env
+else
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/binaries/images/fip_noab.bin:$(TARGET_OUT)/fip.bin \
-    $(LOCAL_PATH)/binaries/images/u-boot-initial-env_noab:$(TARGET_OUT)/u-boot-initial-env \
+    $(LOCAL_PATH)/binaries/images/u-boot-initial-env_noab:$(TARGET_OUT)/u-boot-initial-env
+endif # eq $(TARGET_USE_AB_SLOT), true

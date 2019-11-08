@@ -22,12 +22,15 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.mt8183.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.mt8183.rc \
-    $(LOCAL_PATH)/fstab.mt8183:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8183
+    $(LOCAL_PATH)/fstab.mt8183_noab:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8183
 
 # Flashing binaries
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/binaries/images/lk.bin:$(TARGET_OUT)/lk.bin \
-    $(LOCAL_PATH)/binaries/images/fip.bin:$(TARGET_OUT)/fip.bin \
     $(LOCAL_PATH)/binaries/images/bl2.img:$(TARGET_OUT)/bl2.img \
     $(LOCAL_PATH)/binaries/images/dl_addr.ini:$(TARGET_OUT)/dl_addr.ini \
-    $(LOCAL_PATH)/binaries/images/u-boot-initial-env:$(TARGET_OUT)/u-boot-initial-env \
+
+# U-Boot and env
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/binaries/images/fip_noab.bin:$(TARGET_OUT)/fip.bin \
+    $(LOCAL_PATH)/binaries/images/u-boot-initial-env_noab:$(TARGET_OUT)/u-boot-initial-env \

@@ -70,6 +70,6 @@ DEVICE_MANIFEST_FILE := device/mediatek/common/soc/manifest.xml
 # RecoveryOS
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_RELEASETOOLS_EXTENSIONS := device/mediatek/common/soc/
-TARGET_RECOVERY_FSTAB := device/mediatek/common/soc/mt8183/fstab.recovery.mt8183
+TARGET_RECOVERY_FSTAB := device/mediatek/common/soc/mt8183/fstab.recovery_noab.mt8183
 
 BOARD_VENDOR_MEDIATEK := true

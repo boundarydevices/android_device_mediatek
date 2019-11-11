@@ -14,6 +14,13 @@ git clone https://gitlab.com/baylibre/rich-iot/u-boot.git -b mtk-v2019.10 ~/src/
 Build and integrate into Android
 --------------------------------
 
+The bootloader can be build in two flavors:
+
+1.  Traditional (legacy) OTA support
+2.  A/B support
+
+### Building for traditional (legacy) OTA support
+
 1.  install the .config:
 
 ``` {.sh}
@@ -26,21 +33,60 @@ ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- make pumpkin_android_defconfig
 ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- make
 ```
 
-3.  Export the output to Android source tree: This requires `fiptool` to
-    be installed.
+3.  Export the `fip.bin` binary to Android source tree: This requires
+    `fiptool` to be installed.
 
 `fiptool` can be build from source from the following repo:
 https://github.com/ARM-software/arm-trusted-firmware/tree/master/tools/fiptool
 
 ``` {.sh}
-# this exports the initial U-Boot environment variables (stored in eMMC)
-ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- scripts/get_default_envs.sh  > \
-    ~/src/mediatek/device/mediatek/common/soc/mt8167/binaries/images/u-boot-initial-env
-
 # this updates the firmware package binary which contains other binaries such as bl2
 fiptool update \
-    ~/src/mediatek/device/mediatek/common/soc/mt8167/binaries/images/fip.bin \
+    ~/src/mediatek/device/mediatek/common/soc/mt8167/binaries/images/fip_noab.bin \
     --nt-fw u-boot.bin'
+```
+
+4.  Export the U-boot initial environment to the Android source tree
+
+``` {.sh}
+# this exports the initial U-Boot environment variables (stored in eMMC)
+ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- scripts/get_default_envs.sh  > \
+    ~/src/mediatek/device/mediatek/common/soc/mt8167/binaries/images/u-boot-initial-env_noab
+```
+
+### Building for A/B OTA support
+
+1.  install the .config:
+
+``` {.sh}
+ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- make pumpkin_android_ab_defconfig
+```
+
+2.  Build the `u-boot.bin` binary:
+
+``` {.sh}
+ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- make
+```
+
+3.  Export the `fip.bin` binary to Android source tree: This requires
+    `fiptool` to be installed.
+
+`fiptool` can be build from source from the following repo:
+https://github.com/ARM-software/arm-trusted-firmware/tree/master/tools/fiptool
+
+``` {.sh}
+# this updates the firmware package binary which contains other binaries such as bl2
+fiptool update \
+    ~/src/mediatek/device/mediatek/common/soc/mt8167/binaries/images/fip_ab.bin \
+    --nt-fw u-boot.bin'
+```
+
+4.  Export the U-boot initial environment to the Android source tree
+
+``` {.sh}
+# this exports the initial U-Boot environment variables (stored in eMMC)
+ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- scripts/get_default_envs.sh  > \
+    ~/src/mediatek/device/mediatek/common/soc/mt8167/binaries/images/u-boot-initial-env_ab
 ```
 
 Flash

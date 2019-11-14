@@ -1,4 +1,5 @@
 
+android_ab_slot=
 androidboot_recovery=0
 baudrate=921600
 bootcmd=run mmcboot

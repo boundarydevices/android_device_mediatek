@@ -66,6 +66,7 @@ BOARD_SEPOLICY_DIRS += \
         device/mediatek/common/sepolicy/vendor
 
 DEVICE_MANIFEST_FILE := device/mediatek/common/soc/manifest.xml
+DEVICE_MANIFEST_FILE += device/mediatek/common/soc/mt8183/manifest.xml
 
 # RecoveryOS
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888

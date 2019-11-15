@@ -59,3 +59,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES_DEBUG += \
     bootctl
 endif # eq $(TARGET_USE_AB_SLOT), true
+
+# Backlight/brightness
+PRODUCT_PACKAGES += \
+    android.hardware.light@2.0-service.mediatek \

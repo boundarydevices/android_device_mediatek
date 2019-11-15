@@ -70,10 +70,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.hardware.gralloc=mtk
 
-# Backlight/brightness
-PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.mediatek \
-
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@4.0-service.mediatek \

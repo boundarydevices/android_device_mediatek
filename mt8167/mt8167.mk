@@ -27,6 +27,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/binaries/images/bl2.img:bl2.img
 
 # U-Boot and env
+ifneq ($(TARGET_USE_PRODUCT_SPECIFIC_UBOOT), true)
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/binaries/images/fip.bin:fip.bin \
     $(LOCAL_PATH)/binaries/images/u-boot-initial-env:u-boot-initial-env
+endif # neq $(TARGET_USE_PRODUCT_SPECIFIC_UBOOT), true)

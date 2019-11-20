@@ -32,3 +32,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/binaries/images/fip.bin:fip.bin \
     $(LOCAL_PATH)/binaries/images/u-boot-initial-env:u-boot-initial-env
 endif # neq $(TARGET_USE_PRODUCT_SPECIFIC_UBOOT), true)
+
+# Copy media codecs config file
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/audio_xml/audio_hal_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_hal_configuration.xml

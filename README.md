@@ -128,7 +128,7 @@ In order to fully flash the device, run the following command:
 
 ``` {.sh}
 cd ~/src/mediatek/out/target/product/opal/
-python2 flashimage.py --update dtbo_index 1
+python2 flashimage.py
 ```
 
 Once you see *Waiting for DA mode*:

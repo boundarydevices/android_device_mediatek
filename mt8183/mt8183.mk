@@ -34,8 +34,13 @@ endif # eq $(TARGET_USE_AB_SLOT), true
 # Flashing binaries
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/binaries/images/lk.bin:$(TARGET_OUT)/lk.bin \
-    $(LOCAL_PATH)/binaries/images/bl2.img:$(TARGET_OUT)/bl2.img \
-    $(LOCAL_PATH)/binaries/images/dl_addr.ini:$(TARGET_OUT)/dl_addr.ini \
+    $(LOCAL_PATH)/binaries/images/dl_addr.ini:$(TARGET_OUT)/dl_addr.ini
+
+# BL2
+ifneq ($(TARGET_USE_PRODUCT_SPECIFIC_BL2), true)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/binaries/images/bl2.img:$(TARGET_OUT)/bl2.img
+endif # neq $(TARGET_USE_PRODUCT_SPECIFIC_BL2), true)
 
 # U-Boot and env
 ifneq ($(TARGET_USE_PRODUCT_SPECIFIC_UBOOT), true)

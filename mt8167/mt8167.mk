@@ -23,8 +23,13 @@ PRODUCT_COPY_FILES += \
 # Flashing tool + prebuilt binaries
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/binaries/images/dl_addr.ini:dl_addr.ini \
-    $(LOCAL_PATH)/binaries/images/lk.bin:lk.bin \
-    $(LOCAL_PATH)/binaries/images/bl2.img:bl2.img
+    $(LOCAL_PATH)/binaries/images/lk.bin:lk.bin
+
+# BL2
+ifneq ($(TARGET_USE_PRODUCT_SPECIFIC_BL2), true)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/binaries/images/bl2.img:$(TARGET_OUT)/bl2.img
+endif # neq $(TARGET_USE_PRODUCT_SPECIFIC_BL2), true)
 
 # U-Boot and env
 ifneq ($(TARGET_USE_PRODUCT_SPECIFIC_UBOOT), true)

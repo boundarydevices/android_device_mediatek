@@ -43,7 +43,6 @@ cd ~/src/mediatek/
 source build/envsetup.sh
 lunch aosp_opal-userdebug
 make -j40
-make out/target/product/opal/dtbo.img
 ```
 
 Note: to only rebuild a particular image, run `make <name>image`. For

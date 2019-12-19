@@ -70,3 +70,15 @@ endif # eq $(TARGET_USE_AB_SLOT), true
 # Backlight/brightness
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.mediatek \
+
+# Add support of Mali GPU
+PRODUCT_PACKAGES += \
+    libGLES_mali \
+    gralloc.mt6771
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.hardware.gralloc=mt6771 \
+    ro.hardware.egl=mali
+
+VENDOR_UEVENTD_FILES += \
+    device/mediatek/common/binaries/egl/mali/ueventd.rc

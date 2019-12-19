@@ -54,22 +54,6 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.allocator@2.0-impl \
 
-# graphics bringup with swiftshader from Q preview
-PRODUCT_COPY_FILES += \
-    device/mediatek/common/binaries/egl/lib/libEGL_swiftshader.so:$(TARGET_COPY_OUT_VENDOR)/lib/egl/libEGL_swiftshader.so \
-    device/mediatek/common/binaries/egl/lib/libGLESv1_CM_swiftshader.so:$(TARGET_COPY_OUT_VENDOR)/lib/egl/libGLESv1_CM_swiftshader.so \
-    device/mediatek/common/binaries/egl/lib/libGLESv2_swiftshader.so:$(TARGET_COPY_OUT_VENDOR)/lib/egl/libGLESv2_swiftshader.so \
-    device/mediatek/common/binaries/egl/lib64/libEGL_swiftshader.so:$(TARGET_COPY_OUT_VENDOR)/lib64/egl/libEGL_swiftshader.so \
-    device/mediatek/common/binaries/egl/lib64/libGLESv1_CM_swiftshader.so:$(TARGET_COPY_OUT_VENDOR)/lib64/egl/libGLESv1_CM_swiftshader.so \
-    device/mediatek/common/binaries/egl/lib64/libGLESv2_swiftshader.so:$(TARGET_COPY_OUT_VENDOR)/lib64/egl/libGLESv2_swiftshader.so \
-
-
-# Gralloc
-PRODUCT_PACKAGES += \
-	gralloc.mtk
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.hardware.gralloc=mtk
-
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@4.0-service.mediatek \

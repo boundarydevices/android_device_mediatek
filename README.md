@@ -56,59 +56,8 @@ make vendorimage -j40
 By default, Android uses a prebuild (binary) kernel located in:
 `~/src/mediatek/device/mediatek/common-kernel/`
 
-To re-build the kernel, have to perform the following steps:
-
-1.  Fetch the kernel source code with `repo`:
-
-``` {.sh}
-mkdir ~/src/mediatek-kernel/ && cd $_
-repo init -u https://gitlab.com/baylibre/aosp/mediatek/manifest.git -m kernel.xml -b mtk-android-9
-repo sync
-```
-
-2.  Rebuild the kernel sources:
-
-``` {.sh}
-cd ~/src/mediatek-kernel/
-DIST_DIR=~/src/mediatek/device/mediatek/common-kernel/ \
-    BUILD_CONFIG=src/build.config.mtk \
-    build/build.sh
-```
-
-DTB/DTBO Notes:
-
--   This also rebuilds the `dtbo.img`
--   Currently, the SoC device tree (`mt8167.dtb`) is also part of the
-    `dtbo.img`. This will change when we re-partition.
-
-3.  Finally, rebuild the Android Images to test the changes:
-
-``` {.sh}
-cd ~/src/mediatek/
-source build/envsetup.sh
-lunch aosp_onyx-userdebug
-make -j40
-make bootimage vendorimage out/target/product/onyx/dtbo.img
-```
-
-#### development tips
-
-For incremental (faster) re-building the kernel, use the
-`SKIP_MRPROPER=1` flag:
-
-``` {.sh}
-DIST_DIR=~/src/mediatek/device/mediatek/common-kernel/ \
-    BUILD_CONFIG=src/build.config.mtk \
-    SKIP_MRPROPER=1 \
-    build/build.sh
-```
-
-To edit the kernel configuration (`make menuconfig`), use `build.sh`:
-
-``` {.sh}
-  BUILD_CONFIG=src/build.config.menuconfig.mtk \
-  build/build.sh
-```
+To re-build the kernel, please refer to
+[kernel-guide.md](./docs/kernel-guide.md)
 
 Flashing
 --------

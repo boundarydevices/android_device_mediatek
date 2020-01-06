@@ -9,7 +9,7 @@ to rebuild a Linux kernel, and to customize it.
 By default, Android uses a prebuild (binary) kernel located in:
 `~/src/mediatek/device/mediatek/common-kernel/`
 
-To re-build the kernel, have to perform the following steps:
+To re-build the kernel, do the following steps:
 
 1.  Fetch the kernel source code with `repo`:
 
@@ -40,9 +40,11 @@ DTB/DTBO Notes:
 cd ~/src/mediatek/
 source build/envsetup.sh
 lunch aosp_opal-userdebug
-make -j40
 make bootimage vendorimage out/target/product/opal/dtbo.img
 ```
+
+Note: the above steps assume that we already have an Android source tree
+which has been fully build.
 
 #### development tips
 

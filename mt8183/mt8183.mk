@@ -16,9 +16,16 @@
 
 $(call inherit-product, device/mediatek/common/soc/device-common.mk)
 
-# Copy media codecs config file
+# Audio HAL configuration file
+ifneq ($(TARGET_AUDIO_HAL_XML),)
+# product specific audio HAL configuration file
+PRODUCT_COPY_FILES += \
+    $(TARGET_AUDIO_HAL_XML):$(TARGET_COPY_OUT_VENDOR)/etc/audio_hal_configuration.xml
+else
+# default audio HAL configuration file
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio_xml/audio_hal_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_hal_configuration.xml
+endif
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.mt8183.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.mt8183.rc \

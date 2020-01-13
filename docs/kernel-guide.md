@@ -65,6 +65,26 @@ To edit the kernel configuration (`make menuconfig`), use `build.sh`:
   build/build.sh
 ```
 
+To build `boot.img` and `vendor.img` without having to fetch and build
+the whole Android sources:
+
+``` {.sh}
+cd ~/src/mediatek-kernel/
+    BUILD_CONFIG=src/build.config.mtk \
+    IN_KERNEL_MODULES=1 \
+    MKBOOTIMG_PATH=system/core/mkbootimg/mkbootimg \
+    UNPACK_BOOTIMG_PATH=system/core/mkbootimg/unpack_bootimg \
+    PREBUILT_DIR=<path/to/android/images> \
+    build/build.sh
+```
+
+Note that the above depends on a couple of tools that could be installed
+using the package manager:
+
+``` {.sh}
+apt-get install android-tools-fsutils e2tools
+```
+
 Kernel Source Code organization
 ===============================
 

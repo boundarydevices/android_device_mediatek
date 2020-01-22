@@ -89,3 +89,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 VENDOR_UEVENTD_FILES += \
     device/mediatek/common/binaries/egl/mali/ueventd.rc
+
+PRODUCT_PACKAGES += \
+    android.hardware.neuralnetworks@1.1-service-armnn

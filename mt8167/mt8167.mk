@@ -42,6 +42,7 @@ endif # neq $(TARGET_USE_PRODUCT_SPECIFIC_UBOOT), true)
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio_xml/audio_hal_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_hal_configuration.xml
 
+ifeq ($(PLATFORM_VERSION), 9)
 # graphics bringup with swiftshader from Q preview
 PRODUCT_COPY_FILES += \
     device/mediatek/common/binaries/egl/swiftshader/lib/libEGL_swiftshader.so:$(TARGET_COPY_OUT_VENDOR)/lib/egl/libEGL_swiftshader.so \
@@ -49,8 +50,14 @@ PRODUCT_COPY_FILES += \
     device/mediatek/common/binaries/egl/swiftshader/lib/libGLESv2_swiftshader.so:$(TARGET_COPY_OUT_VENDOR)/lib/egl/libGLESv2_swiftshader.so \
     device/mediatek/common/binaries/egl/swiftshader/lib64/libEGL_swiftshader.so:$(TARGET_COPY_OUT_VENDOR)/lib64/egl/libEGL_swiftshader.so \
     device/mediatek/common/binaries/egl/swiftshader/lib64/libGLESv1_CM_swiftshader.so:$(TARGET_COPY_OUT_VENDOR)/lib64/egl/libGLESv1_CM_swiftshader.so \
-    device/mediatek/common/binaries/egl/swiftshader/lib64/libGLESv2_swiftshader.so:$(TARGET_COPY_OUT_VENDOR)/lib64/egl/libGLESv2_swiftshader.so \
-
+    device/mediatek/common/binaries/egl/swiftshader/lib64/libGLESv2_swiftshader.so:$(TARGET_COPY_OUT_VENDOR)/lib64/egl/libGLESv2_swiftshader.so
+else
+# graphics bringup with swiftshader
+PRODUCT_PACKAGES += \
+    libEGL_swiftshader \
+    libGLESv1_CM_swiftshader \
+    libGLESv2_swiftshader
+endif
 # Gralloc
 PRODUCT_PACKAGES += \
     gralloc.mtk

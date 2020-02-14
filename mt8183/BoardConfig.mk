@@ -63,6 +63,7 @@ BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 TARGET_USES_MKE2FS := true
 
 BOARD_SEPOLICY_DIRS += \
+        device/mediatek/common/soc/mt8183/sepolicy \
         device/mediatek/common/sepolicy/vendor
 
 DEVICE_MANIFEST_FILE := device/mediatek/common/soc/manifest.xml

@@ -1,0 +1,4 @@
+#############################
+# sysfs files
+#
+/sys/devices/platform/odm/odm:backlight_lcd0/backlight(/.*)?        u:object_r:sysfs_leds:s0

@@ -2,3 +2,8 @@
 # sysfs files
 #
 /sys/devices/platform/odm/odm:backlight_lcd0/backlight(/.*)?        u:object_r:sysfs_leds:s0
+
+##########################
+# Devices
+#
+/dev/mali[0-9]                                                      u:object_r:gpu_device:s0

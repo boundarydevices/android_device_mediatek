@@ -7,3 +7,9 @@
 # Devices
 #
 /dev/mali[0-9]                                                      u:object_r:gpu_device:s0
+
+
+#############################
+# Same process HALs installed into /vendor
+#
+/vendor/lib(64)?/hw/gralloc\.mt6771\.so                             u:object_r:same_process_hal_file:s0

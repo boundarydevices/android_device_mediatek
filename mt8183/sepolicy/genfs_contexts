@@ -1,0 +1,1 @@
+genfscon sysfs /devices/platform/soc/1000d000.pwrap/1000d000.pwrap:mt6358/mt6397-rtc/rtc/rtc0   u:object_r:sysfs_rtc:s0

@@ -1,4 +1,11 @@
 #############################
+# HALs
+#
+
+# neural network HAL
+/vendor/bin/hw/android\.hardware\.neuralnetworks@1\.1-service-armnn u:object_r:hal_neuralnetworks_arm_exec:s0
+
+#############################
 # sysfs files
 #
 /sys/devices/platform/odm/odm:backlight_lcd0/backlight(/.*)?        u:object_r:sysfs_leds:s0

@@ -78,6 +78,16 @@ cd ~/src/mediatek-kernel/
     build/build.sh
 ```
 
+To flash only `vendor.img` and `boot.img` use the following commands:
+
+``` {.sh}
+fastboot flash vendor vendor.img && fastboot flash boot boot.img
+```
+
+Note that you can find prebuilt images of android from BaylibreCI here:
+http://build3.baylibre.com/builds/nightly/. More information available
+here: https: //gitlab.com/baylibre/baylibre-ci/-/tree/master/src
+
 Note that the above depends on a couple of tools that could be installed
 using the package manager:
 

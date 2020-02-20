@@ -75,18 +75,7 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/mediatek/common/soc/
 TARGET_RECOVERY_FSTAB := device/mediatek/common/soc/mt8183/fstab.recovery_noab.mt8183
 
 ifeq ($(TARGET_USE_AB_SLOT), true)
-# A/B OTA support
-AB_OTA_UPDATER := true
-AB_OTA_PARTITIONS := \
-        boot \
-        system \
-        vendor
-
-TARGET_NO_RECOVERY := true
-BOARD_USES_RECOVERY_AS_BOOT := true
-
-DEVICE_MANIFEST_FILE += \
-    device/mediatek/common/soc/manifest_bootcontrol.xml
+include device/mediatek/common/hal/boot/BoardConfig.mk
 
 TARGET_RECOVERY_FSTAB := device/mediatek/common/soc/mt8183/fstab.recovery_ab.mt8183
 endif # eq $(TARGET_USE_AB_SLOT), true

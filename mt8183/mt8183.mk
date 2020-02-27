@@ -92,3 +92,7 @@ VENDOR_UEVENTD_FILES += \
 
 PRODUCT_PACKAGES += \
     android.hardware.neuralnetworks@1.1-service-armnn
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ArmNN.quantized8Performance.execTime=2 \
+    ArmNN.quantized8Performance.powerUsage=2

@@ -48,3 +48,5 @@ MTK_PARTITIONS_YAML := device/mediatek/opal/partitions.yaml
 -include vendor/mediatek/mt7668/BoardConfig-mt7668.mk
 # Touchscreen
 include vendor/goodix/goodix5688/BoardConfig-goodix5688.mk
+# UVC Camera
+include device/mediatek/common/uvc/BoardConfig.mk

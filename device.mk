@@ -33,3 +33,5 @@ DEVICE_PACKAGE_OVERLAYS += device/mediatek/opal/overlay
 $(call inherit-product-if-exists, vendor/mediatek/mt7668/mt7668.mk)
 # Touchscreen
 $(call inherit-product, vendor/goodix/goodix5688/goodix5688.mk)
+# UVC camera
+$(call inherit-product, device/mediatek/common/uvc/uvc.mk)

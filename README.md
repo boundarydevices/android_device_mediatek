@@ -1,7 +1,7 @@
-Pumpkin {#board_name}
-=======
+Pumpkin i300A {#board_name}
+=============
 
-onyx is the device code name for mt8167 on Pumpkin board.
+onyx is the device code name for MT8362A on Pumpkin i300A board.
 
 Get the code
 ------------

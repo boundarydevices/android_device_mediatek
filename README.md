@@ -1,7 +1,7 @@
-mt8183 EValuation Board (EVB) {#board_name}
-=============================
+i500 EValuation Board (EVB) {#board_name}
+===========================
 
-opal is the device code name for mt8183 on mt8183 EValuation Board (EVB)
+opal is the device code name for MT8385 on i500 EValuation Board (EVB)
 board.
 
 Get the code

@@ -2,7 +2,7 @@ U-Boot development guide
 ========================
 
 This documents details how to the bootloader, "Das U-Boot" for
-mt8183 EValuation Board (EVB)
+i500 EValuation Board (EVB)
 
 Fetch the source
 ----------------

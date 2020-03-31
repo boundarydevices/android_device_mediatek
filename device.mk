@@ -29,6 +29,10 @@ $(warning Overlays defined in '$(DEVICE_PACKAGE_OVERLAYS)' will override '$(PROD
 endif
 DEVICE_PACKAGE_OVERLAYS += device/mediatek/opal/overlay
 
+# Demo apps
+PRODUCT_PACKAGES += \
+    DemoCheckoutCounter
+
 # Additional hardware features
 $(call inherit-product-if-exists, vendor/mediatek/mt7668/mt7668.mk)
 # Touchscreen

@@ -115,3 +115,6 @@ PRODUCT_COPY_FILES += \
 
 # Add support for common utils: vendor ueventd.rc and (optional) debug tools
 $(call inherit-product, device/mediatek/common/utils/utils.mk)
+
+# ion permissions
+VENDOR_UEVENTD_FILES += device/mediatek/common/binaries/egl/ueventd.rc

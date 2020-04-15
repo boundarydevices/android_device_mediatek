@@ -73,7 +73,7 @@ Flashing the kernel
 -------------------
 
     $ cd ~/src/mediatek/out/target/product/onyx/
-    $ ./flashimage.py --boot --update dtb_index 2 --update dtbo_index 3 --env-size 262144
+    $ python2 ./flashimage.py --boot --update dtb_index 2 --update dtbo_index 3 --env-size 262144
 
 Building the kernel without and Android environment
 ---------------------------------------------------

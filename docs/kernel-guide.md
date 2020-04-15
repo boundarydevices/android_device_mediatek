@@ -73,7 +73,7 @@ Flashing the kernel
 -------------------
 
     $ cd ~/src/mediatek/out/target/product/opal/
-    $ ./flashimage.py --boot
+    $ python2 ./flashimage.py --boot
 
 Building the kernel without and Android environment
 ---------------------------------------------------

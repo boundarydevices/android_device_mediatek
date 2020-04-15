@@ -1,180 +1,115 @@
-Kernel Development Guide
-========================
+Android Linux kernel development guide
+======================================
 
-Android is built around a Linux kernel. This guide intends to help users
-to rebuild a Linux kernel, and to customize it.
+Android is built around a Linux kernel. By default, Android's `boot.img`
+is build from a binary kernel Image located in:
 
-### Building the kernel
+    ~/src/mediatek/device/mediatek/common-kernel/
 
-By default, Android uses a prebuild (binary) kernel located in:
-`~/src/mediatek/device/mediatek/common-kernel/`
+This guide describes how to rebuild and customize a Linux kernel for
+Android.
 
-To re-build the kernel, do the following steps:
+Fetching the kernel code
+------------------------
 
-1.  Fetch the kernel source code with `repo`:
+Fetch the code using `repo`:
 
-``` {.sh}
-mkdir ~/src/mediatek-kernel/ && cd $_
-repo init -u https://gitlab.com/baylibre/aosp/mediatek/manifest.git -m kernel.xml -b mtk-android-9
-repo sync
-```
+    $ mkdir ~/src/mediatek-kernel/ && cd $_
+    $ repo init -u https://gitlab.com/baylibre/aosp/mediatek/manifest.git -m kernel.xml -b mtk-android-9
+    $ repo sync
 
-2.  Rebuild the kernel sources:
+Building the kernel
+-------------------
 
-``` {.sh}
-cd ~/src/mediatek-kernel/
-DIST_DIR=~/src/mediatek/device/mediatek/common-kernel/ \
-    BUILD_CONFIG=src/build.config.mtk \
-    build/build.sh
-```
+In this section, we will assume that we already have an Android source
+tree which has been fully build and is located in:
 
-DTB/DTBO Notes:
+    $ ~/src/mediatek/
 
--   This also rebuilds the `dtbo.img`
--   Currently, the SoC device tree (`mt8167.dtb`) is also part of the
-    `dtbo.img`. This will change when we re-partition.
+### Build everything from scratch
 
-3.  Finally, rebuild the Android Images to test the changes:
+    $ cd ~/src/mediatek-kernel/
+    $ DIST_DIR=~/src/mediatek/device/mediatek/common-kernel/ \
+        BUILD_CONFIG=src/build.config.mtk \
+        build/build.sh
 
-``` {.sh}
-cd ~/src/mediatek/
-source build/envsetup.sh
-lunch aosp_onyx-userdebug
-make bootimage vendorimage out/target/product/onyx/dtbo.img vbmetaimage
-```
+### Rebuilding incrementally
 
-Note: the above steps assume that we already have an Android source tree
-which has been fully build.
+Add the `SKIP_MRPROPER=1` flag:
 
-#### development tips
+    $ cd ~/src/mediatek-kernel/
+    $ DIST_DIR=~/src/mediatek/device/mediatek/common-kernel/ \
+        BUILD_CONFIG=src/build.config.mtk \
+        SKIP_MRPROPER=1 \
+        build/build.sh
 
-For incremental (faster) re-building the kernel, use the
-`SKIP_MRPROPER=1` flag:
+### Defconfig/menuconfig changes
 
-``` {.sh}
-DIST_DIR=~/src/mediatek/device/mediatek/common-kernel/ \
-    BUILD_CONFIG=src/build.config.mtk \
-    SKIP_MRPROPER=1 \
-    build/build.sh
-```
+The usual (`make menuconfig`) is done via `build.sh`:
 
-To edit the kernel configuration (`make menuconfig`), use `build.sh`:
+    $ cd ~/src/mediatek-kernel/
+    $ BUILD_CONFIG=src/build.config.menuconfig.mtk \
+      build/build.sh
 
-``` {.sh}
-  BUILD_CONFIG=src/build.config.menuconfig.mtk \
-  build/build.sh
-```
+Rebuilding all involved Android images
+--------------------------------------
 
-To build `boot.img` and `vendor.img` without having to fetch and build
-the whole Android sources:
+To test the kernel changes, we have to re-generate the relevant Android
+images:
 
-``` {.sh}
-cd ~/src/mediatek-kernel/
-    BUILD_CONFIG=src/build.config.mtk \
-    IN_KERNEL_MODULES=1 \
-    MKBOOTIMG_PATH=system/core/mkbootimg/mkbootimg \
-    UNPACK_BOOTIMG_PATH=system/core/mkbootimg/unpack_bootimg \
-    PREBUILT_DIR=<path/to/android/images> \
-    build/build.sh
-```
+-   `boot.img`: contains the kernel binary and all the built-in modules
+-   `vendor.img`: contains the kernel modules
+-   `dtbo.img`: contains both the main device tree and the device tree
+    overlays
 
-To flash only `vendor.img` and `boot.img` use the following commands:
+To rebuild the Android images, do:
 
-``` {.sh}
-fastboot flash vendor vendor.img && fastboot flash boot boot.img
-```
+    $ cd ~/src/mediatek/
+    $ source build/envsetup.sh
+    $ lunch aosp_onyx-userdebug
+    $ make bootimage vendorimage out/target/product/onyx/dtbo.img vbmetaimage
 
-Note that you can find prebuilt images of android from BaylibreCI here:
-http://build3.baylibre.com/builds/nightly/. More information available
-here: https: //gitlab.com/baylibre/baylibre-ci/-/tree/master/src
+Flashing the kernel
+-------------------
 
-Note that the above depends on a couple of tools that could be installed
-using the package manager:
+    $ cd ~/src/mediatek/out/target/product/onyx/
+    $ ./flashimage.py --boot --update dtb_index 2 --update dtbo_index 3 --env-size 262144
 
-``` {.sh}
-apt-get install android-tools-fsutils e2tools
-```
+Building the kernel without and Android environment
+---------------------------------------------------
 
-Kernel Source Code organization
-===============================
+In this section, we will cover how to rebuild an Android kernel without
+needing the Android source tree. This is done by:
 
-In order to ease the maintenance of the kernel, and to follow Google
-recommendations, we are using a common kernel which targets all SoC from
-mediatek.
+1.  Downloading prebuild images
+2.  Re-injecting the kernel binaries into those images.
 
-This design choice has the following advantages:
+### Additional dependencies
 
--   scale across many different customers and products
--   provide a sane way to deliver updates from our internal trees to
-    downstream customer trees
--   protect customer IP & product-specific customizations from being
-    shared with the wrong party
+    $ apt-get install android-tools-fsutils e2tools
 
-This implies few design policies to respect to make it work:
+### Prebuild images
 
--   the device tree for customer's product has to be placed in a
-    separate folder
--   all the drivers written for a customer must be modules
+Prebuild Android images are available via BayLibreCI at [nightly
+builds](http://build3.baylibre.com/builds/nightly/).
 
-Kernel sources
---------------
+Download the images for onyx to `<path/to/android/images>`.
 
-The common kernel sources, the external modules, the product device tree
-and drivers are located in `~/src/mediatek-kernel/`.
+For more information about BayLibreCI, see [the source
+code](https://gitlab.com/baylibre/baylibre-ci/-/tree/master/src).
 
--   `src`: The common kernel sources. This supports some SoC from
-    mediatek, and their evaluation boards.
--   `prebuilts`, `prebuilts-master/`: Contains the toolchains. This used
-    to build the kernel, the modules and the dtb and some binaries. By
-    using this, we can ensure that binaries will build and works
-    whatever is the host used to build them.
--   `build`: Contains a set of scripts used to build the kernel and the
-    modules. For more details, please see
-    <https://source.android.com/setup/build/building-kernels>.
--   `out`: Created by the build system, this contains all the temporary
-    files and the output files: kernel, modules, dtb, etc.
--   `onyx`: If this folder exists, then it contains the device tree for
-    the product, and, the drivers for this product.
--   `<external modules>`: If they exist, these folders contain kernel
-    drivers from third party, usually Bluetooth and WiFi kernel drivers.
+### Build everything from scratch
 
-### Common kernel
+    $ cd ~/src/mediatek-kernel/
+    $ BUILD_CONFIG=src/build.config.mtk \
+      IN_KERNEL_MODULES=1 \
+      MKBOOTIMG_PATH=system/core/mkbootimg/mkbootimg \
+      UNPACK_BOOTIMG_PATH=system/core/mkbootimg/unpack_bootimg \
+      PREBUILT_DIR=<path/to/android/images> \
+      build/build.sh
 
-The common kernel is a Linux kernel 4.19 updated to support Android and
-mediatek SoC. This is a LTS (long term support) kernel which means it
-will receive for a couple of years all the security and bug fixes. In
-addition, this kernel includes many changes required by Android to work
-properly. The goal of the common kernel is to have only one kernel
-binary that could work on all mediatek SoC. All the changes required for
-a specific product will be kept separated (external kernel modules) and
-loaded at runtime.
+### Reflashing the images
 
-#### Build configuration
-
-The kernel is built using some script from AOSP. To configure the
-behavior of the build system, we have to use a build configuration file.
-The common kernel provides two configuration files:
-
--   `build.config.mtk`: Configured to build the common kernel, all the
-    modules and device tree required for the mediatek evaluation boards.
-    This also provides many helpers that could used by product kernel
-    build configuration files.
--   `build.config.menuconfig.mtk`: Could be used to change the kernel
-    configuration. This updates `mtk_android_defconfig`.
-
-### Product kernel sources
-
-If a product need a specific driver or device tree, this should go here,
-in the product kernel folder. This is usually in organized in this way:
-
--   `Makefile`: This provides the expected rules required by the build
-    script to build the device tree and the drivers. This also allows to
-    write Makefile using same rules as the kernel.
--   `build.config.mtk`: This inherits from `build.config.mtk`, and
-    should be used to build the common kernel, and every thing else
-    needed for the product.
--   `dts`: Contains sources of device tree. Actually, this not really a
-    device tree, but a device tree overlay, that will be applied to the
-    SoC device tree file coming from the common kernel.
--   `drivers`: Contains all the drivers for the product, built as
-    modules.
+    $ adb reboot bootloader
+    $ fastboot flash vendor vendor.img && fastboot flash boot boot.img && fastboot flash dtbo dtbo.img
+    $ fastboot reboot

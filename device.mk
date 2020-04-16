@@ -31,3 +31,5 @@ DEVICE_PACKAGE_OVERLAYS := device/mediatek/onyx/overlay
 # Additional hardware features
 $(call inherit-product-if-exists, vendor/mediatek/mt7668/mt7668.mk)
 $(call inherit-product-if-exists, vendor/focaltech/ft5x06/ft5x06.mk)
+# UVC camera
+$(call inherit-product, device/mediatek/common/uvc/uvc.mk)

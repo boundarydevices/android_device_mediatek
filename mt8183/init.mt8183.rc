@@ -1,2 +1,14 @@
 on fs
     mount_all /vendor/etc/fstab.mt8183
+
+on init
+    # configure cpuset for our CPUs:
+    # 0-3 are our little cores (a53)
+    write /dev/cpuset/background/cpus 0-3
+    write /dev/cpuset/system-background/cpus 0-3
+    write /dev/cpuset/restricted/cpus 0-3
+
+    # 4-7 are our big cores (a73) 
+    write /dev/cpuset/foreground/cpus 4-7
+    write /dev/cpuset/top-app/cpus 4-7
+    write /dev/cpuset/top-app/cpus 4-7

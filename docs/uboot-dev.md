@@ -1,7 +1,8 @@
 U-Boot development guide
 ========================
 
-This documents details how to the bootloader, "Das U-Boot" for Pumpkin
+This documents details how to the bootloader, "Das U-Boot" for
+Pumpkin i300A
 
 Fetch the source
 ----------------

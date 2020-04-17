@@ -1,82 +1,93 @@
-Pumpkin {#board_name}
-=======
+Pumpkin i300A {#board_name}
+=============
 
-onyx is the device code name for mt8167 on Pumpkin board.
+onyx is the device code name for MT8362A on Pumpkin i300A board.
 
-Get the code
-------------
+Fetching the code
+-----------------
 
-First, fetch the code using `repo`:
+Fetch the code using `repo`:
 
-``` {.sh}
-mkdir ~/src/mediatek && cd $_
-repo init -u https://gitlab.com/baylibre/aosp/mediatek/manifest.git -b mtk-android-9
-repo sync
-```
+    $ mkdir ~/src/mediatek && cd $_
+    $ repo init -u https://gitlab.com/baylibre/aosp/mediatek/manifest.git -b mtk-android-9
+    $ repo sync
 
-For more instructions about `repo`, please visit Android's official
-documentation: https://source.android.com/setup/build/downloading
+For more information about `repo`, visit [Android's official
+documentation](https://source.android.com/setup/build/downloading)
 
-Additional dependencies
------------------------
+Note: if `repo` keeps prompting for your ssh password, add the following
+to your `~/.ssh/config`:
 
-The flash/partitioning tools, which are generated at build time depend
-on `pyyaml`. This can be installed with:
-
-``` {.sh}
-pip2 install --user pyyaml
-```
+    [url "git@gitlab.com:"]
+    insteadOf = https://gitlab.com/
 
 Building
 --------
 
+The preferred build environment is identical to Android's official
+recommendations. Refer to [Android's Establishing a Build
+Environment](https://source.android.com/setup/build/initializing) guide.
+
+Moreover, ensure that your system has `python 2.7` installed as
+documented in [Android's Build
+requirements](https://source.android.com/setup/build/requirements).
+
 For more build system related topics, see
 [build\_system.md](./docs/build_system.md)
 
-### {boot,system,vendor,cache,userdata,recovery}.img
+### Additional dependencies
 
-Now, start the usual Android build setup:
+The partitioning tools, which are needed during the Android build depend
+on `pyyaml`.
 
-``` {.sh}
-cd ~/src/mediatek/
-source build/envsetup.sh
-lunch aosp_onyx-userdebug
-make -j40
-```
+`pyyaml` can be installed with:
 
-Note: to only rebuild a particular image, run `make <name>image`. For
-example, for `vendor.img`:
+    $ pip2 install --user pyyaml
 
-``` {.sh}
-make vendorimage -j40
-```
+### Building everything
 
-### kernel
+    $ cd ~/src/mediatek/
+    $ source build/envsetup.sh
+    $ lunch aosp_onyx-userdebug
+    $ make -j40
 
-By default, Android uses a prebuild (binary) kernel located in:
-`~/src/mediatek/device/mediatek/common-kernel/`
+### Building a specific image
 
-To re-build the kernel, please refer to
+To rebuild a specific image, run `make <name>image`.
+
+Some examples:
+
+    $ make vendorimage
+    $ make bootimage
+
+### Building the Linux kernel
+
+By default, Android's `boot.img` is build from a binary kernel Image
+located in:
+
+    ~/src/mediatek/device/mediatek/common-kernel/
+
+To re-build the kernel, refer to
 [kernel-guide.md](./docs/kernel-guide.md)
 
 Flashing
 --------
 
-Flashing is done using `flashimage.py` script. It requires `python2` and
-the `pyserial` module which can be installed with:
+### Prerequisites
 
-``` {.sh}
-pip2 install --user pyserial
-```
+Flashing is done via the `flashimage.py` script. It requires `python2`
+and some python modules which can be installed with:
 
-### Flashing command
+    $ pip2 install --user pyserial
+    $ pip2 install --user wheel
+    $ pip2 install --user oyaml
 
-In order to fully flash the device, run the following command:
+### Flashing everything
 
-``` {.sh}
-cd ~/src/mediatek/out/target/product/onyx/
-python2 flashimage.py --update dtb_index 2 --update dtbo_index 3 --env-size 262144
-```
+To fully flash the board, run the following:
+
+    $ cd ~/src/mediatek/out/target/product/onyx/
+    $ python2 ./flashimage.py --update dtb_index 2 --update dtbo_index 3 --env-size 262144
 
 Once you see *Waiting for DA mode*:
 
@@ -84,3 +95,44 @@ Once you see *Waiting for DA mode*:
 2)  then release only the *reset* button
 3)  release the *volume up* button once you see that the image is
     getting flashed.
+
+### Flashing only one partition
+
+To flash just one partition, you can run the following command:
+
+    $ cd ~/src/mediatek/out/target/product/onyx/
+    $ adb reboot bootloader
+    $ fastboot flash [PARTITION] [FILE]
+    $ fastboot continue
+
+`[PARTITION]` should be replaced with one of the following:
+
+-   *bootloaders*: for flashing the bootloaders (such as u-boot)
+-   *boot*: for flashing the Linux Kernel (`boot.img`).
+-   *imageXXX*: for flashing an android image named `imageXXX.img`
+
+For example, the commands to flash the bootloaders are:
+
+    $ cd ~/src/mediatek/out/target/product/onyx/
+    $ adb reboot bootloader
+    $ fastboot flash bootloaders fip.bin
+    $ fastboot continue
+
+The commands to flash the kernel are:
+
+    $ cd ~/src/mediatek/out/target/product/onyx/
+    $ adb reboot bootloader
+    $ fastboot flash boot boot.img
+    $ fastboot flash dtbo dtbo.img
+    $ fastboot flash vendor vendor.img
+    $ fastboot continue
+
+More documentation
+------------------
+
+The `docs` folder of this project contains more documentation, such as:
+
+-   [kernel-guide.md](./docs/kernel-guide.md)
+-   [uboot-dev.md](./docs/uboot-dev.md)
+-   [mt7668-efuse.md](./docs/mt7668-efuse.md)
+-   [kernel-src-org.md](./docs/kernel-src-org.md)

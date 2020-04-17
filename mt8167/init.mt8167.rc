@@ -1,2 +1,11 @@
 on fs
     mount_all /vendor/etc/fstab.mt8167
+
+on init
+    # 0-3 are our only cores (a35)
+    write /dev/cpuset/background/cpus 0-3
+    write /dev/cpuset/system-background/cpus 0-3
+    write /dev/cpuset/restricted/cpus 0-3
+    write /dev/cpuset/foreground/cpus 0-3
+    write /dev/cpuset/top-app/cpus 0-3
+    write /dev/cpuset/top-app/cpus 0-3

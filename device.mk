@@ -17,9 +17,6 @@
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.onyx.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.onyx.rc \
 
-PRODUCT_PACKAGES += \
-    external/dhcpcd-6.8.2 \
-
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml
 

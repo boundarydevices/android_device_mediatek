@@ -78,6 +78,7 @@ endif # eq $(TARGET_USE_AB_SLOT), true
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.mediatek \
 
+ifeq ($(PLATFORM_VERSION), 9)
 # Add support of Mali GPU
 PRODUCT_PACKAGES += \
     libGLES_mali \
@@ -89,6 +90,17 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 VENDOR_UEVENTD_FILES += \
     device/mediatek/common/binaries/egl/mali/ueventd.rc
+else
+# graphics bringup with swiftshader
+PRODUCT_PACKAGES += \
+    libEGL_swiftshader \
+    libGLESv1_CM_swiftshader \
+    libGLESv2_swiftshader
+
+# Gralloc
+PRODUCT_PACKAGES += \
+    gralloc.mtk
+endif
 
 PRODUCT_PACKAGES += \
     android.hardware.neuralnetworks@1.1-service-armnn

@@ -10,6 +10,6 @@ kerneladdr=0x4A000000
 loadaddr=0x50000000
 load_bootimg=part start mmc ${mmcdev} boot boot_part_start;part size mmc ${mmcdev} boot boot_part_size;mmc read ${loadaddr} ${boot_part_start} ${boot_part_size}; 
 load_dtb=part start mmc ${mmcdev} dtbo dtbo_part_start;part size mmc ${mmcdev} dtbo dtbo_part_size;mmc read ${loadaddr} ${dtbo_part_start} ${dtbo_part_size};dtimg select ${loadaddr} ${dtb_index};dtimg merge ${loadaddr} ${dtbo_index}; 
-mmcboot=avb init ${mmcdev};avb verify;setenv bootargs "${bootargs} ${avb_bootargs}";run load_dtb;run load_bootimg;bootm ${loadaddr}; 
+mmcboot=part number-format dec;part number mmc ${mmcdev} system rootfs_partition; setenv bootargs "${bootargs} androidboot.verifiedbootstate=orange root=/dev/mmcblk${mmcdev}p${rootfs_partition}";run load_dtb;run load_bootimg;bootm ${loadaddr}; 
 mmcdev=0
 tftpboot=set ipaddr 192.168.0.100;tftpboot ${kerneladdr} 192.168.0.1:fitImage;bootm ${kerneladdr};

@@ -43,9 +43,8 @@ BOARD_PERSISTIMAGE_PARTITION_SIZE  := 33554432
 BOARD_SEPOLICY_DIRS += \
     device/mediatek/onyx/sepolicy
 
-# enable AVB
-BOARD_AVB_ENABLE := true
-BOARD_AVB_ALGORITHM := SHA512_RSA4096
+# disable AVB
+BOARD_AVB_ENABLE := false
 
 MTK_PARTITIONS_YAML := device/mediatek/onyx/partitions.yaml
 

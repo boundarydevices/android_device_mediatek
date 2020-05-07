@@ -43,7 +43,7 @@ on `pyyaml`.
 
 `pyyaml` can be installed with:
 
-    $ pip2 install --user pyyaml
+    $ pip3 install --user pyyaml
 
 ### Building everything
 
@@ -76,19 +76,19 @@ Flashing
 
 ### Prerequisites
 
-Flashing is done via the `flashimage.py` script. It requires `python2`
+Flashing is done via the `flashimage.py` script. It requires `python3`
 and some python modules which can be installed with:
 
-    $ pip2 install --user pyserial
-    $ pip2 install --user wheel
-    $ pip2 install --user oyaml
+    $ pip3 install --user wheel
+    $ pip3 install --user pyserial
+    $ pip3 install --user oyaml
 
 ### Flashing everything
 
 To fully flash the board, run the following:
 
     $ cd ~/src/mediatek/out/target/product/opal/
-    $ python2 ./flashimage.py
+    $ ./flashimage.py
 
 Once you see *Waiting for DA mode*:
 

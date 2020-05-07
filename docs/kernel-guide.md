@@ -30,7 +30,7 @@ tree which has been fully build and is located in:
 
     $ cd ~/src/mediatek-kernel/
     $ DIST_DIR=~/src/mediatek/device/mediatek/common-kernel/ \
-        BUILD_CONFIG=src/build.config.mtk \
+        BUILD_CONFIG=src/build.config.mtk.q \
         build/build.sh
 
 ### Rebuilding incrementally
@@ -39,7 +39,7 @@ Add the `SKIP_MRPROPER=1` flag:
 
     $ cd ~/src/mediatek-kernel/
     $ DIST_DIR=~/src/mediatek/device/mediatek/common-kernel/ \
-        BUILD_CONFIG=src/build.config.mtk \
+        BUILD_CONFIG=src/build.config.mtk.q \
         SKIP_MRPROPER=1 \
         build/build.sh
 
@@ -48,7 +48,7 @@ Add the `SKIP_MRPROPER=1` flag:
 The usual (`make menuconfig`) is done via `build.sh`:
 
     $ cd ~/src/mediatek-kernel/
-    $ BUILD_CONFIG=src/build.config.menuconfig.mtk \
+    $ BUILD_CONFIG=src/build.config.mtk.menuconfig.q \
       build/build.sh
 
 Rebuilding all involved Android images
@@ -73,7 +73,7 @@ Flashing the kernel
 -------------------
 
     $ cd ~/src/mediatek/out/target/product/opal/
-    $ python2 ./flashimage.py --boot
+    $ ./flashimage.py --boot
 
 Building the kernel without and Android environment
 ---------------------------------------------------
@@ -101,7 +101,7 @@ code](https://gitlab.com/baylibre/baylibre-ci/-/tree/master/src).
 ### Build everything from scratch
 
     $ cd ~/src/mediatek-kernel/
-    $ BUILD_CONFIG=src/build.config.mtk \
+    $ BUILD_CONFIG=src/build.config.mtk.q \
       IN_KERNEL_MODULES=1 \
       MKBOOTIMG_PATH=system/core/mkbootimg/mkbootimg \
       UNPACK_BOOTIMG_PATH=system/core/mkbootimg/unpack_bootimg \

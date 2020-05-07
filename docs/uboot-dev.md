@@ -108,7 +108,7 @@ Then, we can reflash the bootloader and linux kernel with:
 
 ``` {.sh}
 cd ~/src/mediatek/out/target/product/opal/
-python2 flashimage.py --boot
+./flashimage.py --boot
 ```
 
 Once you see *Waiting for DA mode*:

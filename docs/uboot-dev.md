@@ -108,7 +108,7 @@ Then, we can reflash the bootloader and linux kernel with:
 
 ``` {.sh}
 cd ~/src/mediatek/out/target/product/onyx/
-python2 flashimage.py --boot --update dtb_index 2 --update dtbo_index 3 --env-size 262144
+./flashimage.py --boot --update dtb_index 2 --update dtbo_index 3 --env-size 262144
 ```
 
 Once you see *Waiting for DA mode*:

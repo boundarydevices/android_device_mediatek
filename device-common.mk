@@ -20,9 +20,6 @@ else
 LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
 
-# Shipping API level to Android P (28)
-PRODUCT_SHIPPING_API_LEVEL := 28
-
 PRODUCT_COPY_FILES := \
 	$(LOCAL_KERNEL):kernel
 

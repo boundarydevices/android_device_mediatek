@@ -21,6 +21,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
      device/mediatek/common/soc/mt8183/binaries/images/splashscreen.raw:splashscreen.raw
 
+# Shipping API level to Android P (28)
+PRODUCT_SHIPPING_API_LEVEL := 28
+
 # DEVICE_PACKAGE_OVERLAYS for the device should be before
 # including common overlays since the one listed first
 # takes precedence.

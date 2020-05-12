@@ -10,7 +10,7 @@ Fetching the code
 Fetch the code using `repo`:
 
     $ mkdir ~/src/mediatek && cd $_
-    $ repo init -u https://gitlab.com/baylibre/aosp/mediatek/manifest.git -b mtk-android-9
+    $ repo init -u https://gitlab.com/baylibre/aosp/mediatek/manifest.git -b mtk-android-10
     $ repo sync
 
 For more information about `repo`, visit [Android's official

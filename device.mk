@@ -36,6 +36,10 @@ DEVICE_PACKAGE_OVERLAYS += device/mediatek/opal/overlay
 PRODUCT_PACKAGES += \
     DemoCheckoutCounter
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.heapgrowthlimit=64m \
+    dalvik.vm.heapsize=64m
+
 # Additional hardware features
 $(call inherit-product-if-exists, vendor/mediatek/mt7668/mt7668.mk)
 # Touchscreen

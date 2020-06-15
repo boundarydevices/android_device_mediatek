@@ -36,3 +36,6 @@ TARGET_RECOVERY_FSTAB := device/mediatek/common/soc/mt8183/fstab.recovery_noab.m
 ifeq ($(TARGET_USE_AB_SLOT), true)
 TARGET_RECOVERY_FSTAB := device/mediatek/common/soc/mt8183/fstab.recovery_ab.mt8183
 endif # eq $(TARGET_USE_AB_SLOT), true
+
+# Vulkan
+BOARD_INSTALL_VULKAN := true

@@ -3,7 +3,7 @@
 #
 
 # neural network HAL
-/vendor/bin/hw/android\.hardware\.neuralnetworks@1\.1-service-armnn  u:object_r:hal_neuralnetworks_arm_exec:s0
+/vendor/bin/hw/android\.hardware\.neuralnetworks@1\.2-service-armnn  u:object_r:hal_neuralnetworks_arm_exec:s0
 
 #############################
 # sysfs files

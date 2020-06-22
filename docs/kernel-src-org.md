@@ -58,11 +58,11 @@ The kernel is built using some script from AOSP. To configure the
 behavior of the build system, we have to use a build configuration file.
 The common kernel provides two configuration files:
 
--   `build.config.mtk.q`: Configured to build the common kernel, all the
+-   `build.config.mtk`: Configured to build the common kernel, all the
     modules and device tree required for the mediatek evaluation boards.
     This also provides many helpers that could used by product kernel
     build configuration files.
--   `build.config.mtk.menuconfig.q`: Could be used to change the kernel
+-   `build.config.mtk.menuconfig`: Could be used to change the kernel
     configuration. This updates `mtk_android_defconfig`.
 
 ### Product kernel sources
@@ -73,7 +73,7 @@ in the product kernel folder. This is usually in organized in this way:
 -   `Makefile`: This provides the expected rules required by the build
     script to build the device tree and the drivers. This also allows to
     write Makefile using same rules as the kernel.
--   `build.config.mtk.q`: This inherits from `build.config.mtk.q`, and
+-   `build.config.mtk`: This inherits from `build.config.mtk`, and
     should be used to build the common kernel, and every thing else
     needed for the product.
 -   `dts`: Contains sources of device tree. Actually, this not really a

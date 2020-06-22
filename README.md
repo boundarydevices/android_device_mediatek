@@ -16,7 +16,7 @@ For more information about `repo`, visit [Android's official
 documentation](https://source.android.com/setup/build/downloading)
 
 Note: if `repo` keeps prompting for your ssh password, add the following
-to your `~/.ssh/config`:
+to your `~/.gitconfig`:
 
     [url "git@gitlab.com:"]
     insteadOf = https://gitlab.com/

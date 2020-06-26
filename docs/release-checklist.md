@@ -10,7 +10,7 @@ NOTE: all instructions should come from the device's README available
 at:
 
 ``` {.sh}
-~/src/mediatek/device/mediatek/opal/README.md
+~/src/mediatek/device/mediatek/quartz/README.md
 ```
 
 -   \[ \] repo init
@@ -27,7 +27,7 @@ NOTE: all instructions should come from the device's README available
 at:
 
 ``` {.sh}
-~/src/mediatek/device/mediatek/opal/docs/kernel-guide.md
+~/src/mediatek/device/mediatek/quartz/docs/kernel-guide.md
 ```
 
 -   \[ \] we can clean (full) rebuild the kernel
@@ -122,11 +122,11 @@ Neural network tests
 ``` {.sh}
 cd ~/src/mediatek
 source build/envsetup.sh
-lunch aosp_opal-userdebug
+lunch aosp_quartz-userdebug
 m NeuralNetworksTest_static
 adb root
 adb remount
-adb push out/target/product/opal/testcases/NeuralNetworksTest_static/arm64/NeuralNetworksTest_static /system/bin
+adb push out/target/product/quartz/testcases/NeuralNetworksTest_static/arm64/NeuralNetworksTest_static /system/bin
 adb shell
 # run on device
 # NeuralNetworksTest_static

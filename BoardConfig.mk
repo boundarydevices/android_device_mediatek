@@ -38,9 +38,9 @@ BOARD_BOOTIMAGE_PARTITION_SIZE     := 33554432
 BOARD_PERSISTIMAGE_PARTITION_SIZE  := 33554432
 
 BOARD_SEPOLICY_DIRS += \
-    device/mediatek/opal/sepolicy
+    device/mediatek/quartz/sepolicy
 
-MTK_PARTITIONS_YAML := device/mediatek/opal/partitions.yaml
+MTK_PARTITIONS_YAML := device/mediatek/quartz/partitions.yaml
 
 # Additional hardware features
 # NOTE: must be called last, as they append Board variables such

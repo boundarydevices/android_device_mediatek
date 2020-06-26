@@ -99,15 +99,15 @@ files in `out` folder:
 ``` {.sh}
 cd ~/src/mediatek/
 source build/envsetup.sh
-lunch aosp_opal-userdebug
-make out/target/product/opal/fip.bin \
-     out/target/product/opal/u-boot-initial-env
+lunch aosp_quartz-userdebug
+make out/target/product/quartz/fip.bin \
+     out/target/product/quartz/u-boot-initial-env
 ```
 
 Then, we can reflash the bootloader and linux kernel with:
 
 ``` {.sh}
-cd ~/src/mediatek/out/target/product/opal/
+cd ~/src/mediatek/out/target/product/quartz/
 ./flashimage.py --boot
 ```
 

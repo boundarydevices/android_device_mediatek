@@ -36,7 +36,7 @@ and drivers are located in `~/src/mediatek-kernel/`.
     <https://source.android.com/setup/build/building-kernels>.
 -   `out`: Created by the build system, this contains all the temporary
     files and the output files: kernel, modules, dtb, etc.
--   `opal`: If this folder exists, then it contains the device tree for
+-   `quartz`: If this folder exists, then it contains the device tree for
     the product, and, the drivers for this product.
 -   `<external modules>`: If they exist, these folders contain kernel
     drivers from third party, usually Bluetooth and WiFi kernel drivers.

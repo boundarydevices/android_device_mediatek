@@ -18,10 +18,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
 $(call inherit-product, device/mediatek/common/soc/mt8183/mt8183.mk)
 
-PRODUCT_NAME := aosp_opal
-PRODUCT_DEVICE := opal
+PRODUCT_NAME := aosp_quartz
+PRODUCT_DEVICE := quartz
 PRODUCT_BRAND := Android
-PRODUCT_MODEL := opal
+PRODUCT_MODEL := quartz
 PRODUCT_MANUFACTURER := mediatek
 
-$(call inherit-product, device/mediatek/opal/device.mk)
+$(call inherit-product, device/mediatek/quartz/device.mk)

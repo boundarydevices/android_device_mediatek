@@ -14,5 +14,5 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := $(LOCAL_DIR)/aosp_opal.mk
-COMMON_LUNCH_CHOICES :=  aosp_opal-userdebug
+PRODUCT_MAKEFILES := $(LOCAL_DIR)/aosp_quartz.mk
+COMMON_LUNCH_CHOICES :=  aosp_quartz-userdebug

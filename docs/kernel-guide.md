@@ -66,13 +66,13 @@ To rebuild the Android images, do:
 
     $ cd ~/src/mediatek/
     $ source build/envsetup.sh
-    $ lunch aosp_opal-userdebug
-    $ make bootimage vendorimage out/target/product/opal/dtbo.img
+    $ lunch aosp_quartz-userdebug
+    $ make bootimage vendorimage out/target/product/quartz/dtbo.img
 
 Flashing the kernel
 -------------------
 
-    $ cd ~/src/mediatek/out/target/product/opal/
+    $ cd ~/src/mediatek/out/target/product/quartz/
     $ ./flashimage.py --boot
 
 Building the kernel without and Android environment
@@ -93,7 +93,7 @@ needing the Android source tree. This is done by:
 Prebuild Android images are available via BayLibreCI at [nightly
 builds](http://build3.baylibre.com/builds/nightly/).
 
-Download the images for opal to `<path/to/android/images>`.
+Download the images for quartz to `<path/to/android/images>`.
 
 For more information about BayLibreCI, see [the source
 code](https://gitlab.com/baylibre/baylibre-ci/-/tree/master/src).

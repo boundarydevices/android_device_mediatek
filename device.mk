@@ -30,7 +30,7 @@ PRODUCT_SHIPPING_API_LEVEL := 29
 ifdef DEVICE_PACKAGE_OVERLAYS
 $(warning Overlays defined in '$(DEVICE_PACKAGE_OVERLAYS)' will override '$(PRODUCT_HARDWARE)' overlays)
 endif
-DEVICE_PACKAGE_OVERLAYS += device/mediatek/opal/overlay
+DEVICE_PACKAGE_OVERLAYS += device/mediatek/quartz/overlay
 
 # Demo apps
 PRODUCT_PACKAGES += \

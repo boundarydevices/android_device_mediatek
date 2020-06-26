@@ -1,7 +1,7 @@
 i500 EValuation Board (EVB) {#board_name}
 ===========================
 
-opal is the device code name for MT8385 on i500 EValuation Board (EVB)
+quartz is the device code name for MT8385 on i500 EValuation Board (EVB)
 board.
 
 Fetching the code
@@ -49,7 +49,7 @@ on `pyyaml`.
 
     $ cd ~/src/mediatek/
     $ source build/envsetup.sh
-    $ lunch aosp_opal-userdebug
+    $ lunch aosp_quartz-userdebug
     $ make -j40
 
 ### Building a specific image
@@ -87,7 +87,7 @@ and some python modules which can be installed with:
 
 To fully flash the board, run the following:
 
-    $ cd ~/src/mediatek/out/target/product/opal/
+    $ cd ~/src/mediatek/out/target/product/quartz/
     $ ./flashimage.py
 
 Once you see *Waiting for DA mode*:
@@ -101,7 +101,7 @@ Once you see *Waiting for DA mode*:
 
 To flash just one partition, you can run the following command:
 
-    $ cd ~/src/mediatek/out/target/product/opal/
+    $ cd ~/src/mediatek/out/target/product/quartz/
     $ adb reboot bootloader
     $ fastboot flash [PARTITION] [FILE]
     $ fastboot continue
@@ -114,14 +114,14 @@ To flash just one partition, you can run the following command:
 
 For example, the commands to flash the bootloaders are:
 
-    $ cd ~/src/mediatek/out/target/product/opal/
+    $ cd ~/src/mediatek/out/target/product/quartz/
     $ adb reboot bootloader
     $ fastboot flash bootloaders fip.bin
     $ fastboot continue
 
 The commands to flash the kernel are:
 
-    $ cd ~/src/mediatek/out/target/product/opal/
+    $ cd ~/src/mediatek/out/target/product/quartz/
     $ adb reboot bootloader
     $ fastboot flash boot boot.img
     $ fastboot flash dtbo dtbo.img

@@ -2,7 +2,7 @@ U-Boot development guide
 ========================
 
 This documents details how to the bootloader, "Das U-Boot" for
-i500 EValuation Board (EVB)
+Pumpkin i500
 
 Fetch the source
 ----------------
@@ -108,7 +108,7 @@ Then, we can reflash the bootloader and linux kernel with:
 
 ``` {.sh}
 cd ~/src/mediatek/out/target/product/quartz/
-./flashimage.py --boot
+./flashimage.py --boot --update dtb_index 4 --update dtbo_index 5
 ```
 
 Once you see *Waiting for DA mode*:

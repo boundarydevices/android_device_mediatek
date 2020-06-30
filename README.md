@@ -1,8 +1,7 @@
-i500 EValuation Board (EVB) {#board_name}
-===========================
+Pumpkin i500 {#board_name}
+============
 
-quartz is the device code name for MT8385 on i500 EValuation Board (EVB)
-board.
+quartz is the device code name for MT8385 on Pumpkin i500 board.
 
 Fetching the code
 -----------------
@@ -88,7 +87,7 @@ and some python modules which can be installed with:
 To fully flash the board, run the following:
 
     $ cd ~/src/mediatek/out/target/product/quartz/
-    $ ./flashimage.py
+    $ ./flashimage.py --update dtb_index 4 --update dtbo_index 5
 
 Once you see *Waiting for DA mode*:
 

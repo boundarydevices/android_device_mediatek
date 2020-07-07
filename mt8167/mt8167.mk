@@ -52,12 +52,43 @@ PRODUCT_COPY_FILES += \
     device/mediatek/common/binaries/egl/swiftshader/lib64/libGLESv1_CM_swiftshader.so:$(TARGET_COPY_OUT_VENDOR)/lib64/egl/libGLESv1_CM_swiftshader.so \
     device/mediatek/common/binaries/egl/swiftshader/lib64/libGLESv2_swiftshader.so:$(TARGET_COPY_OUT_VENDOR)/lib64/egl/libGLESv2_swiftshader.so
 else
-# graphics bringup with swiftshader
+# add support of Rogue GPU
 PRODUCT_PACKAGES += \
-    libEGL_swiftshader \
-    libGLESv1_CM_swiftshader \
-    libGLESv2_swiftshader
+    camera.rogue \
+    gralloc.rogue \
+    hwcomposer.drm_imagination \
+    sensors.rogue \
+    thermal.rogue \
+    libAppHintsIPC \
+    libcreatesurface \
+    libdnngraphgen \
+    libEGL_POWERVR_ROGUE \
+    libGLESv1_CM_POWERVR_ROGUE \
+    libGLESv2_POWERVR_ROGUE \
+    libglslcompiler \
+    libIMGDNN \
+    libIMGegl \
+    libPVRCLDNN \
+    libPVROCL \
+    libPVRRS \
+    libPVRScopeServices \
+    libsrv_um \
+    libsutu_display \
+    libufwriter \
+    libusc \
+    memtrack.rogue \
+    vendor.imagination.gpu.apphints@1.0 \
+    vulkan.rogue \
+    libeglinfo \
+    libgles1test1 \
+    libgles2test1.so \
+    sensors.rogue \
+    thermal.rogue \
+    rgx.fw.22.40.54.30
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.hardware.gralloc=rogue \
+    ro.hardware.hwcomposer=drm_imagination \
+    ro.hardware.egl=POWERVR_ROGUE \
+    hwc.drm.device=/dev/dri/card1
 endif
-# Gralloc
-PRODUCT_PACKAGES += \
-    gralloc.mtk

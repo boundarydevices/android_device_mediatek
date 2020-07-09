@@ -16,6 +16,8 @@
 
 include device/mediatek/common/soc/mt8183/BoardConfig.mk
 
+TARGET_BOOTLOADER_BOARD_NAME := quartz
+
 # kernel commandline
 BOARD_KERNEL_CMDLINE := \
     androidboot.serialno=77848183 \

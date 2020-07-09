@@ -16,6 +16,8 @@
 
 include device/mediatek/common/soc/mt8167/BoardConfig.mk
 
+TARGET_BOOTLOADER_BOARD_NAME := onyx
+
 # kernel commandline
 BOARD_KERNEL_CMDLINE := \
     firmware_class.path=/vendor/firmware \

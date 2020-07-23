@@ -82,6 +82,21 @@ and some python modules which can be installed with:
     $ pip3 install --user pyserial
     $ pip3 install --user oyaml
 
+In order for your host machine to be able to talk to the board through
+USB without needing root privileges, you need to create a udev rules
+that will grant the *plugdev* group access to your device:
+
+    $ echo 'SUBSYSTEM=="usb", ATTR{idVendor}=="0e8d", ATTR{idProduct}=="201c", MODE="0660", GROUP="plugdev"' | sudo tee -a /etc/udev/rules.d/51-android.rules
+    $ sudo udevadm control --reload-rules
+    $ sudo udevadm trigger
+
+If your user is not already member of the *plugdev* group:
+
+    $ sudo usermod -a -G plugdev $USER
+
+This last command requires you to log out and log back in to your
+account to be in effect.
+
 ### Flashing everything
 
 To fully flash the board, run the following:

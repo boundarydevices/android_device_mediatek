@@ -48,7 +48,5 @@ MTK_PARTITIONS_YAML := device/mediatek/quartz/partitions.yaml
 # NOTE: must be called last, as they append Board variables such
 # as DEVICE_MANIFEST_FILE
 -include vendor/mediatek/mt7668/BoardConfig-mt7668.mk
-# Touchscreen
-include vendor/goodix/goodix5688/BoardConfig-goodix5688.mk
 # UVC Camera
 include device/mediatek/common/uvc/BoardConfig.mk

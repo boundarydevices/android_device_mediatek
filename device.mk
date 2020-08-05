@@ -42,5 +42,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Additional hardware features
 $(call inherit-product-if-exists, vendor/mediatek/mt7668/mt7668.mk)
+# Touchscreen
+$(call inherit-product, vendor/ilitek/ili251x/ili251x.mk)
 # UVC camera
 $(call inherit-product, device/mediatek/common/uvc/uvc.mk)

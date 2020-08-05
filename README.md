@@ -99,10 +99,19 @@ account to be in effect.
 
 ### Flashing everything
 
+#### HDMI display
 To fully flash the board, run the following:
 
     $ cd ~/src/mediatek/out/target/product/quartz/
     $ ./flashimage.py --update dtb_index 4 --update dtbo_index 5
+
+
+#### DSI touchscreen/panel
+
+To fully flash the board, run the following:
+
+    $ cd ~/src/mediatek/out/target/product/quartz/
+    $ ./flashimage.py --update dtb_index 4 --update dtbo_index 6
 
 Once you see *Waiting for DA mode*:
 

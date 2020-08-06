@@ -21,6 +21,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
      device/mediatek/common/soc/mt8183/binaries/images/splashscreen.raw:splashscreen.raw
 
+# Touchscreen: add 90CCW rotation config file
+PRODUCT_COPY_FILES += \
+     device/mediatek/quartz/input-manager-state.xml:$(TARGET_COPY_OUT_DATA)/system/input-manager-state.xml
+
 # Shipping API level to Android Q (29)
 PRODUCT_SHIPPING_API_LEVEL := 29
 

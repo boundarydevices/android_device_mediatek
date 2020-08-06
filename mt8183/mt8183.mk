@@ -103,5 +103,9 @@ PRODUCT_PACKAGES += \
     android.hardware.neuralnetworks@1.2-service-armnn
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ArmNN.quantized8Performance.execTime=2 \
-    ArmNN.quantized8Performance.powerUsage=2
+    Armnn.operandTypeTensorQuant8AsymmPerformance.execTime=2 \
+    Armnn.operandTypeTensorQuant8AsymmPerformance.powerUsage=2 \
+    Armnn.operandTypeTensorQuant8SymmPerformance.execTime=2 \
+    Armnn.operandTypeTensorQuant8SymmPerformance.powerUsage=2 \
+    Armnn.operandTypeTensorQuant8SymmPerChannelPerformance.execTime=2 \
+    Armnn.operandTypeTensorQuant8SymmPerChannelPerformance.powerUsage=2

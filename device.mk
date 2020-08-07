@@ -25,6 +25,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
      device/mediatek/quartz/input-manager-state.xml:$(TARGET_COPY_OUT_DATA)/system/input-manager-state.xml
 
+# Key Layout files
+PRODUCT_COPY_FILES += \
+     device/mediatek/quartz/mtk-pmic-keys.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/mtk-pmic-keys.kl
+
 # Shipping API level to Android Q (29)
 PRODUCT_SHIPPING_API_LEVEL := 29
 

@@ -14,8 +14,8 @@
 # limitations under the License.
 #
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
-
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
+$(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
 $(call inherit-product, device/mediatek/common/soc/mt8183/mt8183.mk)
 
 PRODUCT_NAME := aosp_quartz
@@ -23,5 +23,6 @@ PRODUCT_DEVICE := quartz
 PRODUCT_BRAND := Android
 PRODUCT_MODEL := quartz
 PRODUCT_MANUFACTURER := mediatek
+PRODUCT_CHARACTERISTICS := tablet
 
 $(call inherit-product, device/mediatek/quartz/device.mk)

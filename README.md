@@ -99,19 +99,10 @@ account to be in effect.
 
 ### Flashing everything
 
-#### HDMI display
 To fully flash the board, run the following:
 
     $ cd ~/src/mediatek/out/target/product/quartz/
     $ ./flashimage.py --update dtb_index 4 --update dtbo_index 5
-
-
-#### DSI touchscreen/panel
-
-To fully flash the board, run the following:
-
-    $ cd ~/src/mediatek/out/target/product/quartz/
-    $ ./flashimage.py --update dtb_index 4 --update dtbo_index 6
 
 Once you see *Waiting for DA mode*:
 
@@ -119,6 +110,14 @@ Once you see *Waiting for DA mode*:
 2)  then release only the *reset* button
 3)  release the *volume up* button once you see that the image is
     getting flashed.
+
+#### DSI support
+
+By default, only HDMI is supported on Pumpkin i500. To enable the
+URT UMO-9465MD-T DSI screen instead, flash as following:
+
+    $ cd ~/src/mediatek/out/target/product/quartz/
+    $ ./flashimage.py --update dtb_index 4 --update dtbo_index 6
 
 ### Flashing only one partition
 

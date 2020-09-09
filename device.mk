@@ -28,6 +28,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 DEVICE_PACKAGE_OVERLAYS := device/mediatek/onyx/overlay
 
+# mark device as "low ram"
+PRODUCT_PROPERTY_OVERRIDES += ro.config.low_ram=true
+
 # Additional hardware features
 $(call inherit-product-if-exists, vendor/mediatek/mt7668/mt7668.mk)
 $(call inherit-product-if-exists, vendor/focaltech/ft5x06/ft5x06.mk)

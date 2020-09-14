@@ -33,9 +33,15 @@ endif # neq $(TARGET_USE_PRODUCT_SPECIFIC_BL2), true)
 
 # U-Boot and env
 ifneq ($(TARGET_USE_PRODUCT_SPECIFIC_UBOOT), true)
+ifeq ($(TARGET_USE_AB_SLOT), true)
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/binaries/images/fip.bin:fip.bin \
-    $(LOCAL_PATH)/binaries/images/u-boot-initial-env:u-boot-initial-env
+    $(LOCAL_PATH)/binaries/images/fip_ab.bin:$(TARGET_OUT)/fip.bin \
+    $(LOCAL_PATH)/binaries/images/u-boot-initial-env_ab:$(TARGET_OUT)/u-boot-initial-env
+else
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/binaries/images/fip_noab.bin:$(TARGET_OUT)/fip.bin \
+    $(LOCAL_PATH)/binaries/images/u-boot-initial-env_noab:$(TARGET_OUT)/u-boot-initial-env
+endif # eq $(TARGET_USE_AB_SLOT), true
 endif # neq $(TARGET_USE_PRODUCT_SPECIFIC_UBOOT), true)
 
 # Copy media codecs config file

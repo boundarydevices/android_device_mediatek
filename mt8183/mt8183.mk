@@ -81,12 +81,15 @@ PRODUCT_PACKAGES += \
 # Add support of Mali GPU
 PRODUCT_PACKAGES += \
     libGLES_mali \
-    gralloc.mt6771
+    gralloc.mt6771 \
+    hwcomposer.drm_mediatek
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.gralloc=mt6771 \
     ro.hardware.egl=mali \
-    ro.hardware.vulkan=mali
+    ro.hardware.vulkan=mali \
+    ro.hardware.hwcomposer=drm_mediatek \
+    hwc.drm.device=/dev/dri/card0
 
 # Vulkan
 PRODUCT_COPY_FILES += \

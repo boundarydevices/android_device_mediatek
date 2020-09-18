@@ -36,12 +36,9 @@ PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-impl \
     android.hardware.keymaster@3.0-service
 
+# Software Gatekeeper HAL
 PRODUCT_PACKAGES += \
-    gatekeeper.mtk \
-    android.hardware.gatekeeper@1.0-impl \
-    android.hardware.gatekeeper@1.0-service
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.hardware.gatekeeper=mtk
+    android.hardware.gatekeeper@1.0-service.software
 
 # 3D CPU renderer
 PRODUCT_PACKAGES += \

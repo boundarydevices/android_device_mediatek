@@ -13,6 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+# Disable kernel config check for now
+PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := false
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 LOCAL_KERNEL := device/mediatek/common-kernel/Image

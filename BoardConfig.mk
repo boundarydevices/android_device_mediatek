@@ -50,5 +50,3 @@ MTK_PARTITIONS_YAML := device/mediatek/quartz/partitions.yaml
 -include vendor/mediatek/mt7668/BoardConfig-mt7668.mk
 # Touchscreen
 include vendor/ilitek/ili251x/BoardConfig-ili251x.mk
-# UVC Camera
-include device/mediatek/common/uvc/BoardConfig.mk

@@ -23,17 +23,16 @@ BOARD_KERNEL_CMDLINE := \
     firmware_class.path=/vendor/firmware \
     androidboot.serialno=77848167 \
     androidboot.selinux=permissive printk.devkmsg=on \
-    ro rootwait skip_initramfs init=/init \
+    ro rootwait init=/init \
+    androidboot.boot_devices=soc/11120000.mmc
 
 BOARD_VENDOR_KERNEL_MODULES += \
     device/mediatek/common-kernel/panel-rpi-pumpkin-touchscreen.ko \
 
 # FS configuration
-BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 2013265920
 TARGET_USERIMAGES_USE_EXT4         := true
 TARGET_COPY_OUT_VENDOR             := vendor
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_VENDORIMAGE_PARTITION_SIZE   := 268435456
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE  := ext4
 BOARD_CACHEIMAGE_PARTITION_SIZE    := 16777216
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 1073741824
@@ -41,6 +40,9 @@ BOARD_DTBOIMG_PARTITION_SIZE       := 4194304
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 134217728
 BOARD_BOOTIMAGE_PARTITION_SIZE     := 33554432
 BOARD_PERSISTIMAGE_PARTITION_SIZE  := 33554432
+BOARD_SUPER_PARTITION_SIZE         := 2415919104
+BOARD_DB_DYNAMIC_PARTITIONS_SIZE   := 2415919104
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 33554432
 
 BOARD_SEPOLICY_DIRS += \
     device/mediatek/onyx/sepolicy

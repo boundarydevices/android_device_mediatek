@@ -21,7 +21,7 @@ BOARD_MKBOOTIMG_ARGS := \
   --kernel_offset $(BOARD_KERNEL_OFFSET) \
   --ramdisk_offset $(BOARD_RAMDISK_OFFSET) \
   --tags_offset $(BOARD_TAGS_OFFSET) \
-  --header_version 1
+  --header_version 2
 
 BOARD_SEPOLICY_DIRS += \
         device/mediatek/common/soc/mt8183/sepolicy

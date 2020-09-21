@@ -17,12 +17,11 @@ include device/mediatek/common/soc/BoardConfigCommon.mk
 
 TARGET_CPU_VARIANT := cortex-a53
 
-
 BOARD_MKBOOTIMG_ARGS := \
   --base $(BOARD_KERNEL_BASE) \
   --kernel_offset $(BOARD_KERNEL_OFFSET) \
   --ramdisk_offset $(BOARD_RAMDISK_OFFSET) \
   --tags_offset $(BOARD_TAGS_OFFSET) \
-  --header_version 1
+  --header_version 2
 
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/mediatek/common/soc/mt8167/bluetooth

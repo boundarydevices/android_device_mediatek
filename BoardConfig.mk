@@ -55,5 +55,3 @@ MTK_PARTITIONS_YAML := device/mediatek/onyx/partitions.yaml
 # as DEVICE_MANIFEST_FILE
 -include vendor/mediatek/mt7668/BoardConfig-mt7668.mk
 -include vendor/focaltech/ft5x06/BoardConfig-ft5x06.mk
-# UVC Camera
-include device/mediatek/common/uvc/BoardConfig.mk

@@ -47,6 +47,15 @@ BOARD_SEPOLICY_DIRS += \
 
 MTK_PARTITIONS_YAML := device/mediatek/onyx/partitions.yaml
 
+# Please keep this list fixed: add new files in the end of the list
+DTB_FILES := \
+        $(LOCAL_DTB)/mt8167-pumpkin.dtb
+
+# Please keep this list fixed: add new files in the end of the list
+DTBO_FILES := \
+        $(LOCAL_DTB)/mt8167-pumpkin-android.dtb \
+        $(LOCAL_DTB)/mt8167-pumpkin-android-dsi.dtb
+
 # Additional hardware features
 # NOTE: must be called last, as they append Board variables such
 # as DEVICE_MANIFEST_FILE

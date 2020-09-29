@@ -43,6 +43,16 @@ BOARD_SEPOLICY_DIRS += \
     device/mediatek/quartz/sepolicy
 
 MTK_PARTITIONS_YAML := device/mediatek/quartz/partitions.yaml
+ 
+# Please keep this list fixed: add new files in the end of the list
+DTB_FILES := \
+        $(LOCAL_DTB)/mt8183-pumpkin.dtb
+
+# Please keep this list fixed: add new files in the end of the list
+DTBO_FILES := \
+        $(LOCAL_DTB)/mt8183-pumpkin-android.dtb \
+        $(LOCAL_DTB)/mt8183-pumpkin-urt-umo-9465md-t.dtb
+
 
 # Additional hardware features
 # NOTE: must be called last, as they append Board variables such

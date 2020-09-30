@@ -98,3 +98,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.egl=POWERVR_ROGUE \
     hwc.drm.device=/dev/dri/card1
 endif
+
+ifeq ($(TARGET_AVB_ENABLE), true)
+PRODUCT_COPY_FILES += \
+    device/mediatek/common/soc/fstab.ramdisk.common.avb:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt8167
+else
+PRODUCT_COPY_FILES += \
+    device/mediatek/common/soc/fstab.ramdisk.common:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt8167
+endif

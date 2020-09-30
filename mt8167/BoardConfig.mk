@@ -17,6 +17,7 @@ include device/mediatek/common/soc/BoardConfigCommon.mk
 
 TARGET_CPU_VARIANT := cortex-a53
 
+
 BOARD_MKBOOTIMG_ARGS := \
   --base $(BOARD_KERNEL_BASE) \
   --kernel_offset $(BOARD_KERNEL_OFFSET) \
@@ -25,3 +26,10 @@ BOARD_MKBOOTIMG_ARGS := \
   --header_version 2
 
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/mediatek/common/soc/mt8167/bluetooth
+
+# Recovery
+ifeq ($(TARGET_AVB_ENABLE), true)
+TARGET_RECOVERY_FSTAB := device/mediatek/common/soc/mt8167/fstab.recovery.mt8167.avb
+else
+TARGET_RECOVERY_FSTAB := device/mediatek/common/soc/mt8167/fstab.recovery.mt8167
+endif

@@ -112,3 +112,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     Armnn.operandTypeTensorQuant8SymmPerformance.powerUsage=2 \
     Armnn.operandTypeTensorQuant8SymmPerChannelPerformance.execTime=2 \
     Armnn.operandTypeTensorQuant8SymmPerChannelPerformance.powerUsage=2
+
+ifeq ($(TARGET_AVB_ENABLE), true)
+PRODUCT_COPY_FILES += \
+    device/mediatek/common/soc/fstab.ramdisk.common.avb:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt8183
+else
+PRODUCT_COPY_FILES += \
+    device/mediatek/common/soc/fstab.ramdisk.common:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt8183
+endif

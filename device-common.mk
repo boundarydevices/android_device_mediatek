@@ -119,3 +119,13 @@ VENDOR_UEVENTD_FILES += device/mediatek/common/binaries/egl/ueventd.rc
 VENDOR_SECURITY_PATCH = $(PLATFORM_SECURITY_PATCH)
 # Set boot SPL
 BOOT_SECURITY_PATCH = $(PLATFORM_SECURITY_PATCH)
+
+# Dynamic partitions
+PRODUCT_BUILD_SUPER_PARTITION := true
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+PRODUCT_USE_DYNAMIC_PARTITION_SIZE := true
+
+PRODUCT_PACKAGES += \
+	android.hardware.fastboot@1.0 \
+	android.hardware.fastboot@1.0-impl-mock \
+	fastbootd

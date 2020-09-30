@@ -90,3 +90,18 @@ DTBO_UNSIGNED := dtbo-unsigned.img
 # $(PRODUCT_OUT) hasn't been defined yet, so use "=" instead of ":="
 # so that it is resolved later
 BOARD_PREBUILT_DTBOIMAGE = $(PRODUCT_OUT)/$(DTBO_UNSIGNED)
+
+# AVB
+ifeq ($(TARGET_AVB_ENABLE), true)
+BOARD_AVB_ENABLE := true
+else
+BOARD_AVB_ENABLE := false
+endif
+
+# Super partition
+TARGET_USE_DYNAMIC_PARTITIONS := true
+BOARD_BUILD_SUPER_IMAGE_BY_DEFAULT := true
+BOARD_SUPER_PARTITION_GROUPS := db_dynamic_partitions
+BOARD_DB_DYNAMIC_PARTITIONS_PARTITION_LIST := system vendor
+BOARD_SUPER_PARTITION_METADATA_DEVICE := super
+BOARD_SUPER_IMAGE_IN_UPDATE_PACKAGE := true

@@ -97,6 +97,13 @@ If your user is not already member of the *plugdev* group:
 This last command requires you to log out and log back in to your
 account to be in effect.
 
+**Warning:** On Fedora machine, *plugdev* group doesn't exist, you just
+need to do:
+
+    $ echo 'SUBSYSTEM=="usb", ATTR{idVendor}=="0e8d", ATTR{idProduct}=="201c", MODE="0660" | sudo tee -a /etc/udev/rules.d/51-android.rules
+    $ sudo udevadm control --reload-rules
+    $ sudo udevadm trigger
+
 ### Flashing everything
 
 To fully flash the board, run the following:

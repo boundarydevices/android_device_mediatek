@@ -23,7 +23,7 @@ BOARD_KERNEL_CMDLINE := \
     firmware_class.path=/vendor/firmware \
     androidboot.serialno=77848167 \
     androidboot.selinux=permissive printk.devkmsg=on \
-    ro rootwait init=/init \
+    init=/init \
     androidboot.boot_devices=soc/11120000.mmc
 
 BOARD_VENDOR_KERNEL_MODULES += \

@@ -56,9 +56,15 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/binaries/images/fip_ab.bin:$(TARGET_OUT)/fip.bin \
     $(LOCAL_PATH)/binaries/images/u-boot-initial-env_ab:$(TARGET_OUT)/u-boot-initial-env
 else
+ifeq ($(TARGET_AVB_ENABLE), true)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/binaries/images/fip_noab.avb.bin:$(TARGET_OUT)/fip.bin \
+    $(LOCAL_PATH)/binaries/images/u-boot-initial-env_noab.avb:$(TARGET_OUT)/u-boot-initial-env
+else
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/binaries/images/fip_noab.bin:$(TARGET_OUT)/fip.bin \
     $(LOCAL_PATH)/binaries/images/u-boot-initial-env_noab:$(TARGET_OUT)/u-boot-initial-env
+endif # eq $(TARGET_AVB_ENABLE), true
 endif # eq $(TARGET_USE_AB_SLOT), true
 endif # neq $(TARGET_USE_PRODUCT_SPECIFIC_UBOOT), true)
 

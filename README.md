@@ -109,7 +109,7 @@ need to do:
 To fully flash the board, run the following:
 
     $ cd ~/src/mediatek/out/target/product/onyx/
-    $ ./flashimage.py --update dtb_index 2 --update dtbo_index 3 --env-size 262144
+    $ ./flashimage.py
 
 Once you see *Waiting for DA mode*:
 
@@ -117,6 +117,14 @@ Once you see *Waiting for DA mode*:
 2)  then release only the *reset* button
 3)  release the *volume up* button once you see that the image is
     getting flashed.
+
+#### DSI support
+
+By default, only HDMI is supported on Pumpkin i300A. To enable the
+Raspberry Pi DSI screen instead, flash as following:
+
+    $ cd ~/src/mediatek/out/target/product/onyx/
+    $ ./flashimage.py --update dtbo_index 1
 
 ### Flashing only one partition
 

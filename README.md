@@ -109,7 +109,7 @@ need to do:
 To fully flash the board, run the following:
 
     $ cd ~/src/mediatek/out/target/product/quartz/
-    $ ./flashimage.py --update dtb_index 4 --update dtbo_index 5
+    $ ./flashimage.py
 
 Once you see *Waiting for DA mode*:
 
@@ -124,7 +124,7 @@ By default, only HDMI is supported on Pumpkin i500. To enable the
 URT UMO-9465MD-T DSI screen instead, flash as following:
 
     $ cd ~/src/mediatek/out/target/product/quartz/
-    $ ./flashimage.py --update dtb_index 4 --update dtbo_index 6
+    $ ./flashimage.py --update dtbo_index 1
 
 ### Flashing only one partition
 

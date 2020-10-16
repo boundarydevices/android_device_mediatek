@@ -73,7 +73,7 @@ Flashing the kernel
 -------------------
 
     $ cd ~/src/mediatek/out/target/product/quartz/
-    $ ./flashimage.py --boot --update dtb_index 4 --update dtbo_index 5
+    $ ./flashimage.py --boot
 
 Building the kernel without and Android environment
 ---------------------------------------------------

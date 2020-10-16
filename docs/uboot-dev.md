@@ -86,7 +86,7 @@ files in `out` folder:
 Then, we can reflash the bootloader and linux kernel with:
 
     $ cd ~/src/mediatek/out/target/product/quartz/
-    $ ./flashimage.py --boot --update dtb_index 4 --update dtbo_index 5
+    $ ./flashimage.py --boot
 
 Once you see *Waiting for DA mode*:
 

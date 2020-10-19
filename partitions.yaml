@@ -12,7 +12,7 @@ partitions:
     size: 10M
     file: splashscreen.raw
   misc:
-    size: 0
+    size: 512K
   boot:
     start: 64M
     size: 0

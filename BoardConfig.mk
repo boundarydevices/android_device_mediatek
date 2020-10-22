@@ -21,7 +21,6 @@ TARGET_BOOTLOADER_BOARD_NAME := onyx
 # kernel commandline
 BOARD_KERNEL_CMDLINE := \
     firmware_class.path=/vendor/firmware \
-    androidboot.serialno=77848167 \
     androidboot.selinux=permissive printk.devkmsg=on \
     init=/init \
     androidboot.boot_devices=soc/11120000.mmc

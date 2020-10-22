@@ -17,6 +17,7 @@ Note: not xml elements from TinyHAL are supported.
         is first loaded during boot -->
         <init>
             <ctl name="ADDA_DL_CH1 DL1_CH1" val="1" />
+            <ctl name="ADDA_DL_CH2 DL1_CH2" val="1" />
             <ctl name="HPL Mux" val="Audio Playback"/>
             <ctl name="HPR Mux" val="Audio Playback"/>
             <ctl name="Headphone Volume" val="0" />

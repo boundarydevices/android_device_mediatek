@@ -20,7 +20,6 @@ TARGET_BOOTLOADER_BOARD_NAME := quartz
 
 # kernel commandline
 BOARD_KERNEL_CMDLINE := \
-    androidboot.serialno=77848183 \
     printk.devkmsg=on \
     init=/init firmware_class.path=/vendor/firmware \
     androidboot.selinux=permissive \

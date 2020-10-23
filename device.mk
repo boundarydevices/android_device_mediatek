@@ -17,8 +17,8 @@
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.onyx.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.onyx.rc \
 
-# Shipping API level to Android Q (29)
-PRODUCT_SHIPPING_API_LEVEL := 29
+# Shipping API level to Android R (30)
+PRODUCT_SHIPPING_API_LEVEL := 30
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml

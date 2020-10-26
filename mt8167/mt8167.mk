@@ -44,10 +44,6 @@ PRODUCT_COPY_FILES += \
 endif # eq $(TARGET_USE_AB_SLOT), true
 endif # neq $(TARGET_USE_PRODUCT_SPECIFIC_UBOOT), true)
 
-# Copy media codecs config file
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio_xml/audio_hal_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_hal_configuration.xml
-
 ifeq ($(PLATFORM_VERSION), 9)
 # graphics bringup with swiftshader from Q preview
 PRODUCT_COPY_FILES += \

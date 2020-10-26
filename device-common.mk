@@ -54,10 +54,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.configstore@1.1-service
 
-# Audio
+# Audio:
+# NOTE: each product should also add audio.primary.$(TARGET_DEVICE) to its PRODUCT_PACKAGES
 PRODUCT_PACKAGES += \
-    android.hardware.audio@4.0-service.mediatek \
-    android.hardware.audio.effect@4.0-impl \
+    android.hardware.audio.service \
+    android.hardware.audio@4.0-impl \
+    android.hardware.audio.effect@4.0-impl
 
 # DRM (Digital Rights Management)
 PRODUCT_PACKAGES += \

@@ -23,6 +23,9 @@ Note: not xml elements from TinyHAL are supported.
         </init>
         </mixer>
 
-	<stream type="pcm" dir="out" card="0" device="4">
-	</stream>
+        <device name="headphone">
+        </device>
+
+        <stream type="pcm" dir="out" card="0" device="4">
+        </stream>
 </audiohal>

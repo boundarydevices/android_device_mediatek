@@ -34,7 +34,13 @@ Note: not xml elements from TinyHAL are supported.
         <device name="headphone">
         </device>
 
+        <device name="headset_in">
+        </device>
+
         <stream type="pcm" dir="out" card="0" device="0">
+        </stream>
+
+        <stream type="pcm" dir="in" card="0" device="5">
         </stream>
 
 </audiohal>

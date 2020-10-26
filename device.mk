@@ -29,8 +29,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
      device/mediatek/quartz/mtk-pmic-keys.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/mtk-pmic-keys.kl
 
-# Shipping API level to Android Q (29)
-PRODUCT_SHIPPING_API_LEVEL := 29
+# Shipping API level to Android R (30)
+PRODUCT_SHIPPING_API_LEVEL := 30
 
 # DEVICE_PACKAGE_OVERLAYS for the device should be before
 # including common overlays since the one listed first

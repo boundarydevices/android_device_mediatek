@@ -50,6 +50,10 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.allocator@2.0-impl \
 
+# SurfaceFlinger
+PRODUCT_PACKAGES += \
+    android.hardware.configstore@1.1-service
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@4.0-service.mediatek \

@@ -30,4 +30,8 @@ Note: not xml elements from TinyHAL are supported.
             <ctl name="PGA Volume" val="5" />
         </init>
         </mixer>
+
+        <stream type="pcm" dir="out" card="0" device="0">
+        </stream>
+
 </audiohal>

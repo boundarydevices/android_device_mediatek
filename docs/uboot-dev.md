@@ -8,7 +8,7 @@ Fetch the source
 ----------------
 
     $ mkdir ~/src/u-boot-mediatek
-    $ git clone https://gitlab.com/baylibre/rich-iot/u-boot.git -b mtk-v2019.10 ~/src/u-boot-mediatek && cd $_
+    $ git clone https://gitlab.com/baylibre/rich-iot/u-boot.git -b mtk-v2020.10 ~/src/u-boot-mediatek && cd $_
 
 Build and integrate into Android
 --------------------------------
@@ -29,7 +29,7 @@ https://github.com/ARM-software/arm-trusted-firmware/tree/master/tools/fiptool
 
 Install the `.config`:
 
-    $ ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- make pumpkin_android_defconfig
+    $ ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- make mt8516_pumpkin_android_defconfig
 
 Build the `u-boot.bin` binary:
 
@@ -52,7 +52,7 @@ Export the U-boot initial environment to the Android source tree:
 
 Install the `.config`:
 
-    $ ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- make pumpkin_android_ab_defconfig
+    $ ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- make mt8516_pumpkin_android_ab_defconfig
 
 Build the `u-boot.bin` binary:
 

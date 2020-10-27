@@ -15,7 +15,7 @@ Fetching the kernel code
 Fetch the code using `repo`:
 
     $ mkdir ~/src/mediatek-kernel/ && cd $_
-    $ repo init -u https://gitlab.com/baylibre/aosp/mediatek/manifest.git -m kernel.xml -b mtk-android-10
+    $ repo init -u https://gitlab.com/baylibre/aosp/mediatek/manifest.git -m kernel.xml -b mtk-android-11
     $ repo sync
 
 Building the kernel

@@ -21,6 +21,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
      device/mediatek/common/soc/mt8183/binaries/images/splashscreen.raw:splashscreen.raw
 
+# Audio: use default hal configuration with TinyHAL
+PRODUCT_PACKAGES += audio.primary.quartz
+PRODUCT_COPY_FILES += \
+     device/mediatek/common/soc/mt8183/audio_xml/audio_hal_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio.quartz.xml
+
 # Touchscreen: add 90CCW rotation config file
 PRODUCT_COPY_FILES += \
      device/mediatek/quartz/input-manager-state.xml:$(TARGET_COPY_OUT_DATA)/system/input-manager-state.xml

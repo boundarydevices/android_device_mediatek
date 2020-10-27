@@ -51,8 +51,8 @@ DTB_FILES := \
 # Please keep this list fixed: add new files in the end of the list
 DTBO_FILES := \
         $(LOCAL_DTB)/mt8183-pumpkin-android.dtb \
-        $(LOCAL_DTB)/mt8183-pumpkin-urt-umo-9465md-t.dtb
-
+        $(LOCAL_DTB)/mt8183-pumpkin-urt-umo-9465md-t.dtb \
+        $(LOCAL_DTB)/mt8183-pumpkin-ar0330.dtb
 
 # Additional hardware features
 # NOTE: must be called last, as they append Board variables such

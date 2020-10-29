@@ -20,6 +20,11 @@ PRODUCT_COPY_FILES += \
 # Shipping API level to Android R (30)
 PRODUCT_SHIPPING_API_LEVEL := 30
 
+# Audio: use default hal configuration with TinyHAL
+PRODUCT_PACKAGES += audio.primary.onyx
+PRODUCT_COPY_FILES += \
+     device/mediatek/common/soc/mt8167/audio_xml/audio_hal_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio.onyx.xml
+
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml
 

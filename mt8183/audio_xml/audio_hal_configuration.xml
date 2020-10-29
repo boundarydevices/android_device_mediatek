@@ -24,8 +24,6 @@ Note: not xml elements from TinyHAL are supported.
 
             <!-- capture -->
             <ctl name="UL3_CH1 ADDA_UL_CH1" val="1" />
-            <ctl name="PCM_1_PB_CH1 ADDA_UL_CH1" val="1" />
-            <ctl name="ADDA_DL_CH2 ADDA_UL_CH2" val="1" />
             <ctl name="Mic Type Mux" val="ACC" />
             <ctl name="ADC L Mux" val="Left Preamplifier" />
             <ctl name="PGA L Mux" val="AIN1" />

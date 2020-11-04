@@ -104,8 +104,8 @@ PRODUCT_COPY_FILES += \
 
 ifeq ($(TARGET_AVB_ENABLE), true)
 PRODUCT_COPY_FILES += \
-    device/mediatek/common/soc/fstab.ramdisk.common.avb:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt8167
+    device/mediatek/common/soc/fstab.mt8167.avb:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt8167
 else
 PRODUCT_COPY_FILES += \
-    device/mediatek/common/soc/fstab.ramdisk.common:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt8167
+    device/mediatek/common/soc/fstab.mt8167:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt8167
 endif

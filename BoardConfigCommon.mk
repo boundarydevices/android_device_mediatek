@@ -76,11 +76,6 @@ DEVICE_MANIFEST_FILE := device/mediatek/common/soc/manifest.xml
 
 BOARD_VENDOR_MEDIATEK := true
 
-ifeq ($(TARGET_USE_AB_SLOT), true)
-include device/mediatek/common/hal/boot/BoardConfig.mk
-
-endif # eq $(TARGET_USE_AB_SLOT), true
-
 # Set location of DTB/DTBO files
 LOCAL_DTB := device/mediatek/common-kernel/
 

@@ -110,3 +110,19 @@ PRODUCT_PACKAGES += \
 	android.hardware.fastboot@1.0 \
 	android.hardware.fastboot@1.0-impl-mock \
 	fastbootd
+
+ifeq ($(TARGET_USE_AB_SLOT), true)
+# A/B Support
+PRODUCT_PACKAGES += \
+    update_engine \
+    update_verifier \
+    android.hardware.boot@1.1-impl \
+    android.hardware.boot@1.1-impl.recovery \
+    android.hardware.boot@1.1-service \
+    bootctrl.default
+
+PRODUCT_PACKAGES_DEBUG += \
+    bootctl \
+    update_engine_client
+
+endif # eq $(TARGET_USE_AB_SLOT), true

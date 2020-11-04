@@ -79,18 +79,6 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml
 
-# Optional features
-ifeq ($(TARGET_USE_AB_SLOT), true)
-# A/B Ota support
-PRODUCT_PACKAGES += \
-    update_engine \
-    update_verifier \
-    android.hardware.boot@1.0-service.mediatek \
-
-PRODUCT_PACKAGES_DEBUG += \
-    bootctl
-endif # eq $(TARGET_USE_AB_SLOT), true
-
 # Backlight/brightness
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.mediatek \

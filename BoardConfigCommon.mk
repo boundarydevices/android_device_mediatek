@@ -74,6 +74,11 @@ endif
 
 DEVICE_MANIFEST_FILE := device/mediatek/common/soc/manifest.xml
 
+# Boot control HAL for A/B
+ifeq ($(TARGET_USE_AB_SLOT), true)
+DEVICE_MANIFEST_FILE += device/mediatek/common/soc/manifest_ab.xml
+endif
+
 BOARD_VENDOR_MEDIATEK := true
 
 # Set location of DTB/DTBO files
@@ -91,6 +96,19 @@ ifeq ($(TARGET_AVB_ENABLE), true)
 BOARD_AVB_ENABLE := true
 else
 BOARD_AVB_ENABLE := false
+endif
+
+ifeq ($(TARGET_USE_AB_SLOT), true)
+AB_OTA_UPDATER := true
+AB_OTA_PARTITIONS := \
+        boot \
+        dtbo \
+        system \
+        vbmeta \
+        vendor
+
+BOARD_USES_RECOVERY_AS_BOOT := true
+TARGET_NO_RECOVERY := true
 endif
 
 # Super partition

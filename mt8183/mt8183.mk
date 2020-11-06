@@ -117,3 +117,17 @@ PRODUCT_PROPERTY_OVERRIDES += \
     Armnn.operandTypeTensorQuant8SymmPerformance.powerUsage=2 \
     Armnn.operandTypeTensorQuant8SymmPerChannelPerformance.execTime=2 \
     Armnn.operandTypeTensorQuant8SymmPerChannelPerformance.powerUsage=2
+
+# Camera
+PRODUCT_PACKAGES += \
+    android.hardware.camera.provider@2.4-impl \
+    android.hardware.camera.provider@2.4-service \
+    camera.libcamera \
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.hardware.camera=libcamera
+
+PRODUCT_COPY_FILES += \
+    device/mediatek/common/hal/camera/csi/init.csi.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.csi.rc \
+
+VENDOR_UEVENTD_FILES += device/mediatek/common/hal/camera/csi/ueventd.csi.rc

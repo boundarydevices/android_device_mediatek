@@ -57,3 +57,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
 $(call inherit-product-if-exists, vendor/mediatek/mt7668/mt7668.mk)
 # Touchscreen
 $(call inherit-product, vendor/ilitek/ili251x/ili251x.mk)
+# Camera
+$(call inherit-product, vendor/onsemi/ap1302/ap1302.mk)

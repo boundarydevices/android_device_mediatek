@@ -68,3 +68,5 @@ DTBO_FILES := \
 -include vendor/mediatek/mt7668/BoardConfig-mt7668.mk
 # Touchscreen
 include vendor/ilitek/ili251x/BoardConfig-ili251x.mk
+# Camera
+include vendor/onsemi/ap1302/BoardConfig-ap1302.mk

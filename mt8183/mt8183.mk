@@ -19,13 +19,34 @@ $(call inherit-product, device/mediatek/common/soc/device-common.mk)
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.mt8183.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.mt8183.rc \
 
+
+# Ramdisk fstab
 ifeq ($(TARGET_USE_AB_SLOT), true)
+ifeq ($(TARGET_AVB_ENABLE), true)
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/fstab.mt8183_ab:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8183
+    $(LOCAL_PATH)/fstab.mt8183.avb.ab:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.mt8183
 else
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/fstab.mt8183_noab:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8183
-endif # eq $(TARGET_USE_AB_SLOT), true
+    $(LOCAL_PATH)/fstab.mt8183.ab:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.mt8183
+endif
+else
+ifeq ($(TARGET_AVB_ENABLE), true)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/fstab.ramdisk.common.avb:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt8183
+else
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/fstab.ramdisk.common:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt8183
+endif
+endif
+
+# Vendor fstab
+ifeq ($(TARGET_USE_AB_SLOT), true)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/fstab.mt8183.ab:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8183
+else
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/fstab.mt8183:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8183
+endif
 
 # Flashing binaries
 PRODUCT_COPY_FILES += \
@@ -108,11 +129,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
     Armnn.operandTypeTensorQuant8SymmPerformance.powerUsage=2 \
     Armnn.operandTypeTensorQuant8SymmPerChannelPerformance.execTime=2 \
     Armnn.operandTypeTensorQuant8SymmPerChannelPerformance.powerUsage=2
-
-ifeq ($(TARGET_AVB_ENABLE), true)
-PRODUCT_COPY_FILES += \
-    device/mediatek/common/soc/fstab.ramdisk.common.avb:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt8183
-else
-PRODUCT_COPY_FILES += \
-    device/mediatek/common/soc/fstab.ramdisk.common:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt8183
-endif

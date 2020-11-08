@@ -31,18 +31,18 @@ DEVICE_MANIFEST_FILE += device/mediatek/common/soc/mt8183/manifest.xml
 # RecoveryOS
 TARGET_RELEASETOOLS_EXTENSIONS := device/mediatek/common/soc/
 
-# Recovery fstab
-ifeq ($(TARGET_AVB_ENABLE), true)
-TARGET_RECOVERY_FSTAB := device/mediatek/common/soc/mt8183/fstab.recovery_noab.mt8183.avb
-else
-TARGET_RECOVERY_FSTAB := device/mediatek/common/soc/mt8183/fstab.recovery_noab.mt8183
-endif
-
+# Recovery
 ifeq ($(TARGET_USE_AB_SLOT), true)
 ifeq ($(TARGET_AVB_ENABLE), true)
-TARGET_RECOVERY_FSTAB := device/mediatek/common/soc/mt8183/fstab.recovery_ab.mt8183.avb
+TARGET_RECOVERY_FSTAB := device/mediatek/common/soc/mt8183/fstab.mt8183.avb.ab
 else
-TARGET_RECOVERY_FSTAB := device/mediatek/common/soc/mt8183/fstab.recovery_ab.mt8183
+TARGET_RECOVERY_FSTAB := device/mediatek/common/soc/mt8183/fstab.mt8183.ab
+endif
+else
+ifeq ($(TARGET_AVB_ENABLE), true)
+TARGET_RECOVERY_FSTAB := device/mediatek/common/soc/mt8183/fstab.recovery.mt8183.avb
+else
+TARGET_RECOVERY_FSTAB := device/mediatek/common/soc/mt8183/fstab.recovery.mt8183
 endif
 endif # eq $(TARGET_USE_AB_SLOT), true
 

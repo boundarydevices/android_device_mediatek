@@ -118,6 +118,22 @@ Once you see *Waiting for DA mode*:
 3)  release the *volume up* button once you see that the image is
     getting flashed.
 
+### Flashing another serial number
+
+All the boards have the same serial number, so to get a custom serial
+number you need to flash the board:
+
+    $ ./flashimage.py  --update serial# <unique_serial_number>
+
+When reflashing again after setting your custom serial number you have
+to flash the board by skipping the env
+
+\$ ./flashimage.py --skip-env
+
+If you don't, it will erase the existing one and set the default serial
+number. Other option: you can flash with fastboot(don't use the
+flashimage.py tool)
+
 #### DSI support
 
 By default, only HDMI is supported on Pumpkin i300A. To enable the

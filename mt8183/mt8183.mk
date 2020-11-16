@@ -99,7 +99,7 @@ VENDOR_UEVENTD_FILES += \
     device/mediatek/common/binaries/egl/mali/ueventd.rc
 
 PRODUCT_PACKAGES += \
-    android.hardware.neuralnetworks@1.2-service-armnn
+    android.hardware.neuralnetworks@1.3-service-armnn
 
 PRODUCT_PROPERTY_OVERRIDES += \
     Armnn.operandTypeTensorQuant8AsymmPerformance.execTime=2 \

@@ -1,14 +1,18 @@
 
-android_ab_slot=
-androidboot_fastboot=0
-androidboot_recovery=0
+
 baudrate=921600
-bootcmd=run mmcboot
+bootcmd=run distro_bootcmd
+bootcmd= run mmcboot
 bootdelay=2
+dtbaddr=0x54000000
 dtb_index=0
-dtbo_index=1
-kerneladdr=0x4A000000
+dtboaddr=0x54C00000
+dtbo_index=0
+fastboot=fastboot usb 0
+fdt_addr_r=0x56000000
+fdt_size=0xC0000
+ hardware=mt8183
 loadaddr=0x50000000
-mmcboot=ab_select android_ab_slot mmc ${mmcdev}#misc;setenv bootargs  "${bootargs} androidboot.slot_suffix=_${android_ab_slot}";if bcb load ${mmcdev} misc; then if bcb test command = bootonce-bootloader ; then bcb clear command; bcb store;setenv androidboot_fastboot 1;fi;fi;if bcb load ${mmcdev} misc; then if bcb test command = boot-recovery; then bcb clear command; bcb store;aprop load ${mmcdev} userdata;if aprop test persist.sys.boot.reason = recovery; then aprop set persist.sys.boot.reason none; aprop store;fi;setenv androidboot_recovery 1;else if aprop load ${mmcdev} userdata; then if aprop test persist.sys.boot.reason = recovery; then aprop set persist.sys.boot.reason none; aprop store;setenv androidboot_recovery 1;fi;fi;fi;fi;if test "${androidboot_fastboot}" -eq 1; then echo Android: booting into fastboot;fastboot usb 0;fi;if test "${androidboot_recovery}" -eq 1; then echo Android: booting into recovery;part start mmc ${mmcdev} dtbo dtbo_part_start;part size mmc ${mmcdev} dtbo dtbo_part_size;mmc read ${loadaddr} ${dtbo_part_start} ${dtbo_part_size};dtimg select ${loadaddr} ${dtb_index};dtimg merge ${loadaddr} ${dtbo_index};part start mmc ${mmcdev} boot_${android_ab_slot} boot_part_start;part size mmc ${mmcdev} boot_${android_ab_slot} boot_part_size;mmc read ${loadaddr} ${boot_part_start} ${boot_part_size};bootm ${loadaddr};fi;echo Android: booting into system;part start mmc ${mmcdev} dtbo dtbo_part_start;part size mmc ${mmcdev} dtbo dtbo_part_size;mmc read ${loadaddr} ${dtbo_part_start} ${dtbo_part_size};dtimg select ${loadaddr} ${dtb_index};dtimg merge ${loadaddr} ${dtbo_index};part start mmc ${mmcdev} boot_${android_ab_slot} boot_part_start;part size mmc ${mmcdev} boot_${android_ab_slot} boot_part_size;mmc read ${loadaddr} ${boot_part_start} ${boot_part_size};part number-format dec;part number mmc ${mmcdev} system_${android_ab_slot} rootfs_partition;setenv bootargs   "${bootargs} root=/dev/mmcblk${mmcdev}p${rootfs_partition}";setenv bootargs  "${bootargs} skip_initramfs";bootm ${loadaddr};
+mmcboot=mmc dev ${mmcdev}; if ab_select current_slot mmc ${mmcdev}#misc; then setenv slot_suffix _${current_slot}; else echo could not get current ab slot; exit; fi; if bcb load 0 misc; then if bcb test command = bootonce-bootloader; then echo BCB: Bootloader boot...; bcb clear command; bcb store; run fastboot; exit; elif bcb test command = boot-recovery; then echo BCB: Recovery boot...; bcb clear command; bcb store; setenv apart boot${slot_suffix}; else echo BCB: Normal boot requested...; setenv apart boot${slot_suffix}; setenv bootargs_ab ${bootargs_ab} androidboot.force_normal_boot=1; fi; else echo Warning: BCB is corrupted or does not exist; echo Performing normal boot...; fi; setenv avb_verify "avb init 0; avb verify ${slot_suffix};"; if run avb_verify; then echo AVB verification OK.; setenv bootargs "$bootargs $avb_bootargs"; else setenv bootargs "$bootargs androidboot.verifiedbootstate=orange"; echo AVB verification failed.; fi; setenv bootargs_ab ${bootargs_ab} androidboot.slot_suffix=${slot_suffix}; echo A/B cmdline addition: ${bootargs_ab}; setenv bootargs ${bootargs} ${bootargs_ab}; part start mmc ${mmcdev} ${apart} boot_start;part size mmc ${mmcdev} ${apart} boot_size;if mmc read ${loadaddr} ${boot_start} ${boot_size}; then echo ${apart} paritition loaded into memory...; else echo Failed to load ${apart} partition...; reset; fi;echo Preparing FDT...; abootimg get dtb --index=$dtb_index dtb_start dtb_size; cp.b $dtb_start $fdt_addr_r $dtb_size; fdt addr $fdt_addr_r $fdt_size; part start mmc ${mmcdev} dtbo${slot_suffix} dtbo_start; part size mmc ${mmcdev} dtbo${slot_suffix} dtbo_size; mmc read ${dtboaddr} ${dtbo_start} ${dtbo_size}; echo "  Applying DTBOs..."; adtimg addr $dtboaddr; adtimg get dt --index=$dtbo_index dtbo_addr; fdt apply $dtbo_addr;setenv bootargs "$bootargs androidboot.dtbo_idx=$dtbo_index "; setenv bootargs "$bootargs androidboot.serialno=${serial#} "; setenv bootargs "$bootargs androidboot.hardware=${hardware} "; bootm ${loadaddr} ${loadaddr} ${fdt_addr_r}; 
 mmcdev=0
-rootfs_partition=0
+serial#=pumpkin-i500-12345

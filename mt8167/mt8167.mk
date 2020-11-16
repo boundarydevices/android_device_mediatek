@@ -17,8 +17,7 @@
 $(call inherit-product, device/mediatek/common/soc/device-common.mk)
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init.mt8167.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.mt8167.rc \
-    $(LOCAL_PATH)/fstab.mt8167:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8167
+    $(LOCAL_PATH)/init.mt8167.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.mt8167.rc
 
 # Flashing tool + prebuilt binaries
 PRODUCT_COPY_FILES += \
@@ -102,10 +101,30 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml
 
+# Ramdisk fstab
+ifeq ($(TARGET_USE_AB_SLOT), true)
 ifeq ($(TARGET_AVB_ENABLE), true)
 PRODUCT_COPY_FILES += \
-    device/mediatek/common/soc/fstab.mt8167.avb:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt8167
+    $(LOCAL_PATH)/fstab.mt8167.avb.ab:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.mt8167
 else
 PRODUCT_COPY_FILES += \
-    device/mediatek/common/soc/fstab.mt8167:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt8167
+    $(LOCAL_PATH)/fstab.mt8167.ab:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.mt8167
+endif
+else
+ifeq ($(TARGET_AVB_ENABLE), true)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/fstab.mt8167.avb:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt8167
+else
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/fstab.mt8167:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt8167
+endif
+endif
+
+# Vendor fstab
+ifeq ($(TARGET_USE_AB_SLOT), true)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/fstab.mt8167.ab:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8167
+else
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/fstab.mt8167:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8167
 endif

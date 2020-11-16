@@ -28,8 +28,16 @@ BOARD_MKBOOTIMG_ARGS := \
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/mediatek/common/soc/mt8167/bluetooth
 
 # Recovery
+ifeq ($(TARGET_USE_AB_SLOT), true)
+ifeq ($(TARGET_AVB_ENABLE), true)
+TARGET_RECOVERY_FSTAB := device/mediatek/common/soc/mt8167/fstab.mt8167.avb.ab
+else
+TARGET_RECOVERY_FSTAB := device/mediatek/common/soc/mt8167/fstab.mt8167.ab
+endif
+else
 ifeq ($(TARGET_AVB_ENABLE), true)
 TARGET_RECOVERY_FSTAB := device/mediatek/common/soc/mt8167/fstab.recovery.mt8167.avb
 else
 TARGET_RECOVERY_FSTAB := device/mediatek/common/soc/mt8167/fstab.recovery.mt8167
+endif
 endif

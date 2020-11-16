@@ -23,7 +23,8 @@ BOARD_KERNEL_CMDLINE := \
     printk.devkmsg=on \
     init=/init firmware_class.path=/vendor/firmware \
     androidboot.selinux=permissive \
-    androidboot.boot_devices=soc/11230000.mmc
+    androidboot.boot_devices=soc/11230000.mmc \
+    mem_sleep_default=s2idle
 
 # FS configuration
 ifeq ($(TARGET_USE_AB_SLOT), true)

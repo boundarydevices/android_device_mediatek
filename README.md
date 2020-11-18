@@ -49,16 +49,23 @@ on `pyyaml`.
     $ cd ~/src/mediatek/
     $ source build/envsetup.sh
     $ lunch aosp_quartz-userdebug
-    $ make -j40
+    $ m -j40
+
+We also support the following build flags to enable optional features:
+
+-   `TARGET_AVB_ENABLE=true` : Enable
+    [AVB](https://source.android.com/security/verifiedboot/avb)
+-   `TARGET_USE_AB_SLOT=true` : Enable [AB
+    partitions](https://source.android.com/devices/tech/ota/ab)
 
 ### Building a specific image
 
-To rebuild a specific image, run `make <name>image`.
+To rebuild a specific image, run `m <name>image`.
 
 Some examples:
 
-    $ make vendorimage
-    $ make bootimage
+    $ m vendorimage
+    $ m bootimage
 
 ### Building the Linux kernel
 

@@ -123,6 +123,7 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service-mtk \
     camera.libcamera \
+    cam \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.camera=libcamera

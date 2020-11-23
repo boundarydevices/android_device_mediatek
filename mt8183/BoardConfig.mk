@@ -24,7 +24,8 @@ BOARD_MKBOOTIMG_ARGS := \
   --header_version 2
 
 BOARD_SEPOLICY_DIRS += \
-        device/mediatek/common/soc/mt8183/sepolicy
+        device/mediatek/common/soc/mt8183/sepolicy \
+        device/mediatek/common/hal/camera/csi/sepolicy
 
 DEVICE_MANIFEST_FILE += device/mediatek/common/soc/mt8183/manifest.xml
 

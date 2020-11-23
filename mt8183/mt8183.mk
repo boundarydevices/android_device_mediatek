@@ -121,7 +121,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
-    android.hardware.camera.provider@2.4-service \
+    android.hardware.camera.provider@2.4-service-mtk \
     camera.libcamera \
 
 PRODUCT_PROPERTY_OVERRIDES += \

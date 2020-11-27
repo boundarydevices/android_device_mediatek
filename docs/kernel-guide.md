@@ -1,7 +1,6 @@
-Android Linux kernel development guide
-======================================
+# Android Linux kernel development guide
 
-Android is built around a Linux kernel. By default, Android's `boot.img`
+Android is built around a Linux kernel. By default, Android’s `boot.img`
 is build from a binary kernel Image located in:
 
     ~/src/mediatek/device/mediatek/common-kernel/
@@ -9,8 +8,7 @@ is build from a binary kernel Image located in:
 This guide describes how to rebuild and customize a Linux kernel for
 Android.
 
-Fetching the kernel code
-------------------------
+## Fetching the kernel code
 
 Fetch the code using `repo`:
 
@@ -18,8 +16,7 @@ Fetch the code using `repo`:
     $ repo init -u https://gitlab.com/baylibre/aosp/mediatek/manifest.git -m kernel.xml -b mtk-android-11
     $ repo sync
 
-Building the kernel
--------------------
+## Building the kernel
 
 In this section, we will assume that we already have an Android source
 tree which has been fully build and is located in:
@@ -51,16 +48,14 @@ The usual (`make menuconfig`) is done via `build.sh`:
     $ BUILD_CONFIG=src/build.config.mtk.menuconfig \
       build/build.sh
 
-Rebuilding all involved Android images
---------------------------------------
+## Rebuilding all involved Android images
 
 To test the kernel changes, we have to re-generate the relevant Android
 images:
 
--   `boot.img`: contains the kernel binary and all the built-in modules
--   `vendor.img`: contains the kernel modules
--   `dtbo.img`: contains both the main device tree and the device tree
-    overlays
+  - `boot.img`: contains the kernel binary and the main device tree
+  - `vendor.img`: contains the kernel modules
+  - `dtbo.img`: contains the device tree overlays
 
 To rebuild the Android images, do:
 
@@ -69,14 +64,12 @@ To rebuild the Android images, do:
     $ lunch aosp_onyx-userdebug
     $ make bootimage vendorimage out/target/product/onyx/dtbo.img vbmetaimage
 
-Flashing the kernel
--------------------
+## Flashing the kernel
 
     $ cd ~/src/mediatek/out/target/product/onyx/
     $ ./flashimage.py --boot
 
-Building the kernel without and Android environment
----------------------------------------------------
+## Building the kernel without and Android environment
 
 In this section, we will cover how to rebuild an Android kernel without
 needing the Android source tree. This is done by:

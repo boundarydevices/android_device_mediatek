@@ -1,15 +1,13 @@
-MT7668 E-fuse provisioning
-==========================
+# MT7668 E-fuse provisioning
 
 MT7668 has a dynamic, re-programmable memory on silicon named E-fuse. We
 can use the E-fuse to configure a persistent (surviving board re-flash)
 MAC address for WiFi and Bluetooth.
 
-For more details of the E-Fuse content, refer to MediaTek's document
+For more details of the E-Fuse content, refer to MediaTek’s document
 named `E-FUSE_Content_Introduction_V11.pdf`
 
-WiFi MAC address
-----------------
+## WiFi MAC address
 
 To provision the WiFi MAC address:
 
@@ -28,22 +26,24 @@ To provision the WiFi MAC address:
 
 Then, to verify:
 
--   reboot the device
--   dump the mac address from Android:
+  - reboot the device
 
-          # ifconfig wlan0
-            wlan0     Link encap:Ethernet  HWaddr 00:11:66:66:66:aa  Driver wlan
-                      UP BROADCAST MULTICAST  MTU:1500  Metric:1
-                      RX packets:0 errors:0 dropped:0 overruns:0 frame:0
-                      TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
-                      collisions:0 txqueuelen:1000
-                      RX bytes:0 TX bytes:0
+  - dump the mac address from Android:
 
-Note: the WiFi driver **won't** configure any "bad" addresses. Always
+    ```
+      # ifconfig wlan0
+        wlan0     Link encap:Ethernet  HWaddr 00:11:66:66:66:aa  Driver wlan
+                  UP BROADCAST MULTICAST  MTU:1500  Metric:1
+                  RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+                  TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+                  collisions:0 txqueuelen:1000
+                  RX bytes:0 TX bytes:0
+    ```
+
+Note: the WiFi driver **won’t** configure any “bad” addresses. Always
 pick a valid mac address when provisioning.
 
-Bluetooth BDaddress
--------------------
+## Bluetooth BDaddress
 
 To configure the BDaddr:
 
@@ -61,19 +61,21 @@ Will display:
 
 Then, to verify:
 
--   reboot the device
--   dump the bdaddr from Android:
+  - reboot the device
 
-          # dumpsys bluetooth_manager | head -10
-          Bluetooth Status
-            enabled: true
-            state: ON
-            address: 00:0C:E7:55:FF:12
-            name: <omitted>
-            time since enabled: 00:20:07.412
+  - dump the bdaddr from Android:
 
-Reading back from E-fuse directly
----------------------------------
+    ```
+      # dumpsys bluetooth_manager | head -10
+      Bluetooth Status
+        enabled: true
+        state: ON
+        address: 00:0C:E7:55:FF:12
+        name: <omitted>
+        time since enabled: 00:20:07.412
+    ```
+
+## Reading back from E-fuse directly
 
 We can also read-back the address from E-Fuse without relying on the
 android tools, by using `wifitest -E`:

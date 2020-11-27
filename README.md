@@ -1,10 +1,8 @@
-Pumpkin i500 {#board_name}
-============
+# Pumpkin i500
 
 quartz is the device code name for MT8385 on Pumpkin i500 board.
 
-Fetching the code
------------------
+## Fetching the code
 
 Fetch the code using `repo`:
 
@@ -12,7 +10,7 @@ Fetch the code using `repo`:
     $ repo init -u https://gitlab.com/baylibre/aosp/mediatek/manifest.git -b mtk-android-11
     $ repo sync
 
-For more information about `repo`, visit [Android's official
+For more information about `repo`, visit [Android’s official
 documentation](https://source.android.com/setup/build/downloading)
 
 Note: if `repo` keeps prompting for your ssh password, add the following
@@ -21,15 +19,14 @@ to your `~/.gitconfig`:
     [url "git@gitlab.com:"]
     insteadOf = https://gitlab.com/
 
-Building
---------
+## Building
 
-The preferred build environment is identical to Android's official
-recommendations. Refer to [Android's Establishing a Build
+The preferred build environment is identical to Android’s official
+recommendations. Refer to [Android’s Establishing a Build
 Environment](https://source.android.com/setup/build/initializing) guide.
 
 Moreover, ensure that your system has `python 2.7` installed as
-documented in [Android's Build
+documented in [Android’s Build
 requirements](https://source.android.com/setup/build/requirements).
 
 For more build system related topics, see
@@ -53,9 +50,9 @@ on `pyyaml`.
 
 We also support the following build flags to enable optional features:
 
--   `TARGET_AVB_ENABLE=true` : Enable
+  - `TARGET_AVB_ENABLE=true` : Enable
     [AVB](https://source.android.com/security/verifiedboot/avb)
--   `TARGET_USE_AB_SLOT=true` : Enable [AB
+  - `TARGET_USE_AB_SLOT=true` : Enable [AB
     partitions](https://source.android.com/devices/tech/ota/ab)
 
 ### Building a specific image
@@ -69,7 +66,7 @@ Some examples:
 
 ### Building the Linux kernel
 
-By default, Android's `boot.img` is build from a binary kernel Image
+By default, Android’s `boot.img` is build from a binary kernel Image
 located in:
 
     ~/src/mediatek/device/mediatek/common-kernel/
@@ -77,8 +74,7 @@ located in:
 To re-build the kernel, refer to
 [kernel-guide.md](./docs/kernel-guide.md)
 
-Flashing
---------
+## Flashing
 
 ### Prerequisites
 
@@ -91,7 +87,8 @@ and some python modules which can be installed with:
 
 In order for your host machine to be able to talk to the board through
 USB without needing root privileges, you need to create a udev rules
-that will grant the *plugdev* group access to your device:
+that will grant the *plugdev* group access to your
+    device:
 
     $ echo 'SUBSYSTEM=="usb", ATTR{idVendor}=="0e8d", ATTR{idProduct}=="201c", MODE="0660", GROUP="plugdev"' | sudo tee -a /etc/udev/rules.d/51-android.rules
     $ sudo udevadm control --reload-rules
@@ -104,8 +101,9 @@ If your user is not already member of the *plugdev* group:
 This last command requires you to log out and log back in to your
 account to be in effect.
 
-**Warning:** On Fedora machine, *plugdev* group doesn't exist, you just
-need to do:
+**Warning:** On Fedora machine, *plugdev* group doesn’t exist, you just
+need to
+    do:
 
     $ echo 'SUBSYSTEM=="usb", ATTR{idVendor}=="0e8d", ATTR{idProduct}=="201c", MODE="0660" | sudo tee -a /etc/udev/rules.d/51-android.rules
     $ sudo udevadm control --reload-rules
@@ -135,16 +133,16 @@ number you need to flash the board:
 When reflashing again after setting your custom serial number you have
 to flash the board by skipping the env
 
-\$ ./flashimage.py --skip-env
+$ ./flashimage.py –skip-env
 
-If you don't, it will erase the existing one and set the default serial
-number. Other option: you can flash with fastboot(don't use the
+If you don’t, it will erase the existing one and set the default serial
+number. Other option: you can flash with fastboot(don’t use the
 flashimage.py tool)
 
 #### DSI support
 
-By default, only HDMI is supported on Pumpkin i500. To enable the
-URT UMO-9465MD-T DSI screen instead, flash as following:
+By default, only HDMI is supported on Pumpkin i500. To enable the URT
+UMO-9465MD-T DSI screen instead, flash as following:
 
     $ cd ~/src/mediatek/out/target/product/quartz/
     $ ./flashimage.py --update dtbo_index 1
@@ -160,9 +158,9 @@ To flash just one partition, you can run the following command:
 
 `[PARTITION]` should be replaced with one of the following:
 
--   *bootloaders*: for flashing the bootloaders (such as u-boot)
--   *boot*: for flashing the Linux Kernel (`boot.img`).
--   *imageXXX*: for flashing an android image named `imageXXX.img`
+  - *bootloaders*: for flashing the bootloaders (such as u-boot)
+  - *boot*: for flashing the Linux Kernel (`boot.img`).
+  - *imageXXX*: for flashing an android image named `imageXXX.img`
 
 For example, the commands to flash the bootloaders are:
 
@@ -180,18 +178,17 @@ The commands to flash the kernel are:
     $ fastboot flash vendor vendor.img
     $ fastboot continue
 
-Tips
-----
+## Tips
 
 ### turn off the screen
 
-After the device boots, the screen will stay on all the time. This won't
+After the device boots, the screen will stay on all the time. This won’t
 let the kernel to enter its default suspend state.
 
 To avoid that, you can tell the power manager to disable holding the
 screen on:
 
-``` {.sh}
+``` sh
 svc power stayon false
 ```
 
@@ -200,23 +197,22 @@ svc power stayon false
 If you want to keep the scree on all the time you can tell the power
 manager to stay awake:
 
-``` {.sh}
+``` sh
 svc power stayon true
 ```
 
 Alternatively, you can hold a wakelock via the commandline:
 
-``` {.sh}
+``` sh
 echo lock_me > /sys/power/wake_lock
 echo lock_me > /sys/power/wake_unlock
 ```
 
-More documentation
-------------------
+## More documentation
 
 The `docs` folder of this project contains more documentation, such as:
 
--   [kernel-guide.md](./docs/kernel-guide.md)
--   [uboot-dev.md](./docs/uboot-dev.md)
--   [mt7668-efuse.md](./docs/mt7668-efuse.md)
--   [kernel-src-org.md](./docs/kernel-src-org.md)
+  - [kernel-guide.md](./docs/kernel-guide.md)
+  - [uboot-dev.md](./docs/uboot-dev.md)
+  - [mt7668-efuse.md](./docs/mt7668-efuse.md)
+  - [kernel-src-org.md](./docs/kernel-src-org.md)

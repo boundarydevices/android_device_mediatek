@@ -1,51 +1,49 @@
-Release checklist
-=================
+# Release checklist
 
 Tests we need to run before releasing to a customer.
 
-Fetching/building release
--------------------------
+## Fetching/building release
 
-NOTE: all instructions should come from the device's README available
+NOTE: all instructions should come from the device’s README available
 at:
 
-``` {.sh}
+``` sh
 ~/src/mediatek/device/mediatek/quartz/README.md
 ```
 
--   \[ \] repo init
--   \[ \] repo sync
--   \[ \] lunch
--   \[ \] can build full Android image for lunch target
--   \[ \] can flash from `out` folder for lunch target
--   \[ \] hardware is flashed and boots to home screen
+  - \[ \] repo init
+  - \[ \] repo sync
+  - \[ \] lunch
+  - \[ \] can build full Android image for lunch target
+  - \[ \] can flash from `out` folder for lunch target
+  - \[ \] hardware is flashed and boots to home screen
 
-Kernel rebuilding
------------------
+## Kernel rebuilding
 
-NOTE: all instructions should come from the device's README available
+NOTE: all instructions should come from the device’s README available
 at:
 
-``` {.sh}
+``` sh
 ~/src/mediatek/device/mediatek/quartz/docs/kernel-guide.md
 ```
 
--   \[ \] we can clean (full) rebuild the kernel
--   \[ \] we can incrementally rebuild the kernel
--   \[ \] we can re-generate `dtbo.img`
--   \[ \] we can edit the kernel `menuconfig` via script / helper
--   \[ \] we can flash the new kernel(`{boot,dtbo.vendor}.img`)
--   \[ \] hardware is flashed and boots to home screen
+  - \[ \] we can clean (full) rebuild the kernel
+  - \[ \] we can incrementally rebuild the kernel
+  - \[ \] we can re-generate `dtbo.img`
+  - \[ \] we can edit the kernel `menuconfig` via script / helper
+  - \[ \] we can flash the new kernel(`{boot,dtbo.vendor}.img`)
+  - \[ \] hardware is flashed and boots to home screen
 
-Connectivity tests
-------------------
+## Connectivity tests
 
 ### WiFi
 
--   \[ \] Wifi can scan for access points
--   \[ \] Wifi regulation is supported (`iw set reg`/`iw get reg`)
+  - \[ \] Wifi can scan for access points
+  - \[ \] Wifi regulation is supported (`iw set reg`/`iw get reg`)
 
-``` {.sh}
+<!-- end list -->
+
+``` sh
 # iw reg get
 global
 country 00: DFS-UNSET
@@ -71,55 +69,58 @@ country FR: DFS-ETSI
 
 ### Bluetooth
 
--   \[ \] Bluetooth can scan for peripherals
+  - \[ \] Bluetooth can scan for peripherals
 
-Display / Touch tests
----------------------
+## Display / Touch tests
 
 ### Display
 
--   \[ \] Brightness control
+  - \[ \] Brightness control
 
-``` {.sh}
+<!-- end list -->
+
+``` sh
 # input keyevent 220
 brightness decreases
 ```
 
-``` {.sh}
+``` sh
 # input keyevent 221
 brightness increases
 ```
 
--   \[ \] Splashscreen (in bootloader) support
+  - \[ \] Splashscreen (in bootloader) support
 
 ### Touch
 
--   \[ \] taps are detected
+  - \[ \] taps are detected
 
-``` {.sh}
+<!-- end list -->
+
+``` sh
 # getevent -lp
 we see a touch input
 ```
 
-``` {.sh}
+``` sh
 # getevent -l # wait for touch
 touch events are reported
 ```
 
--   \[ \] touch is accurate
+  - \[ \] touch is accurate
 
-Camera tests
-------------
+## Camera tests
 
--   \[ \] Camera can be plugged and is detected by Android
--   \[ \] We can take a picture with camera
+  - \[ \] Camera can be plugged and is detected by Android
+  - \[ \] We can take a picture with camera
 
-Neural network tests
---------------------
+## Neural network tests
 
--   \[ \] Run NNAPI native functional test
+  - \[ \] Run NNAPI native functional test
 
-``` {.sh}
+<!-- end list -->
+
+``` sh
 cd ~/src/mediatek
 source build/envsetup.sh
 lunch aosp_quartz-userdebug
@@ -132,25 +133,24 @@ adb shell
 # NeuralNetworksTest_static
 ```
 
-OTA tests
----------
+## OTA tests
 
 ### Package generation
 
--   \[ \] It is possible to generate an OTA package in the build See:
+  - \[ \] It is possible to generate an OTA package in the build See:
     https://source.android.com/devices/tech/ota/tools
 
 ### Reboot flow
 
--   \[ \] `adb reboot bootloader` device waits in fastboot mode and can
+  - \[ \] `adb reboot bootloader` device waits in fastboot mode and can
     be listed with `fastboot devices`
--   \[ \] `adb reboot recovery` device reboots into recoveryOS, recovery
+  - \[ \] `adb reboot recovery` device reboots into recoveryOS, recovery
     menu is visible
--   \[ \] `adb reboot sideload` device reboots into recoveryOS, waiting
+  - \[ \] `adb reboot sideload` device reboots into recoveryOS, waiting
     for OTA.zip
--   \[ \] `adb reboot sideload-auto-reboot` device reboots into
+  - \[ \] `adb reboot sideload-auto-reboot` device reboots into
     recoveryOS, waiting for OTA.zip
 
 ### package installation
 
--   \[ \] `adb sideload <ota.zip>` applies successfully
+  - \[ \] `adb sideload <ota.zip>` applies successfully

@@ -132,3 +132,22 @@ endif
 BOARD_USES_TINYHAL_AUDIO := true
 TINYALSA_NO_ADD_NEW_CTRLS := true
 TINYALSA_NO_CTL_GET_ID := true
+
+# WARNING: do *NOT* edit BOARD_USERDATAIMAGE_PARTITION_SIZE
+# the userdata partition will automatically take the remaining eMMC space
+# since it's the last partition in the partitioning table, userdata
+# partition must align 64KiB to comply with the flasher (LK) specifications
+MTK_PRODUCT_OUT := $(OUT_DIR)/target/product/$(PRODUCT_MODEL)
+BOARD_USERDATAIMAGE_PARTITION_SIZE = $(shell \
+	mkdir -p $(MTK_PRODUCT_OUT); \
+	python3  device/mediatek/common/mbr/gen_partition_xml.py \
+	$(MTK_PARTITIONS_YAML) $(MTK_PRODUCT_OUT) \
+	--cache $(BOARD_CACHEIMAGE_PARTITION_SIZE) \
+	--boot $(BOARD_BOOTIMAGE_PARTITION_SIZE) \
+	--recovery $(BOARD_RECOVERYIMAGE_PARTITION_SIZE) \
+	--product $(BOARD_PRODUCTIMAGE_PARTITION_SIZE) \
+	--oem $(BOARD_OEMIMAGE_PARTITION_SIZE) \
+	--dtbo $(BOARD_DTBOIMG_PARTITION_SIZE) \
+	--super $(BOARD_SUPER_PARTITION_SIZE); \
+	awk '/userdata:/ || /userdata_a:/ {flag=1} flag && /size:/{print $$NF;flag="";exit}' \
+	${MTK_PRODUCT_OUT}/partitions.yaml)

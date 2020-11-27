@@ -21,27 +21,24 @@ to your `~/.gitconfig`:
 
 ## Building
 
-The preferred build environment is identical to Android’s official
-recommendations. Refer to [Android’s Establishing a Build
-Environment](https://source.android.com/setup/build/initializing) guide.
+### Setup
 
-Moreover, ensure that your system has `python 2.7` installed as
-documented in [Android’s Build
-requirements](https://source.android.com/setup/build/requirements).
+Refer to:
 
-For more build system related topics, see
-[build\_system.md](./docs/build_system.md)
+  - [Android’s Build
+    requirements](https://source.android.com/setup/build/requirements).
+  - [Android’s Establishing a Build
+    Environment](https://source.android.com/setup/build/initializing)
+    guide.
 
-### Additional dependencies
-
-The partitioning tools, which are needed during the Android build depend
-on `pyyaml`.
-
-`pyyaml` can be installed with:
+Then, install `pyyaml` for python3:
 
     $ pip3 install --user pyyaml
 
-### Building everything
+`pyyaml` is used by our partitioning tools, which are called at build
+time.
+
+### Building Android
 
     $ cd ~/src/mediatek/
     $ source build/envsetup.sh
@@ -55,19 +52,9 @@ We also support the following build flags to enable optional features:
   - `TARGET_USE_AB_SLOT=true` : Enable [AB
     partitions](https://source.android.com/devices/tech/ota/ab)
 
-### Building a specific image
+### Rebuilding the Linux kernel
 
-To rebuild a specific image, run `m <name>image`.
-
-Some examples:
-
-    $ m vendorimage
-    $ m bootimage
-
-### Building the Linux kernel
-
-By default, Android’s `boot.img` is build from a binary kernel Image
-located in:
+By default, Android’s kernel is build from a prebuilt binary located in:
 
     ~/src/mediatek/device/mediatek/common-kernel/
 
@@ -123,29 +110,22 @@ Once you see *Waiting for DA mode*:
 3)  release the *volume up* button once you see that the image is
     getting flashed.
 
-### Flashing another serial number
+#### Device-Tree Overlays (DTBO)
 
-All the boards have the same serial number, so to get a custom serial
-number you need to flash the board:
+The following Device-Tree Overlays are supported:
 
-    $ ./flashimage.py  --update serial# <unique_serial_number>
+| dtbo\_index | description                                       |
+| ----------: | :------------------------------------------------ |
+|           0 | HDMI only                                         |
+|           1 | UMO-9465MD-T DSI panel                            |
+|           2 | Onsemi AR0330CS camera sensor                     |
+|           3 | Onsemi AR0330CS camera sensor + Onsemi AP1302 ISP |
 
-When reflashing again after setting your custom serial number you have
-to flash the board by skipping the env
-
-$ ./flashimage.py –skip-env
-
-If you don’t, it will erase the existing one and set the default serial
-number. Other option: you can flash with fastboot(don’t use the
-flashimage.py tool)
-
-#### DSI support
-
-By default, only HDMI is supported on Pumpkin i500. To enable the URT
-UMO-9465MD-T DSI screen instead, flash as following:
+To enable one of the above DTBOs, modify the `dtbo_index` at flashing
+time by passing the `--update dtbo_index <dtbo_index>` argument:
 
     $ cd ~/src/mediatek/out/target/product/quartz/
-    $ ./flashimage.py --update dtbo_index 1
+    $ ./flashimage.py --update dtbo_index <dtbo_index>
 
 ### Flashing only one partition
 
@@ -172,11 +152,27 @@ For example, the commands to flash the bootloaders are:
 The commands to flash the kernel are:
 
     $ cd ~/src/mediatek/out/target/product/quartz/
-    $ adb reboot bootloader
+    $ adb reboot fastboot
     $ fastboot flash boot boot.img
     $ fastboot flash dtbo dtbo.img
     $ fastboot flash vendor vendor.img
     $ fastboot continue
+
+### Flashing another serial number
+
+All the boards have the same serial number, so to get a custom serial
+number you need to flash the board:
+
+    $ ./flashimage.py --update serial# <unique_serial_number>
+
+When reflashing again after setting your custom serial number you have
+to flash the board by skipping the env
+
+    $ ./flashimage.py --skip-env
+
+If you don’t, it will erase the existing one and set the default serial
+number. Other option: you can flash with fastboot (by doing `adb reboot
+bootloader`)
 
 ## Tips
 

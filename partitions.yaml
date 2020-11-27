@@ -23,9 +23,9 @@ partitions:
   cache:
     size: 0
     file: cache.img
-  userdata:
-    size: 0
-    file: userdata.img
   super:
     size: 0
     file: super.img
+  userdata:
+    size: 0
+    file: userdata.img

@@ -127,6 +127,15 @@ time by passing the `--update dtbo_index <dtbo_index>` argument:
     $ cd ~/src/mediatek/out/target/product/quartz/
     $ ./flashimage.py --update dtbo_index <dtbo_index>
 
+To enable multiple DTBOs, pass a space-separated index list. For
+example, to enable both `UMO-9465MD-T DSI panel` (1) and `Onsemi
+AR0330CS camera sensor + Onsemi AP1302 ISP` (3), run:
+
+    $ ./flashimage.py --update dtbo_index '1 3'
+
+The overlays are applied in the order documented in [Validating the DTBO
+partition](https://source.android.com/devices/architecture/dto/compile#validating-the-dtbo-partition)
+
 ### Flashing only one partition
 
 To flash just one partition, you can run the following command:

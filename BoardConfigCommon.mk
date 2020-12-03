@@ -137,7 +137,7 @@ TINYALSA_NO_CTL_GET_ID := true
 # the userdata partition will automatically take the remaining eMMC space
 # since it's the last partition in the partitioning table, userdata
 # partition must align 64KiB to comply with the flasher (LK) specifications
-MTK_PRODUCT_OUT := $(OUT_DIR)/target/product/$(PRODUCT_MODEL)
+MTK_PRODUCT_OUT := $(OUT_DIR)/target/product/$(PRODUCT_DEVICE)
 BOARD_USERDATAIMAGE_PARTITION_SIZE = $(shell \
 	mkdir -p $(MTK_PRODUCT_OUT); \
 	python3  device/mediatek/common/mbr/gen_partition_xml.py \

@@ -1,0 +1,9 @@
+allow netd kernel:system module_request;
+allow netd self:capability sys_module;
+allow netd self:filesystem associate;
+allow netd netd:capability { setgid setuid };
+allow netd netd:packet_socket create_socket_perms_no_ioctl;
+dontaudit netd sysfs:file write;
+
+allowxperm netd self: { unix_stream_socket } ioctl priv_sock_ioctls;
+binder_use(netd);

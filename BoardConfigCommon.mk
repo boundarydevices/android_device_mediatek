@@ -65,11 +65,11 @@ $(error device/mediatek/common/soc/BoardConfigCommon.mk should be included first
 endif
 ifeq ($(PLATFORM_VERSION), 9)
 BOARD_SEPOLICY_DIRS := \
-        device/mediatek/common/sepolicy/28.0/vendor
+        device/mediatek/common/soc/sepolicy/28.0/vendor
 else
 # assume Android 10
 BOARD_SEPOLICY_DIRS := \
-        device/mediatek/common/sepolicy/29.0/vendor
+        device/mediatek/common/soc/sepolicy/29.0/vendor
 endif
 
 DEVICE_MANIFEST_FILE := device/mediatek/common/soc/manifest.xml

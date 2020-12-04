@@ -1,0 +1,26 @@
+typeattribute platform_app system_writes_vendor_properties_violators;
+typeattribute platform_app data_between_core_and_vendor_violators;
+typeattribute platform_app system_writes_vendor_properties_violators;
+
+get_prop(platform_app, public_vendor_default_prop)
+get_prop(platform_app, vendor_default_prop)
+get_prop(platform_app, traced_enabled_prop)
+get_prop(platform_app, safemode_prop)
+get_prop(platform_app, exported_overlay_prop)
+get_prop(platform_app, persistent_properties_ready_prop)
+get_prop(platform_app, dumpstate_options_prop)
+get_prop(platform_app, device_logging_prop)
+get_prop(platform_app, ctl_stop_prop)
+get_prop(platform_app, device_logging_prop)
+get_prop(platform_app, overlay_prop)
+get_prop(platform_app, ctl_mdnsd_prop)
+get_prop(platform_app, ctl_interface_stop_prop)
+set_prop(platform_app, public_vendor_default_prop)
+
+allow platform_app vendor_file:file r_file_perms;
+allow platform_app system_app_data_file:file {read write};
+
+allow platform_app platform_app:icmp_socket create;
+dontaudit platform_app property_type:file *;
+
+allow platform_app platform_app:icmp_socket create_socket_perms;

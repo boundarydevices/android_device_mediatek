@@ -1,0 +1,4 @@
+ro.config.wallpaper_component           u:object_r:public_vendor_default_prop:s0
+wifi.supplicant_scan_interval           u:object_r:public_vendor_default_prop:s0
+ArmNN.quantized8Performance.execTime    u:object_r:public_vendor_default_prop:s0
+ArmNN.quantized8Performance.powerUsage  u:object_r:public_vendor_default_prop:s0

@@ -6,3 +6,6 @@
 
 # custom lights HAL (backlight)
 /vendor/bin/hw/android\.hardware\.light@2\.0-service\.mediatek u:object_r:hal_light_default_exec:s0
+
+# graphics
+/dev/dri/card[0-9]*                                 u:object_r:graphics_device:s0

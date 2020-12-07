@@ -61,6 +61,9 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@4.0-impl \
     android.hardware.audio.effect@4.0-impl
 
+PRODUCT_COPY_FILES += \
+    frameworks/av/media/libeffects/data/audio_effects.xml:vendor/etc/audio_effects.xml
+
 # DRM (Digital Rights Management)
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.1-service.clearkey \

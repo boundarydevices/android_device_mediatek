@@ -94,7 +94,7 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml
 
 # Add support for common utils: vendor ueventd.rc and (optional) debug tools
-$(call inherit-product, device/mediatek/common/utils/utils.mk)
+$(call inherit-product, device/mediatek/common/soc/utils/utils.mk)
 
 # ion permissions
 VENDOR_UEVENTD_FILES += device/mediatek/common/binaries/egl/ueventd.rc

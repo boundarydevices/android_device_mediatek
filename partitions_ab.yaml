@@ -6,10 +6,6 @@ partitions:
   bootloaders:
     start: 512K
     size: 2M
-  vbmeta:
-    size: 64K
-    file: vbmeta.img
-    ab: true
   misc:
     size: 512K
   boot:

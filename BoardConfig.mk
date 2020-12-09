@@ -48,9 +48,17 @@ BOARD_SEPOLICY_DIRS += \
     device/mediatek/onyx/sepolicy
 
 ifeq ($(TARGET_USE_AB_SLOT), true)
+ifeq ($(TARGET_AVB_ENABLE), true)
+MTK_PARTITIONS_YAML := device/mediatek/onyx/partitions.avb_ab.yaml
+else
 MTK_PARTITIONS_YAML := device/mediatek/onyx/partitions_ab.yaml
+endif
+else # TARGET_USE_AB_SLOT == false
+ifeq ($(TARGET_AVB_ENABLE), true)
+MTK_PARTITIONS_YAML := device/mediatek/onyx/partitions.avb.yaml
 else
 MTK_PARTITIONS_YAML := device/mediatek/onyx/partitions.yaml
+endif
 endif
 
 # Please keep this list fixed: add new files in the end of the list

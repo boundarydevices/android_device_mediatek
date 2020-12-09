@@ -5,9 +5,6 @@ partitions:
   bootloaders:
     start: 512K
     size: 2M
-  vbmeta:
-    size: 64K
-    file: vbmeta.img
   splashscreen:
     size: 10M
     file: splashscreen.raw

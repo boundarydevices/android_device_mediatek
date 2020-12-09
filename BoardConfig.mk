@@ -46,9 +46,17 @@ BOARD_SEPOLICY_DIRS += \
     device/mediatek/quartz/sepolicy
 
 ifeq ($(TARGET_USE_AB_SLOT), true)
+ifeq ($(TARGET_AVB_ENABLE), true)
+MTK_PARTITIONS_YAML := device/mediatek/quartz/partitions.avb_ab.yaml
+else
 MTK_PARTITIONS_YAML := device/mediatek/quartz/partitions_ab.yaml
+endif
+else # TARGET_USE_AB_SLOT == false
+ifeq ($(TARGET_AVB_ENABLE), true)
+MTK_PARTITIONS_YAML := device/mediatek/quartz/partitions.avb.yaml
 else
 MTK_PARTITIONS_YAML := device/mediatek/quartz/partitions.yaml
+endif
 endif
 
 # Please keep this list fixed: add new files in the end of the list

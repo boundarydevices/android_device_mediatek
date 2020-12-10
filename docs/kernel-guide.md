@@ -67,7 +67,11 @@ To rebuild the Android images, do:
 ## Flashing the kernel
 
     $ cd ~/src/mediatek/out/target/product/quartz/
-    $ ./flashimage.py --boot
+    $ adb reboot fastboot
+    $ fastboot flash boot boot.img
+    $ fastboot flash vendor vendor.img
+    $ fastboot flash dtbo dtbo.img
+    $ fastboot reboot
 
 ## Building the kernel without and Android environment
 
@@ -103,6 +107,8 @@ code](https://gitlab.com/baylibre/baylibre-ci/-/tree/master/src).
 
 ### Reflashing the images
 
-    $ adb reboot bootloader
-    $ fastboot flash vendor vendor.img && fastboot flash boot boot.img && fastboot flash dtbo dtbo.img
+    $ adb reboot fastboot
+    $ fastboot flash boot boot.img
+    $ fastboot flash vendor vendor.img
+    $ fastboot flash dtbo dtbo.img
     $ fastboot reboot

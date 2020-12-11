@@ -1,2 +1,0 @@
-get_prop(system_server, public_vendor_default_prop)
-allow system_server kernel:system syslog_read;

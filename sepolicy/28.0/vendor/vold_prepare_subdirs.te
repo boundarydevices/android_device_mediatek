@@ -1,1 +1,0 @@
-allow vold_prepare_subdirs file_contexts_file:file r_file_perms;

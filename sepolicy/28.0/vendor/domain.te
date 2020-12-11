@@ -1,2 +1,0 @@
-allow domain vendor_configs_file:file map;
-allowxperm domain domain:icmp_socket ioctl { unpriv_sock_ioctls unpriv_tty_ioctls };

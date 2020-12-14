@@ -1,1 +1,2 @@
+allow init functionfs:dir { mounton };
 allow init misc_block_device:blk_file { write };

@@ -1,0 +1,2 @@
+allow fsck userdata_block_device:blk_file { open read write ioctl };
+allow fsck cache_block_device:blk_file { open read write ioctl };

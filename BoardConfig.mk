@@ -22,7 +22,6 @@ TARGET_BOOTLOADER_BOARD_NAME := quartz
 BOARD_KERNEL_CMDLINE := \
     printk.devkmsg=on \
     init=/init firmware_class.path=/vendor/firmware \
-    androidboot.selinux=permissive \
     androidboot.boot_devices=soc/11230000.mmc \
     mem_sleep_default=s2idle
 

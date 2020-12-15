@@ -27,3 +27,10 @@
 /dev/block/platform/soc/11230000.mmc/by-name/userdata 		    u:object_r:userdata_block_device:s0
 /dev/block/platform/soc/11230000.mmc/by-name/cache   		    u:object_r:cache_block_device:s0
 /dev/block/platform/soc/11230000.mmc/by-name/misc   		    u:object_r:misc_block_device:s0
+/dev/block/platform/soc/11230000.mmc/by-name/super   		    u:object_r:super_block_device:s0
+/dev/block/platform/soc/11230000.mmc/by-name/recovery 		    u:object_r:recovery_block_device:s0
+/dev/block/platform/soc/11230000.mmc/by-name/splashscreen	    u:object_r:splashscreen_block_device:s0
+/dev/block/platform/soc/11230000.mmc/by-name/bootloaders	    u:object_r:bootloaders_block_device:s0
+/dev/block/platform/soc/11230000.mmc/by-name/boot(_[ab])?	    u:object_r:boot_block_device:s0
+/dev/block/platform/soc/11230000.mmc/by-name/dtbo(_[ab])?	    u:object_r:dtbo_block_device:s0
+/dev/block/platform/soc/11230000.mmc/by-name/vbmeta(_[ab])?	    u:object_r:vbmeta_block_device:s0

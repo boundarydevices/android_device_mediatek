@@ -6,3 +6,8 @@ allow kernel device:chr_file { create setattr };
 allow kernel vendor_file:file { read open };
 
 allow kernel vendor_init:key { search };
+
+recovery_only(`
+	allow kernel device:blk_file { create getattr setattr unlink };
+	allow kernel device:dir { remove_name };
+');

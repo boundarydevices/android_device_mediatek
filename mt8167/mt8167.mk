@@ -91,7 +91,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.gralloc=rogue \
     ro.hardware.hwcomposer=drm_imagination \
     ro.hardware.egl=POWERVR_ROGUE \
-    hwc.drm.device=/dev/dri/card1
+    hwc.drm.device=/dev/dri/card2
 endif
 
 # Audio policy configuration

@@ -217,7 +217,9 @@ echo lock_me > /sys/power/wake_unlock
 
 The `docs` folder of this project contains more documentation, such as:
 
-  - [kernel-guide.md](./docs/kernel-guide.md)
-  - [uboot-dev.md](./docs/uboot-dev.md)
-  - [mt7668-efuse.md](./docs/mt7668-efuse.md)
-  - [kernel-src-org.md](./docs/kernel-src-org.md)
+  - [Frequently Asked Questions](./docs/faq.md)
+  - [Development tips & tricks](./docs/development.md)
+  - [Android kernel developer guide](./docs/kernel-guide.md)
+  - [U-Boot developer guide](./docs/uboot-dev.md)
+  - [MT7668 WiFi/Bluetooth MAC provisioning](./docs/mt7668-efuse.md)
+  - [Kernel source code structure](./docs/kernel-src-org.md)

@@ -32,3 +32,15 @@ the above error will be reproduced.
 
 Please install `repo` as [recommended on Android’s
 website](https://source.android.com/setup/develop#installing-repo)
+
+### 2\. The Camera app disappears after booting Android
+
+The Android Camera app runs on the first Android boot to detect whether
+a physical camera sensor is present and useable by the device. If it
+can’t find one, it will disable itself and thus disappear from the
+launcher.
+
+To re-enable it, use package manager via `adb`:
+
+    adb root
+    adb shell pm enable com.android.camera2/com.android.camera.CameraLauncher

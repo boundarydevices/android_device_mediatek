@@ -2,4 +2,5 @@ set_prop(recovery, boottime_public_prop)
 
 recovery_only(`
 	allow recovery cache_file:dir { mounton };
+	allow recovery self:capability { fsetid };
 ');

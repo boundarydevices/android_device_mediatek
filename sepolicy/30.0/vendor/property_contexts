@@ -1,7 +1,3 @@
-hwc.drm.device                          u:object_r:public_vendor_default_prop:s0
-hwc.drm.use_overlay_planes              u:object_r:public_vendor_default_prop:s0
-hwc.drm.exclude_non_hwfb_imports        u:object_r:public_vendor_default_prop:s0
-hwc.drm.primary_display_order           u:object_r:public_vendor_default_prop:s0
 sys.usb.ffs.aio_compat 			u:object_r:exported_ffs_prop:s0	exact bool
 ro.boottime.init.mount.cache	        u:object_r:boottime_public_prop:s0 exact string
 ro.boottime.init.fsck.cache             u:object_r:boottime_public_prop:s0 exact string

@@ -1,3 +1,14 @@
 sys.usb.ffs.aio_compat 			u:object_r:exported_ffs_prop:s0	exact bool
 ro.boottime.init.mount.cache	        u:object_r:boottime_public_prop:s0 exact string
 ro.boottime.init.fsck.cache             u:object_r:boottime_public_prop:s0 exact string
+
+# hwc
+ro.boot.hardware.egl 			u:object_r:cf_graphics_config_prop:s0 exact string
+ro.boot.hardware.gralloc		u:object_r:cf_graphics_config_prop:s0 exact string
+ro.boot.hardware.hwcomposer 		u:object_r:cf_graphics_config_prop:s0 exact string
+ro.boot.hardware.vulkan 		u:object_r:cf_graphics_config_prop:s0 exact string
+hwc.drm.device 				u:object_r:cf_graphics_config_prop:s0 exact string
+hwc.drm.exclude_non_hwfb_imports 	u:object_r:cf_graphics_config_prop:s0 exact int
+hwc.drm.primary_display_order 		u:object_r:cf_graphics_config_prop:s0 exact string
+hwc.drm.scale_with_gpu 			u:object_r:cf_graphics_config_prop:s0 exact int
+hwc.drm.use_overlay_planes 		u:object_r:cf_graphics_config_prop:s0 exact int

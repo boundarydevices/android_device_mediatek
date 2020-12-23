@@ -1,3 +1,5 @@
+type cf_graphics_config_prop, property_type;
+
 allow vendor_init self:capability sys_module;
 allow vendor_init vendor_file:system { module_load };
 allow vendor_init vendor_init:key write;
@@ -6,3 +8,5 @@ recovery_only(`
 	allow vendor_init rootfs:dir { read };
 	allow vendor_init rootfs:system { module_load };
 ');
+
+set_prop(vendor_init, cf_graphics_config_prop)

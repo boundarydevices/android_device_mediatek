@@ -27,6 +27,7 @@ CFG_SECURE_DATA_PATH := y
 # https://android-git.linaro.org/git/prebuilts/gcc/linux-x86/aarch64/gcc-linaro-7.3.1-2018.05-x86_64_aarch64-linux-gnu
 # OPTEE_LINARO_CROSS_COMPILE64 := prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-7.3-linaro/bin/aarch64-linux-gnu-
 
+OPTEE_PYTHONPATH := $(LOCAL_PATH)/site-packages/
 BUILD_OPTEE_MK := $(LOCAL_PATH)/build_optee.mk
 
 PRODUCT_PACKAGES += \

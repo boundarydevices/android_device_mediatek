@@ -4,6 +4,7 @@
 TOP_ROOT_ABS := $(realpath $(TOP))
 
 HOST_MAKE := prebuilts/build-tools/linux-x86/bin/make
+COMPILE_LINE := $(HOST_MAKE)
 
 # OPTEE_OUT_DIR could be exported explicitly
 # if PRODUCT_OUT is not the default out directory in aosp workspace
@@ -25,7 +26,12 @@ else
 # clang as default on Android
 CROSS_COMPILE64 := aarch64-android
 CLANG_PATH := $(TOP_ROOT_ABS)/prebuilts/clang/host/linux-x86/clang-r383902b/bin
-HOST_MAKE := PATH=$(CLANG_PATH):$$PATH $(HOST_MAKE) COMPILER=clang
+COMPILE_LINE := PATH=$(CLANG_PATH):$$PATH $(COMPILE_LINE) COMPILER=clang
+endif
+
+# Set PYTHONPATH
+ifdef OPTEE_PYTHONPATH
+COMPILE_LINE := PYTHONPATH=$(TOP_ROOT_ABS)/$(OPTEE_PYTHONPATH) $(COMPILE_LINE)
 endif
 
 # OP-TEE binary
@@ -46,7 +52,7 @@ ifneq (true,$(BUILD_OPTEE_OS_DEFINED))
 BUILD_OPTEE_OS_DEFINED := true
 $(OPTEE_BIN):
 	@echo "Start building optee_os..."
-	$(HOST_MAKE) \
+	$(COMPILE_LINE) \
 		CROSS_COMPILE64=$(CROSS_COMPILE64) \
 		-C $(TOP_ROOT_ABS)/$(OPTEE_OS_DIR) \
 		O=$(ABS_OPTEE_OS_OUT_DIR) \
@@ -90,7 +96,7 @@ $(TA_TMP_FILE): PRIVATE_TA_TMP_FILE := $(TA_TMP_FILE)
 $(TA_TMP_FILE): PRIVATE_TA_TMP_DIR := $(TA_TMP_DIR)
 $(TA_TMP_FILE): $(OPTEE_BIN)
 	@echo "Start building TA for $(PRIVATE_TA_SRC_DIR) $(PRIVATE_TA_TMP_FILE)..."
-	$(HOST_MAKE) \
+	$(COMPILE_LINE) \
 		CROSS_COMPILE64=$(CROSS_COMPILE64) \
 		-C $(TOP_ROOT_ABS)/$(PRIVATE_TA_SRC_DIR) \
 		O=$(ABS_OPTEE_TA_OUT_DIR)/$(PRIVATE_TA_TMP_DIR) \

@@ -23,7 +23,11 @@ CFG_TEE_SUPP_LOG_LEVEL := 4
 CFG_SECSTOR_TA_MGMT_PTA := y
 CFG_SECURE_DATA_PATH := y
 
-BUILD_OPTEE_MK := external/optee-os/mk/aosp_optee.mk
+# To use linaro toolchain, please set OPTEE_LINARO_CROSS_COMPILE64
+# https://android-git.linaro.org/git/prebuilts/gcc/linux-x86/aarch64/gcc-linaro-7.3.1-2018.05-x86_64_aarch64-linux-gnu
+# OPTEE_LINARO_CROSS_COMPILE64 := prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-7.3-linaro/bin/aarch64-linux-gnu-
+
+BUILD_OPTEE_MK := $(LOCAL_PATH)/build_optee.mk
 
 PRODUCT_PACKAGES += \
     libteec \
@@ -36,7 +40,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES_DEBUG += xtest
 PRODUCT_PACKAGES_DEBUG += 12345678-5b69-11e4-9dbb-101f74f00099.ta # sdp_basic
 PRODUCT_PACKAGES_DEBUG += 873bcd08-c2c3-11e6-a937-d0bf9c45c61c.ta # socket
+
+# Clang (default compiler) can't build os_test TA
+# So only build this if we are using linaro toolchain
+ifdef OPTEE_LINARO_CROSS_COMPILE64
 PRODUCT_PACKAGES_DEBUG += 5b9e0e40-2636-11e1-ad9e-0002a5d5c51b.ta # os_test
+endif
+
 PRODUCT_PACKAGES_DEBUG += ffd2bded-ab7d-4988-95ee-e4962fff7154.ta # os_test_lib
 PRODUCT_PACKAGES_DEBUG += 5ce0c432-0ab0-40e5-a056-782ca0e6aba2.ta # concurrent_large
 PRODUCT_PACKAGES_DEBUG += b689f2a7-8adf-477a-9f99-32e90c0ad0a2.ta # storage

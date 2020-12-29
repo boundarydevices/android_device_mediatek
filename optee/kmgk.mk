@@ -1,0 +1,32 @@
+#
+# Copyright 2020 BayLibre SAS
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+ifneq ($(OPTEE_ENABLE),true)
+$(error OP-TEE: Cannot compile Keymaster/Gatekeeper, OPTEE_ENABLE is not set to true)
+endif
+
+# gatekeeper
+PRODUCT_PROPERTY_OVERRIDES += ro.hardware.gatekeeper=optee
+PRODUCT_PACKAGES += \
+     android.hardware.gatekeeper@1.0-service.optee \
+     4d573443-6a56-4272-ac6f-2425af9ef9bb.ta
+
+# keymaster
+PRODUCT_PROPERTY_OVERRIDES += ro.hardware.keystore=optee
+PRODUCT_PACKAGES += \
+     android.hardware.keymaster@3.0-service.optee \
+     wait_for_keymaster_optee \
+     dba51a17-0563-11e7-93b1-6fa7b0071a51.ta

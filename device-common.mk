@@ -34,13 +34,18 @@ PRODUCT_PACKAGES += \
     android.hardware.health@2.0-service.batteryless \
 
 # Security
+ifeq ($(OPTEE_ENABLE), true)
+$(call inherit-product, $(LOCAL_PATH)/optee/device-optee.mk)
+endif
+
+ifeq ($(TEE_KEYMASTER_GATEKEEPER_ENABLE), true)
+$(call inherit-product, $(LOCAL_PATH)/optee/kmgk.mk)
+else
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-impl \
-    android.hardware.keymaster@3.0-service
-
-# Software Gatekeeper HAL
-PRODUCT_PACKAGES += \
+    android.hardware.keymaster@3.0-service \
     android.hardware.gatekeeper@1.0-service.software
+endif
 
 # 3D CPU renderer
 PRODUCT_PACKAGES += \

@@ -128,3 +128,7 @@ else
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/fstab.mt8167:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8167
 endif
+
+# OP-TEE
+OPTEE_PLATFORM := mediatek-mt8516
+OPTEE_PLATFORM_FLAVOR := mt8516

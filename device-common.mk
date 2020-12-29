@@ -118,6 +118,7 @@ ifeq ($(TARGET_USE_AB_SLOT), true)
 # A/B Support
 PRODUCT_PACKAGES += \
     update_engine \
+    update_engine_sideload \
     update_verifier \
     android.hardware.boot@1.1-impl \
     android.hardware.boot@1.1-impl.recovery \

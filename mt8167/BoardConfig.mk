@@ -25,6 +25,9 @@ BOARD_MKBOOTIMG_ARGS := \
   --tags_offset $(BOARD_TAGS_OFFSET) \
   --header_version 2
 
+BOARD_SEPOLICY_DIRS += \
+        device/mediatek/common/soc/mt8167/sepolicy
+
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/mediatek/common/soc/mt8167/bluetooth
 
 # Recovery

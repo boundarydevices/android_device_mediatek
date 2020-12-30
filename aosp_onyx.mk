@@ -16,6 +16,9 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
+# All OP-TEE vars MUST be set before including common/soc/mt*
+OPTEE_ENABLE := true
+
 $(call inherit-product, device/mediatek/common/soc/mt8167/mt8167.mk)
 
 PRODUCT_NAME := aosp_onyx

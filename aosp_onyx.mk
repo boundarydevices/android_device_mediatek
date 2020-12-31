@@ -18,6 +18,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
 # All OP-TEE vars MUST be set before including common/soc/mt*
 OPTEE_ENABLE := true
+TEE_KEYMASTER_GATEKEEPER_ENABLE := true
 
 $(call inherit-product, device/mediatek/common/soc/mt8167/mt8167.mk)
 

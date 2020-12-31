@@ -1,2 +1,5 @@
 # /sys/class/net
 genfscon sysfs /devices/platform/soc/11180000.ethernet/net u:object_r:sysfs_net:s0
+
+# /sys/class/rtc
+genfscon sysfs /devices/platform/soc/1000f000.pwrap/1000f000.pwrap:pmic/mt6397-rtc u:object_r:sysfs_rtc:s0

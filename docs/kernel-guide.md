@@ -61,12 +61,12 @@ To rebuild the Android images, do:
 
     $ cd ~/src/mediatek/
     $ source build/envsetup.sh
-    $ lunch aosp_onyx-userdebug
-    $ make bootimage vendorimage out/target/product/onyx/dtbo.img vbmetaimage
+    $ lunch innocomm_sb30-userdebug
+    $ make bootimage vendorimage out/target/product/innocomm_sb30/dtbo.img vbmetaimage
 
 ## Flashing the kernel
 
-    $ cd ~/src/mediatek/out/target/product/onyx/
+    $ cd ~/src/mediatek/out/target/product/innocomm_sb30/
     $ adb reboot fastboot
     $ fastboot flash boot boot.img
     $ fastboot flash vendor vendor.img
@@ -90,7 +90,7 @@ needing the Android source tree. This is done by:
 Prebuild Android images are available via BayLibreCI at [nightly
 builds](http://build3.baylibre.com/builds/nightly/).
 
-Download the images for onyx to `<path/to/android/images>`.
+Download the images for innocomm_sb30 to `<path/to/android/images>`.
 
 For more information about BayLibreCI, see [the source
 code](https://gitlab.com/baylibre/baylibre-ci/-/tree/master/src).

@@ -81,13 +81,13 @@ files in `out` folder:
 
     $ cd ~/src/mediatek/
     $ source build/envsetup.sh
-    $ lunch aosp_onyx-userdebug
-    $ make out/target/product/onyx/fip.bin \
-        out/target/product/onyx/u-boot-initial-env
+    $ lunch innocomm_sb30-userdebug
+    $ make out/target/product/innocomm_sb30/fip.bin \
+        out/target/product/innocomm_sb30/u-boot-initial-env
 
 Then, we can reflash the bootloader and linux kernel with:
 
-    $ cd ~/src/mediatek/out/target/product/onyx/
+    $ cd ~/src/mediatek/out/target/product/innocomm_sb30/
     $ ./flashimage.py --boot
 
 Once you see *Waiting for DA mode*:

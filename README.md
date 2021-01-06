@@ -1,6 +1,6 @@
 # Pumpkin i300A
 
-onyx is the device code name for MT8362A on Pumpkin i300A board.
+innocomm_sb30 is the device code name for MT8362A on Pumpkin i300A board.
 
 ## Fetching the code
 
@@ -42,7 +42,7 @@ time.
 
     $ cd ~/src/mediatek/
     $ source build/envsetup.sh
-    $ lunch aosp_onyx-userdebug
+    $ lunch innocomm_sb30-userdebug
     $ m -j40
 
 We also support the following build flags to enable optional features:
@@ -100,7 +100,7 @@ need to
 
 To fully flash the board, run the following:
 
-    $ cd ~/src/mediatek/out/target/product/onyx/
+    $ cd ~/src/mediatek/out/target/product/innocomm_sb30/
     $ ./flashimage.py
 
 Once you see *Waiting for DA mode*:
@@ -122,14 +122,14 @@ The following Device-Tree Overlays are supported:
 To enable one of the above DTBOs, modify the `dtbo_index` at flashing
 time by passing the `--update dtbo_index <dtbo_index>` argument:
 
-    $ cd ~/src/mediatek/out/target/product/onyx/
+    $ cd ~/src/mediatek/out/target/product/innocomm_sb30/
     $ ./flashimage.py --update dtbo_index <dtbo_index>
 
 ### Flashing only one partition
 
 To flash just one partition, you can run the following command:
 
-    $ cd ~/src/mediatek/out/target/product/onyx/
+    $ cd ~/src/mediatek/out/target/product/innocomm_sb30/
     $ adb reboot bootloader
     $ fastboot flash [PARTITION] [FILE]
     $ fastboot continue
@@ -142,14 +142,14 @@ To flash just one partition, you can run the following command:
 
 For example, the commands to flash the bootloaders are:
 
-    $ cd ~/src/mediatek/out/target/product/onyx/
+    $ cd ~/src/mediatek/out/target/product/innocomm_sb30/
     $ adb reboot bootloader
     $ fastboot flash bootloaders fip.bin
     $ fastboot continue
 
 The commands to flash the kernel are:
 
-    $ cd ~/src/mediatek/out/target/product/onyx/
+    $ cd ~/src/mediatek/out/target/product/innocomm_sb30/
     $ adb reboot fastboot
     $ fastboot flash boot boot.img
     $ fastboot flash dtbo dtbo.img

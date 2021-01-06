@@ -11,7 +11,7 @@ documentation](https://source.android.com/devices/tech/ota/tools)
     $ adb root
     $ adb reboot sideload
     $ adb wait-for-sideload
-    $ adb sideload dist_output/aosp_onyx-ota-eng.${USER}.zip
+    $ adb sideload dist_output/innocomm_sb30-ota-eng.${USER}.zip
     $ adb reboot
 
 ## Apply OTA via `SystemUpdaterSample` app
@@ -28,13 +28,13 @@ documentation](https://source.android.com/devices/tech/ota/tools)
     ```
      $ cd ~/src/mediatek/
      $ source build/envsetup.sh
-     $ lunch aosp_onyx-userdebug
+     $ lunch innocomm_sb30-userdebug
      $ PYTHONPATH=$ANDROID_BUILD_TOP/build/make/tools/releasetools:$PYTHONPATH \
          bootable/recovery/updater_sample/tools/gen_update_config.py \
          --ab_install NON_STREAMING \
-         dist_output/aosp_onyx-ota-eng.${USER}.zip \
-         dist_output/aosp_onyx-ota-eng.${USER}.json \
-         file:///data/user/0/com.example.android.systemupdatersample/files/packages/aosp_onyx-ota-eng.${USER}.zip
+         dist_output/innocomm_sb30-ota-eng.${USER}.zip \
+         dist_output/innocomm_sb30-ota-eng.${USER}.json \
+         file:///data/user/0/com.example.android.systemupdatersample/files/packages/innocomm_sb30-ota-eng.${USER}.zip
     ```
 
 3.  Push the files on the board:
@@ -43,8 +43,8 @@ documentation](https://source.android.com/devices/tech/ota/tools)
      $ adb root
      $ adb shell mkdir /data/user/0/com.example.android.systemupdatersample/files/configs
      $ adb shell mkdir /data/user/0/com.example.android.systemupdatersample/files/packages
-     $ adb push dist_output/aosp_onyx-ota-eng.${USER}.json /data/user/0/com.example.android.systemupdatersample/files/configs/
-     $ adb push dist_output/aosp_onyx-ota-eng.${USER}.zip /data/user/0/com.example.android.systemupdatersample/files/packages/
+     $ adb push dist_output/innocomm_sb30-ota-eng.${USER}.json /data/user/0/com.example.android.systemupdatersample/files/configs/
+     $ adb push dist_output/innocomm_sb30-ota-eng.${USER}.zip /data/user/0/com.example.android.systemupdatersample/files/packages/
     ```
 
 4.  Run the update on the UI:

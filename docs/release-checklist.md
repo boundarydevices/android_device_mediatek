@@ -8,7 +8,7 @@ NOTE: all instructions should come from the device’s README available
 at:
 
 ``` sh
-~/src/mediatek/device/mediatek/onyx/README.md
+~/src/mediatek/device/mediatek/innocomm_sb30/README.md
 ```
 
   - \[ \] repo init
@@ -24,7 +24,7 @@ NOTE: all instructions should come from the device’s README available
 at:
 
 ``` sh
-~/src/mediatek/device/mediatek/onyx/docs/kernel-guide.md
+~/src/mediatek/device/mediatek/innocomm_sb30/docs/kernel-guide.md
 ```
 
   - \[ \] we can clean (full) rebuild the kernel

@@ -14,5 +14,5 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := $(LOCAL_DIR)/aosp_onyx.mk
-COMMON_LUNCH_CHOICES := aosp_onyx-userdebug
+PRODUCT_MAKEFILES := $(LOCAL_DIR)/innocomm_sb30.mk
+COMMON_LUNCH_CHOICES := innocomm_sb30-userdebug

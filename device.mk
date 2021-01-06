@@ -14,8 +14,6 @@
 # limitations under the License.
 #
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init.innocomm_sb30.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.innocomm_sb30.rc \
 
 # Shipping API level to Android R (30)
 PRODUCT_SHIPPING_API_LEVEL := 30
@@ -38,6 +36,6 @@ PRODUCT_PROPERTY_OVERRIDES += ro.config.low_ram=true
 
 # Additional hardware features
 $(call inherit-product-if-exists, vendor/mediatek/mt7668/mt7668.mk)
-$(call inherit-product-if-exists, vendor/focaltech/ft5x06/ft5x06.mk)
+
 # UVC camera
 $(call inherit-product, device/mediatek/common/hal/camera/uvc/uvc.mk)

@@ -1,3 +1,0 @@
-on early-init
-    insmod /vendor/lib/modules/panel-rpi-pumpkin-touchscreen.ko
-

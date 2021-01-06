@@ -1,6 +1,4 @@
-# Pumpkin i300A
-
-innocomm_sb30 is the device code name for MT8362A on Pumpkin i300A board.
+# Innocomm SB30
 
 ## Fetching the code
 
@@ -179,6 +177,5 @@ The `docs` folder of this project contains more documentation, such as:
   - [Frequently Asked Questions](./docs/faq.md)
   - [Development tips & tricks](./docs/development.md)
   - [Android kernel developer guide](./docs/kernel-guide.md)
-  - [U-Boot developer guide](./docs/uboot-dev.md)
   - [MT7668 WiFi/Bluetooth MAC provisioning](./docs/mt7668-efuse.md)
   - [Kernel source code structure](./docs/kernel-src-org.md)

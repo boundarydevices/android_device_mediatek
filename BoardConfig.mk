@@ -25,9 +25,6 @@ BOARD_KERNEL_CMDLINE := \
     init=/init \
     androidboot.boot_devices=soc/11120000.mmc
 
-BOARD_VENDOR_KERNEL_MODULES += \
-    device/mediatek/common-kernel/panel-rpi-pumpkin-touchscreen.ko \
-
 # FS configuration
 ifeq ($(TARGET_USE_AB_SLOT), true)
 BOARD_SUPER_PARTITION_SIZE         := 4831838208
@@ -63,18 +60,16 @@ endif
 
 # Please keep this list fixed: add new files in the end of the list
 DTB_FILES := \
-        $(LOCAL_DTB)/mt8167-pumpkin.dtb
+        $(LOCAL_DTB)/mt8167-sb30.dtb
 
 # Please keep this list fixed: add new files in the end of the list
 DTBO_FILES := \
-        $(LOCAL_DTB)/mt8167-pumpkin-android.dtb \
-        $(LOCAL_DTB)/mt8167-pumpkin-android-dsi.dtb
+        $(LOCAL_DTB)/mt8167-sb30-android.dtb 
 
 # Additional hardware features
 # NOTE: must be called last, as they append Board variables such
 # as DEVICE_MANIFEST_FILE
 -include vendor/mediatek/mt7668/BoardConfig-mt7668.mk
--include vendor/focaltech/ft5x06/BoardConfig-ft5x06.mk
 # UVC Camera
 include device/mediatek/common/hal/camera/uvc/BoardConfig.mk
 DEVICE_MANIFEST_FILE += device/mediatek/common/hal/camera/manifest-uvc.xml

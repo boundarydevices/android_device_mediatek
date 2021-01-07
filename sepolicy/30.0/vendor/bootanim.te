@@ -1,1 +1,3 @@
 allow bootanim gpu_device:chr_file rw_file_perms;
+
+get_prop(bootanim, vendor_default_prop)

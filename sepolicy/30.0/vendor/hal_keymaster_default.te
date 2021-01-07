@@ -1,2 +1,6 @@
+type keymaster_tee_prop, property_type;
+
 allow hal_keymaster_default property_socket:sock_file write;
 allow hal_keymaster_default init:unix_stream_socket connectto;
+
+set_prop(hal_keymaster_default, keymaster_tee_prop)

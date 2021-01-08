@@ -67,7 +67,7 @@ DTB_FILES := \
 DTBO_FILES := \
         $(LOCAL_DTB)/mt8183-pumpkin-android.dtb \
         $(LOCAL_DTB)/mt8183-pumpkin-urt-umo-9465md-t.dtb \
-        $(LOCAL_DTB)/mt8183-pumpkin-ar0330.dtb \
+        $(LOCAL_DTB)/mt8183-pumpkin-ar0330-single.dtb \
         $(LOCAL_DTB)/mt8183-pumpkin-ap1302-ar0330.dtb
 
 # Additional hardware features

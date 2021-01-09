@@ -1,4 +1,4 @@
-on late-fs
+on post-fs-data
     exec_start wait_for_keymaster_optee
 
 service tee-supplicant /vendor/bin/tee-supplicant

@@ -8,7 +8,6 @@
 #############################
 # sysfs files
 #
-/sys/devices/platform/backlight_lcd0/backlight(/.*)?                u:object_r:sysfs_leds:s0
 
 ##########################
 # Devices

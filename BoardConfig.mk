@@ -27,6 +27,7 @@ BOARD_KERNEL_CMDLINE := \
 
 BOARD_VENDOR_KERNEL_MODULES += \
     device/mediatek/common-kernel/panel-rpi-pumpkin-touchscreen.ko \
+    device/mediatek/common-kernel/edt-rpi-ft5x06.ko
 
 # FS configuration
 ifeq ($(TARGET_USE_AB_SLOT), true)
@@ -74,7 +75,6 @@ DTBO_FILES := \
 # NOTE: must be called last, as they append Board variables such
 # as DEVICE_MANIFEST_FILE
 -include vendor/mediatek/mt7668/BoardConfig-mt7668.mk
--include vendor/focaltech/ft5x06/BoardConfig-ft5x06.mk
 # UVC Camera
 include device/mediatek/common/hal/camera/uvc/BoardConfig.mk
 DEVICE_MANIFEST_FILE += device/mediatek/common/hal/camera/manifest-uvc.xml

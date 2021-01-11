@@ -1,3 +1,5 @@
 on early-init
     insmod /vendor/lib/modules/panel-rpi-pumpkin-touchscreen.ko
 
+on late-init
+    insmod /vendor/lib/modules/edt-rpi-ft5x06.ko

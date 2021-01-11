@@ -33,6 +33,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.health@2.0-service.batteryless \
 
+# Backlight/brightness
+PRODUCT_PACKAGES += \
+    android.hardware.light@2.0-service.mediatek \
+
 # Security
 ifeq ($(OPTEE_ENABLE), true)
 $(call inherit-product, $(LOCAL_PATH)/optee/device-optee.mk)

@@ -29,6 +29,9 @@ BOARD_VENDOR_KERNEL_MODULES += \
     device/mediatek/common-kernel/panel-rpi-pumpkin-touchscreen.ko \
     device/mediatek/common-kernel/edt-rpi-ft5x06.ko
 
+BOARD_RECOVERY_KERNEL_MODULES += \
+    device/mediatek/common-kernel/panel-rpi-pumpkin-touchscreen.ko
+
 # FS configuration
 ifeq ($(TARGET_USE_AB_SLOT), true)
 BOARD_SUPER_PARTITION_SIZE         := 4831838208

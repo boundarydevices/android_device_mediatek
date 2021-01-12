@@ -46,6 +46,7 @@ endif
 
 BOARD_VENDOR_KERNEL_MODULES := \
     device/mediatek/common-kernel/mediatek-drm.ko \
+    device/mediatek/common-kernel/snd-soc-hdmi-codec.ko \
     device/mediatek/common-kernel/mediatek-drm-hdmi.ko \
     device/mediatek/common-kernel/ntc_thermistor.ko
 

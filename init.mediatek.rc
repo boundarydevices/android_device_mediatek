@@ -1,6 +1,7 @@
 on init
    start watchdogd
    insmod /vendor/lib/modules/mediatek-drm.ko
+   insmod /vendor/lib/modules/snd-soc-hdmi-codec.ko
    insmod /vendor/lib/modules/mediatek-drm-hdmi.ko
    insmod /vendor/lib/modules/ntc_thermistor.ko
 

@@ -114,15 +114,15 @@ Once you see *Waiting for DA mode*:
 
 The following Device-Tree Overlays are supported:
 
-| dtbo\_index | description                                       |
-| ----------: | :------------------------------------------------ |
-|           0 | HDMI only                                         |
-|           1 | UMO-9465MD-T DSI panel                            |
-|           2 | Single Onsemi AR0330 camera sensor                |
-|           3 | Dual AR0330 camera sensors                        |
-|           4 | Single Onsemi AP1302 ISP + Single AR0330          |
-|           5 | Single AP1302 ISP + Single Onsemi AR0144 sensor   |
-|           6 | Dual AP1302 ISPs + Single AR0144 + Single AR0330  |
+| dtbo\_index | description                                      |
+| ----------: | :----------------------------------------------- |
+|           0 | HDMI only                                        |
+|           1 | UMO-9465MD-T DSI panel                           |
+|           2 | Single Onsemi AR0330 camera sensor               |
+|           3 | Dual AR0330 camera sensors                       |
+|           4 | Single Onsemi AP1302 ISP + Single AR0330         |
+|           5 | Single AP1302 ISP + Single Onsemi AR0144 sensor  |
+|           6 | Dual AP1302 ISPs + Single AR0144 + Single AR0330 |
 
 To enable one of the above DTBOs, modify the `dtbo_index` at flashing
 time by passing the `--update dtbo_index <dtbo_index>` argument:

@@ -118,8 +118,11 @@ The following Device-Tree Overlays are supported:
 | ----------: | :------------------------------------------------ |
 |           0 | HDMI only                                         |
 |           1 | UMO-9465MD-T DSI panel                            |
-|           2 | Onsemi AR0330CS camera sensor                     |
-|           3 | Onsemi AR0330CS camera sensor + Onsemi AP1302 ISP |
+|           2 | Single Onsemi AR0330 camera sensor                |
+|           3 | Dual AR0330 camera sensors                        |
+|           4 | Single Onsemi AP1302 ISP + Single AR0330          |
+|           5 | Single AP1302 ISP + Single Onsemi AR0144 sensor   |
+|           6 | Dual AP1302 ISPs + Single AR0144 + Single AR0330  |
 
 To enable one of the above DTBOs, modify the `dtbo_index` at flashing
 time by passing the `--update dtbo_index <dtbo_index>` argument:

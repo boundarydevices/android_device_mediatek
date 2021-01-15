@@ -1,0 +1,1 @@
+allow shell sysfs_power_supply:dir { open read search };

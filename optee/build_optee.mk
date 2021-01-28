@@ -25,7 +25,7 @@ CROSS_COMPILE64 := $(TOP_ROOT_ABS)/$(OPTEE_LINARO_CROSS_COMPILE64)
 else
 # clang as default on Android
 CROSS_COMPILE64 := aarch64-android
-CLANG_PATH := $(TOP_ROOT_ABS)/prebuilts/clang/host/linux-x86/clang-r383902b/bin
+CLANG_PATH := $(TOP_ROOT_ABS)/$(LLVM_PREBUILTS_BASE)/$(BUILD_OS)-x86/$(LLVM_PREBUILTS_VERSION)/bin
 COMPILE_LINE := PATH=$(CLANG_PATH):$$PATH $(COMPILE_LINE) COMPILER=clang
 endif
 

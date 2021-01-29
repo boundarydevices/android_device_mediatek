@@ -29,9 +29,15 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.mediatek.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.mediatek.rc \
     $(LOCAL_PATH)/init.mediatek.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.mediatek.usb.rc \
 
-# Health
+# Health: Install default binderized implementation to vendor.
 PRODUCT_PACKAGES += \
-    android.hardware.health@2.0-service.batteryless \
+    android.hardware.health@2.1-service \
+    android.hardware.health@2.1-impl-batteryless
+
+ifneq ($(TARGET_USE_AB_SLOT), true)
+# For non-A/B devices, install default passthrough implementation to recovery.
+PRODUCT_PACKAGES += android.hardware.health@2.1-impl-batteryless.recovery
+endif
 
 # Backlight/brightness
 PRODUCT_PACKAGES += \

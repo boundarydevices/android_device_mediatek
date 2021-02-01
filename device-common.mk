@@ -136,6 +136,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES_DEBUG += \
     bootctl \
-    update_engine_client
+    update_engine_client \
+    SystemUpdaterSample
 
 endif # eq $(TARGET_USE_AB_SLOT), true

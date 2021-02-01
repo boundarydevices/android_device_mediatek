@@ -17,6 +17,9 @@
 <audioPolicyConfiguration version="1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
     <!-- version section contains a “version” tag in the form “major.minor” e.g version=”1.0” -->
 
+    <!-- Global configuration Declaration -->
+    <globalConfiguration speaker_drc_enabled="true"/>
+
     <!-- Modules section:
         There is one section per audio HW module present on the platform.
         Each module section will contains two mandatory tags for audio HAL “halVersion” and “name”.

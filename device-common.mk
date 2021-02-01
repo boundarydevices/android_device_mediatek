@@ -67,8 +67,8 @@ PRODUCT_PACKAGES += \
 # NOTE: each product should also add audio.primary.$(TARGET_DEVICE) to its PRODUCT_PACKAGES
 PRODUCT_PACKAGES += \
     android.hardware.audio.service \
-    android.hardware.audio@4.0-impl \
-    android.hardware.audio.effect@4.0-impl
+    android.hardware.audio@6.0-impl \
+    android.hardware.audio.effect@6.0-impl
 
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libeffects/data/audio_effects.xml:vendor/etc/audio_effects.xml

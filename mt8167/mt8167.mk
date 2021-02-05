@@ -94,6 +94,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     hwc.drm.device=/dev/dri/card2
 endif
 
+PRODUCT_PACKAGES += vpud.mt8167
+
 # Audio policy configuration
 USE_XML_AUDIO_POLICY_CONF := 1
 PRODUCT_COPY_FILES += \

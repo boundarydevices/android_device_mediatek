@@ -64,3 +64,7 @@ PRODUCT_PACKAGES_DEBUG += a4c04d50-f180-11e8-8eb2-f2801f1b9fd1.ta # sims_keepali
 PRODUCT_PACKAGES_DEBUG += 614789f2-39c0-4ebf-b235-92b32ac107ed.ta # sha_perf
 PRODUCT_PACKAGES_DEBUG += 528938ce-fc59-11e8-8eb2-f2801f1b9fd1.ta # miss
 PRODUCT_PACKAGES_DEBUG += e6a33ed4-562b-463a-bb7e-ff5e15a493c8.ta # sims
+
+PRODUCT_PACKAGES_DEBUG += \
+    VtsHalGatekeeperV1_0TargetTest \
+    VtsHalKeymasterV3_0TargetTest

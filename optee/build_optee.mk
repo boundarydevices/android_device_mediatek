@@ -6,10 +6,9 @@ TOP_ROOT_ABS := $(realpath $(TOP))
 HOST_MAKE := prebuilts/build-tools/linux-x86/bin/make
 COMPILE_LINE := $(HOST_MAKE)
 
-# OPTEE_OUT_DIR could be exported explicitly
-# if PRODUCT_OUT is not the default out directory in aosp workspace
-OPTEE_OUT_DIR ?= $(PRODUCT_OUT)/optee
-ABS_OPTEE_OUT_DIR ?= $(realpath $(PRODUCT_OUT))/optee
+# Output working directory
+OPTEE_OUT_DIR ?= $(PRODUCT_OUT)/obj/PACKAGING/optee_intermediates
+ABS_OPTEE_OUT_DIR := $(TOP_ROOT_ABS)/$(OPTEE_OUT_DIR)
 OPTEE_TA_OUT_DIR ?= $(OPTEE_OUT_DIR)/ta
 ABS_OPTEE_TA_OUT_DIR ?= $(ABS_OPTEE_OUT_DIR)/ta
 

@@ -9,12 +9,12 @@ COMPILE_LINE := $(HOST_MAKE)
 # Output working directory
 OPTEE_OUT_DIR ?= $(PRODUCT_OUT)/obj/PACKAGING/optee_intermediates
 ABS_OPTEE_OUT_DIR := $(TOP_ROOT_ABS)/$(OPTEE_OUT_DIR)
-OPTEE_TA_OUT_DIR ?= $(OPTEE_OUT_DIR)/ta
-ABS_OPTEE_TA_OUT_DIR ?= $(ABS_OPTEE_OUT_DIR)/ta
+OPTEE_TA_OUT_DIR := $(OPTEE_OUT_DIR)/ta
+ABS_OPTEE_TA_OUT_DIR := $(ABS_OPTEE_OUT_DIR)/ta
 
 # Set so that OP-TEE clients can find the installed dev-kit, which
 # depends on platform and its OP-TEE word-size.
-OPTEE_OS_OUT_DIR ?= $(OPTEE_OUT_DIR)/arm-plat-$(OPTEE_PLATFORM)
+OPTEE_OS_OUT_DIR := $(OPTEE_OUT_DIR)/arm-plat-$(OPTEE_PLATFORM)
 ABS_OPTEE_OS_OUT_DIR := $(ABS_OPTEE_OUT_DIR)/arm-plat-$(OPTEE_PLATFORM)
 TA_DEV_KIT_DIR := $(ABS_OPTEE_OS_OUT_DIR)/export-${OPTEE_TA_TARGETS}
 

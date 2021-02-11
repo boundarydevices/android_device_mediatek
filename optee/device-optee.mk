@@ -37,6 +37,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.optee.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.optee.rc
 
+VENDOR_UEVENTD_FILES += device/mediatek/common/soc/optee/ueventd.optee.rc
+
 # xtest
 PRODUCT_PACKAGES_DEBUG += xtest
 PRODUCT_PACKAGES_DEBUG += 12345678-5b69-11e4-9dbb-101f74f00099.ta # sdp_basic

@@ -70,6 +70,7 @@ DTBO_FILES := \
         $(LOCAL_DTB)/mt8183-pumpkin-ar0330-dual.dtb \
         $(LOCAL_DTB)/mt8183-pumpkin-ap1302-ar0330-single.dtb \
         $(LOCAL_DTB)/mt8183-pumpkin-ap1302-ar0144-single.dtb \
+        $(LOCAL_DTB)/mt8183-pumpkin-ap1302-ar0144-dual.dtb \
         $(LOCAL_DTB)/mt8183-pumpkin-ap1302-ar0330-single-ar0144-single.dtb
 
 # Additional hardware features

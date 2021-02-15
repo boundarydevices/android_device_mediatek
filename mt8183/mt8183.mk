@@ -114,6 +114,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     Armnn.operandTypeTensorQuant8SymmPerChannelPerformance.execTime=2 \
     Armnn.operandTypeTensorQuant8SymmPerChannelPerformance.powerUsage=2
 
+PRODUCT_PACKAGES += vpud.mt8183
+
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \

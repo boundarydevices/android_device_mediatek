@@ -5,8 +5,6 @@ on init
    insmod /vendor/lib/modules/mediatek-drm-hdmi.ko
    insmod /vendor/lib/modules/ntc_thermistor.ko
 
-on fs
-    start console
 
 on post-fs-data
     setprop vold.post_fs_data_done 1

@@ -20,32 +20,25 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.mt8183.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.mt8183.rc \
 
 
-# Ramdisk fstab
+# fstab
 ifeq ($(TARGET_USE_AB_SLOT), true)
 ifeq ($(TARGET_AVB_ENABLE), true)
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/fstab.mt8183.avb.ab:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.mt8183
+    $(LOCAL_PATH)/fstab.mt8183.avb.ab:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8183
 else
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/fstab.mt8183.ab:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.mt8183
-endif
-else
-ifeq ($(TARGET_AVB_ENABLE), true)
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/fstab.mt8183.avb:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt8183
-else
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/fstab.mt8183:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt8183
-endif
-endif
-
-# Vendor fstab
-ifeq ($(TARGET_USE_AB_SLOT), true)
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/fstab.mt8183.ab:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8183
+endif
+else
+ifeq ($(TARGET_AVB_ENABLE), true)
+PRODUCT_COPY_FILES += \
+    device/mediatek/common/soc/fstab.ramdisk.avb:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt8183 \
+    $(LOCAL_PATH)/fstab.mt8183.avb:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8183
 else
 PRODUCT_COPY_FILES += \
+    device/mediatek/common/soc/fstab.ramdisk:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt8183 \
     $(LOCAL_PATH)/fstab.mt8183:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8183
+endif
 endif
 
 # Flashing binaries

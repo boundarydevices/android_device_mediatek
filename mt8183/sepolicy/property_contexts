@@ -1,0 +1,4 @@
+mtk.vdec.regdump        u:object_r:vpud_prop:s0
+mtk.vdec.prof           u:object_r:vpud_prop:s0
+mtk.venc.drvdump        u:object_r:vpud_prop:s0
+mtk.venc.drvinfo        u:object_r:vpud_prop:s0

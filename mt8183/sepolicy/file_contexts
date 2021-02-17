@@ -5,6 +5,9 @@
 # neural network HAL
 /vendor/bin/hw/android\.hardware\.neuralnetworks@1\.3-service-armnn  u:object_r:hal_neuralnetworks_arm_exec:s0
 
+# vpud (media encoding/decoding using HW accelerators)
+/vendor/bin/vpud                                                     u:object_r:vpud_exec:s0
+
 #############################
 # sysfs files
 #
@@ -13,6 +16,7 @@
 # Devices
 #
 /dev/mali[0-9]                                                      u:object_r:gpu_device:s0
+/dev/vpu                                                            u:object_r:vpu_device:s0
 
 
 #############################

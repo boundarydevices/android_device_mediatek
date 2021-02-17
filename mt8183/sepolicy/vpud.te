@@ -1,0 +1,6 @@
+type vpud, domain;
+
+type vpud_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(vpud)
+
+allow vpud vpu_device:chr_file rw_file_perms;

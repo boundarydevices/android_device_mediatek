@@ -115,6 +115,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     Armnn.operandTypeTensorQuant8SymmPerChannelPerformance.powerUsage=2
 
 PRODUCT_PACKAGES += vpud.mt8183
+VENDOR_UEVENTD_FILES += device/mediatek/common/soc/mt8183/binaries/vpud/ueventd.vpud.rc
 
 # Camera
 PRODUCT_PACKAGES += \

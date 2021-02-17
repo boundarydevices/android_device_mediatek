@@ -1,0 +1,4 @@
+service mediatek.vpud /vendor/bin/vpud
+    class hal
+    user system
+    group system

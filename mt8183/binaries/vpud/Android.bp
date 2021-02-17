@@ -32,6 +32,7 @@ cc_prebuilt_binary {
     },
     compile_multilib: "64",
     vendor: true,
+    init_rc: ["etc/init.vpud.rc"],
 }
 
 cc_prebuilt_library_shared {

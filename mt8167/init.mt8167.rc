@@ -4,11 +4,6 @@ on late-fs
     # cause services for bootanim not running.
     wait_for_prop hwservicemanager.ready true
 
-    mount_all /vendor/etc/fstab.mt8167 --late
-	
-on fs
-    mount_all /vendor/etc/fstab.mt8167 --early
-
 on init
     # 0-3 are our only cores (a35)
     write /dev/cpuset/background/cpus 0-3

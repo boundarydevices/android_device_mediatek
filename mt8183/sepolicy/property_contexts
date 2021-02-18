@@ -2,3 +2,22 @@ mtk.vdec.regdump        u:object_r:vpud_prop:s0
 mtk.vdec.prof           u:object_r:vpud_prop:s0
 mtk.venc.drvdump        u:object_r:vpud_prop:s0
 mtk.venc.drvinfo        u:object_r:vpud_prop:s0
+
+# additional (optional) properties
+mtk.venc.rcinfo                 u:object_r:vpud_prop:s0
+mtk.vcodec.1080p                u:object_r:vpud_prop:s0
+mtk.venc.irate                  u:object_r:vpud_prop:s0
+mtk.venc.avsr                   u:object_r:vpud_prop:s0
+mtk.venc.preultra               u:object_r:vpud_prop:s0
+mtk.venc.h264.showreg           u:object_r:vpud_prop:s0
+mtk.venc.h264.showlog           u:object_r:vpud_prop:s0
+mtk.venc.h264.dumplog           u:object_r:vpud_prop:s0
+mtk.venc.h264.profile           u:object_r:vpud_prop:s0
+mtk.venc.h264.set.bitrate       u:object_r:vpud_prop:s0
+mtk.venc.h264.rfs.n             u:object_r:vpud_prop:s0
+mtk.venc.h264.rfs.d             u:object_r:vpud_prop:s0
+mtk.venc.h264.rfs.sigfrm        u:object_r:vpud_prop:s0
+mtk.venc.h264.rfs.errfrm        u:object_r:vpud_prop:s0
+mtk.venc.h264.rfs.inserterr     u:object_r:vpud_prop:s0
+wfd.iframesize.level            u:object_r:vpud_prop:s0
+mtk.venc.h264.tsvc.checkCRC     u:object_r:vpud_prop:s0

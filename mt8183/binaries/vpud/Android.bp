@@ -14,7 +14,6 @@
 
 cc_prebuilt_binary {
     name: "vpud.mt8183",
-    stem: "vpud", // named vpud on device
     srcs: ["bin/vpud"],
     shared_libs: [
         "libc++",
@@ -32,7 +31,7 @@ cc_prebuilt_binary {
     },
     compile_multilib: "64",
     vendor: true,
-    init_rc: ["etc/init.vpud.rc"],
+    init_rc: ["etc/init.vpud.mt8183.rc"],
 }
 
 cc_prebuilt_library_shared {

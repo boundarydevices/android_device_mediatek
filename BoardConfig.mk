@@ -82,4 +82,6 @@ include vendor/ilitek/ili251x/BoardConfig-ili251x.mk
 include vendor/onsemi/ap1302/BoardConfig-ap1302.mk
 # UVC Camera
 include device/mediatek/common/hal/camera/uvc/BoardConfig.mk
+# CSI Camera
+include device/mediatek/common/hal/camera/csi/BoardConfig.mk
 DEVICE_MANIFEST_FILE += device/mediatek/common/hal/camera/manifest-uvc-csi.xml

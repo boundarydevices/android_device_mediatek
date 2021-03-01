@@ -64,3 +64,5 @@ $(call inherit-product, vendor/ilitek/ili251x/ili251x.mk)
 $(call inherit-product, vendor/onsemi/ap1302/ap1302.mk)
 # UVC camera
 $(call inherit-product, device/mediatek/common/hal/camera/uvc/uvc.mk)
+# CSI camera
+$(call inherit-product, device/mediatek/common/hal/camera/csi/csi.mk)

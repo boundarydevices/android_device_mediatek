@@ -20,12 +20,26 @@ Note: not xml elements from TinyHAL are supported.
             <ctl name="O04 I06 Switch" val="1"/>
             <ctl name="O03 I05 Switch" val="1"/>
             <ctl name="HPOUT Mux" val="AUDIO_AMP"/>
+
+            <!-- capture -->
+            <ctl name="O09 I03 Switch" val="1"/>
+            <ctl name="O10 I04 Switch" val="1"/>
+            <ctl name="AIF TX Mux" val="Analog MIC" />
+            <ctl name="Left PGA Mux" val="CH1" />
+            <ctl name="Audio_PGA1_Setting" val="+6dB" />
         </init>
         </mixer>
 
         <device name="headphone">
         </device>
 
-        <stream type="pcm" dir="out" card="0" device="4">
+        <device name="headset_in">
+        </device>
+
+        <stream type="pcm" dir="out" card="0" device="4" rate="48000">
         </stream>
+
+        <stream type="pcm" dir="in" card="0" device="2" rate="48000">
+        </stream>
+
 </audiohal>

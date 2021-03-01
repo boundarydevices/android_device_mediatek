@@ -32,6 +32,7 @@ cc_prebuilt_binary {
     },
     compile_multilib: "32",
     vendor: true,
+    init_rc: ["etc/init.vpud.mt8167.rc"],
 }
 
 cc_prebuilt_library_shared {

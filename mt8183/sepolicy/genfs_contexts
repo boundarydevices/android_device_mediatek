@@ -1,6 +1,3 @@
 genfscon sysfs /devices/platform/soc/1000d000.pwrap/1000d000.pwrap:mt6358/mt6397-rtc/rtc/rtc0   u:object_r:sysfs_rtc:s0
 genfscon sysfs /firmware/devicetree/base/odm/firmware/android           u:object_r:sysfs_dt_firmware_android:s0
 genfscon sysfs /devices/platform/soc/11240000.mmc/mmc_host/mmc1/mmc1:0001/mmc1:0001:1/net u:object_r:sysfs_net:s0
-
-genfscon sysfs /firmware/devicetree/base/model                          u:object_r:sysfs_dt_base:s0
-genfscon sysfs /firmware/devicetree/base/compatible                     u:object_r:sysfs_dt_base:s0

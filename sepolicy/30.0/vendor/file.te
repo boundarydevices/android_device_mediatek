@@ -1,1 +1,2 @@
 type sysfs_power_supply, fs_type, sysfs_type;
+type sysfs_dt_base, fs_type, sysfs_type;

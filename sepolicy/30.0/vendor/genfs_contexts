@@ -1,3 +1,5 @@
 genfscon sysfs /class/power_supply	u:object_r:sysfs_power_supply:s0
 genfscon sysfs /class/thermal		u:object_r:sysfs_thermal:s0
 genfscon sysfs /devices/virtual/thermal	u:object_r:sysfs_thermal:s0
+genfscon sysfs /firmware/devicetree/base/model u:object_r:sysfs_dt_base:s0
+genfscon sysfs /firmware/devicetree/base/compatible u:object_r:sysfs_dt_base:s0

@@ -96,6 +96,10 @@ endif
 PRODUCT_PACKAGES += vpud.mt8167
 VENDOR_UEVENTD_FILES += device/mediatek/common/soc/ueventd/ueventd.vpud.rc
 
+# MDP support
+PRODUCT_PACKAGES += \
+    libmdp.mt8167 mdpd
+
 # Audio policy configuration
 USE_XML_AUDIO_POLICY_CONF := 1
 PRODUCT_COPY_FILES += \

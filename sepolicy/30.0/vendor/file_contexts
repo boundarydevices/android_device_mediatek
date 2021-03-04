@@ -5,8 +5,7 @@
 /vendor/bin/hw/android\.hardware\.light@2\.0-service\.mediatek u:object_r:hal_light_default_exec:s0
 
 # vpud (media encoding/decoding using HW accelerators)
-/vendor/bin/vpud\.mt8183                                             u:object_r:vpud_exec:s0
-/vendor/bin/vpud\.mt8167                                             u:object_r:vpud_exec:s0
+/vendor/bin/vpud\.mt[0-9]*                                          u:object_r:vpud_exec:s0
 
 /dev/vpu                                                            u:object_r:vpu_device:s0
 

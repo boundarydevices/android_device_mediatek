@@ -69,6 +69,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.configstore@1.1-service
 
+# mt8183 and mt8167 both have the same OpenGL ES version (3.2)
+# this value should be moved in specific soc folder if it's not aligned in next deliveries
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.opengles.version=196610
+
 # Audio:
 # NOTE: each product should also add audio.primary.$(TARGET_DEVICE) to its PRODUCT_PACKAGES
 PRODUCT_PACKAGES += \

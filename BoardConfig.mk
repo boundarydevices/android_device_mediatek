@@ -80,4 +80,6 @@ DTBO_FILES := \
 -include vendor/mediatek/mt7668/BoardConfig-mt7668.mk
 # UVC Camera
 include device/mediatek/common/hal/camera/uvc/BoardConfig.mk
-DEVICE_MANIFEST_FILE += device/mediatek/common/hal/camera/manifest-uvc.xml
+# CSI Camera
+include device/mediatek/common/hal/camera/csi/BoardConfig.mk
+DEVICE_MANIFEST_FILE += device/mediatek/common/hal/camera/manifest-uvc-csi.xml

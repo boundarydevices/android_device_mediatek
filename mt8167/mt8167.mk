@@ -19,9 +19,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.mt8167.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.mt8167.rc
 
 # Flashing tool + prebuilt binaries
+ifneq ($(TARGET_USE_PRODUCT_SPECIFIC_LK), true)
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/binaries/images/dl_addr.ini:dl_addr.ini \
     $(LOCAL_PATH)/binaries/images/lk.bin:lk.bin
+endif # neq $(TARGET_USE_PRODUCT_SPECIFIC_LK), true)
 
 # BL2
 ifneq ($(TARGET_USE_PRODUCT_SPECIFIC_BL2), true)

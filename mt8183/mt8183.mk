@@ -42,9 +42,12 @@ endif
 endif
 
 # Flashing binaries
+ifneq ($(TARGET_USE_PRODUCT_SPECIFIC_LK), true)
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/binaries/images/lk.bin:$(TARGET_OUT)/lk.bin \
     $(LOCAL_PATH)/binaries/images/dl_addr.ini:$(TARGET_OUT)/dl_addr.ini
+endif # neq $(TARGET_USE_PRODUCT_SPECIFIC_LK), true)
+
 
 # BL2
 ifneq ($(TARGET_USE_PRODUCT_SPECIFIC_BL2), true)

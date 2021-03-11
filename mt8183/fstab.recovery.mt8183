@@ -2,8 +2,7 @@
 # <src>						<mnt_point>   <type>  <mnt_flags and options>  <fs_mgr_flags>
 # The filesystem that contains the filesystem checker binary (typically /system) cannot
 # specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
-/dev/block/platform/soc/11230000.mmc/by-name/userdata     /data         f2fs      noatime,nosuid,nodev                                             latemount,wait,check,quota,fileencryption=software,quota
-/dev/block/platform/soc/11230000.mmc/by-name/userdata     /data         ext4      noatime,nosuid,nodev,nodelalloc,nomblk_io_submit,errors=panic    latemount,wait,check,quota,formattable,reservedsize=32M
+/dev/block/platform/soc/11230000.mmc/by-name/userdata     /data         f2fs      noatime,nosuid,nodev,discard,reserve_root=32768,fsync_mode=nobarrier       latemount,wait,check,quota,formattable,reservedsize=32M
 /dev/block/platform/soc/11230000.mmc/by-name/cache        /cache        ext4      noatime,nosuid,nodev,nodelalloc,nomblk_io_submit,errors=panic    wait,check,formattable
 /dev/block/platform/soc/11230000.mmc/by-name/misc         /misc         emmc      defaults                                                         defaults
 /dev/block/platform/soc/11230000.mmc/by-name/recovery     /recovery     emmc      defaults                                                         defaults

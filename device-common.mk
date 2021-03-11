@@ -154,3 +154,7 @@ PRODUCT_PACKAGES_DEBUG += \
     SystemUpdaterSample
 
 endif # eq $(TARGET_USE_AB_SLOT), true
+PRODUCT_PACKAGES += \
+    sg_write_buffer \
+    f2fs_io \
+    check_f2fs

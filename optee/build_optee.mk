@@ -8,7 +8,7 @@ COMPILE_LINE := $(HOST_MAKE)
 
 # Output working directory
 OPTEE_OUT_DIR ?= $(PRODUCT_OUT)/obj/PACKAGING/optee_intermediates
-ABS_OPTEE_OUT_DIR := $(TOP_ROOT_ABS)/$(OPTEE_OUT_DIR)
+ABS_OPTEE_OUT_DIR := $(if $(filter /%,$(OUT_DIR)),$(OPTEE_OUT_DIR),$(TOP_ROOT_ABS)/$(OPTEE_OUT_DIR))
 OPTEE_TA_OUT_DIR := $(OPTEE_OUT_DIR)/ta
 ABS_OPTEE_TA_OUT_DIR := $(ABS_OPTEE_OUT_DIR)/ta
 

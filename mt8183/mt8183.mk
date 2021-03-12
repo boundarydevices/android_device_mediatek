@@ -24,9 +24,11 @@ PRODUCT_COPY_FILES += \
 ifeq ($(TARGET_USE_AB_SLOT), true)
 ifeq ($(TARGET_AVB_ENABLE), true)
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/fstab.mt8183.avb.ab:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.mt8183 \
     $(LOCAL_PATH)/fstab.mt8183.avb.ab:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8183
 else
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/fstab.mt8183.ab:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.mt8183 \
     $(LOCAL_PATH)/fstab.mt8183.ab:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8183
 endif
 else

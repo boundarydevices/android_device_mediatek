@@ -34,11 +34,11 @@ endif
 else
 ifeq ($(TARGET_AVB_ENABLE), true)
 PRODUCT_COPY_FILES += \
-    device/mediatek/common/soc/fstab.ramdisk.avb:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt8183 \
+    $(LOCAL_PATH)/fstab.mt8183.avb:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt8183 \
     $(LOCAL_PATH)/fstab.mt8183.avb:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8183
 else
 PRODUCT_COPY_FILES += \
-    device/mediatek/common/soc/fstab.ramdisk:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt8183 \
+    $(LOCAL_PATH)/fstab.mt8183:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt8183 \
     $(LOCAL_PATH)/fstab.mt8183:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8183
 endif
 endif

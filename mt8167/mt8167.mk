@@ -123,11 +123,11 @@ endif
 else
 ifeq ($(TARGET_AVB_ENABLE), true)
 PRODUCT_COPY_FILES += \
-    device/mediatek/common/soc/fstab.ramdisk.avb:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt8167 \
+    $(LOCAL_PATH)/fstab.mt8167.avb:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt8167 \
     $(LOCAL_PATH)/fstab.mt8167.avb:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8167
 else
 PRODUCT_COPY_FILES += \
-    device/mediatek/common/soc/fstab.ramdisk:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt8167 \
+    $(LOCAL_PATH)/fstab.mt8167:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt8167 \
     $(LOCAL_PATH)/fstab.mt8167:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8167
 endif
 endif

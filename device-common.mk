@@ -13,11 +13,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
+ifndef TARGET_KERNEL_USE
+TARGET_KERNEL_USE=4.19
+endif
+
 # Disable kernel config check for now
 PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := false
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-LOCAL_KERNEL := device/mediatek/common-kernel/Image
+LOCAL_KERNEL := device/mediatek/common-kernel/$(TARGET_KERNEL_USE)/Image
 else
 LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif

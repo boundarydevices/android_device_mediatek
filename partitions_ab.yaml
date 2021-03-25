@@ -6,6 +6,9 @@ partitions:
   bootloaders:
     start: 512K
     size: 2M
+  persist:
+    size: 32M
+    file: persist.img
   splashscreen:
     size: 10M
     file: splashscreen.raw

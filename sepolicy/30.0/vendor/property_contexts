@@ -14,8 +14,6 @@ hwc.drm.scale_with_gpu 			u:object_r:cf_graphics_config_prop:s0 exact int
 hwc.drm.use_overlay_planes 		u:object_r:cf_graphics_config_prop:s0 exact int
 persist.pvr.apphintipc  		u:object_r:vendor_default_prop:s0
 
-# tee
-keymaster.optee.status  		u:object_r:keymaster_tee_prop:s0
 
 
 # vpud

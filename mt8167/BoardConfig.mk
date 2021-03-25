@@ -28,6 +28,9 @@ BOARD_MKBOOTIMG_ARGS := \
 BOARD_SEPOLICY_DIRS += \
         device/mediatek/common/soc/mt8167/sepolicy
 
+BOARD_SEPOLICY_DIRS += \
+    device/mediatek/common/soc/optee/sepolicy/30.0/vendor
+
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/mediatek/common/soc/mt8167/bluetooth
 
 # Recovery

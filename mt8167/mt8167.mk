@@ -92,7 +92,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.gralloc=rogue \
     ro.hardware.hwcomposer=drm_imagination \
     ro.hardware.egl=POWERVR_ROGUE \
-    hwc.drm.device=/dev/dri/card2
+    vendor.hwc.drm.device=/dev/dri/card2
 endif
 
 PRODUCT_PACKAGES += vpud.mt8167

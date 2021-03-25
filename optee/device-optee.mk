@@ -13,6 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+PRODUCT_CUSTOM_IMAGE_MAKEFILES += \
+   device/mediatek/common/soc/build/custom_images/persist.mk
 
 # optee
 OPTEE_OS_DIR := external/optee-os

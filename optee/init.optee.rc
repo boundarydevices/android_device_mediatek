@@ -1,3 +1,6 @@
+on post-fs
+    restorecon_recursive /mnt/vendor/persist/
+
 on post-fs-data
     exec_start wait_for_keymaster_optee
 

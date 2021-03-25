@@ -5,5 +5,7 @@
 /vendor/bin/hw/wait_for_keymaster_optee                          u:object_r:wait_for_keymaster_optee_exec:s0
 /vendor/bin/hw/android\.hardware\.gatekeeper@1\.0-service\.optee u:object_r:hal_gatekeeper_default_exec:s0
 /vendor/bin/hw/android\.hardware\.keymaster@3\.0-service\.optee  u:object_r:hal_keymaster_default_exec:s0
-/data/vendor/tee(/.*)?						 u:object_r:tee_data_file:s0
+/mnt/vendor/persist(/.*)?                                        u:object_r:vendor_data_file:s0
+/mnt/vendor/persist/tee(/.*)?                                    u:object_r:tee_data_file:s0
+/dev/block/mmcblk0p2                                             u:object_r:persist_block_device:s0
 

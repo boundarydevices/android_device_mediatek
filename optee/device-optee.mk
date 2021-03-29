@@ -16,6 +16,10 @@
 PRODUCT_CUSTOM_IMAGE_MAKEFILES += \
    device/mediatek/common/soc/build/custom_images/persist.mk
 
+# copy persist prebuilt images
+PRODUCT_COPY_FILES += \
+    device/mediatek/common/soc/binaries/persist.img:$(TARGET_OUT)/persist.img 
+
 # optee
 OPTEE_OS_DIR := external/optee-os
 OPTEE_TA_TARGETS := ta_arm64

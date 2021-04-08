@@ -79,6 +79,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196610
 
+#enforce permission allowlists for system apps.
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.control_privapp_permissions=enforce
+
 # Audio:
 # NOTE: each product should also add audio.primary.$(TARGET_DEVICE) to its PRODUCT_PACKAGES
 PRODUCT_PACKAGES += \

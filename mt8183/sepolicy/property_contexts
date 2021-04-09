@@ -1,0 +1,36 @@
+# Quant types
+Armnn.operandTypeTensorQuant8AsymmPerformance.execTime            u:object_r:armnn_prop:s0
+Armnn.operandTypeTensorQuant8AsymmPerformance.powerUsage          u:object_r:armnn_prop:s0
+Armnn.operandTypeTensorQuant8SymmPerformance.execTime             u:object_r:armnn_prop:s0
+Armnn.operandTypeTensorQuant8SymmPerformance.powerUsage           u:object_r:armnn_prop:s0
+Armnn.operandTypeTensorQuant8SymmPerChannelPerformance.execTime   u:object_r:armnn_prop:s0
+Armnn.operandTypeTensorQuant8SymmPerChannelPerformance.powerUsage u:object_r:armnn_prop:s0
+Armnn.operandTypeTensorQuant8AsymmSignedPerformance.execTime      u:object_r:armnn_prop:s0
+Armnn.operandTypeTensorQuant8AsymmSignedPerformance.powerUsage    u:object_r:armnn_prop:s0
+Armnn.operandTypeTensorQuant16SymmPerformance.execTime            u:object_r:armnn_prop:s0
+Armnn.operandTypeTensorQuant16SymmPerformance.powerUsage          u:object_r:armnn_prop:s0
+
+# Float types
+Armnn.operandTypeTensorFloat32Performance.execTime                u:object_r:armnn_prop:s0
+Armnn.operandTypeTensorFloat32Performance.powerUsage              u:object_r:armnn_prop:s0
+Armnn.operandTypeFloat32Performance.execTime                      u:object_r:armnn_prop:s0
+Armnn.operandTypeFloat32Performance.powerUsage                    u:object_r:armnn_prop:s0
+Armnn.operandTypeTensorFloat16Performance.execTime                u:object_r:armnn_prop:s0
+Armnn.operandTypeTensorFloat16Performance.powerUsage              u:object_r:armnn_prop:s0
+Armnn.operandTypeFloat16Performance.execTime                      u:object_r:armnn_prop:s0
+Armnn.operandTypeFloat16Performance.powerUsage                    u:object_r:armnn_prop:s0
+ArmNN.relaxedFloat32toFloat16Performance.execTime                 u:object_r:armnn_prop:s0
+ArmNN.relaxedFloat32toFloat16Performance.powerUsage               u:object_r:armnn_prop:s0
+
+# Int types
+Armnn.operandTypeTensorInt32Performance.execTime                  u:object_r:armnn_prop:s0
+Armnn.operandTypeTensorInt32Performance.powerUsage                u:object_r:armnn_prop:s0
+Armnn.operandTypeInt32Performance.execTime                        u:object_r:armnn_prop:s0
+Armnn.operandTypeInt32Performance.powerUsage                      u:object_r:armnn_prop:s0
+
+# Misc
+ArmNN.ifPerformance.powerUsage                                    u:object_r:armnn_prop:s0
+ArmNN.ifPerformance.execTime                                      u:object_r:armnn_prop:s0
+ArmNN.whilePerformance.execTime                                   u:object_r:armnn_prop:s0
+ArmNN.whilePerformance.powerUsage                                 u:object_r:armnn_prop:s0
+

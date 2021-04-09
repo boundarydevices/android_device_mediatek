@@ -7,3 +7,6 @@ init_daemon_domain(hal_neuralnetworks_arm)
 hal_client_domain(hal_neuralnetworks_arm, hal_allocator)
 
 allow hal_neuralnetworks_arm gpu_device:chr_file rw_file_perms;
+
+type armnn_prop, property_type;
+get_prop(hal_neuralnetworks_arm, armnn_prop)

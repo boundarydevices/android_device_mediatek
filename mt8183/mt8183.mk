@@ -80,22 +80,23 @@ PRODUCT_COPY_FILES += \
 # Add support of Mali GPU
 PRODUCT_PACKAGES += \
     libGLES_mali \
-    gralloc.mt6771 \
-    hwcomposer.drm_mediatek
+    hwcomposer.drm \
+    libOpenCL.so libOpenCL.so.1 libOpenCL.so.1.1 libOpenCL.so.1.2 \
+    arm.graphics \
+    arm.graphics-ndk_platform
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.hardware.gralloc=mt6771 \
     ro.hardware.egl=mali \
     ro.hardware.vulkan=mali \
-    ro.hardware.hwcomposer=drm_mediatek \
+    ro.hardware.hwcomposer=drm \
     vendor.hwc.drm.device=/dev/dri/card1
 
 # 3D CPU renderer
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.composer@2.1-service \
-    android.hardware.graphics.mapper@2.0-impl \
-    android.hardware.graphics.allocator@2.0-service \
-    android.hardware.graphics.allocator@2.0-impl
+    android.hardware.graphics.composer@2.4-service \
+    android.hardware.graphics.mapper@4.0-impl-arm \
+    android.hardware.graphics.allocator@4.0-impl-arm \
+    android.hardware.graphics.allocator@4.0-service
 
 # Vulkan
 PRODUCT_COPY_FILES += \
@@ -103,7 +104,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.vulkan.compute-0.xml:vendor/etc/permissions/android.hardware.vulkan.compute.xml \
     frameworks/native/data/etc/android.hardware.vulkan.level-1.xml:vendor/etc/permissions/android.hardware.vulkan.level.xml
 
-PRODUCT_PACKAGES +=  vulkan.mali.so
+PRODUCT_PACKAGES +=  vulkan.mali
 
 VENDOR_UEVENTD_FILES += \
     device/mediatek/common/binaries/egl/mali/ueventd.rc

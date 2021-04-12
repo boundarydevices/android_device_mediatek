@@ -1,14 +1,4 @@
 <manifest version="1.0" type="device">
-    <hal>
-        <name>android.hardware.neuralnetworks</name>
-        <transport>hwbinder</transport>
-        <version>1.3</version>
-        <interface>
-            <name>IDevice</name>
-            <instance>armnn</instance>
-        </interface>
-        <fqname>@1.3::IDevice/armnn</fqname>
-    </hal>
     <hal format="hidl">
         <name>android.hardware.graphics.allocator</name>
         <transport>hwbinder</transport>

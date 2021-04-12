@@ -62,13 +62,6 @@ PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-service.software
 endif
 
-# 3D CPU renderer
-PRODUCT_PACKAGES += \
-    android.hardware.graphics.composer@2.1-service \
-    android.hardware.graphics.mapper@2.0-impl \
-    android.hardware.graphics.allocator@2.0-service \
-    android.hardware.graphics.allocator@2.0-impl \
-
 # SurfaceFlinger
 PRODUCT_PACKAGES += \
     android.hardware.configstore@1.1-service

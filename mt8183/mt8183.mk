@@ -90,6 +90,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.hwcomposer=drm_mediatek \
     vendor.hwc.drm.device=/dev/dri/card1
 
+# 3D CPU renderer
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.composer@2.1-service \
+    android.hardware.graphics.mapper@2.0-impl \
+    android.hardware.graphics.allocator@2.0-service \
+    android.hardware.graphics.allocator@2.0-impl
+
 # Vulkan
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.vulkan.version-1_1.xml:vendor/etc/permissions/android.hardware.vulkan.version.xml \

@@ -95,6 +95,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.hwc.drm.device=/dev/dri/card2
 endif
 
+# 3D CPU renderer
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.composer@2.1-service \
+    android.hardware.graphics.mapper@2.0-impl \
+    android.hardware.graphics.allocator@2.0-service \
+    android.hardware.graphics.allocator@2.0-impl
+
 PRODUCT_PACKAGES += vpud.mt8167
 VENDOR_UEVENTD_FILES += device/mediatek/common/soc/ueventd/ueventd.vpud.rc
 

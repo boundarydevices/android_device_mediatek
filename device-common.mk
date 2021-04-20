@@ -171,3 +171,7 @@ PRODUCT_PACKAGES += \
 # Copy xml file to support backup function
 PRODUCT_COPY_FILES += \
 frameworks/native/data/etc/android.software.backup.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.backup.xml
+
+# Copy xml file to support PIN, pattern and password LOck
+ PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.software.secure_lock_screen.xml:system/etc/permissions/android.software.secure_lock_screen.xml

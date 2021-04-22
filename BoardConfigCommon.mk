@@ -87,6 +87,10 @@ DTBO_UNSIGNED := dtbo-unsigned.img
 BOARD_PREBUILT_DTBOIMAGE = $(PRODUCT_OUT)/$(DTBO_UNSIGNED)
 
 # AVB
+ifeq ($(TARGET_BUILD_VARIANT), user)
+TARGET_AVB_ENABLE:=true
+endif
+
 ifeq ($(TARGET_AVB_ENABLE), true)
 BOARD_AVB_ENABLE := true
 else

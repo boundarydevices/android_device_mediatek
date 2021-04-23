@@ -167,3 +167,9 @@ frameworks/native/data/etc/android.software.backup.xml:$(TARGET_COPY_OUT_VENDOR)
 # Copy xml file to support PIN, pattern and password LOck
  PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.secure_lock_screen.xml:system/etc/permissions/android.software.secure_lock_screen.xml
+
+ifeq ($(TARGET_AVB_ENABLE), true)
+#copy xml file to tell PackageManager that the system supports Verified Boot
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.software.verified_boot.xml:system/etc/permissions/android.software.verified_boot.xml
+endif # eq $(TARGET_AVB_ENABLE), true

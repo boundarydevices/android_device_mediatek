@@ -120,6 +120,13 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml
 
+# DRM (Digital Rights Management)
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.1-service.clearkey \
+    android.hardware.drm@1.1-service.widevine \
+    android.hardware.drm@1.0-service \
+    android.hardware.drm@1.0-impl
+
 # fstab
 ifeq ($(TARGET_USE_AB_SLOT), true)
 ifeq ($(TARGET_AVB_ENABLE), true)

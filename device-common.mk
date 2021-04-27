@@ -80,13 +80,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libeffects/data/audio_effects.xml:vendor/etc/audio_effects.xml
 
-# DRM (Digital Rights Management)
-PRODUCT_PACKAGES += \
-    android.hardware.drm@1.1-service.clearkey \
-    android.hardware.drm@1.1-service.widevine \
-    android.hardware.drm@1.0-service \
-    android.hardware.drm@1.0-impl
-
 # Memtrack
 PRODUCT_PACKAGES += memtrack.default \
     android.hardware.memtrack@1.0-service \

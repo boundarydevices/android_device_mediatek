@@ -102,6 +102,10 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.allocator@2.0-impl
 
+# SurfaceFlinger
+PRODUCT_PACKAGES += \
+    android.hardware.configstore@1.1-service
+
 PRODUCT_PACKAGES += vpud.mt8167
 VENDOR_UEVENTD_FILES += device/mediatek/common/soc/ueventd/ueventd.vpud.rc
 

@@ -45,8 +45,7 @@ PRODUCT_PACKAGES += android.hardware.health@2.1-impl-batteryless.recovery
 endif
 
 # Backlight/brightness
-PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.mediatek \
+PRODUCT_PACKAGES += android.hardware.lights-service.mediatek
 
 # Security
 ifeq ($(OPTEE_ENABLE), true)

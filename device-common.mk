@@ -173,3 +173,7 @@ ifeq ($(TARGET_AVB_ENABLE), true)
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.verified_boot.xml:system/etc/permissions/android.software.verified_boot.xml
 endif # eq $(TARGET_AVB_ENABLE), true
+
+# Supported features
+PRODUCT_COPY_FILES += \
+	frameworks/native/data/etc/android.hardware.opengles.aep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.opengles.aep.xml

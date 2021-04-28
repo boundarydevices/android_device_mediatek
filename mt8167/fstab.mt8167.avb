@@ -9,3 +9,4 @@ vendor                                                    /vendor       ext4    
 /dev/block/platform/soc/11120000.mmc/by-name/persist      /mnt/vendor/persist     ext4    noatime,nosuid,nodev,barrier=1,data=ordered,nodelalloc,errors=panic   wait,check,formattable
 /dev/block/platform/soc/11120000.mmc/by-name/misc         /misc         emmc      defaults                                                                    defaults
 */block/sd*                                               auto          auto      defaults                                                                    voldmanaged=usb:auto,noemulatedsd
+/dev/block/zram0                                          none          swap      defaults                                                                    zramsize=314572800

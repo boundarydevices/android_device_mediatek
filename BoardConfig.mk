@@ -73,7 +73,8 @@ DTB_FILES := \
 DTBO_FILES := \
         $(LOCAL_DTB)/mt8167-pumpkin-android.dtb \
         $(LOCAL_DTB)/mt8167-pumpkin-android-dsi.dtb \
-        $(LOCAL_DTB)/mt8167-pumpkin-i2s-header.dtb
+        $(LOCAL_DTB)/mt8167-pumpkin-i2s-header.dtb \
+        $(LOCAL_DTB)/mt8167-pumpkin-ov5645.dtb \
 
 # Additional hardware features
 # NOTE: must be called last, as they append Board variables such

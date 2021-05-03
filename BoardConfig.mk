@@ -72,7 +72,8 @@ DTB_FILES := \
 # Please keep this list fixed: add new files in the end of the list
 DTBO_FILES := \
         $(LOCAL_DTB)/mt8167-pumpkin-android.dtb \
-        $(LOCAL_DTB)/mt8167-pumpkin-android-dsi.dtb
+        $(LOCAL_DTB)/mt8167-pumpkin-android-dsi.dtb \
+        $(LOCAL_DTB)/mt8167-pumpkin-i2s-header.dtb
 
 # Additional hardware features
 # NOTE: must be called last, as they append Board variables such

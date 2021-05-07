@@ -85,7 +85,13 @@ PRODUCT_PACKAGES += memtrack.default \
     android.hardware.memtrack@1.0-service \
     android.hardware.memtrack@1.0-impl
 
-# Usb
+# USB
+PRODUCT_PACKAGES += \
+    android.hardware.usb@1.2-service.mtk
+
+PRODUCT_COPY_FILES += \
+    device/mediatek/common/hal/usb/1.2/init.gadgethal.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.gadgethal.sh
+
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.usb.accessory.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.usb.accessory.xml \
 

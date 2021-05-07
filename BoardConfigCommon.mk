@@ -67,6 +67,10 @@ endif
 BOARD_SEPOLICY_DIRS := \
         device/mediatek/common/soc/sepolicy/30.0/vendor
 
+# USB Hal
+BOARD_SEPOLICY_DIRS += \
+        device/mediatek/common/hal/usb/1.2/sepolicy
+
 # Boot control HAL for A/B
 ifeq ($(TARGET_USE_AB_SLOT), true)
 DEVICE_MANIFEST_FILE += device/mediatek/common/soc/manifest_ab.xml

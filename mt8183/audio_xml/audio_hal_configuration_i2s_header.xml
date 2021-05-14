@@ -34,10 +34,10 @@ Note: not xml elements from TinyHAL are supported.
         <device name="mic">
 	</device>
 
-        <stream type="pcm" dir="out" card="0" device="0">
+        <stream type="pcm" dir="out" card="0" device="0" rate="48000">
         </stream>
 
-        <stream type="pcm" dir="in" card="0" device="3">
+        <stream type="pcm" dir="in" card="0" device="3" rate="48000">
         </stream>
 
 </audiohal>

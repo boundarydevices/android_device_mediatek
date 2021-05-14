@@ -29,7 +29,7 @@ BOARD_SEPOLICY_DIRS += \
 BOARD_SEPOLICY_DIRS += \
     device/mediatek/common/soc/optee/sepolicy/30.0/vendor
 
-DEVICE_MANIFEST_FILE += device/mediatek/common/soc/mt8183/manifest.xml
+DEVICE_MANIFEST_FILE := device/mediatek/common/soc/mt8183/manifest.xml
 
 # RecoveryOS
 TARGET_RELEASETOOLS_EXTENSIONS := device/mediatek/common/soc/

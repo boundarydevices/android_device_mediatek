@@ -30,10 +30,16 @@ Note: not xml elements from TinyHAL are supported.
         </init>
         </mixer>
 
+        <!-- jack out -->
         <device name="headphone">
         </device>
 
+        <!-- jack in -->
         <device name="headset_in">
+        </device>
+
+        <!-- camera in -->
+        <device name="mic">
         </device>
 
         <stream type="pcm" dir="out" card="0" device="4" rate="48000">

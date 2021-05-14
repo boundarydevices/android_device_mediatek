@@ -15,7 +15,7 @@
 #
 
 ifndef TARGET_KERNEL_USE
-TARGET_KERNEL_USE=4.19
+TARGET_KERNEL_USE=5.4
 endif
 
 # Disable kernel config check for now

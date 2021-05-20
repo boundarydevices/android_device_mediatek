@@ -31,7 +31,7 @@ BOARD_SEPOLICY_DIRS += \
 BOARD_SEPOLICY_DIRS += \
     device/mediatek/common/soc/optee/sepolicy/30.0/vendor
 
-DEVICE_MANIFEST_FILE := device/mediatek/common/soc/mt8167/manifest.xml
+DEVICE_MANIFEST_FILE += device/mediatek/common/soc/mt8167/manifest.xml
 
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/mediatek/common/soc/mt8167/bluetooth
 

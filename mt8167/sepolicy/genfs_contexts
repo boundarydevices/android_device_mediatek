@@ -5,3 +5,5 @@ genfscon sysfs /devices/platform/soc/11180000.ethernet/net u:object_r:sysfs_net:
 genfscon sysfs /devices/platform/soc/1000f000.pwrap/1000f000.pwrap:pmic/mt6397-rtc u:object_r:sysfs_rtc:s0
 
 genfscon sysfs /firmware/devicetree/base/soc/vcu@0/compatible u:object_r:sysfs_dt_base:s0
+
+genfscon sysfs /devices/platform/soc/11120000.mmc/ u:object_r:sysfs_devices_mmc:s0

@@ -1,0 +1,4 @@
+allow dumpstate sysfs_devices_mmc:file r_file_perms;
+
+binder_call(dumpstate, hal_light_default)
+binder_call(dumpstate, hal_power_default)

@@ -117,9 +117,13 @@ PRODUCT_PACKAGES += \
 # Audio policy configuration
 USE_XML_AUDIO_POLICY_CONF := 1
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio_xml/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml
+
+ifneq ($(TARGET_USE_PRODUCT_SPECIFIC_AUDIO), true)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/audio_xml/audio_policy_configuration_jack.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml
+endif
 
 # DRM (Digital Rights Management)
 PRODUCT_PACKAGES += \

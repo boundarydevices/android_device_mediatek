@@ -70,6 +70,10 @@ PRODUCT_COPY_FILES += \
 endif # eq $(TARGET_USE_AB_SLOT), true
 endif # neq $(TARGET_USE_PRODUCT_SPECIFIC_UBOOT), true)
 
+# Media configuration
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/media_xml/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml
+
 # Audio policy configuration
 USE_XML_AUDIO_POLICY_CONF := 1
 PRODUCT_COPY_FILES += \

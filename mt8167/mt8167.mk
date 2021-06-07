@@ -56,51 +56,52 @@ PRODUCT_COPY_FILES += \
 else
 # add support of Rogue GPU
 PRODUCT_PACKAGES += \
-    camera.rogue \
+    libEGL_powervr \
+    libGLESv1_CM_powervr \
+    libGLESv2_powervr \
     gralloc.rogue \
-    hwcomposer.drm_imagination \
+    memtrack.rogue \
     sensors.rogue \
     thermal.rogue \
+    vulkan.powervr \
     libAppHintsIPC \
-    libcreatesurface \
-    libdnngraphgen \
-    libEGL_POWERVR_ROGUE \
-    libGLESv1_CM_POWERVR_ROGUE \
-    libGLESv2_POWERVR_ROGUE \
     libglslcompiler \
-    libIMGDNN \
     libIMGegl \
-    libPVRCLDNN \
+    libpvrANDROID_WSEGL \
     libPVROCL \
-    libPVRRS \
     libPVRScopeServices \
     libsrv_um \
-    libsutu_display \
     libufwriter \
     libusc \
-    memtrack.rogue \
     vendor.imagination.gpu.apphints@1.0 \
-    vulkan.rogue \
+    rgx.fw.22.40.54.30 \
+    rgx.sh.22.40.54.30 \
     libeglinfo \
     libgles1test1 \
-    libgles2test1.so \
-    sensors.rogue \
-    thermal.rogue \
-    rgx.fw.22.40.54.30
+    libgles2test1 \
+    libgles3test1 \
+    hwcomposer.drm \
+
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.gralloc=rogue \
-    ro.hardware.hwcomposer=drm_imagination \
-    ro.hardware.egl=POWERVR_ROGUE \
+    ro.hardware.hwcomposer=drm \
+    ro.hardware.egl=powervr \
+    ro.hardware.vulkan=powervr \
+    persist.pvr.apphintipc=0 \
     vendor.hwc.drm.device=/dev/dri/card2
+
+# Public Libraries
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
+
 endif
 
 # 3D CPU renderer
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.composer@2.1-service \
-    android.hardware.graphics.mapper@2.0-impl \
-    android.hardware.graphics.allocator@2.0-service \
-    android.hardware.graphics.allocator@2.0-impl
+    android.hardware.graphics.composer@2.4-service \
+    android.hardware.graphics.mapper@4.0-impl \
+    android.hardware.graphics.allocator@4.0-service.img \
 
 # SurfaceFlinger
 PRODUCT_PACKAGES += \

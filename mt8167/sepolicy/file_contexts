@@ -24,3 +24,14 @@
 /vendor/lib(64)?/libusc\.so                         u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libglslcompiler\.so                u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/hw/gralloc\.rogue\.so              u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/hw/vulkan\.powervr\.so             u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libpvrANDROID_WSEGL\.so            u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libPVROCL\.so                       u:object_r:same_process_hal_file:s0
+
+# IPC apphints driver
+/vendor/lib(64)?/libAppHintsIPC\.so  u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/vendor\.imagination\.gpu\.apphints@1\.0\.so u:object_r:same_process_hal_file:s0
+
+# graphics allocator hidl service
+/vendor/bin/hw/android\.hardware\.graphics\.allocator@4\.0-service.img u:object_r:hal_graphics_allocator_default_exec:s0
+/vendor/lib(64)?/hw/android\.hardware\.graphics\.mapper@4\.0-impl.so u:object_r:same_process_hal_file:s0

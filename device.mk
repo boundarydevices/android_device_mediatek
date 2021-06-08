@@ -53,8 +53,8 @@ PRODUCT_PACKAGES += \
     DemoCheckoutCounter
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.heapgrowthlimit=64m \
-    dalvik.vm.heapsize=64m
+    dalvik.vm.heapgrowthlimit=128m \
+    dalvik.vm.heapsize=128m
 
 # Additional hardware features
 $(call inherit-product-if-exists, vendor/mediatek/mt7668/mt7668.mk)

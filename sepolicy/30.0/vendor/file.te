@@ -1,3 +1,4 @@
 type sysfs_power_supply, fs_type, sysfs_type;
 type sysfs_dt_base, fs_type, sysfs_type;
 type sysfs_devices_mmc, fs_type, sysfs_type;
+type mediadrm_vendor_data_file, file_type, data_file_type;

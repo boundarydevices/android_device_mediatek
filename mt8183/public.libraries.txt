@@ -1,6 +1,4 @@
-libGLES_mali.so
 libOpenCL.so
 libOpenCL.so.1
 libOpenCL.so.1.1
 libOpenCL.so.1.2
-vulkan.mali.so

@@ -16,6 +16,9 @@
 
 $(call inherit-product, device/mediatek/common/soc/device-common.mk)
 
+# ARMNN hal (gpu tuning file)
+$(call inherit-product, vendor/arm/android-nn-driver/armnn.mk)
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.mt8183.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.mt8183.rc \
 

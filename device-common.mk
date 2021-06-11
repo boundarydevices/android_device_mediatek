@@ -87,6 +87,10 @@ PRODUCT_PACKAGES += memtrack.default \
     android.hardware.memtrack@1.0-service \
     android.hardware.memtrack@1.0-impl
 
+# DRM (Digital Rights Management)
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.3-service.clearkey
+
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.2-service.mtk

@@ -103,9 +103,6 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@4.0-impl \
     android.hardware.graphics.allocator@4.0-service.img \
 
-# SurfaceFlinger
-PRODUCT_PACKAGES += \
-    android.hardware.configstore@1.1-service
 
 PRODUCT_PACKAGES += vpud.mt8167
 VENDOR_UEVENTD_FILES += device/mediatek/common/soc/ueventd/ueventd.vpud.rc
@@ -125,12 +122,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio_xml/audio_policy_configuration_jack.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml
 endif
 
-# DRM (Digital Rights Management)
-PRODUCT_PACKAGES += \
-    android.hardware.drm@1.1-service.clearkey \
-    android.hardware.drm@1.1-service.widevine \
-    android.hardware.drm@1.0-service \
-    android.hardware.drm@1.0-impl
 
 # fstab
 ifeq ($(TARGET_USE_AB_SLOT), true)

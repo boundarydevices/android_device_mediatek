@@ -32,6 +32,14 @@ CFG_SECURE_DATA_PATH := y
 CFG_TEE_FS_PARENT_PATH := /mnt/vendor/persist/tee
 CFG_TEE_CLIENT_LOAD_PATH := /vendor/lib/
 
+# log level
+# 0: none
+# 1: error
+# 2: error + warning
+# 3: error + warning + debug
+# 4: error + warning + debug + flow
+OPTEE_TA_LOG_LEVEL := 2
+
 # To use linaro toolchain, please set OPTEE_LINARO_CROSS_COMPILE64
 # https://android-git.linaro.org/git/prebuilts/gcc/linux-x86/aarch64/gcc-linaro-7.3.1-2018.05-x86_64_aarch64-linux-gnu
 # OPTEE_LINARO_CROSS_COMPILE64 := prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-7.3-linaro/bin/aarch64-linux-gnu-

@@ -76,6 +76,10 @@ ifeq ($(TARGET_USE_AB_SLOT), true)
 DEVICE_MANIFEST_FILE += device/mediatek/common/soc/manifest_ab.xml
 endif
 
+ifeq ($(TARGET_KERNEL_USE), 5.4)
+DEVICE_MANIFEST_FILE += device//mediatek/common/soc/manifest_kernel5.xml
+endif
+
 BOARD_VENDOR_MEDIATEK := true
 
 # Set location of DTB/DTBO files

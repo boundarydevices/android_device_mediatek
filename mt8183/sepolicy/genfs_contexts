@@ -2,3 +2,11 @@ genfscon sysfs /devices/platform/soc/1000d000.pwrap/1000d000.pwrap:mt6358/mt6397
 genfscon sysfs /firmware/devicetree/base/odm/firmware/android           u:object_r:sysfs_dt_firmware_android:s0
 genfscon sysfs /devices/platform/soc/11240000.mmc/mmc_host/mmc1/mmc1:0001/mmc1:0001:1/net u:object_r:sysfs_net:s0
 genfscon sysfs /devices/platform/soc/11230000.mmc/ u:object_r:sysfs_devices_mmc:s0
+genfscon sysfs /devices/platform/rtc-test.2/wakeup/wakeup2 u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1000d000.pwrap/1000d000.pwrap:mt6358/mt6397-rtc/wakeup/wakeup3 u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1000d000.pwrap/1000d000.pwrap:mt6358/mt6397-rtc/power/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1000d000.pwrap/1000d000.pwrap:mt6358/mt6397-rtc/rtc/rtc0/wakeup4 u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/11201000.usb/wakeup/wakeup0 u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/11201000.usb/11200000.xhci/wakeup/wakeup1 u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/10010000.kp/wakeup/wakeup2 u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1100f000.i2c/i2c-3/3-0026/wakeup/wakeup5 u:object_r:sysfs_wakeup:s0

@@ -83,6 +83,10 @@ PRODUCT_PACKAGES_DEBUG += 614789f2-39c0-4ebf-b235-92b32ac107ed.ta # sha_perf
 PRODUCT_PACKAGES_DEBUG += 528938ce-fc59-11e8-8eb2-f2801f1b9fd1.ta # miss
 PRODUCT_PACKAGES_DEBUG += e6a33ed4-562b-463a-bb7e-ff5e15a493c8.ta # sims
 
+# tee-supplicant test plugin
+PRODUCT_PACKAGES_DEBUG += f07bfc66-958c-4a15-99c0-260e4e7375dd.plugin
+PRODUCT_PACKAGES_DEBUG += 380231ac-fb99-47ad-a689-9e017eb6e78a.ta # supp_plugin
+
 PRODUCT_PACKAGES_DEBUG += \
     VtsHalGatekeeperV1_0TargetTest \
     VtsHalKeymasterV3_0TargetTest

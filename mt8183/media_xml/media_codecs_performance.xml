@@ -96,5 +96,15 @@
             <!-- 1 run, measured 11 min 8 max 14 -->
             <Limit name="measured-frame-rate-1920x1080" range="8-14" />
         </MediaCodec>
+        <MediaCodec name="c2.android.vp9.decoder" type="video/x-vnd.on2.vp9" update="true">
+            <!-- 1 run, measured 342 min 239 max 445 -->
+            <Limit name="measured-frame-rate-320x180" range="239-445" />
+            <!-- 1 run, measured 183 min 128 max 238 -->
+            <Limit name="measured-frame-rate-640x360" range="128-238" />
+            <!-- 1 run, measured 78 min 55 max 101 -->
+            <Limit name="measured-frame-rate-1280x720" range="55-101" />
+            <!-- 1 run, measured 48 min 34 max 62 -->
+            <Limit name="measured-frame-rate-1920x1080" range="34-62" />
+        </MediaCodec>
     </Decoders>
 </MediaCodecs>

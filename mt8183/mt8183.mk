@@ -75,7 +75,8 @@ endif # neq $(TARGET_USE_PRODUCT_SPECIFIC_UBOOT), true)
 
 # Media configuration
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/media_xml/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml
+    $(LOCAL_PATH)/media_xml/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
+    $(LOCAL_PATH)/media_xml/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
 
 # Audio policy configuration
 USE_XML_AUDIO_POLICY_CONF := 1

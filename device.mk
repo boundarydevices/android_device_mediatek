@@ -49,8 +49,10 @@ endif
 DEVICE_PACKAGE_OVERLAYS += device/mediatek/quartz/overlay
 
 # Demo apps
+ifneq (,$(filter userdebug eng,$(TARGET_BUILD_VARIANT)))
 PRODUCT_PACKAGES += \
     DemoCheckoutCounter
+endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapgrowthlimit=128m \

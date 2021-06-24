@@ -79,6 +79,7 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.effect@6.0-impl
 
 PRODUCT_COPY_FILES += \
+    frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:vendor/etc/a2dp_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:vendor/etc/r_submix_audio_policy_configuration.xml \
     frameworks/av/media/libeffects/data/audio_effects.xml:vendor/etc/audio_effects.xml
 

@@ -1,10 +1,3 @@
-on init
-   # in recoveryOS, kernel modules are located in /lib/ instead of /vendor/lib/
-   # and /vendor is not mounted. See:
-   # https://source.android.com/devices/architecture/kernel/loadable-kernel-modules
-   insmod /lib/modules/mediatek-drm.ko
-   insmod /lib/modules/mediatek-drm-hdmi.ko
-
 on boot
     mount configfs none /config
     mkdir /config/usb_gadget/g1 0770 shell shell

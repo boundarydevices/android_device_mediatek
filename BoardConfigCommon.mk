@@ -58,6 +58,8 @@ BOARD_RECOVERY_KERNEL_MODULES := \
     device/mediatek/common-kernel/$(TARGET_KERNEL_USE)/mediatek-drm.ko \
     device/mediatek/common-kernel/$(TARGET_KERNEL_USE)/mediatek-drm-hdmi.ko
 
+VENDOR_UEVENTD_FILES += device/mediatek/common/soc/ueventd/ueventd.common.rc
+
 # Use mke2fs to create ext4 images
 TARGET_USES_MKE2FS := true
 

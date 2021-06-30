@@ -70,6 +70,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.control_privapp_permissions=enforce
 
+PRODUCT_PRODUCT_PROPERTIES += ro.incremental.enable=yes
+
 # Audio:
 # NOTE: each product should also add audio.primary.$(TARGET_DEVICE) to its PRODUCT_PACKAGES
 PRODUCT_PACKAGES += \

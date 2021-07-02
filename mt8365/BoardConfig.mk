@@ -81,6 +81,6 @@ SOONG_CONFIG_arm_gralloc_gralloc_use_ion_dma_heap := true
 SOONG_CONFIG_arm_gralloc_gralloc_use_ion_compound_page_heap := false
 SOONG_CONFIG_arm_gralloc_gralloc_init_afbc := false
 SOONG_CONFIG_arm_gralloc_gralloc_hwc_force_bgra_8888 := false
-SOONG_CONFIG_arm_gralloc_gralloc_use_ion_dmabuf_sync := false
+SOONG_CONFIG_arm_gralloc_gralloc_use_ion_dmabuf_sync := true
 SOONG_CONFIG_arm_gralloc_gralloc_hwc_fb_disable_afbc := true
 SOONG_CONFIG_arm_gralloc_gralloc_camera_write_raw16 := false

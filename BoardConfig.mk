@@ -25,6 +25,36 @@ BOARD_KERNEL_CMDLINE := \
     init=/init \
     androidboot.boot_devices=soc/11230000.mmc
 
+# FS configuration
+ifeq ($(TARGET_USE_AB_SLOT), true)
+BOARD_SUPER_PARTITION_SIZE         := 4831838208
+else
+BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE  := ext4
+BOARD_CACHEIMAGE_PARTITION_SIZE    := 16777216
+BOARD_SUPER_PARTITION_SIZE         := 2415919104
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
+endif
+TARGET_USERIMAGES_USE_EXT4         := true
+TARGET_COPY_OUT_VENDOR             := vendor
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_DTBOIMG_PARTITION_SIZE       := 4194304
+BOARD_BOOTIMAGE_PARTITION_SIZE     := 67108864
+BOARD_DB_DYNAMIC_PARTITIONS_SIZE   := 2411724800
+
+ifeq ($(TARGET_USE_AB_SLOT), true)
+ifeq ($(TARGET_AVB_ENABLE), true)
+MTK_PARTITIONS_YAML := device/mediatek/innocomm_sb35/partitions.avb_ab.yaml
+else
+MTK_PARTITIONS_YAML := device/mediatek/innocomm_sb35/partitions_ab.yaml
+endif
+else # TARGET_USE_AB_SLOT == false
+ifeq ($(TARGET_AVB_ENABLE), true)
+MTK_PARTITIONS_YAML := device/mediatek/innocomm_sb35/partitions.avb.yaml
+else
+MTK_PARTITIONS_YAML := device/mediatek/innocomm_sb35/partitions.yaml
+endif
+endif
+
 # Please keep this list fixed: add new files in the end of the list
 DTB_FILES := \
         $(LOCAL_DTB)/mt8365-sb35.dtb

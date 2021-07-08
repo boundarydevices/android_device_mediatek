@@ -1,0 +1,112 @@
+#
+# Copyright 2014 The Android Open-Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+$(call inherit-product, device/mediatek/common/soc/device-common.mk)
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/init.mt8365.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.mt8365.rc
+
+# fstab
+ifeq ($(TARGET_USE_AB_SLOT), true)
+ifeq ($(TARGET_AVB_ENABLE), true)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/fstab.mt8365.avb.ab:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.mt8365 \
+    $(LOCAL_PATH)/fstab.mt8365.avb.ab:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8365
+else
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/fstab.mt8365.ab:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.mt8365 \
+    $(LOCAL_PATH)/fstab.mt8365.ab:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8365
+endif
+else
+ifeq ($(TARGET_AVB_ENABLE), true)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/fstab.mt8365.avb:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt8365 \
+    $(LOCAL_PATH)/fstab.mt8365.avb:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8365
+else
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/fstab.mt8365:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt8365 \
+    $(LOCAL_PATH)/fstab.mt8365:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8365
+endif
+endif
+
+# Flashing binaries
+ifneq ($(TARGET_USE_PRODUCT_SPECIFIC_LK), true)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/binaries/images/lk.bin:$(TARGET_OUT)/lk.bin \
+    $(LOCAL_PATH)/binaries/images/dl_addr.ini:$(TARGET_OUT)/dl_addr.ini
+endif # neq $(TARGET_USE_PRODUCT_SPECIFIC_LK), true)
+
+
+# BL2
+ifneq ($(TARGET_USE_PRODUCT_SPECIFIC_BL2), true)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/binaries/images/bl2.img:$(TARGET_OUT)/bl2.img
+endif # neq $(TARGET_USE_PRODUCT_SPECIFIC_BL2), true)
+
+# U-Boot and env
+ifneq ($(TARGET_USE_PRODUCT_SPECIFIC_UBOOT), true)
+ifeq ($(TARGET_USE_AB_SLOT), true)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/binaries/images/fip_ab.bin:$(TARGET_OUT)/fip.bin \
+    $(LOCAL_PATH)/binaries/images/u-boot-initial-env_ab:$(TARGET_OUT)/u-boot-initial-env
+else
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/binaries/images/fip_noab.bin:$(TARGET_OUT)/fip.bin \
+    $(LOCAL_PATH)/binaries/images/u-boot-initial-env_noab:$(TARGET_OUT)/u-boot-initial-env
+endif # eq $(TARGET_USE_AB_SLOT), true
+endif # neq $(TARGET_USE_PRODUCT_SPECIFIC_UBOOT), true)
+
+# Media configuration
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/media_xml/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
+    $(LOCAL_PATH)/media_xml/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
+
+# Add support of Mali GPU
+PRODUCT_SOONG_NAMESPACES += device/mediatek/common/binaries/egl/mali/i350
+
+PRODUCT_PACKAGES += \
+    libGLES_mali \
+    hwcomposer.drm \
+    libOpenCL.so libOpenCL.so.1 libOpenCL.so.1.1 libOpenCL.so.1.2 \
+    arm.graphics \
+    arm.graphics-ndk_platform
+
+# Public Libraries
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.hardware.egl=mali \
+    ro.hardware.vulkan=mali \
+    ro.hardware.hwcomposer=drm \
+    vendor.hwc.drm.device=/dev/dri/card1
+
+# 3D CPU renderer
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.composer@2.4-service \
+    android.hardware.graphics.mapper@4.0-impl-arm \
+    android.hardware.graphics.allocator@4.0-impl-arm \
+    android.hardware.graphics.allocator@4.0-service
+
+PRODUCT_PACKAGES +=  vulkan.mali
+
+VENDOR_UEVENTD_FILES += \
+    device/mediatek/common/binaries/egl/mali/ueventd.rc
+
+# OP-TEE
+OPTEE_PLATFORM := mediatek-mt8175
+OPTEE_PLATFORM_FLAVOR := mt8175
+OPTEE_CFG_DRAM_SIZE := 0x80000000

@@ -16,3 +16,6 @@
 
 # Shipping API level to Android R (30)
 PRODUCT_SHIPPING_API_LEVEL := 30
+
+# UVC camera
+$(call inherit-product, device/mediatek/common/hal/camera/uvc/uvc.mk)

@@ -14,6 +14,6 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := $(LOCAL_DIR)/full_innocomm_sb35.mk
+PRODUCT_MAKEFILES := $(LOCAL_DIR)/innocomm_sb35.mk
 
-COMMON_LUNCH_CHOICES := full_innocomm_sb35-userdebug
+COMMON_LUNCH_CHOICES := innocomm_sb35-userdebug

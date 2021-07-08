@@ -16,7 +16,7 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 $(call inherit-product, device/mediatek/innocomm_sb35/device.mk)
 
-PRODUCT_NAME := full_innocomm_sb35
+PRODUCT_NAME := innocomm_sb35
 PRODUCT_DEVICE := innocomm_sb35
 PRODUCT_BRAND := Android
 PRODUCT_MODEL := innocomm_sb35

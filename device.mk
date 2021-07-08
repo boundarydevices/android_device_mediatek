@@ -17,6 +17,9 @@
 # Shipping API level to Android R (30)
 PRODUCT_SHIPPING_API_LEVEL := 30
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sf.lcd_density=180
+
 DEVICE_PACKAGE_OVERLAYS := device/mediatek/innocomm_sb35/overlay
 
 # UVC camera

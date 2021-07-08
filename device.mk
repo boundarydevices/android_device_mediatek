@@ -14,4 +14,5 @@
 # limitations under the License.
 #
 
-
+# Shipping API level to Android R (30)
+PRODUCT_SHIPPING_API_LEVEL := 30

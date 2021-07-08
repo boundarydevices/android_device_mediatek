@@ -14,8 +14,21 @@
 # limitations under the License.
 #
 
+include device/mediatek/common/soc/mt8365/BoardConfig.mk
 
-TARGET_ARCH := arm
-TARGET_ARCH_VARIANT := armv7-a-neon
-TARGET_CPU_ABI := armeabi-v7a
-TARGET_CPU_ABI2 := armeabi
+TARGET_BOOTLOADER_BOARD_NAME := innocomm_sb35
+
+# kernel commandline
+BOARD_KERNEL_CMDLINE := \
+    firmware_class.path=/vendor/firmware \
+    androidboot.selinux=permissive printk.devkmsg=on \
+    init=/init \
+    androidboot.boot_devices=soc/11230000.mmc
+
+# Please keep this list fixed: add new files in the end of the list
+DTB_FILES := \
+        $(LOCAL_DTB)/mt8365-sb35.dtb
+
+# Please keep this list fixed: add new files in the end of the list
+DTBO_FILES := \
+        $(LOCAL_DTB)/mt8365-sb35-android.dtb

@@ -32,6 +32,8 @@ DTB_FILES := \
 # Please keep this list fixed: add new files in the end of the list
 DTBO_FILES := \
         $(LOCAL_DTB)/mt8365-sb35-android.dtb
+
+include vendor/mediatek/mt7668/BoardConfig-mt7663.mk
 # UVC Camera
 include device/mediatek/common/hal/camera/uvc/BoardConfig.mk
 DEVICE_MANIFEST_FILE += device/mediatek/common/hal/camera/manifest-uvc.xml

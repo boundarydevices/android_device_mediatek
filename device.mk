@@ -19,3 +19,5 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 
 # UVC camera
 $(call inherit-product, device/mediatek/common/hal/camera/uvc/uvc.mk)
+
+$(call inherit-product, vendor/mediatek/mt7668/mt7663.mk)

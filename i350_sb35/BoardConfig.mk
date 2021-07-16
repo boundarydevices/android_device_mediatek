@@ -26,12 +26,12 @@ BOARD_KERNEL_CMDLINE := \
     androidboot.boot_devices=soc/11230000.mmc
 
 BOARD_VENDOR_KERNEL_MODULES += \
-    device/mediatek/common-kernel/$(TARGET_KERNEL_USE)/lt9611.ko \
-    device/mediatek/common-kernel/$(TARGET_KERNEL_USE)/panel-rpi-pumpkin-touchscreen.ko
+    device/mediatek/kernel-binaries/$(TARGET_KERNEL_USE)/lt9611.ko \
+    device/mediatek/kernel-binaries/$(TARGET_KERNEL_USE)/panel-rpi-pumpkin-touchscreen.ko
 
 BOARD_RECOVERY_KERNEL_MODULES += \
-    device/mediatek/common-kernel/$(TARGET_KERNEL_USE)/lt9611.ko \
-    device/mediatek/common-kernel/$(TARGET_KERNEL_USE)/panel-rpi-pumpkin-touchscreen.ko
+    device/mediatek/kernel-binaries/$(TARGET_KERNEL_USE)/lt9611.ko \
+    device/mediatek/kernel-binaries/$(TARGET_KERNEL_USE)/panel-rpi-pumpkin-touchscreen.ko
 
 # FS configuration
 ifeq ($(TARGET_USE_AB_SLOT), true)

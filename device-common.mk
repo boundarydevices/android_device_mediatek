@@ -22,7 +22,7 @@ endif
 PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := false
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-LOCAL_KERNEL := device/mediatek/common-kernel/$(TARGET_KERNEL_USE)/Image
+LOCAL_KERNEL := device/mediatek/kernel-binaries/$(TARGET_KERNEL_USE)/Image
 else
 LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif

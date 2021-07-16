@@ -103,7 +103,7 @@ PRODUCT_PACKAGES += \
     android.hardware.usb@1.2-service.mtk
 
 PRODUCT_COPY_FILES += \
-    device/mediatek/common/hal/usb/1.2/init.gadgethal.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.gadgethal.sh
+    hardware/mediatek/usb/1.2/init.gadgethal.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.gadgethal.sh
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.usb.accessory.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.usb.accessory.xml \
@@ -131,7 +131,7 @@ PRODUCT_COPY_FILES += \
 
 # Copy media codecs config file
 PRODUCT_COPY_FILES += \
-    device/mediatek/common/hal/media_xml/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
+    hardware/mediatek/media_xml/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml
 
 # Power HAL

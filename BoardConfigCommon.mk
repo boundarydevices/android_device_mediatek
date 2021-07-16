@@ -71,7 +71,7 @@ BOARD_SEPOLICY_DIRS := \
 
 # USB Hal
 BOARD_SEPOLICY_DIRS += \
-        device/mediatek/common/hal/usb/1.2/sepolicy
+        hardware/mediatek/usb/1.2/sepolicy
 
 # Boot control HAL for A/B
 ifeq ($(TARGET_USE_AB_SLOT), true)

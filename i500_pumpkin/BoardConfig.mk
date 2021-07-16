@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-include device/mediatek/common/soc/mt8183/BoardConfig.mk
+include device/mediatek/common/mt8183/BoardConfig.mk
 
 TARGET_BOOTLOADER_BOARD_NAME := i500_pumpkin
 

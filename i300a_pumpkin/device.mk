@@ -23,7 +23,7 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 # Audio: use default hal configuration with TinyHAL
 PRODUCT_PACKAGES += audio.primary.i300a_pumpkin
 PRODUCT_COPY_FILES += \
-     device/mediatek/common/soc/mt8167/audio_xml/audio_hal_configuration_jack.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio.i300a_pumpkin.xml
+     device/mediatek/common/mt8167/audio_xml/audio_hal_configuration_jack.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio.i300a_pumpkin.xml
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml

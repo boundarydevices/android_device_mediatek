@@ -19,12 +19,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Splashscreen: use default one
 PRODUCT_COPY_FILES += \
-     device/mediatek/common/soc/mt8183/binaries/images/splashscreen.raw:splashscreen.raw
+     device/mediatek/common/mt8183/binaries/images/splashscreen.raw:splashscreen.raw
 
 # Audio: use default hal configuration with TinyHAL
 PRODUCT_PACKAGES += audio.primary.i500_pumpkin
 PRODUCT_COPY_FILES += \
-     device/mediatek/common/soc/mt8183/audio_xml/audio_hal_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio.i500_pumpkin.xml
+     device/mediatek/common/mt8183/audio_xml/audio_hal_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio.i500_pumpkin.xml
 
 PRODUCT_COPY_FILES += \
      device/mediatek/board/i500_pumpkin/ILI210x_Touchscreen.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/ILI210x_Touchscreen.idc

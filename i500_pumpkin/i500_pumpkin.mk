@@ -22,10 +22,10 @@ TEE_KEYMASTER_GATEKEEPER_ENABLE := true
 
 $(call inherit-product, device/mediatek/common/soc/mt8183/mt8183.mk)
 
-PRODUCT_NAME := aosp_quartz
-PRODUCT_DEVICE := quartz
+PRODUCT_NAME := i500_pumpkin
+PRODUCT_DEVICE := i500_pumpkin
 PRODUCT_BRAND := Android
-PRODUCT_MODEL := quartz
+PRODUCT_MODEL := i500_pumpkin
 PRODUCT_MANUFACTURER := mediatek
 
-$(call inherit-product, device/mediatek/board/quartz/device.mk)
+$(call inherit-product, device/mediatek/board/i500_pumpkin/device.mk)

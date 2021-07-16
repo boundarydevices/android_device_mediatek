@@ -16,7 +16,7 @@
 
 include device/mediatek/common/soc/mt8183/BoardConfig.mk
 
-TARGET_BOOTLOADER_BOARD_NAME := quartz
+TARGET_BOOTLOADER_BOARD_NAME := i500_pumpkin
 
 # kernel commandline
 BOARD_KERNEL_CMDLINE := \
@@ -42,19 +42,19 @@ BOARD_BOOTIMAGE_PARTITION_SIZE     := 67108864
 BOARD_DB_DYNAMIC_PARTITIONS_SIZE   := 2411724800
 
 BOARD_SEPOLICY_DIRS += \
-    device/mediatek/board/quartz/sepolicy
+    device/mediatek/board/i500_pumpkin/sepolicy
 
 ifeq ($(TARGET_USE_AB_SLOT), true)
 ifeq ($(TARGET_AVB_ENABLE), true)
-MTK_PARTITIONS_YAML := device/mediatek/board/quartz/partitions.avb_ab.yaml
+MTK_PARTITIONS_YAML := device/mediatek/board/i500_pumpkin/partitions.avb_ab.yaml
 else
-MTK_PARTITIONS_YAML := device/mediatek/board/quartz/partitions_ab.yaml
+MTK_PARTITIONS_YAML := device/mediatek/board/i500_pumpkin/partitions_ab.yaml
 endif
 else # TARGET_USE_AB_SLOT == false
 ifeq ($(TARGET_AVB_ENABLE), true)
-MTK_PARTITIONS_YAML := device/mediatek/board/quartz/partitions.avb.yaml
+MTK_PARTITIONS_YAML := device/mediatek/board/i500_pumpkin/partitions.avb.yaml
 else
-MTK_PARTITIONS_YAML := device/mediatek/board/quartz/partitions.yaml
+MTK_PARTITIONS_YAML := device/mediatek/board/i500_pumpkin/partitions.yaml
 endif
 endif
 

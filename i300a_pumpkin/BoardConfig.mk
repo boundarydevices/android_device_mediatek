@@ -16,7 +16,7 @@
 
 include device/mediatek/common/soc/mt8167/BoardConfig.mk
 
-TARGET_BOOTLOADER_BOARD_NAME := onyx
+TARGET_BOOTLOADER_BOARD_NAME := i300a_pumpkin
 
 # kernel commandline
 BOARD_KERNEL_CMDLINE := \
@@ -49,19 +49,19 @@ BOARD_BOOTIMAGE_PARTITION_SIZE     := 67108864
 BOARD_DB_DYNAMIC_PARTITIONS_SIZE   := 2411724800
 
 BOARD_SEPOLICY_DIRS += \
-    device/mediatek/board/onyx/sepolicy
+    device/mediatek/board/i300a_pumpkin/sepolicy
 
 ifeq ($(TARGET_USE_AB_SLOT), true)
 ifeq ($(TARGET_AVB_ENABLE), true)
-MTK_PARTITIONS_YAML := device/mediatek/board/onyx/partitions.avb_ab.yaml
+MTK_PARTITIONS_YAML := device/mediatek/board/i300a_pumpkin/partitions.avb_ab.yaml
 else
-MTK_PARTITIONS_YAML := device/mediatek/board/onyx/partitions_ab.yaml
+MTK_PARTITIONS_YAML := device/mediatek/board/i300a_pumpkin/partitions_ab.yaml
 endif
 else # TARGET_USE_AB_SLOT == false
 ifeq ($(TARGET_AVB_ENABLE), true)
-MTK_PARTITIONS_YAML := device/mediatek/board/onyx/partitions.avb.yaml
+MTK_PARTITIONS_YAML := device/mediatek/board/i300a_pumpkin/partitions.avb.yaml
 else
-MTK_PARTITIONS_YAML := device/mediatek/board/onyx/partitions.yaml
+MTK_PARTITIONS_YAML := device/mediatek/board/i300a_pumpkin/partitions.yaml
 endif
 endif
 

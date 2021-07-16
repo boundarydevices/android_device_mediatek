@@ -22,10 +22,10 @@ TEE_KEYMASTER_GATEKEEPER_ENABLE := true
 
 $(call inherit-product, device/mediatek/common/soc/mt8167/mt8167.mk)
 
-PRODUCT_NAME := aosp_onyx
-PRODUCT_DEVICE := onyx
+PRODUCT_NAME := i300a_pumpkin
+PRODUCT_DEVICE := i300a_pumpkin
 PRODUCT_BRAND := Android
-PRODUCT_MODEL := onyx
+PRODUCT_MODEL := i300a_pumpkin
 PRODUCT_MANUFACTURER := mediatek
 
-$(call inherit-product, device/mediatek/board/onyx/device.mk)
+$(call inherit-product, device/mediatek/board/i300a_pumpkin/device.mk)

@@ -14,5 +14,5 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := $(LOCAL_DIR)/aosp_onyx.mk
-COMMON_LUNCH_CHOICES := aosp_onyx-userdebug
+PRODUCT_MAKEFILES := $(LOCAL_DIR)/i300a_pumpkin.mk
+COMMON_LUNCH_CHOICES := i300a_pumpkin-userdebug

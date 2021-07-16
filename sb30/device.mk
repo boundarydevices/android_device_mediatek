@@ -29,7 +29,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=180
 
-DEVICE_PACKAGE_OVERLAYS := device/mediatek/innocomm_sb30/overlay
+DEVICE_PACKAGE_OVERLAYS := device/mediatek/board/sb30/overlay
 
 # mark device as "low ram"
 PRODUCT_PROPERTY_OVERRIDES += ro.config.low_ram=true

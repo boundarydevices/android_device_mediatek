@@ -16,7 +16,7 @@
 
 include device/mediatek/common/soc/mt8365/BoardConfig.mk
 
-TARGET_BOOTLOADER_BOARD_NAME := innocomm_sb35
+TARGET_BOOTLOADER_BOARD_NAME := i350_sb35
 
 # kernel commandline
 BOARD_KERNEL_CMDLINE := \
@@ -51,15 +51,15 @@ BOARD_DB_DYNAMIC_PARTITIONS_SIZE   := 2411724800
 
 ifeq ($(TARGET_USE_AB_SLOT), true)
 ifeq ($(TARGET_AVB_ENABLE), true)
-MTK_PARTITIONS_YAML := device/mediatek/board/sb35/partitions.avb_ab.yaml
+MTK_PARTITIONS_YAML := device/mediatek/board/i350_sb35/partitions.avb_ab.yaml
 else
-MTK_PARTITIONS_YAML := device/mediatek/board/sb35/partitions_ab.yaml
+MTK_PARTITIONS_YAML := device/mediatek/board/i350_sb35/partitions_ab.yaml
 endif
 else # TARGET_USE_AB_SLOT == false
 ifeq ($(TARGET_AVB_ENABLE), true)
-MTK_PARTITIONS_YAML := device/mediatek/board/sb35/partitions.avb.yaml
+MTK_PARTITIONS_YAML := device/mediatek/board/i350_sb35/partitions.avb.yaml
 else
-MTK_PARTITIONS_YAML := device/mediatek/board/sb35/partitions.yaml
+MTK_PARTITIONS_YAML := device/mediatek/board/i350_sb35/partitions.yaml
 endif
 endif
 

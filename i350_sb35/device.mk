@@ -14,6 +14,15 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := $(LOCAL_DIR)/innocomm_sb35.mk
+# Shipping API level to Android R (30)
+PRODUCT_SHIPPING_API_LEVEL := 30
 
-COMMON_LUNCH_CHOICES := innocomm_sb35-userdebug
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sf.lcd_density=180
+
+DEVICE_PACKAGE_OVERLAYS := device/mediatek/board/i350_sb35/overlay
+
+# UVC camera
+$(call inherit-product, device/mediatek/common/hal/camera/uvc/uvc.mk)
+
+$(call inherit-product, vendor/mediatek/mt7668/mt7663.mk)

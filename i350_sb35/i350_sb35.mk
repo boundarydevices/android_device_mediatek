@@ -22,10 +22,10 @@ TEE_KEYMASTER_GATEKEEPER_ENABLE := true
 
 $(call inherit-product, device/mediatek/common/soc/mt8365/mt8365.mk)
 
-PRODUCT_NAME := innocomm_sb35
-PRODUCT_DEVICE := innocomm_sb35
+PRODUCT_NAME := i350_sb35
+PRODUCT_DEVICE := i350_sb35
 PRODUCT_BRAND := Android
-PRODUCT_MODEL := innocomm_sb35
+PRODUCT_MODEL := i350_sb35
 PRODUCT_MANUFACTURER := mediatek
 
-$(call inherit-product, device/mediatek/board/sb35/device.mk)
+$(call inherit-product, device/mediatek/board/i350_sb35/device.mk)

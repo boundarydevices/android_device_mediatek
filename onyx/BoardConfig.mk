@@ -49,19 +49,19 @@ BOARD_BOOTIMAGE_PARTITION_SIZE     := 67108864
 BOARD_DB_DYNAMIC_PARTITIONS_SIZE   := 2411724800
 
 BOARD_SEPOLICY_DIRS += \
-    device/mediatek/onyx/sepolicy
+    device/mediatek/board/onyx/sepolicy
 
 ifeq ($(TARGET_USE_AB_SLOT), true)
 ifeq ($(TARGET_AVB_ENABLE), true)
-MTK_PARTITIONS_YAML := device/mediatek/onyx/partitions.avb_ab.yaml
+MTK_PARTITIONS_YAML := device/mediatek/board/onyx/partitions.avb_ab.yaml
 else
-MTK_PARTITIONS_YAML := device/mediatek/onyx/partitions_ab.yaml
+MTK_PARTITIONS_YAML := device/mediatek/board/onyx/partitions_ab.yaml
 endif
 else # TARGET_USE_AB_SLOT == false
 ifeq ($(TARGET_AVB_ENABLE), true)
-MTK_PARTITIONS_YAML := device/mediatek/onyx/partitions.avb.yaml
+MTK_PARTITIONS_YAML := device/mediatek/board/onyx/partitions.avb.yaml
 else
-MTK_PARTITIONS_YAML := device/mediatek/onyx/partitions.yaml
+MTK_PARTITIONS_YAML := device/mediatek/board/onyx/partitions.yaml
 endif
 endif
 

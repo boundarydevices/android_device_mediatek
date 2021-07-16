@@ -28,4 +28,4 @@ PRODUCT_BRAND := Android
 PRODUCT_MODEL := onyx
 PRODUCT_MANUFACTURER := mediatek
 
-$(call inherit-product, device/mediatek/onyx/device.mk)
+$(call inherit-product, device/mediatek/board/onyx/device.mk)

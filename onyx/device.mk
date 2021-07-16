@@ -31,7 +31,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=180
 
-DEVICE_PACKAGE_OVERLAYS := device/mediatek/onyx/overlay
+DEVICE_PACKAGE_OVERLAYS := device/mediatek/board/onyx/overlay
 
 # mark device as "low ram"
 PRODUCT_PROPERTY_OVERRIDES += ro.config.low_ram=true

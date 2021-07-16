@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<input-manager-state>
+    <input-devices>
+        <!-- descriptor has been found using:
+            $ dumpsys input | grep -A 4 '  1: ILI210x Touchscreen'
+        -->
+        <input-device descriptor="747301347d82336a9b40e739d552549598488396">
+            <calibration format="affine">
+                <x_scale>0</x_scale>
+                <x_ymix>-1</x_ymix>
+                <x_offset>2047</x_offset>
+                <y_scale>0</y_scale>
+                <y_xmix>1</y_xmix>
+            </calibration>
+        </input-device>
+    </input-devices>
+</input-manager-state>

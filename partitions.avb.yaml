@@ -1,0 +1,37 @@
+eMMCSize: 14952M
+blockSize: 512
+type: 0FC63DAF-8483-4772-8E79-3D69D8477DE4
+partitions:
+  bootloaders:
+    start: 512K
+    size: 2M
+  persist:
+    size: 32M
+    file: persist.img
+  vbmeta:
+    size: 64K
+    file: vbmeta.img
+  splashscreen:
+    size: 10M
+    file: splashscreen.raw
+  misc:
+    size: 512K
+  boot:
+    start: 64M
+    size: 0
+    file: boot.img
+  dtbo:
+    size: 0
+    file: dtbo.img
+  recovery:
+    size: 0
+    file: recovery.img
+  cache:
+    size: 0
+    file: cache.img
+  super:
+    size: 0
+    file: super.img
+  userdata:
+    size: 0
+    file: userdata.img

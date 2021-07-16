@@ -154,7 +154,7 @@ TINYALSA_NO_CTL_GET_ID := true
 MTK_PRODUCT_OUT := $(OUT_DIR)/target/product/$(PRODUCT_DEVICE)
 BOARD_USERDATAIMAGE_PARTITION_SIZE = $(shell \
 	mkdir -p $(MTK_PRODUCT_OUT); \
-	python3  device/mediatek/common/mbr/gen_partition_xml.py \
+	python3  vendor/mediatek/tools/mbr/gen_partition_xml.py \
 	$(MTK_PARTITIONS_YAML) $(MTK_PRODUCT_OUT) \
 	--cache $(BOARD_CACHEIMAGE_PARTITION_SIZE) \
 	--boot $(BOARD_BOOTIMAGE_PARTITION_SIZE) \

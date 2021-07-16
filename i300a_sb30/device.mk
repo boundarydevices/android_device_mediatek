@@ -19,9 +19,9 @@
 PRODUCT_SHIPPING_API_LEVEL := 30
 
 # Audio: use default hal configuration with TinyHAL
-PRODUCT_PACKAGES += audio.primary.innocomm_sb30
+PRODUCT_PACKAGES += audio.primary.i300a_sb30
 PRODUCT_COPY_FILES += \
-     device/mediatek/common/soc/mt8167/audio_xml/audio_hal_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio.innocomm_sb30.xml
+     device/mediatek/common/soc/mt8167/audio_xml/audio_hal_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio.i300a_sb30.xml
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml
@@ -29,7 +29,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=180
 
-DEVICE_PACKAGE_OVERLAYS := device/mediatek/board/sb30/overlay
+DEVICE_PACKAGE_OVERLAYS := device/mediatek/board/i300a_sb30/overlay
 
 # mark device as "low ram"
 PRODUCT_PROPERTY_OVERRIDES += ro.config.low_ram=true

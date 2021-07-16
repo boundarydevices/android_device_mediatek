@@ -18,10 +18,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
 $(call inherit-product, device/mediatek/common/soc/mt8167/mt8167.mk)
 
-PRODUCT_NAME := innocomm_sb30
-PRODUCT_DEVICE := innocomm_sb30
+PRODUCT_NAME := i300a_sb30
+PRODUCT_DEVICE := i300a_sb30
 PRODUCT_BRAND := Android
-PRODUCT_MODEL := innocomm_sb30
+PRODUCT_MODEL := i300a_sb30
 PRODUCT_MANUFACTURER := mediatek
 
-$(call inherit-product, device/mediatek/board/sb30/device.mk)
+$(call inherit-product, device/mediatek/board/i300a_sb30/device.mk)

@@ -14,5 +14,5 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := $(LOCAL_DIR)/innocomm_sb30.mk
-COMMON_LUNCH_CHOICES := innocomm_sb30-userdebug
+PRODUCT_MAKEFILES := $(LOCAL_DIR)/i300a_sb30.mk
+COMMON_LUNCH_CHOICES := i300a_sb30-userdebug

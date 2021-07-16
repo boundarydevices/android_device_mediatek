@@ -75,7 +75,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media_xml/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
 
 # Add support of Mali GPU
-PRODUCT_SOONG_NAMESPACES += device/mediatek/common/binaries/egl/mali/i350
+PRODUCT_SOONG_NAMESPACES += vendor/mediatek/prebuilts/egl/mali/i350
 
 PRODUCT_PACKAGES += \
     libGLES_mali \
@@ -104,7 +104,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES +=  vulkan.mali
 
 VENDOR_UEVENTD_FILES += \
-    device/mediatek/common/binaries/egl/mali/ueventd.rc
+    vendor/mediatek/prebuilts/egl/mali/ueventd.rc
 
 # OP-TEE
 OPTEE_PLATFORM := mediatek-mt8175

@@ -141,7 +141,7 @@ PRODUCT_PACKAGES += android.hardware.power-service.example
 $(call inherit-product, device/mediatek/common/utils/utils.mk)
 
 # ion permissions
-VENDOR_UEVENTD_FILES += device/mediatek/common/binaries/egl/ueventd.rc
+VENDOR_UEVENTD_FILES += vendor/mediatek/prebuilts/egl/ueventd.rc
 
 # Set Vendor SPL to match platform
 VENDOR_SECURITY_PATCH = $(PLATFORM_SECURITY_PATCH)

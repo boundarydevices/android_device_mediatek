@@ -86,7 +86,7 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml
 
 # Add support of Mali GPU
-PRODUCT_SOONG_NAMESPACES += device/mediatek/common/binaries/egl/mali/i500
+PRODUCT_SOONG_NAMESPACES += vendor/mediatek/prebuilts/egl/mali/i500
 
 PRODUCT_PACKAGES += \
     libGLES_mali \
@@ -115,7 +115,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES +=  vulkan.mali
 
 VENDOR_UEVENTD_FILES += \
-    device/mediatek/common/binaries/egl/mali/ueventd.rc
+    vendor/mediatek/prebuilts/egl/mali/ueventd.rc
 
 PRODUCT_PACKAGES += \
     android.hardware.neuralnetworks@1.3-service-armnn

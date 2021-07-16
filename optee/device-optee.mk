@@ -21,7 +21,7 @@ PRODUCT_COPY_FILES += \
     device/mediatek/common/binaries/persist.img:$(TARGET_OUT)/persist.img 
 
 # optee
-OPTEE_OS_DIR := external/optee-os
+OPTEE_OS_DIR := vendor/linaro/optee-os
 OPTEE_TA_TARGETS := ta_arm64
 OPTEE_CFG_ARM64_CORE := y
 

@@ -42,19 +42,19 @@ BOARD_BOOTIMAGE_PARTITION_SIZE     := 67108864
 BOARD_DB_DYNAMIC_PARTITIONS_SIZE   := 2411724800
 
 BOARD_SEPOLICY_DIRS += \
-    device/mediatek/quartz/sepolicy
+    device/mediatek/board/quartz/sepolicy
 
 ifeq ($(TARGET_USE_AB_SLOT), true)
 ifeq ($(TARGET_AVB_ENABLE), true)
-MTK_PARTITIONS_YAML := device/mediatek/quartz/partitions.avb_ab.yaml
+MTK_PARTITIONS_YAML := device/mediatek/board/quartz/partitions.avb_ab.yaml
 else
-MTK_PARTITIONS_YAML := device/mediatek/quartz/partitions_ab.yaml
+MTK_PARTITIONS_YAML := device/mediatek/board/quartz/partitions_ab.yaml
 endif
 else # TARGET_USE_AB_SLOT == false
 ifeq ($(TARGET_AVB_ENABLE), true)
-MTK_PARTITIONS_YAML := device/mediatek/quartz/partitions.avb.yaml
+MTK_PARTITIONS_YAML := device/mediatek/board/quartz/partitions.avb.yaml
 else
-MTK_PARTITIONS_YAML := device/mediatek/quartz/partitions.yaml
+MTK_PARTITIONS_YAML := device/mediatek/board/quartz/partitions.yaml
 endif
 endif
 

@@ -27,15 +27,15 @@ PRODUCT_COPY_FILES += \
      device/mediatek/common/soc/mt8183/audio_xml/audio_hal_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio.quartz.xml
 
 PRODUCT_COPY_FILES += \
-     device/mediatek/quartz/ILI210x_Touchscreen.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/ILI210x_Touchscreen.idc
+     device/mediatek/board/quartz/ILI210x_Touchscreen.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/ILI210x_Touchscreen.idc
 
 # Touchscreen: add 90CCW rotation config file
 PRODUCT_COPY_FILES += \
-     device/mediatek/quartz/input-manager-state.xml:$(TARGET_COPY_OUT_DATA)/system/input-manager-state.xml
+     device/mediatek/board/quartz/input-manager-state.xml:$(TARGET_COPY_OUT_DATA)/system/input-manager-state.xml
 
 # Key Layout files
 PRODUCT_COPY_FILES += \
-     device/mediatek/quartz/mtk-pmic-keys.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/mtk-pmic-keys.kl
+     device/mediatek/board/quartz/mtk-pmic-keys.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/mtk-pmic-keys.kl
 
 # Shipping API level to Android R (30)
 PRODUCT_SHIPPING_API_LEVEL := 30
@@ -46,7 +46,7 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 ifdef DEVICE_PACKAGE_OVERLAYS
 $(warning Overlays defined in '$(DEVICE_PACKAGE_OVERLAYS)' will override '$(PRODUCT_HARDWARE)' overlays)
 endif
-DEVICE_PACKAGE_OVERLAYS += device/mediatek/quartz/overlay
+DEVICE_PACKAGE_OVERLAYS += device/mediatek/board/quartz/overlay
 
 # Demo apps
 ifneq (,$(filter userdebug eng,$(TARGET_BUILD_VARIANT)))

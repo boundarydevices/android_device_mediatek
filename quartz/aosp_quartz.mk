@@ -28,4 +28,4 @@ PRODUCT_BRAND := Android
 PRODUCT_MODEL := quartz
 PRODUCT_MANUFACTURER := mediatek
 
-$(call inherit-product, device/mediatek/quartz/device.mk)
+$(call inherit-product, device/mediatek/board/quartz/device.mk)

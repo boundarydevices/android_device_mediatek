@@ -71,7 +71,7 @@ DTB_FILES := \
 DTBO_FILES := \
         $(LOCAL_DTB)/mt8365-sb35-android.dtb
 
-include vendor/mediatek/mt7668/BoardConfig-mt7663.mk
+include vendor/mediatek/wireless/BoardConfig-mt7663.mk
 # UVC Camera
 include hardware/mediatek/camera/uvc/BoardConfig.mk
 DEVICE_MANIFEST_FILE += hardware/mediatek/camera/manifest-uvc.xml

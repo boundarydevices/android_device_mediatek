@@ -35,7 +35,7 @@ DEVICE_PACKAGE_OVERLAYS := device/mediatek/board/i300a_sb30/overlay
 PRODUCT_PROPERTY_OVERRIDES += ro.config.low_ram=true
 
 # Additional hardware features
-$(call inherit-product-if-exists, vendor/mediatek/mt7668/mt7668.mk)
+$(call inherit-product-if-exists, vendor/mediatek/wireless/mt7668.mk)
 
 # UVC camera
 $(call inherit-product, hardware/mediatek/camera/uvc/uvc.mk)

@@ -79,7 +79,7 @@ DTBO_FILES := \
 # Additional hardware features
 # NOTE: must be called last, as they append Board variables such
 # as DEVICE_MANIFEST_FILE
--include vendor/mediatek/mt7668/BoardConfig-mt7668.mk
+-include vendor/mediatek/wireless/BoardConfig-mt7668.mk
 # UVC Camera
 include hardware/mediatek/camera/uvc/BoardConfig.mk
 # CSI Camera

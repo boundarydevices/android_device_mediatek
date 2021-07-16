@@ -51,15 +51,15 @@ BOARD_DB_DYNAMIC_PARTITIONS_SIZE   := 2411724800
 
 ifeq ($(TARGET_USE_AB_SLOT), true)
 ifeq ($(TARGET_AVB_ENABLE), true)
-MTK_PARTITIONS_YAML := device/mediatek/innocomm_sb35/partitions.avb_ab.yaml
+MTK_PARTITIONS_YAML := device/mediatek/board/sb35/partitions.avb_ab.yaml
 else
-MTK_PARTITIONS_YAML := device/mediatek/innocomm_sb35/partitions_ab.yaml
+MTK_PARTITIONS_YAML := device/mediatek/board/sb35/partitions_ab.yaml
 endif
 else # TARGET_USE_AB_SLOT == false
 ifeq ($(TARGET_AVB_ENABLE), true)
-MTK_PARTITIONS_YAML := device/mediatek/innocomm_sb35/partitions.avb.yaml
+MTK_PARTITIONS_YAML := device/mediatek/board/sb35/partitions.avb.yaml
 else
-MTK_PARTITIONS_YAML := device/mediatek/innocomm_sb35/partitions.yaml
+MTK_PARTITIONS_YAML := device/mediatek/board/sb35/partitions.yaml
 endif
 endif
 

@@ -28,4 +28,4 @@ PRODUCT_BRAND := Android
 PRODUCT_MODEL := innocomm_sb35
 PRODUCT_MANUFACTURER := mediatek
 
-$(call inherit-product, device/mediatek/innocomm_sb35/device.mk)
+$(call inherit-product, device/mediatek/board/sb35/device.mk)

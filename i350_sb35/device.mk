@@ -23,6 +23,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 DEVICE_PACKAGE_OVERLAYS := device/mediatek/board/i350_sb35/overlay
 
 # UVC camera
-$(call inherit-product, device/mediatek/common/hal/camera/uvc/uvc.mk)
+$(call inherit-product, hardware/mediatek/camera/uvc/uvc.mk)
 
 $(call inherit-product, vendor/mediatek/mt7668/mt7663.mk)

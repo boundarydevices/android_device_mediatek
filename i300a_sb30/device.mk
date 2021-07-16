@@ -38,4 +38,4 @@ PRODUCT_PROPERTY_OVERRIDES += ro.config.low_ram=true
 $(call inherit-product-if-exists, vendor/mediatek/mt7668/mt7668.mk)
 
 # UVC camera
-$(call inherit-product, device/mediatek/common/hal/camera/uvc/uvc.mk)
+$(call inherit-product, hardware/mediatek/camera/uvc/uvc.mk)

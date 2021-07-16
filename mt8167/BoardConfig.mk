@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-include device/mediatek/common/soc/BoardConfigCommon.mk
+include device/mediatek/common/BoardConfigCommon.mk
 
 TARGET_CPU_VARIANT := cortex-a53
 
@@ -26,27 +26,27 @@ BOARD_MKBOOTIMG_ARGS := \
   --header_version 2
 
 BOARD_SEPOLICY_DIRS += \
-        device/mediatek/common/soc/mt8167/sepolicy
+        device/mediatek/common/mt8167/sepolicy
 
 BOARD_SEPOLICY_DIRS += \
-    device/mediatek/common/soc/optee/sepolicy/30.0/vendor
+    device/mediatek/common/optee/sepolicy/30.0/vendor
 
-DEVICE_MANIFEST_FILE += device/mediatek/common/soc/mt8167/manifest.xml
-DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE := device/mediatek/common/soc/mt8167/device_framework_matrix.xml
+DEVICE_MANIFEST_FILE += device/mediatek/common/mt8167/manifest.xml
+DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE := device/mediatek/common/mt8167/device_framework_matrix.xml
 
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/mediatek/common/soc/mt8167/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/mediatek/common/mt8167/bluetooth
 
 # Recovery
 ifeq ($(TARGET_USE_AB_SLOT), true)
 ifeq ($(TARGET_AVB_ENABLE), true)
-TARGET_RECOVERY_FSTAB := device/mediatek/common/soc/mt8167/fstab.mt8167.avb.ab
+TARGET_RECOVERY_FSTAB := device/mediatek/common/mt8167/fstab.mt8167.avb.ab
 else
-TARGET_RECOVERY_FSTAB := device/mediatek/common/soc/mt8167/fstab.mt8167.ab
+TARGET_RECOVERY_FSTAB := device/mediatek/common/mt8167/fstab.mt8167.ab
 endif
 else
 ifeq ($(TARGET_AVB_ENABLE), true)
-TARGET_RECOVERY_FSTAB := device/mediatek/common/soc/mt8167/fstab.recovery.mt8167.avb
+TARGET_RECOVERY_FSTAB := device/mediatek/common/mt8167/fstab.recovery.mt8167.avb
 else
-TARGET_RECOVERY_FSTAB := device/mediatek/common/soc/mt8167/fstab.recovery.mt8167
+TARGET_RECOVERY_FSTAB := device/mediatek/common/mt8167/fstab.recovery.mt8167
 endif
 endif

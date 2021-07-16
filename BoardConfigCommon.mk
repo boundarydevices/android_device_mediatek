@@ -41,7 +41,7 @@ BOARD_TAGS_OFFSET = 0x14000000
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 
 ifneq ($(BOARD_VENDOR_KERNEL_MODULES),)
-$(error device/mediatek/common/soc/BoardConfigCommon.mk should be included first)
+$(error device/mediatek/common/BoardConfigCommon.mk should be included first)
 endif
 
 BOARD_VENDOR_KERNEL_MODULES := \
@@ -51,23 +51,23 @@ BOARD_VENDOR_KERNEL_MODULES := \
     device/mediatek/common-kernel/$(TARGET_KERNEL_USE)/ntc_thermistor.ko
 
 ifneq ($(BOARD_RECOVERY_KERNEL_MODULES),)
-$(error device/mediatek/common/soc/BoardConfigCommon.mk should be included first)
+$(error device/mediatek/common/BoardConfigCommon.mk should be included first)
 endif
 
 BOARD_RECOVERY_KERNEL_MODULES := \
     device/mediatek/common-kernel/$(TARGET_KERNEL_USE)/mediatek-drm.ko \
     device/mediatek/common-kernel/$(TARGET_KERNEL_USE)/mediatek-drm-hdmi.ko
 
-VENDOR_UEVENTD_FILES += device/mediatek/common/soc/ueventd/ueventd.common.rc
+VENDOR_UEVENTD_FILES += device/mediatek/common/ueventd/ueventd.common.rc
 
 # Use mke2fs to create ext4 images
 TARGET_USES_MKE2FS := true
 
 ifneq ($(BOARD_SEPOLICY_DIRS),)
-$(error device/mediatek/common/soc/BoardConfigCommon.mk should be included first)
+$(error device/mediatek/common/BoardConfigCommon.mk should be included first)
 endif
 BOARD_SEPOLICY_DIRS := \
-        device/mediatek/common/soc/sepolicy/30.0/vendor
+        device/mediatek/common/sepolicy/30.0/vendor
 
 # USB Hal
 BOARD_SEPOLICY_DIRS += \
@@ -75,11 +75,11 @@ BOARD_SEPOLICY_DIRS += \
 
 # Boot control HAL for A/B
 ifeq ($(TARGET_USE_AB_SLOT), true)
-DEVICE_MANIFEST_FILE += device/mediatek/common/soc/manifest_ab.xml
+DEVICE_MANIFEST_FILE += device/mediatek/common/manifest_ab.xml
 endif
 
 ifeq ($(TARGET_KERNEL_USE), 5.4)
-DEVICE_MANIFEST_FILE += device//mediatek/common/soc/manifest_kernel5.xml
+DEVICE_MANIFEST_FILE += device/mediatek/common/manifest_kernel5.xml
 endif
 
 BOARD_VENDOR_MEDIATEK := true

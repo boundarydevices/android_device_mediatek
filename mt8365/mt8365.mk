@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-$(call inherit-product, device/mediatek/common/soc/device-common.mk)
+$(call inherit-product, device/mediatek/common/device-common.mk)
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.mt8365.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.mt8365.rc

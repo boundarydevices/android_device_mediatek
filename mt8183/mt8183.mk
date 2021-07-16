@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-$(call inherit-product, device/mediatek/common/soc/device-common.mk)
+$(call inherit-product, device/mediatek/common/device-common.mk)
 
 # ARMNN hal (gpu tuning file)
 $(call inherit-product, vendor/arm/android-nn-driver/armnn.mk)
@@ -129,11 +129,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     Armnn.operandTypeTensorQuant8SymmPerChannelPerformance.powerUsage=2
 
 PRODUCT_PACKAGES += vpud.mt8183
-VENDOR_UEVENTD_FILES += device/mediatek/common/soc/ueventd/ueventd.vpud.rc
+VENDOR_UEVENTD_FILES += device/mediatek/common/ueventd/ueventd.vpud.rc
 
 # Secure Companion Processor (SCP) firmware
 PRODUCT_COPY_FILES += \
-    device/mediatek/common/soc/mt8183/binaries/scp/scp.img:$(TARGET_COPY_OUT_VENDOR)/firmware/scp.img
+    device/mediatek/common/mt8183/binaries/scp/scp.img:$(TARGET_COPY_OUT_VENDOR)/firmware/scp.img
 
 # OP-TEE
 OPTEE_PLATFORM := mediatek-mt8183

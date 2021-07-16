@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-$(call inherit-product, device/mediatek/common/soc/device-common.mk)
+$(call inherit-product, device/mediatek/common/device-common.mk)
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.mt8167.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.mt8167.rc
@@ -105,7 +105,7 @@ PRODUCT_PACKAGES += \
 
 
 PRODUCT_PACKAGES += vpud.mt8167
-VENDOR_UEVENTD_FILES += device/mediatek/common/soc/ueventd/ueventd.vpud.rc
+VENDOR_UEVENTD_FILES += device/mediatek/common/ueventd/ueventd.vpud.rc
 
 # MDP support
 PRODUCT_PACKAGES += \

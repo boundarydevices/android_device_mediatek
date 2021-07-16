@@ -14,11 +14,11 @@
 # limitations under the License.
 #
 PRODUCT_CUSTOM_IMAGE_MAKEFILES += \
-   device/mediatek/common/soc/build/custom_images/persist.mk
+   device/mediatek/common/build/custom_images/persist.mk
 
 # copy persist prebuilt images
 PRODUCT_COPY_FILES += \
-    device/mediatek/common/soc/binaries/persist.img:$(TARGET_OUT)/persist.img 
+    device/mediatek/common/binaries/persist.img:$(TARGET_OUT)/persist.img 
 
 # optee
 OPTEE_OS_DIR := external/optee-os
@@ -53,7 +53,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.optee.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.optee.rc
 
-VENDOR_UEVENTD_FILES += device/mediatek/common/soc/optee/ueventd.optee.rc
+VENDOR_UEVENTD_FILES += device/mediatek/common/optee/ueventd.optee.rc
 
 # xtest
 PRODUCT_PACKAGES_DEBUG += xtest

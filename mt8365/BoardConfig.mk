@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-include device/mediatek/common/soc/BoardConfigCommon.mk
+include device/mediatek/common/BoardConfigCommon.mk
 
 TARGET_CPU_VARIANT := cortex-a53
 
@@ -25,28 +25,28 @@ BOARD_MKBOOTIMG_ARGS := \
   --header_version 2
 
 BOARD_SEPOLICY_DIRS += \
-        device/mediatek/common/soc/mt8365/sepolicy
+        device/mediatek/common/mt8365/sepolicy
 
 BOARD_SEPOLICY_DIRS += \
-    device/mediatek/common/soc/optee/sepolicy/30.0/vendor
+    device/mediatek/common/optee/sepolicy/30.0/vendor
 
-DEVICE_MANIFEST_FILE += device/mediatek/common/soc/mt8365/manifest.xml
+DEVICE_MANIFEST_FILE += device/mediatek/common/mt8365/manifest.xml
 
 # RecoveryOS
-TARGET_RELEASETOOLS_EXTENSIONS := device/mediatek/common/soc/
+TARGET_RELEASETOOLS_EXTENSIONS := device/mediatek/common/
 
 # Recovery
 ifeq ($(TARGET_USE_AB_SLOT), true)
 ifeq ($(TARGET_AVB_ENABLE), true)
-TARGET_RECOVERY_FSTAB := device/mediatek/common/soc/mt8365/fstab.mt8365.avb.ab
+TARGET_RECOVERY_FSTAB := device/mediatek/common/mt8365/fstab.mt8365.avb.ab
 else
-TARGET_RECOVERY_FSTAB := device/mediatek/common/soc/mt8365/fstab.mt8365.ab
+TARGET_RECOVERY_FSTAB := device/mediatek/common/mt8365/fstab.mt8365.ab
 endif
 else
 ifeq ($(TARGET_AVB_ENABLE), true)
-TARGET_RECOVERY_FSTAB := device/mediatek/common/soc/mt8365/fstab.recovery.mt8365.avb
+TARGET_RECOVERY_FSTAB := device/mediatek/common/mt8365/fstab.recovery.mt8365.avb
 else
-TARGET_RECOVERY_FSTAB := device/mediatek/common/soc/mt8365/fstab.recovery.mt8365
+TARGET_RECOVERY_FSTAB := device/mediatek/common/mt8365/fstab.recovery.mt8365
 endif
 endif # eq $(TARGET_USE_AB_SLOT), true
 

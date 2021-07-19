@@ -24,6 +24,8 @@ BOARD_MKBOOTIMG_ARGS := \
   --tags_offset $(BOARD_TAGS_OFFSET) \
   --header_version 2
 
+BOARD_SEPOLICY_DIRS += \
+        device/mediatek/common/soc/mt8365/sepolicy
 
 BOARD_SEPOLICY_DIRS += \
     device/mediatek/common/soc/optee/sepolicy/30.0/vendor

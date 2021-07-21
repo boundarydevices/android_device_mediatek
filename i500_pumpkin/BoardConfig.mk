@@ -81,7 +81,7 @@ DTBO_FILES := \
 # Touchscreen
 include vendor/ilitek/BoardConfig-ili251x.mk
 # Camera
-include vendor/onsemi/ap1302/BoardConfig-ap1302.mk
+-include vendor/onsemi/ap1302/BoardConfig-ap1302.mk
 # UVC Camera
 include hardware/mediatek/camera/uvc/BoardConfig.mk
 # CSI Camera

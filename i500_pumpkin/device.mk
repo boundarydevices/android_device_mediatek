@@ -63,7 +63,7 @@ $(call inherit-product-if-exists, vendor/mediatek/wireless/mt7668.mk)
 # Touchscreen
 $(call inherit-product, vendor/ilitek/ili251x.mk)
 # Camera
-$(call inherit-product, vendor/onsemi/ap1302/ap1302.mk)
+$(call inherit-product-if-exists, vendor/onsemi/ap1302/ap1302.mk)
 # UVC camera
 $(call inherit-product, hardware/mediatek/camera/uvc/uvc.mk)
 # CSI camera

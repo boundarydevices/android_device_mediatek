@@ -1,7 +1,7 @@
 Android is built around a Linux kernel. By default, Android's
 ``boot.img`` is build from a binary kernel Image located in::
 
-   ~/src/rita/device/mediatek/common-kernel/5.4
+   ~/src/rita/device/mediatek/kernel-binaries/5.4
 
 This guide describes how to rebuild and customize a Linux kernel for
 Android.
@@ -34,7 +34,7 @@ Build everything from scratch
 .. prompt:: bash $
 
    cd ~/src/rita-kernel/
-   export DIST_DIR=~/src/rita/device/mediatek/common-kernel/5.4
+   export DIST_DIR=~/src/rita/device/mediatek/kernel-binaries/5.4
    export BUILD_CONFIG=src/build.config.mtk
    build/build.sh
 
@@ -46,7 +46,7 @@ Add the ``SKIP_MRPROPER=1`` flag:
 .. prompt:: bash $
 
    cd ~/src/rita-kernel/
-   export DIST_DIR=~/src/rita/device/mediatek/common-kernel/5.4
+   export DIST_DIR=~/src/rita/device/mediatek/kernel-binaries/5.4
    export BUILD_CONFIG=src/build.config.mtk
    export SKIP_MRPROPER=1
    build/build.sh

@@ -78,7 +78,7 @@ Rebuilding the Linux kernel
 
 By default, Android's kernel is build from a prebuilt binary located in::
 
-   ~/src/rita/device/mediatek/common-kernel/5.4
+   ~/src/rita/device/mediatek/kernel-binaries/5.4
 
 To re-build the kernel, refer to :ref:`kernel/kernel-build:building the kernel`
 

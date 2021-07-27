@@ -1,5 +1,4 @@
-# Pumpkin i500
+# AIoT board support
 
-I500_Pumpkin is the device code name for MT8385 on Pumpkin i500 board.
-
-Documentation is available at [https://baylibre.gitlab.io/aosp/mediatek/product/i500_pumpkin](https://baylibre.gitlab.io/aosp/mediatek/product/i500_pumpkin)
+Documentation is available at 
+[https://mediatek.gitlab.io/aiot/rita/device/mediatek/board/](https://mediatek.gitlab.io/aiot/rita/device/mediatek/board/)

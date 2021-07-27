@@ -16,4 +16,6 @@
 
 PRODUCT_MAKEFILES := $(LOCAL_DIR)/i350_sb35.mk
 
-COMMON_LUNCH_CHOICES := i350_sb35-userdebug
+COMMON_LUNCH_CHOICES := \
+		i350_sb35-userdebug \
+		i350_sb35-user

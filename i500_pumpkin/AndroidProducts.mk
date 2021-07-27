@@ -15,4 +15,6 @@
 #
 
 PRODUCT_MAKEFILES := $(LOCAL_DIR)/i500_pumpkin.mk
-COMMON_LUNCH_CHOICES :=  i500_pumpkin-userdebug
+COMMON_LUNCH_CHOICES :=  \
+		i500_pumpkin-userdebug \
+		i500_pumpkin-user

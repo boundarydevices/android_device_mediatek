@@ -15,4 +15,6 @@
 #
 
 PRODUCT_MAKEFILES := $(LOCAL_DIR)/i300a_sb30.mk
-COMMON_LUNCH_CHOICES := i300a_sb30-userdebug
+COMMON_LUNCH_CHOICES := \
+		i300a_sb30-userdebug \
+		i300a_sb30-user

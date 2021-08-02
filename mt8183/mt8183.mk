@@ -139,3 +139,7 @@ PRODUCT_COPY_FILES += \
 OPTEE_PLATFORM := mediatek-mt8183
 OPTEE_PLATFORM_FLAVOR := mt8183
 OPTEE_CFG_DRAM_SIZE := 0x80000000
+
+# Cadence Neural Networks HAL for VP6 acceleration
+# This requires NDA to get access
+$(call inherit-product-if-exists, vendor/cadence/prebuilts/i500/vp6.mk)

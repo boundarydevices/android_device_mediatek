@@ -103,7 +103,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.egl=mali \
     ro.hardware.vulkan=mali \
     ro.hardware.hwcomposer=drm \
-    vendor.hwc.drm.device=/dev/dri/card1
+    vendor.hwc.drm.device=/dev/dri/card2
 
 # 3D CPU renderer
 PRODUCT_PACKAGES += \

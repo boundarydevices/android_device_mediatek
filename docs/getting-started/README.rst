@@ -25,6 +25,18 @@ Fetch the code using ``repo``:
    repo init -u git@gitlab.com:mediatek/aiot/bsp/manifest.git -b rita/mtk-android-11
    repo sync
 
+.. note::
+
+   For folks who have signed an NDA with MediaTek, some additional projects are
+   available. Use the following command instead:
+
+
+   .. prompt:: bash $
+
+     mkdir ~/src/rita && cd $_
+     repo init -u git@gitlab.com:mediatek/aiot/bsp/manifest.git -b rita/mtk-android-11 -m rita_restricted.xml
+     repo sync
+
 For more information about ``repo``, visit `Android's official
 documentation <https://source.android.com/setup/build/downloading>`__
 

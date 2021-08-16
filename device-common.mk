@@ -197,3 +197,7 @@ endif # eq $(TARGET_AVB_ENABLE), true
 # Supported features
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.opengles.aep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.opengles.aep.xml
+
+# Enable setting project ID on external storage
+PRODUCT_QUOTA_PROJID := 1
+PRODUCT_VENDOR_PROPERTIES += external_storage.projid.enabled=1

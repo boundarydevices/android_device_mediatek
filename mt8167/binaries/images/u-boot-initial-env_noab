@@ -2,7 +2,7 @@
 
 avb_verify=avb init ${mmcdev}; avb verify $slot_suffix;
 baudrate=921600
-board=onyx
+board=i300a_pumpkin
 boot_a_script=load ${devtype} ${devnum}:${distro_bootpart} ${scriptaddr} ${prefix}${script}; source ${scriptaddr}
 bootcmd=run distro_bootcmd
 bootcmd_fastboot=setenv run_fastboot 0;if bcb load 0 misc; then if bcb test command = bootonce-bootloader; then echo BCB: Bootloader boot...; bcb clear command; bcb store; setenv run_fastboot 1;fi; if bcb test command = boot-fastboot; then echo BCB: fastboot userspace boot...; setenv force_recovery 1;fi; else echo Warning: BCB is corrupted or does not exist; fi;if test "${run_fastboot}" -eq 1; then fastboot 0; fi;
@@ -24,7 +24,7 @@ dtbo_index=0
 fastboot=fastboot usb 0
 fdt_addr_r=0x56000000
 fdt_size=0xC0000
-hardware=mt8167
+hardware=mt8516
 loadaddr=0x50000000
  mmc_boot=if mmc dev ${devnum}; then devtype=mmc; run scan_dev_for_boot_part; fi
 mmcdev=0

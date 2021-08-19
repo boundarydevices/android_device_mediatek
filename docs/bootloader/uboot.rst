@@ -52,7 +52,7 @@ Export the ``fip.bin`` binary to Android source tree:
 
     # this updates the firmware package binary which contains other binaries such as bl2
     fiptool update \
-      ~/src/rita/device/mediatek/common/soc/mt8167/binaries/images/fip_noab.bin \
+      ~/src/rita/device/mediatek/common/mt8167/binaries/images/fip_noab.bin \
       --nt-fw u-boot.bin
 
 * For A/B Slot
@@ -61,7 +61,7 @@ Export the ``fip.bin`` binary to Android source tree:
 
     # this updates the firmware package binary which contains other binaries such as bl2
     fiptool update \
-      ~/src/rita/device/mediatek/common/soc/mt8167/binaries/images/fip_ab.bin \
+      ~/src/rita/device/mediatek/common/mt8167/binaries/images/fip_ab.bin \
       --nt-fw u-boot.bin
 
 
@@ -73,7 +73,7 @@ Export the U-boot initial environment to the Android source tree:
 
     # this exports the initial U-Boot environment variables (stored in eMMC)
     ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- scripts/get_default_envs.sh  > \
-      ~/src/rita/device/mediatek/common/soc/mt8167/binaries/images/u-boot-initial-env_noab
+      ~/src/rita/device/mediatek/common/mt8167/binaries/images/u-boot-initial-env_noab
 
 * For A/B Slot
 
@@ -81,7 +81,7 @@ Export the U-boot initial environment to the Android source tree:
 
     # this exports the initial U-Boot environment variables (stored in eMMC)
     ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- scripts/get_default_envs.sh  > \
-      ~/src/rita/device/mediatek/common/soc/mt8167/binaries/images/u-boot-initial-env_ab
+      ~/src/rita/device/mediatek/common/mt8167/binaries/images/u-boot-initial-env_ab
 
 Flash
 -----

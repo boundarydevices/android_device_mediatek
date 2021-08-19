@@ -17,6 +17,18 @@ Fetch the code using ``repo``:
    repo init -u git@gitlab.com:mediatek/aiot/bsp/manifest.git -b rita/mtk-android-11 -m kernel-5.4.xml
    repo sync
 
+.. note::
+
+   For folks who have signed an NDA with MediaTek, some additional projects are
+   available. Use the following command instead:
+
+
+   .. prompt:: bash $
+
+     mkdir ~/src/rita && cd $_
+     repo init -u git@gitlab.com:mediatek/aiot/bsp/manifest.git -b rita/mtk-android-11 -m kernel-5.4_rita_restricted.xml
+     repo sync
+
 
 Building the kernel
 -------------------

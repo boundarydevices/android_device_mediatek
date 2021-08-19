@@ -16,6 +16,10 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
+# All OP-TEE vars MUST be set before including common/mt*
+OPTEE_ENABLE := true
+TEE_KEYMASTER_GATEKEEPER_ENABLE := true
+
 $(call inherit-product, device/mediatek/common/mt8167/mt8167.mk)
 
 PRODUCT_NAME := i300a_sb30

@@ -79,18 +79,26 @@
         <MediaCodec name="c2.android.hevc.decoder" type="video/hevc" update="true">
             <!-- 1 run, measured 69 min 48 max 90 -->
             <Limit name="measured-frame-rate-320x240" range="48-90" />
-            <!-- 1 run, measured 21 min 15 max 27 -->
-            <Limit name="measured-frame-rate-720x480" range="15-27" />
+            <!-- 1 run, measured 252 min 176 max 328 -->
+            <Limit name="measured-frame-rate-352x288" range="176-328" />
+            <!-- 1 run, measured 138 min 97 max 179 -->
+            <Limit name="measured-frame-rate-640x360" range="97-179" />
+            <!-- 1 run, measured 126 min 88 max 164 -->
+            <Limit name="measured-frame-rate-720x480" range="88-164" />
+            <!-- 1 run, measured 64 min 45 max 83 -->
+            <Limit name="measured-frame-rate-1280x720" range="45-83" />
+            <!-- 1 run, measured 38 min 27 max 49 -->
+            <Limit name="measured-frame-rate-1920x1080" range="27-49" />
         </MediaCodec>
         <MediaCodec name="c2.android.mpeg4.decoder" type="video/mp4v-es" update="true">
             <!-- 1 run, measured 509 min 354 max 658 -->
             <Limit name="measured-frame-rate-176x144" range="354-658" />
         </MediaCodec>
         <MediaCodec name="c2.android.vp8.decoder" type="video/x-vnd.on2.vp8" update="true">
-            <!-- 1 run, measured 95 min 65 max 123 -->
-            <Limit name="measured-frame-rate-320x180" range="65-123" />
-            <!-- 1 run, measured 50 min 35 max 65 -->
-            <Limit name="measured-frame-rate-640x360" range="35-65" />
+            <!-- 1 run, measured 427 min 299 max 555 -->
+            <Limit name="measured-frame-rate-320x180" range="299-555" />
+            <!-- 1 run, measured 187 min 131 max 243 -->
+            <Limit name="measured-frame-rate-640x360" range="131-243" />
             <!-- 1 run, measured 25 min 17 max 32 -->
             <Limit name="measured-frame-rate-1280x720" range="17-32" />
             <!-- 1 run, measured 11 min 8 max 14 -->

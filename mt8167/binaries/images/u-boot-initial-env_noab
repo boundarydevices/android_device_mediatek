@@ -24,7 +24,7 @@ dtbo_index=0
 fastboot=fastboot usb 0
 fdt_addr_r=0x56000000
 fdt_size=0xC0000
-hardware=mt8516
+hardware=mt8167
 loadaddr=0x50000000
  mmc_boot=if mmc dev ${devnum}; then devtype=mmc; run scan_dev_for_boot_part; fi
 mmcdev=0

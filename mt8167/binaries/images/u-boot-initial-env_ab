@@ -25,7 +25,7 @@ fastboot=fastboot usb 0
 fdt_addr_r=0x56000000
 fdt_size=0xC0000
 get_current_slot=if part number mmc ${mmcdev} misc control_part_number; then echo misc partition number:${control_part_number};ab_select current_slot mmc ${mmcdev}:${control_part_number};else echo misc partition not found;fi;
-hardware=mt8516
+hardware=mt8167
 loadaddr=0x50000000
  mmc_boot=if mmc dev ${devnum}; then devtype=mmc; run scan_dev_for_boot_part; fi
 mmcdev=0

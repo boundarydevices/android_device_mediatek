@@ -38,6 +38,14 @@
         <item>"9,1"</item>
     </string-array>
 
+    <!-- Default supported concurrent socket keepalive slots per transport type, used by
+         ConnectivityManager.createSocketKeepalive() for calculating the number of keepalive
+         offload slots that should be reserved for privileged access. -->
+    <!-- An Array of "[NetworkCapabilities.TRANSPORT_*],[supported keepalives] -->
+    <string-array translatable="false" name="config_networkSupportedKeepaliveCount">
+        <item>1,0</item>
+    </string-array>
+
     <!-- Whether a software navigation bar should be shown. NOTE: in the future this may be
          autodetected from the Configuration. -->
     <bool name="config_showNavigationBar">true</bool>

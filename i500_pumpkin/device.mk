@@ -29,10 +29,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
      device/mediatek/board/i500_pumpkin/ILI210x_Touchscreen.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/ILI210x_Touchscreen.idc
 
-# Touchscreen: add 90CCW rotation config file
-PRODUCT_COPY_FILES += \
-     device/mediatek/board/i500_pumpkin/input-manager-state.xml:$(TARGET_COPY_OUT_DATA)/system/input-manager-state.xml
-
 # Key Layout files
 PRODUCT_COPY_FILES += \
      device/mediatek/board/i500_pumpkin/mtk-pmic-keys.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/mtk-pmic-keys.kl

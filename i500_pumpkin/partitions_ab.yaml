@@ -23,6 +23,8 @@ partitions:
     size: 0
     file: dtbo.img
     ab: true
+  metadata:
+    size: 512K
   super:
     size: 0
     file: super.img

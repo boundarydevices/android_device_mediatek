@@ -50,6 +50,8 @@ PRODUCT_PACKAGES += android.hardware.lights-service.mediatek
 # Security
 ifeq ($(OPTEE_ENABLE), true)
 $(call inherit-product, $(LOCAL_PATH)/optee/device-optee.mk)
+else
+PRODUCT_PROPERTY_OVERRIDES += ro.vendor.keymaster.optee=disabled
 endif
 
 ifeq ($(TEE_KEYMASTER_GATEKEEPER_ENABLE), true)

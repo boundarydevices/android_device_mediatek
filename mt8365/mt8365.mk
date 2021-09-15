@@ -91,8 +91,15 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.egl=mali \
     ro.hardware.vulkan=mali \
-    ro.hardware.hwcomposer=drm \
+    ro.hardware.hwcomposer=drm
+
+ifeq ($(TARGET_VKMS_ENABLED), true)
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.hwc.drm.device=/dev/dri/card0
+else
+PRODUCT_PROPERTY_OVERRIDES += \
     vendor.hwc.drm.device=/dev/dri/card1
+endif
 
 # 3D CPU renderer
 PRODUCT_PACKAGES += \

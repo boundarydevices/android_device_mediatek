@@ -88,8 +88,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.hwcomposer=drm \
     ro.hardware.egl=powervr \
     ro.hardware.vulkan=powervr \
-    persist.pvr.apphintipc=0 \
+    persist.pvr.apphintipc=0
+
+ifeq ($(TARGET_VKMS_ENABLED), true)
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.hwc.drm.device=/dev/dri/card0
+else
+PRODUCT_PROPERTY_OVERRIDES += \
     vendor.hwc.drm.device=/dev/dri/card2
+endif
 
 # Public Libraries
 PRODUCT_COPY_FILES += \

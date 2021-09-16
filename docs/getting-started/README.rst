@@ -84,6 +84,7 @@ We also support the following build flags to enable optional features:
    `AVB <https://source.android.com/security/verifiedboot/avb>`__
 -  ``TARGET_USE_AB_SLOT=true`` : Enable `AB
    partitions <https://source.android.com/devices/tech/ota/ab>`__
+-  ``TARGET_VKMS_ENABLED=true`` : Enable Virtual Display
 
 
 Rebuilding the Linux kernel

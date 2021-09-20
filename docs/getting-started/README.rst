@@ -1,6 +1,12 @@
 RITA (Rich IoT Android) provides an AOSP experience on the MediaTek
 Pumpkin boards.
 
+.. note::
+
+    Please make sure the power supply (usb port or specific port) is sufficient for the board.
+    Use powered usb hub instead of direct connection to the usb port of the pc or the laptop.
+
+
 Supported boards
 ================
 

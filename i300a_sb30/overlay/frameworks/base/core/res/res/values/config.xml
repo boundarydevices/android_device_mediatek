@@ -37,4 +37,6 @@
          autodetected from the Configuration. -->
     <bool name="config_showNavigationBar">true</bool>
 
+    <bool name="config_sms_capable">false</bool>
+
 </resources>

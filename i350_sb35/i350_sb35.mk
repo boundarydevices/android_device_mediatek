@@ -22,6 +22,26 @@ TEE_KEYMASTER_GATEKEEPER_ENABLE := true
 
 $(call inherit-product, device/mediatek/common/mt8365/mt8365.mk)
 
+TARGET_USE_PRODUCT_SPECIFIC_BL2 := true
+TARGET_USE_PRODUCT_SPECIFIC_LK := true
+TARGET_USE_PRODUCT_SPECIFIC_UBOOT := true
+PRODUCT_COPY_FILES += \
+    device/mediatek/board/i350_sb35/binaries/images/lk.bin:lk.bin \
+    device/mediatek/common/mt8365/binaries/images/dl_addr.ini:dl_addr.ini
+
+ifeq ($(TARGET_USE_AB_SLOT), true)
+PRODUCT_COPY_FILES += \
+    device/mediatek/board/i350_sb35//binaries/images/fip_ab.bin:$(TARGET_OUT)/fip.bin \
+    device/mediatek/board/i350_sb35//binaries/images/bl2.img:$(TARGET_OUT)/bl2.img \
+    device/mediatek/board/i350_sb35//binaries/images/u-boot-initial-env_ab:$(TARGET_OUT)/u-boot-initial-env
+else
+PRODUCT_COPY_FILES += \
+    device/mediatek/board/i350_sb35/binaries/images/fip_noab.bin:$(TARGET_OUT)/fip.bin \
+    device/mediatek/board/i350_sb35/binaries/images/bl2.img:$(TARGET_OUT)/bl2.img \
+    device/mediatek/board/i350_sb35/binaries/images/u-boot-initial-env_noab:$(TARGET_OUT)/u-boot-initial-env
+endif # eq $(TARGET_USE_AB_SLOT), true
+
+
 PRODUCT_NAME := i350_sb35
 PRODUCT_DEVICE := i350_sb35
 PRODUCT_BRAND := Android

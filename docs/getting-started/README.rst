@@ -109,13 +109,13 @@ Flashing
 Prerequisites
 -------------
 
-Flashing is done via the `RITY tools <https://baylibre.gitlab.io/rich-iot/tools/rity-tools/>`_.
+Flashing is done via the `AIOT tools <https://mediatek.gitlab.io/aiot/bsp/aiot-tools/>`_.
 
 .. note::
 
-    RITY tools was originally developped for yocto, but it supports Android (RITA) as well.
+    AIOT tools was originally developped for yocto, but it supports Android (RITA) as well.
 
-Please follow the `RITY tools manual <https://baylibre.gitlab.io/rich-iot/tools/rity-tools>`_
+Please follow the `AIOT tools manual <https://mediatek.gitlab.io/aiot/bsp/aiot-tools>`_
 for instructions on how to install the tools.
 
 
@@ -127,7 +127,7 @@ To fully flash the board, run the following:
 .. prompt:: bash $
 
    cd ~/src/rita/out/target/product/i300a_pumpkin/
-   rity-flash
+   aiot-flash
 
 Once you see *Waiting for DA mode*:
 
@@ -153,7 +153,7 @@ time by passing the ``--update dtbo_index <dtbo_index>`` argument:
 .. prompt:: bash $
 
   cd ~/src/rita/out/target/product/i300a_pumpkin/
-  rity-flash --dtbo-index <dtbo_index>
+  aiot-flash --dtbo-index <dtbo_index>
 
 .. note::
     To avoid reflashing, It's possible to change the ``dtbo_index`` from the U-Boot shell.
@@ -238,7 +238,7 @@ example, to enable both ``UMO-9465MD-T DSI panel`` (1) and
 
 .. prompt:: bash $
 
-  rity-flash --dtbo-index '1 4'
+  aiot-flash --dtbo-index '1 4'
 
 The overlays are applied in the order documented in `Validating the DTBO
 partition <https://source.android.com/devices/architecture/dto/compile#validating-the-dtbo-partition>`__

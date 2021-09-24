@@ -9,10 +9,10 @@ the ``--serialno`` option:
 
 .. prompt:: bash $
 
-   rity-flash mmc0boot1 --serialno <unique_serial_number>
+   aiot-flash mmc0boot1 --serialno <unique_serial_number>
 
 .. note::
-   When reflashing the whole board again using ``rity-flash``, the custom serial number
+   When reflashing the whole board again using ``aiot-flash``, the custom serial number
    will be lost since we also reflash ``mmc0boot1`` with default values.
 
    Make sure you always provide the ``--serialno <unique_serial_number>`` argument when reflashing.

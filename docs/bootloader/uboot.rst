@@ -113,7 +113,7 @@ Then, we can reflash the bootloaders:
 .. prompt:: bash $
 
    cd ~/src/rita/out/target/product/i300a_pumpkin/
-   rity-flash mmc0boot0 mmc0boot1 bootloaders
+   aiot-flash mmc0boot0 mmc0boot1 bootloaders
 
 Once you see *Waiting for DA mode*:
 

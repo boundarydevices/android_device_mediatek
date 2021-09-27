@@ -11,6 +11,7 @@ Pumpkin i300a  ``i300a_pumpkin-userdebug``
 Pumpkin i500   ``i500_pumpkin-userdebug``
 Innocomm SB30  ``i300a_sb30-userdebug``
 Innocomm SB35  ``i350_sb35-userdebug``
+AIoT i350 EVK  ``i350_evk-userdebug``
 ============== =========================
 
 
@@ -202,6 +203,24 @@ dtbo_index description
 0          HDMI only
 1          Raspberri Pi 7" DSI panel
 ========== =========================
+
+AIoT i350 EVK
+-------------
+
+The following Device-Tree Overlays are supported:
+
+========== =========================
+dtbo_index description
+========== =========================
+0          HDMI only
+========== =========================
+
+.. warning::
+   Please check Switch (SW2101) position on Board to select DPI, same as image
+   
+   .. image:: images/i350_dpi_lan_switch.jpg
+      :width: 350
+
 
 Multiple DTBOs
 --------------

@@ -16,7 +16,7 @@
 
 include device/mediatek/common/mt8365/BoardConfig.mk
 
-TARGET_BOOTLOADER_BOARD_NAME := i350_evk
+TARGET_BOOTLOADER_BOARD_NAME := i350_pumpkin
 
 # kernel commandline
 BOARD_KERNEL_CMDLINE := \
@@ -43,25 +43,25 @@ BOARD_DB_DYNAMIC_PARTITIONS_SIZE   := 2411724800
 
 ifeq ($(TARGET_USE_AB_SLOT), true)
 ifeq ($(TARGET_AVB_ENABLE), true)
-MTK_PARTITIONS_YAML := device/mediatek/board/i350_evk/partitions.avb_ab.yaml
+MTK_PARTITIONS_YAML := device/mediatek/board/i350_pumpkin/partitions.avb_ab.yaml
 else
-MTK_PARTITIONS_YAML := device/mediatek/board/i350_evk/partitions_ab.yaml
+MTK_PARTITIONS_YAML := device/mediatek/board/i350_pumpkin/partitions_ab.yaml
 endif
 else # TARGET_USE_AB_SLOT == false
 ifeq ($(TARGET_AVB_ENABLE), true)
-MTK_PARTITIONS_YAML := device/mediatek/board/i350_evk/partitions.avb.yaml
+MTK_PARTITIONS_YAML := device/mediatek/board/i350_pumpkin/partitions.avb.yaml
 else
-MTK_PARTITIONS_YAML := device/mediatek/board/i350_evk/partitions.yaml
+MTK_PARTITIONS_YAML := device/mediatek/board/i350_pumpkin/partitions.yaml
 endif
 endif
 
 # Please keep this list fixed: add new files in the end of the list
 DTB_FILES := \
-        $(LOCAL_DTB)/mt8365-evk.dtb
+        $(LOCAL_DTB)/mt8365-pumpkin.dtb
 
 # Please keep this list fixed: add new files in the end of the list
 DTBO_FILES := \
-        $(LOCAL_DTB)/mt8365-evk-android.dtb 
+        $(LOCAL_DTB)/mt8365-pumpkin-android.dtb
 
 include vendor/mediatek/wireless/BoardConfig-mt7663.mk
 # UVC Camera

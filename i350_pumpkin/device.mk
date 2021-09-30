@@ -20,7 +20,7 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=180
 
-DEVICE_PACKAGE_OVERLAYS := device/mediatek/board/i350_evk/overlay
+DEVICE_PACKAGE_OVERLAYS := device/mediatek/board/i350_pumpkin/overlay
 
 # UVC camera
 $(call inherit-product, hardware/mediatek/camera/uvc/uvc.mk)

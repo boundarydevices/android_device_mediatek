@@ -14,8 +14,8 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := $(LOCAL_DIR)/i350_evk.mk
+PRODUCT_MAKEFILES := $(LOCAL_DIR)/i350_pumpkin.mk
 
 COMMON_LUNCH_CHOICES := \
-		i350_evk-userdebug \
-		i350_evk-user
+		i350_pumpkin-userdebug \
+		i350_pumpkin-user

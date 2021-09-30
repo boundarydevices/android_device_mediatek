@@ -105,6 +105,10 @@ else
 BOARD_AVB_ENABLE := false
 endif
 
+ifneq ($(TARGET_USE_AB_SLOT), true)
+BOARD_INCLUDE_RECOVERY_DTBO := true
+endif
+
 ifeq ($(TARGET_USE_AB_SLOT), true)
 AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS := \

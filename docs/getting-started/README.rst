@@ -14,6 +14,7 @@ Supported boards
 Name           Android lunch target
 ============== =========================
 Pumpkin i300a  ``i300a_pumpkin-userdebug``
+Pumpkin i350   ``i350_pumpkin-userdebug``
 Pumpkin i500   ``i500_pumpkin-userdebug``
 Innocomm SB30  ``i300a_sb30-userdebug``
 Innocomm SB35  ``i350_sb35-userdebug``
@@ -138,8 +139,8 @@ Once you see *Waiting for DA mode*:
 
 .. note::
 
-    For Innocomm SB-35 board, use the *volume down* button instead of
-    the *volume up* button.
+    For Innocomm SB-35 and Pumpkin i350 boards, use the *volume down* button
+    instead of the *volume up* button.
 
 Peripheral support
 ==================
@@ -178,6 +179,17 @@ dtbo_index description
 1          Raspberri Pi 7" DSI panel
 2          Audio I2s on the 40pins header (disables SD card)
 3          OV5645 camera sensor
+========== =========================
+
+Pumpkin i350
+------------
+
+The following Device-Tree Overlays are supported:
+
+========== =========================
+dtbo_index description
+========== =========================
+0          HDMI only
 ========== =========================
 
 Pumpkin i500

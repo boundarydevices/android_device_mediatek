@@ -18,6 +18,9 @@ include device/mediatek/common/mt8365/BoardConfig.mk
 
 TARGET_BOOTLOADER_BOARD_NAME := i350_sb35
 
+BOARD_SEPOLICY_DIRS += \
+    device/mediatek/board/i350_sb35/sepolicy
+
 # kernel commandline
 BOARD_KERNEL_CMDLINE := \
     firmware_class.path=/vendor/firmware \

@@ -1,0 +1,3 @@
+genfscon sysfs /devices/platform/soc/1000d000.pwrap/1000d000.pwrap:pmic/mt6357-rtc/wakeup/wakeup2  u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1000d000.pwrap/1000d000.pwrap:pmic/mt6357-rtc/rtc/rtc0/wakeup3 u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/gpio-keys/wakeup/wakeup4 u:object_r:sysfs_wakeup:s0

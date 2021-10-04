@@ -82,7 +82,8 @@ PRODUCT_PACKAGES += \
     hwcomposer.drm \
     libOpenCL.so libOpenCL.so.1 libOpenCL.so.1.1 libOpenCL.so.1.2 \
     arm.graphics \
-    arm.graphics-ndk_platform
+    arm.graphics-ndk_platform \
+    liblibarm_mali_config_sysprops
 
 # Public Libraries
 PRODUCT_COPY_FILES += \

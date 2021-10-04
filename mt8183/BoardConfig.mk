@@ -61,7 +61,6 @@ SOONG_CONFIG_arm_gralloc += \
 		gralloc_use_ion_compound_page_heap \
 		gralloc_init_afbc \
 		gralloc_use_ion_dmabuf_sync \
-		mali_display_version \
 		mali_video_version \
 		mali_gpu_support_afbc_basic \
 		mali_gpu_support_afbc_splitblk \
@@ -70,7 +69,6 @@ SOONG_CONFIG_arm_gralloc += \
 		mali_gpu_support_afbc_yuv_write \
 		gralloc_arm_no_external_afbc 
 
-SOONG_CONFIG_arm_gralloc_mali_display_version := v650
 SOONG_CONFIG_arm_gralloc_mali_video_version := v550
 SOONG_CONFIG_arm_gralloc_mali_gpu_support_afbc_basic := false
 SOONG_CONFIG_arm_gralloc_mali_gpu_support_afbc_splitblk := false

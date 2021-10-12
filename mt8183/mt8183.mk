@@ -13,6 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+include device/mediatek/common/common-build-flags.mk
 
 $(call inherit-product, device/mediatek/common/device-common.mk)
 
@@ -49,27 +50,26 @@ endif
 # Flashing binaries
 ifneq ($(TARGET_USE_PRODUCT_SPECIFIC_LK), true)
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/binaries/images/lk.bin:$(TARGET_OUT)/lk.bin \
+    $(LOCAL_PATH)/binaries/images/lk-$(TARGET_MODE_BL).bin:$(TARGET_OUT)/lk.bin \
     $(LOCAL_PATH)/binaries/images/dl_addr.ini:$(TARGET_OUT)/dl_addr.ini
 endif # neq $(TARGET_USE_PRODUCT_SPECIFIC_LK), true)
-
 
 # BL2
 ifneq ($(TARGET_USE_PRODUCT_SPECIFIC_BL2), true)
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/binaries/images/bl2.img:$(TARGET_OUT)/bl2.img
+    $(LOCAL_PATH)/binaries/images/bl2-$(TARGET_MODE_BL).img:$(TARGET_OUT)/bl2.img
 endif # neq $(TARGET_USE_PRODUCT_SPECIFIC_BL2), true)
 
 # U-Boot and env
 ifneq ($(TARGET_USE_PRODUCT_SPECIFIC_UBOOT), true)
 ifeq ($(TARGET_USE_AB_SLOT), true)
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/binaries/images/fip_ab.bin:$(TARGET_OUT)/fip.bin \
-    $(LOCAL_PATH)/binaries/images/u-boot-initial-env_ab:$(TARGET_OUT)/u-boot-initial-env
+    $(LOCAL_PATH)/binaries/images/fip_$(TARGET_MODE_BL)_ab.bin:$(TARGET_OUT)/fip.bin \
+    $(LOCAL_PATH)/binaries/images/u-boot-initial-$(TARGET_MODE_BL)-env_ab:$(TARGET_OUT)/u-boot-initial-env
 else
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/binaries/images/fip_noab.bin:$(TARGET_OUT)/fip.bin \
-    $(LOCAL_PATH)/binaries/images/u-boot-initial-env_noab:$(TARGET_OUT)/u-boot-initial-env
+    $(LOCAL_PATH)/binaries/images/fip_$(TARGET_MODE_BL)_noab.bin:$(TARGET_OUT)/fip.bin \
+    $(LOCAL_PATH)/binaries/images/u-boot-initial-$(TARGET_MODE_BL)-env_noab:$(TARGET_OUT)/u-boot-initial-env
 endif # eq $(TARGET_USE_AB_SLOT), true
 endif # neq $(TARGET_USE_PRODUCT_SPECIFIC_UBOOT), true)
 

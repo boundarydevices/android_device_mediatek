@@ -106,7 +106,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.hwc.drm.device=/dev/dri/card0
 else
 PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.hwc.drm.device=/dev/dri/card1
+    vendor.hwc.drm.device=/dev/dri/card2
 endif
 
 # 3D CPU renderer
@@ -125,3 +125,7 @@ VENDOR_UEVENTD_FILES += \
 OPTEE_PLATFORM := mediatek-mt8175
 OPTEE_PLATFORM_FLAVOR := mt8175
 OPTEE_CFG_DRAM_SIZE := 0x80000000
+
+# Cadence Neural Networks HAL for VP6 acceleration
+# This requires NDA to get access
+$(call inherit-product-if-exists, vendor/cadence/prebuilts/i350/vp6.mk)

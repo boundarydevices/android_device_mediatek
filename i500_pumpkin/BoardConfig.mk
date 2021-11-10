@@ -25,6 +25,10 @@ BOARD_KERNEL_CMDLINE := \
     androidboot.boot_devices=soc/11230000.mmc \
     mem_sleep_default=s2idle
 
+# kernel modules required for ap1302 isp
+BOARD_VENDOR_KERNEL_MODULES += \
+    device/mediatek/kernel-binaries/$(TARGET_KERNEL_USE)/ap1302.ko
+
 # FS configuration
 ifeq ($(TARGET_USE_AB_SLOT), true)
 BOARD_SUPER_PARTITION_SIZE         := 4831838208
@@ -82,8 +86,6 @@ DTBO_FILES := \
 -include vendor/mediatek/wireless/BoardConfig-mt7668.mk
 # Touchscreen
 include vendor/ilitek/BoardConfig-ili251x.mk
-# Camera
--include vendor/onsemi/ap1302/BoardConfig-ap1302.mk
 # UVC Camera
 include hardware/mediatek/camera/uvc/BoardConfig.mk
 # CSI Camera

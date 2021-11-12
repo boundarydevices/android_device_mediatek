@@ -34,7 +34,7 @@ PRODUCT_COPY_FILES += \
      device/mediatek/board/i500_pumpkin/mtk-pmic-keys.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/mtk-pmic-keys.kl
 
 # Camera firmwares
-PRODUCT_COPY_FILES := \
+PRODUCT_COPY_FILES += \
     external/onsemi/OLogic_Pumpkin_i500//ap1302_ar0330_single_fw.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/ap1302_ar0330_single_fw.bin \
     external/onsemi/OLogic_Pumpkin_i500//ap1302_ar0144_single_fw.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/ap1302_ar0144_single_fw.bin \
     external/onsemi/OLogic_Pumpkin_i500//ap1302_ar0144_dual_fw.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/ap1302_ar0144_dual_fw.bin

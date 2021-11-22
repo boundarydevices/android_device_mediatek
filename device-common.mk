@@ -205,5 +205,10 @@ endif # eq $(TARGET_AVB_ENABLE), true
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.opengles.aep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.opengles.aep.xml
 
+#Increase JVM heap size
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.heapgrowthlimit=128m \
+    dalvik.vm.heapsize=128m
+
 # Enable project quotas and casefolding for emulated storage without sdcardfs
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)

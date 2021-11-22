@@ -1,3 +1,1 @@
 allow system_server gpu_device:chr_file { open read write ioctl map };
-
-get_prop(system_server, vendor_default_prop)

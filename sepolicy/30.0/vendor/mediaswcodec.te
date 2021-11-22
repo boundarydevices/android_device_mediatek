@@ -1,4 +1,2 @@
 allow mediaswcodec gpu_device:chr_file rw_file_perms;
 allow mediaswcodec graphics_device:chr_file rw_file_perms;
-
-get_prop(mediaswcodec, vendor_default_prop)

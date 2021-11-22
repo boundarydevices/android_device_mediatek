@@ -17,9 +17,6 @@ include device/mediatek/common/common-build-flags.mk
 
 $(call inherit-product, device/mediatek/common/device-common.mk)
 
-# ARMNN hal (gpu tuning file)
-$(call inherit-product, vendor/arm/android-nn-driver/armnn.mk)
-
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.mt8183.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.mt8183.rc \
 
@@ -135,6 +132,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     Armnn.operandTypeTensorQuant8SymmPerformance.powerUsage=2 \
     Armnn.operandTypeTensorQuant8SymmPerChannelPerformance.execTime=2 \
     Armnn.operandTypeTensorQuant8SymmPerChannelPerformance.powerUsage=2
+
+# Install gpu tuning file
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/armnn/gpu-tuner-file.csv:$(TARGET_COPY_OUT_VENDOR)/etc/gpu-tuner-file.csv
 
 PRODUCT_PACKAGES += vpud.mt8183
 VENDOR_UEVENTD_FILES += device/mediatek/common/ueventd/ueventd.vpud.rc

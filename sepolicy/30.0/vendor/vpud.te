@@ -6,6 +6,6 @@ init_daemon_domain(vpud)
 allow vpud vpu_device:chr_file    rw_file_perms;
 allow vpud sysfs_dt_base:file     r_file_perms;
 
-type vpud_prop, property_type;
+vendor_internal_prop(vpud_prop)
 
 get_prop(vpud, vpud_prop)

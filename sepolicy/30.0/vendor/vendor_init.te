@@ -1,4 +1,4 @@
-type cf_graphics_config_prop, property_type;
+vendor_internal_prop(cf_graphics_config_prop)
 
 allow vendor_init self:capability sys_module;
 allow vendor_init vendor_file:system { module_load };

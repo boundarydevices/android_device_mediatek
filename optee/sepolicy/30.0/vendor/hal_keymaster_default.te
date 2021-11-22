@@ -1,4 +1,4 @@
-type keymaster_tee_prop, property_type;
+vendor_internal_prop(keymaster_tee_prop)
 
 allow hal_keymaster_default property_socket:sock_file write;
 allow hal_keymaster_default init:unix_stream_socket connectto;

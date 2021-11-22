@@ -33,6 +33,9 @@ TARGET_USES_64_BIT_BINDER := true
 # Enable vndk
 BOARD_VNDK_VERSION := current
 
+# Android 12 bringup, should be removed
+BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE := true
+
 # bootimage generation
 BOARD_KERNEL_BASE = 0x40000000
 BOARD_KERNEL_OFFSET = 0x00200000

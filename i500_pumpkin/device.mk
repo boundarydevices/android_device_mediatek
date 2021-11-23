@@ -50,10 +50,6 @@ $(warning Overlays defined in '$(DEVICE_PACKAGE_OVERLAYS)' will override '$(PROD
 endif
 DEVICE_PACKAGE_OVERLAYS += device/mediatek/board/i500_pumpkin/overlay
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.heapgrowthlimit=128m \
-    dalvik.vm.heapsize=128m
-
 # Additional hardware features
 $(call inherit-product-if-exists, vendor/mediatek/wireless/mt7668.mk)
 # Touchscreen

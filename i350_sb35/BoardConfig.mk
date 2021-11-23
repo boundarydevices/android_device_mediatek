@@ -24,7 +24,7 @@ BOARD_SEPOLICY_DIRS += \
 # kernel commandline
 BOARD_KERNEL_CMDLINE := \
     firmware_class.path=/vendor/firmware \
-    androidboot.selinux=permissive printk.devkmsg=on \
+    printk.devkmsg=on \
     init=/init \
     androidboot.boot_devices=soc/11230000.mmc
 

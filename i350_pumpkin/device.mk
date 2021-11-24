@@ -20,6 +20,12 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=180
 
+# Audio: use a specific i350-pumpkin hal configuration with TinyHAL
+PRODUCT_PACKAGES += audio.primary.i350_pumpkin
+PRODUCT_COPY_FILES += \
+     device/mediatek/common/mt8365/audio_xml/audio_policy_configuration-i350_pumpkin.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
+     device/mediatek/common/mt8365/audio_xml/audio_hal_configuration-i350_pumpkin.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio.i350_pumpkin.xml
+
 DEVICE_PACKAGE_OVERLAYS := device/mediatek/board/i350_pumpkin/overlay
 
 # UVC camera

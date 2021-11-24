@@ -12,6 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+soong_namespace {
+}
+
 cc_prebuilt_binary {
     name: "vpud.mt8167",
     srcs: ["bin/vpud"],
@@ -23,9 +26,9 @@ cc_prebuilt_binary {
         "liblog",
         "libm",
         "libutils",
-        "libvcodec_utility.mt8167",
-        "libvpud_vcodec.mt8167",
-        "libherope_sa.ca7.mt8167",
+        "libvcodec_utility",
+        "libvpud_vcodec",
+        "libherope_sa.ca7",
     ],
     strip: {
         none: true,
@@ -36,7 +39,7 @@ cc_prebuilt_binary {
 }
 
 cc_prebuilt_library_shared {
-    name: "libherope_sa.ca7.mt8167",
+    name: "libherope_sa.ca7",
     srcs: ["lib/libherope_sa.ca7.so"],
     shared_libs: [
         "libc++",
@@ -45,8 +48,8 @@ cc_prebuilt_library_shared {
         "libdl",
         "liblog",
         "libm",
-        "libvcodec_oal.mt8167",
-        "libvcodec_utility.mt8167",
+        "libvcodec_oal",
+        "libvcodec_utility",
     ],
     strip: {
         none: true,
@@ -57,7 +60,7 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libvcodecdrv.mt8167",
+    name: "libvcodecdrv",
     srcs: ["lib/libvcodecdrv.so"],
     shared_libs: [
         "libc++",
@@ -67,7 +70,7 @@ cc_prebuilt_library_shared {
         "liblog",
         "libm",
         "libutils",
-        "libvcodec_utility.mt8167",
+        "libvcodec_utility",
     ],
     strip: {
         none: true,
@@ -77,7 +80,7 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libvcodec_oal.mt8167",
+    name: "libvcodec_oal",
     srcs: ["lib/libvcodec_oal.so"],
     shared_libs: [
         "libc++",
@@ -94,7 +97,7 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libvcodec_utility.mt8167",
+    name: "libvcodec_utility",
     srcs: ["lib/libvcodec_utility.so"],
     shared_libs: [
         "libc++",
@@ -113,7 +116,7 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libvpud_vcodec.mt8167",
+    name: "libvpud_vcodec",
     srcs: ["lib/libvpud_vcodec.so"],
     shared_libs: [
         "libc++",
@@ -123,8 +126,8 @@ cc_prebuilt_library_shared {
         "liblog",
         "libm",
         "libutils",
-        "libvcodec_utility.mt8167",
-        "libvcodecdrv.mt8167",
+        "libvcodec_utility",
+        "libvcodecdrv",
     ],
     strip: {
         none: true,

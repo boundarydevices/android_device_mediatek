@@ -113,6 +113,7 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@4.0-service.img \
 
 
+PRODUCT_SOONG_NAMESPACES += device/mediatek/common/mt8167/binaries/vpud
 PRODUCT_PACKAGES += vpud.mt8167
 VENDOR_UEVENTD_FILES += device/mediatek/common/ueventd/ueventd.vpud.rc
 

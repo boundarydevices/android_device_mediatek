@@ -137,6 +137,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/armnn/gpu-tuner-file.csv:$(TARGET_COPY_OUT_VENDOR)/etc/gpu-tuner-file.csv
 
+PRODUCT_SOONG_NAMESPACES += device/mediatek/common/mt8183/binaries/vpud
 PRODUCT_PACKAGES += vpud.mt8183
 VENDOR_UEVENTD_FILES += device/mediatek/common/ueventd/ueventd.vpud.rc
 

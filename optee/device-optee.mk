@@ -13,13 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-PRODUCT_CUSTOM_IMAGE_MAKEFILES += \
-   device/mediatek/common/build/custom_images/persist.mk
-
-# copy persist prebuilt images
-PRODUCT_COPY_FILES += \
-    device/mediatek/common/binaries/persist.img:$(TARGET_OUT)/persist.img 
-
 # optee
 OPTEE_OS_DIR := vendor/linaro/optee-os
 OPTEE_TA_TARGETS := ta_arm64

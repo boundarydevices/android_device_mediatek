@@ -34,6 +34,14 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.mediatek.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.mediatek.rc \
     $(LOCAL_PATH)/init.mediatek.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.mediatek.usb.rc \
 
+# persist.img
+PRODUCT_CUSTOM_IMAGE_MAKEFILES += \
+   device/mediatek/common/build/custom_images/persist.mk
+
+# copy persist prebuilt images
+PRODUCT_COPY_FILES += \
+    device/mediatek/common/binaries/persist.img:$(TARGET_OUT)/persist.img
+
 # AVB
 ifeq ($(TARGET_BUILD_VARIANT), user)
 TARGET_AVB_ENABLE := true

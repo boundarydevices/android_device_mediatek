@@ -17,8 +17,6 @@
 # Shipping API level to Android R (30)
 PRODUCT_SHIPPING_API_LEVEL := 30
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=180
 
 # Audio: use a specific i350-evk hal configuration with TinyHAL
 PRODUCT_PACKAGES += audio.primary.i350_evk

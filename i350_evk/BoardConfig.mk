@@ -17,6 +17,7 @@
 include device/mediatek/common/mt8365/BoardConfig.mk
 
 TARGET_BOOTLOADER_BOARD_NAME := i350_evk
+TARGET_SCREEN_DENSITY := 360
 
 BOARD_SEPOLICY_DIRS += \
     device/mediatek/board/i350_evk/sepolicy

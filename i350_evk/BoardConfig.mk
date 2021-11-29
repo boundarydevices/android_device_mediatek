@@ -64,7 +64,8 @@ DTB_FILES := \
 
 # Please keep this list fixed: add new files in the end of the list
 DTBO_FILES := \
-        $(LOCAL_DTB)/mt8365-evk-android.dtb 
+        $(LOCAL_DTB)/mt8365-evk-android.dtb \
+        $(LOCAL_DTB)/mt8365-evk-android-dsi.dtb
 
 include vendor/mediatek/wireless/BoardConfig-mt7663.mk
 # UVC Camera

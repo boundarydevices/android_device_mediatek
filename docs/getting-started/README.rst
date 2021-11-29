@@ -190,6 +190,7 @@ The following Device-Tree Overlays are supported:
 dtbo_index description
 ========== =========================
 0          HDMI only
+1          Startek KD070FHFID015 DSI panel Only
 ========== =========================
 
 Pumpkin i500

@@ -23,6 +23,8 @@ partitions:
   cache:
     size: 0
     file: cache.img
+  metadata:
+    size: 512K
   super:
     size: 0
     file: super.img

@@ -220,3 +220,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Enable project quotas and casefolding for emulated storage without sdcardfs
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
+
+ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
+PRODUCT_COPY_FILES += \
+    device/mediatek/common/privapp-permissions.xml:system/etc/permissions/privapp-permissions.xml
+endif
+

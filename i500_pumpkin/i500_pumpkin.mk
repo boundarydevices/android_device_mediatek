@@ -29,3 +29,7 @@ PRODUCT_MODEL := i500_pumpkin
 PRODUCT_MANUFACTURER := mediatek
 
 $(call inherit-product, device/mediatek/board/i500_pumpkin/device.mk)
+
+# clean-up all unknown PRODUCT_PACKAGES
+allowed_list := product_manifest.xml
+$(call enforce-product-packages-exist, $(allowed_list))

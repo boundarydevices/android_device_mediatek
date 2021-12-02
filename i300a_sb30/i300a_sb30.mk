@@ -29,3 +29,7 @@ PRODUCT_MODEL := i300a_sb30
 PRODUCT_MANUFACTURER := mediatek
 
 $(call inherit-product, device/mediatek/board/i300a_sb30/device.mk)
+
+# clean-up all unknown PRODUCT_PACKAGES
+allowed_list := product_manifest.xml
+$(call enforce-product-packages-exist, $(allowed_list))

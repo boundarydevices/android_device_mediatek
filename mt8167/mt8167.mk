@@ -78,10 +78,6 @@ PRODUCT_PACKAGES += \
     vendor.imagination.gpu.apphints@1.0 \
     rgx.fw.22.40.54.30 \
     rgx.sh.22.40.54.30 \
-    libeglinfo \
-    libgles1test1 \
-    libgles2test1 \
-    libgles3test1 \
     hwcomposer.drm \
 
 

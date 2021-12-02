@@ -93,7 +93,6 @@ PRODUCT_SOONG_NAMESPACES += vendor/mediatek/prebuilts/egl/mali/i500
 PRODUCT_PACKAGES += \
     libGLES_mali \
     hwcomposer.drm \
-    libOpenCL.so libOpenCL.so.1 libOpenCL.so.1.1 libOpenCL.so.1.2 \
     arm.graphics \
     arm.graphics-ndk_platform \
     liblibarm_mali_config_sysprops

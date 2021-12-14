@@ -36,6 +36,8 @@ DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE := device/mediatek/common/mt8167/device
 
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/mediatek/common/mt8167/bluetooth
 
+VENDOR_UEVENTD_FILES += device/mediatek/common/mt8167/ueventd.mt8167.rc
+
 # Recovery
 ifeq ($(TARGET_USE_AB_SLOT), true)
 ifeq ($(TARGET_AVB_ENABLE), true)

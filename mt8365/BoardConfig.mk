@@ -32,6 +32,8 @@ BOARD_SEPOLICY_DIRS += \
 
 DEVICE_MANIFEST_FILE += device/mediatek/common/mt8365/manifest.xml
 
+VENDOR_UEVENTD_FILES += device/mediatek/common/mt8183/ueventd.mt8183.rc
+
 # RecoveryOS
 TARGET_RELEASETOOLS_EXTENSIONS := device/mediatek/common/
 

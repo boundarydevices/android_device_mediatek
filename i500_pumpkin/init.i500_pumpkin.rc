@@ -1,0 +1,12 @@
+on early-init
+    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules \
+      btmtksdio.ko \
+      mediatek-drm.ko \
+      snd-soc-hdmi-codec.ko \
+      mediatek-drm-hdmi.ko \
+      ntc_thermistor.ko \
+      ap1302.ko \
+      ili210x.ko \
+      uvcvideo.ko \
+      wlan_drv_gen4_MT7668.ko \
+      wlan_drv_gen4_MT7668_prealloc.ko

@@ -93,7 +93,6 @@ PRODUCT_PACKAGES += \
     libGLES_mali \
     hwcomposer.drm \
     arm.graphics \
-    arm.graphics-ndk_platform \
     liblibarm_mali_config_sysprops
 
 # Public Libraries

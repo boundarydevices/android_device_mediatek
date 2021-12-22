@@ -104,7 +104,7 @@ endif
 
 # 3D CPU renderer
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.composer@2.4-service \
+    android.hardware.graphics.composer@2.3-service \
     android.hardware.graphics.mapper@4.0-impl \
     android.hardware.graphics.allocator@4.0-service.img \
 

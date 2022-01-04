@@ -125,9 +125,8 @@ PRODUCT_PACKAGES +=  vulkan.mali
 VENDOR_UEVENTD_FILES += \
     vendor/mediatek/prebuilts/egl/mali/ueventd.rc
 
-# FIXME: disabled for Android 12 bringup
-# PRODUCT_PACKAGES += \
-#     android.hardware.neuralnetworks@1.3-service-armnn
+PRODUCT_PACKAGES += \
+    android.hardware.neuralnetworks@1.3-service-armnn
 
 PRODUCT_PROPERTY_OVERRIDES += \
     Armnn.operandTypeTensorQuant8AsymmPerformance.execTime=2 \

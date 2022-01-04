@@ -154,6 +154,14 @@ OPTEE_PLATFORM := mediatek-mt8183
 OPTEE_PLATFORM_FLAVOR := mt8183
 OPTEE_CFG_DRAM_SIZE := 0x80000000
 
+# NeuralNetworks
+GPU_PREBUILD_PRESENT := $(wildcard vendor/mediatek/prebuilts/egl/mali/i500)
+ifneq "$(GPU_PREBUILD_PRESENT)" ""
+ARMNN_COMPUTE_CL_ENABLE := 1
+else
+ARMNN_COMPUTE_CL_ENABLE := 0
+endif
+
 # Cadence Neural Networks HAL for VP6 acceleration
 # This requires NDA to get access
 $(call inherit-product-if-exists, vendor/cadence/prebuilts/i500/vp6.mk)

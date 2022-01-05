@@ -30,7 +30,7 @@ Fetch the code using ``repo``:
 .. prompt:: bash $
 
    mkdir ~/src/rita && cd $_
-   repo init -u git@gitlab.com:mediatek/aiot/bsp/manifest.git -b rita/mtk-android-11
+   repo init -u git@gitlab.com:mediatek/aiot/bsp/manifest.git -b rita/mtk-android-12
    repo sync
 
 .. note::
@@ -42,7 +42,7 @@ Fetch the code using ``repo``:
    .. prompt:: bash $
 
      mkdir ~/src/rita && cd $_
-     repo init -u git@gitlab.com:mediatek/aiot/bsp/manifest.git -b rita/mtk-android-11 -m rita_restricted.xml
+     repo init -u git@gitlab.com:mediatek/aiot/bsp/manifest.git -b rita/mtk-android-12 -m rita_restricted.xml
      repo sync
 
 For more information about ``repo``, visit `Android's official

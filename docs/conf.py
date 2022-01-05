@@ -24,9 +24,9 @@ author = 'MediaTek Inc. and BayLibre, SAS'
 
 
 # The major project version
-version = 'mtk-android-11'
+version = 'mtk-android-12'
 # The full version, including alpha/beta/rc tags
-release = 'mtk-android-11'
+release = 'mtk-android-12'
 
 
 # -- General configuration ---------------------------------------------------

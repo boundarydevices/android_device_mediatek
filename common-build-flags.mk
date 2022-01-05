@@ -5,3 +5,5 @@ else
 TARGET_MODE_BL := debug
 endif
 endif
+
+TARGET_USE_AB_SLOT ?= true

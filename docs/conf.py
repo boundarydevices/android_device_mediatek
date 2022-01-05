@@ -19,7 +19,7 @@ import sys
 # -- Project information -----------------------------------------------------
 
 project = 'RITA SDK manual'
-copyright = 'Copyright 2021 MediaTek Inc. Copyright 2020-2021 BayLibre, SAS'
+copyright = 'Copyright 2021-2022 MediaTek Inc. Copyright 2020-2022 BayLibre, SAS'
 author = 'MediaTek Inc. and BayLibre, SAS'
 
 

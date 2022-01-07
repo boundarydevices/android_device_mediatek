@@ -233,6 +233,9 @@ dtbo_index description
 ========== =========================
 0          HDMI only
 1          Startek KD070FHFID015 DSI panel Only
+2          Single AP1302 ISP + sensor AR0430 on CSI0
+3          Single AP1302 ISP + sensor AR0430 on CSI1
+4          Dual AP1302 ISPs + sensors AR0430
 ========== =========================
 
 .. warning::

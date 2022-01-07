@@ -32,6 +32,6 @@ pages:
     - public
   only:
     refs:
-    - mtk-android-11
+    - mtk-android-12
     changes:
     - docs/**/*

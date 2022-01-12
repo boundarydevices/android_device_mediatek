@@ -26,6 +26,10 @@ PRODUCT_COPY_FILES += \
 
 DEVICE_PACKAGE_OVERLAYS := device/mediatek/board/i350_evk/overlay
 
+# Camera + ISP Firmwares:
+PRODUCT_COPY_FILES += \
+     external/onsemi/MediaTek_AIoT_i350_EVK/ap1302_ar0430_single_fw.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/ap1302_ar0430_single_fw.bin
+
 # UVC camera
 $(call inherit-product, hardware/mediatek/camera/uvc/uvc.mk)
 

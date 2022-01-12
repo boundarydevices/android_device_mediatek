@@ -14,8 +14,8 @@
 # limitations under the License.
 #
 
-# Shipping API level to Android R (30)
-PRODUCT_SHIPPING_API_LEVEL := 30
+# Shipping API level to Android 12 (S)
+PRODUCT_SHIPPING_API_LEVEL := 31
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=180

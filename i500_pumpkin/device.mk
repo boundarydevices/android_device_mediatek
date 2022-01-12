@@ -42,8 +42,8 @@ PRODUCT_COPY_FILES += \
     external/onsemi/OLogic_Pumpkin_i500//ap1302_ar0144_single_fw.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/ap1302_ar0144_single_fw.bin \
     external/onsemi/OLogic_Pumpkin_i500//ap1302_ar0144_dual_fw.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/ap1302_ar0144_dual_fw.bin
 
-# Shipping API level to Android R (30)
-PRODUCT_SHIPPING_API_LEVEL := 30
+# Shipping API level to Android 12 (S)
+PRODUCT_SHIPPING_API_LEVEL := 31
 
 # DEVICE_PACKAGE_OVERLAYS for the device should be before
 # including common overlays since the one listed first

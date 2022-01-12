@@ -17,8 +17,8 @@
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.i300a_pumpkin.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.i300a_pumpkin.rc \
 
-# Shipping API level to Android R (30)
-PRODUCT_SHIPPING_API_LEVEL := 30
+# Shipping API level to Android 12 (S)
+PRODUCT_SHIPPING_API_LEVEL := 31
 
 # Audio: use default hal configuration with TinyHAL
 PRODUCT_PACKAGES += audio.primary.i300a_pumpkin

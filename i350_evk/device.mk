@@ -14,8 +14,8 @@
 # limitations under the License.
 #
 
-# Shipping API level to Android R (30)
-PRODUCT_SHIPPING_API_LEVEL := 30
+# Shipping API level to Android 12 (S)
+PRODUCT_SHIPPING_API_LEVEL := 31
 
 
 # Audio: use a specific i350-evk hal configuration with TinyHAL

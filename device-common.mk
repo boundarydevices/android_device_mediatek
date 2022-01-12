@@ -105,9 +105,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.cts.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.cts.xml
 
 # Memtrack
-PRODUCT_PACKAGES += memtrack.default \
-    android.hardware.memtrack@1.0-service \
-    android.hardware.memtrack@1.0-impl
+PRODUCT_PACKAGES += \
+    android.hardware.memtrack-service.example
 
 # DRM (Digital Rights Management)
 PRODUCT_PACKAGES += \
@@ -179,9 +178,9 @@ PRODUCT_PACKAGES += \
     update_engine \
     update_engine_sideload \
     update_verifier \
-    android.hardware.boot@1.1-impl \
-    android.hardware.boot@1.1-impl.recovery \
-    android.hardware.boot@1.1-service \
+    android.hardware.boot@1.2-impl \
+    android.hardware.boot@1.2-impl.recovery \
+    android.hardware.boot@1.2-service \
     bootctrl.default
 
 PRODUCT_PACKAGES_DEBUG += \

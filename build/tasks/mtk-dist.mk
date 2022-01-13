@@ -20,7 +20,7 @@ INTERNAL_IMG_PACKAGE_FILES += \
 	$(PRODUCT_OUT)/vbmeta.img
 endif
 
-ifeq ($(TARGET_USE_AB_SLOT), false)
+ifneq ($(TARGET_USE_AB_SLOT), true)
 INTERNAL_IMG_PACKAGE_FILES += \
 	$(PRODUCT_OUT)/cache.img \
 	$(PRODUCT_OUT)/recovery.img

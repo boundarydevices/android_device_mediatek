@@ -80,9 +80,11 @@ Building Android
    cd ~/src/rita/
    source build/envsetup.sh
    lunch $LUNCH_TARGET
-   m -j40
+   m -j40           # nice -n19 build/soong/soong_ui.bash --make-mode
 
 Where ``$LUNCH_TARGET`` is listed in `Supported boards`_
+Since the sourced *m* function won't work together with nice, we should use the abvove alternate
+commented command.
 
 
 We also support the following build flags to enable optional features:

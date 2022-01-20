@@ -60,6 +60,9 @@ endif
 # Backlight/brightness
 PRODUCT_PACKAGES += android.hardware.lights-service.mediatek
 
+# Thermal
+Product_PACKAGES += android.hardware.thermal@2.0-service.mediatek
+
 # Security
 ifeq ($(OPTEE_ENABLE), true)
 $(call inherit-product, $(LOCAL_PATH)/optee/device-optee.mk)

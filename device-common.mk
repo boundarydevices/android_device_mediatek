@@ -230,3 +230,7 @@ endif
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.activities_on_secondary_displays.xml:system/etc/permissions/android.software.activities_on_secondary_displays.xml
 
+# Display settings (windowing, system decorations, IME ...)
+PRODUCT_COPY_FILES += \
+    device/mediatek/common/etc/display_settings.xml:$(TARGET_COPY_OUT_VENDOR)/etc/display_settings.xml
+

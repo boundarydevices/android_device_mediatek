@@ -226,3 +226,7 @@ PRODUCT_COPY_FILES += \
     device/mediatek/common/privapp-permissions.xml:system/etc/permissions/privapp-permissions.xml
 endif
 
+# Enable activities on secondary displays
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.software.activities_on_secondary_displays.xml:system/etc/permissions/android.software.activities_on_secondary_displays.xml
+

@@ -124,6 +124,10 @@ PRODUCT_PACKAGES +=  vulkan.mali
 VENDOR_UEVENTD_FILES += \
     vendor/mediatek/prebuilts/egl/mali/ueventd.rc
 
+# MDP support
+PRODUCT_PACKAGES += \
+    libmdp.mt8365 mdpd
+
 # OP-TEE
 OPTEE_PLATFORM := mediatek-mt8175
 OPTEE_PLATFORM_FLAVOR := mt8175

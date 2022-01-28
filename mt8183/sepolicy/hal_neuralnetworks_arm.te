@@ -8,7 +8,7 @@ hal_client_domain(hal_neuralnetworks_arm, hal_allocator)
 
 allow hal_neuralnetworks_arm gpu_device:chr_file rw_file_perms;
 
-vendor_internal_prop(vendor_armnn_prop)
-get_prop(hal_neuralnetworks_arm, vendor_armnn_prop)
+vendor_internal_prop(armnn_prop)
+get_prop(hal_neuralnetworks_arm, armnn_prop)
 
 hal_client_domain(hal_neuralnetworks_arm, hal_graphics_allocator)

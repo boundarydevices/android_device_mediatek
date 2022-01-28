@@ -129,12 +129,12 @@ PRODUCT_PACKAGES += \
     android.hardware.neuralnetworks@1.3-service-armnn
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.Armnn.operandTypeTensorQuant8AsymmPerformance.execTime=2 \
-    vendor.Armnn.operandTypeTensorQuant8AsymmPerformance.powerUsage=2 \
-    vendor.Armnn.operandTypeTensorQuant8SymmPerformance.execTime=2 \
-    vendor.Armnn.operandTypeTensorQuant8SymmPerformance.powerUsage=2 \
-    vendor.Armnn.operandTypeTensorQuant8SymmPerChannelPerformance.execTime=2 \
-    vendor.Armnn.operandTypeTensorQuant8SymmPerChannelPerformance.powerUsage=2
+    Armnn.operandTypeTensorQuant8AsymmPerformance.execTime=2 \
+    Armnn.operandTypeTensorQuant8AsymmPerformance.powerUsage=2 \
+    Armnn.operandTypeTensorQuant8SymmPerformance.execTime=2 \
+    Armnn.operandTypeTensorQuant8SymmPerformance.powerUsage=2 \
+    Armnn.operandTypeTensorQuant8SymmPerChannelPerformance.execTime=2 \
+    Armnn.operandTypeTensorQuant8SymmPerChannelPerformance.powerUsage=2
 
 # Install gpu tuning file
 PRODUCT_COPY_FILES += \

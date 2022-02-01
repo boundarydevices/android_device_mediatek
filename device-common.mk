@@ -33,6 +33,7 @@ PRODUCT_COPY_FILES := \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.mediatek.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.mediatek.rc \
     $(LOCAL_PATH)/init.mediatek.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.mediatek.usb.rc \
+    $(LOCAL_PATH)/init.lights.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.lights.rc \
 
 # persist.img
 PRODUCT_CUSTOM_IMAGE_MAKEFILES += \
@@ -58,7 +59,7 @@ PRODUCT_PACKAGES += android.hardware.health@2.1-impl-batteryless.recovery
 endif
 
 # Backlight/brightness
-PRODUCT_PACKAGES += android.hardware.lights-service.mediatek
+PRODUCT_PACKAGES += android.hardware.lights-service
 
 # Thermal
 Product_PACKAGES += android.hardware.thermal@2.0-service.mediatek

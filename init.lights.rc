@@ -1,0 +1,7 @@
+# permissions for sysfs
+on early-boot
+    chown system system /sys/class/backlight/backlight_lcd0/brightness
+    chmod 0644 /sys/class/backlight/backlight_lcd0/brightness
+    chown root system /sys/class/backlight/backlight_lcd0/max_brightness
+    chmod 0664 /sys/class/backlight/backlight_lcd0/max_brightness
+

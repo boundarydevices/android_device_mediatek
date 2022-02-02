@@ -41,3 +41,9 @@
 /dev/block/platform/soc/11230000.mmc/by-name/vbmeta(_[ab])?	    u:object_r:vbmeta_block_device:s0
 /dev/block/platform/soc/11230000.mmc/by-name/persist            u:object_r:persist_block_device:s0
 /dev/block/platform/soc/11230000.mmc/by-name/metadata		u:object_r:metadata_block_device:s0
+
+#############################
+# MDP support
+#
+/vendor/bin/hw/mdpd						u:object_r:mdpd_exec:s0
+/dev/vcu1							u:object_r:mdp_device:s0

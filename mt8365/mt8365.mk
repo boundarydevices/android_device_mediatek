@@ -122,7 +122,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES +=  vulkan.mali
 
 VENDOR_UEVENTD_FILES += \
-    vendor/mediatek/prebuilts/egl/mali/ueventd.rc
+    vendor/mediatek/prebuilts/egl/mali/ueventd.rc \
+    device/mediatek/common/ueventd/ueventd.vcu.rc
 
 # MDP support
 PRODUCT_PACKAGES += \

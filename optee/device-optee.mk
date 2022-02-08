@@ -44,6 +44,9 @@ PRODUCT_PACKAGES += \
     libteec \
     tee-supplicant
 
+# disable tee-supplicant RPMB emulation
+RPMB_EMU := 0
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.optee.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.optee.rc
 

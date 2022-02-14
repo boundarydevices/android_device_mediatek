@@ -1,0 +1,10 @@
+cameras:
+  # camera on CSI0
+  "/base/soc/i2c@11009000/camera@3d":
+    location: front
+    rotation: 0
+
+  # camera on CSI1
+  "/base/soc/i2c@1100f000/camera@3d":
+    location: back
+    rotation: 0

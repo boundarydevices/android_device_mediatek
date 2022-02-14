@@ -28,6 +28,12 @@ PRODUCT_COPY_FILES += \
 
 DEVICE_PACKAGE_OVERLAYS := device/mediatek/board/i350_pumpkin/overlay
 
+# Camera + ISP Firmwares:
+PRODUCT_COPY_FILES += \
+     external/onsemi/OLogic_Pumpkin_i500/ap1302_ar0330_single_fw.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/ap1302_ar0330_single_fw.bin \
+     external/onsemi/OLogic_Pumpkin_i500/ap1302_ar0144_single_fw.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/ap1302_ar0144_single_fw.bin \
+     external/onsemi/OLogic_Pumpkin_i500/ap1302_ar0144_dual_fw.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/ap1302_ar0144_dual_fw.bin
+
 # UVC camera
 $(call inherit-product, hardware/mediatek/camera/uvc/uvc.mk)
 

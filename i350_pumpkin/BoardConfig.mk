@@ -54,9 +54,11 @@ DTB_FILES := \
 DTBO_FILES := \
         $(LOCAL_DTB)/mt8365-pumpkin-android.dtb \
         $(LOCAL_DTB)/mt8365-pumpkin-android-ap1302-ar0144-single.dtb \
-        $(LOCAL_DTB)/mt8365-pumpkin-android-ap1302-ar0144-dual.dtb \
+        $(LOCAL_DTB)/mt8365-pumpkin-android-ap1302-ar0144-dual.dtb
 
 include vendor/mediatek/wireless/BoardConfig-mt7663.mk
 # UVC Camera
 include hardware/mediatek/camera/uvc/BoardConfig.mk
-DEVICE_MANIFEST_FILE += hardware/mediatek/camera/manifest-uvc.xml
+# CSI Camera
+include hardware/mediatek/camera/csi/BoardConfig.mk
+DEVICE_MANIFEST_FILE += hardware/mediatek/camera/manifest-uvc-csi.xml

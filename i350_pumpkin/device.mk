@@ -36,5 +36,7 @@ PRODUCT_COPY_FILES += \
 
 # UVC camera
 $(call inherit-product, hardware/mediatek/camera/uvc/uvc.mk)
+# CSI camera
+$(call inherit-product, hardware/mediatek/camera/csi/csi.mk)
 
 $(call inherit-product, vendor/mediatek/wireless/mt7663.mk)

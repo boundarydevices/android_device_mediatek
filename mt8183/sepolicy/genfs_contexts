@@ -10,3 +10,4 @@ genfscon sysfs /devices/platform/soc/11201000.usb/wakeup/wakeup0 u:object_r:sysf
 genfscon sysfs /devices/platform/soc/11201000.usb/11200000.xhci/wakeup/wakeup1 u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/10010000.kp/wakeup/wakeup2 u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/1100f000.i2c/i2c-3/3-0026/wakeup/wakeup5 u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/11240000.mmc/mmc_host/mmc0/mmc0:0001/mmc0:0001:1/net   u:object_r:sysfs_net:s0

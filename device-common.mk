@@ -237,3 +237,5 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/mediatek/common/etc/display_settings.xml:$(TARGET_COPY_OUT_VENDOR)/etc/display_settings.xml
 
+#Add CameraDemo package
+PRODUCT_PACKAGES += CameraDemo

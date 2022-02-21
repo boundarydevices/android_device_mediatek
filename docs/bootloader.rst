@@ -5,4 +5,5 @@ Bootloader
    :maxdepth: 2
    :caption: Contents:
 
-   bootloader/uboot
+   bootloader/bootloaders
+   bootloader/secure-boot

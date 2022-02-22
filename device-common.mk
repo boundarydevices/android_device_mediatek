@@ -219,8 +219,8 @@ PRODUCT_COPY_FILES += \
 
 #Increase JVM heap size
 PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.heapgrowthlimit=128m \
-    dalvik.vm.heapsize=128m
+    dalvik.vm.heapgrowthlimit=256m \
+    dalvik.vm.heapsize=256m
 
 # Enable project quotas and casefolding for emulated storage without sdcardfs
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)

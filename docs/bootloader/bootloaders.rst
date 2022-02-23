@@ -72,8 +72,8 @@ Flashing
 
 .. parsed-literal::
 
-   |SOC_NAME|/binaries/images/dl_addr.ini
-   |SOC_NAME|/binaries/images/lk.bin
+   mt8167/binaries/images/dl_addr.ini
+   mt8167/binaries/images/lk.bin
 
 3. Run ``aiot-bootrom``:
 

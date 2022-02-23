@@ -62,7 +62,7 @@ endif
 PRODUCT_PACKAGES += android.hardware.lights-service
 
 # Thermal
-Product_PACKAGES += android.hardware.thermal@2.0-service.mediatek
+PRODUCT_PACKAGES += android.hardware.thermal@2.0-service.mediatek
 
 # Security
 ifeq ($(OPTEE_ENABLE), true)

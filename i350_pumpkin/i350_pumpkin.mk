@@ -30,17 +30,10 @@ PRODUCT_COPY_FILES += \
     device/mediatek/board/i350_pumpkin/binaries/images/lk-$(TARGET_MODE_BL).bin:lk.bin \
     device/mediatek/common/mt8365/binaries/images/dl_addr.ini:dl_addr.ini
 
-ifeq ($(TARGET_USE_AB_SLOT), true)
 PRODUCT_COPY_FILES += \
-    device/mediatek/board/i350_pumpkin/binaries/images/fip_$(TARGET_MODE_BL)_ab.bin:$(TARGET_OUT)/fip.bin \
+    device/mediatek/board/i350_pumpkin/binaries/images/fip_$(TARGET_MODE_BL).bin:$(TARGET_OUT)/fip.bin \
     device/mediatek/board/i350_pumpkin/binaries/images/bl2-$(TARGET_MODE_BL).img:$(TARGET_OUT)/bl2.img \
-    device/mediatek/board/i350_pumpkin/binaries/images/u-boot-initial-$(TARGET_MODE_BL)-env_ab:$(TARGET_OUT)/u-boot-initial-env
-else
-PRODUCT_COPY_FILES += \
-    device/mediatek/board/i350_pumpkin/binaries/images/fip_$(TARGET_MODE_BL)_noab.bin:$(TARGET_OUT)/fip.bin \
-    device/mediatek/board/i350_pumpkin/binaries/images/bl2-$(TARGET_MODE_BL).img:$(TARGET_OUT)/bl2.img \
-    device/mediatek/board/i350_pumpkin/binaries/images/u-boot-initial-$(TARGET_MODE_BL)-env_noab:$(TARGET_OUT)/u-boot-initial-env
-endif # eq $(TARGET_USE_AB_SLOT), true
+    device/mediatek/board/i350_pumpkin/binaries/images/u-boot-initial-$(TARGET_MODE_BL)-env:$(TARGET_OUT)/u-boot-initial-env
 
 $(call inherit-product, device/mediatek/common/mt8365/mt8365.mk)
 

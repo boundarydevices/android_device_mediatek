@@ -30,14 +30,7 @@ BOARD_VENDOR_KERNEL_MODULES += \
     device/mediatek/kernel-binaries/$(TARGET_KERNEL_USE)/ap1302.ko
 
 # FS configuration
-ifeq ($(TARGET_USE_AB_SLOT), true)
 BOARD_SUPER_PARTITION_SIZE         := 4831838208
-else
-BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE  := ext4
-BOARD_CACHEIMAGE_PARTITION_SIZE    := 16777216
-BOARD_SUPER_PARTITION_SIZE         := 2415919104
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
-endif
 TARGET_USERIMAGES_USE_EXT4         := true
 TARGET_COPY_OUT_VENDOR             := vendor
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -50,18 +43,10 @@ BOARD_USES_METADATA_PARTITION := true
 BOARD_SEPOLICY_DIRS += \
     device/mediatek/board/i500_pumpkin/sepolicy
 
-ifeq ($(TARGET_USE_AB_SLOT), true)
-ifeq ($(TARGET_AVB_ENABLE), true)
-MTK_PARTITIONS_YAML := device/mediatek/board/i500_pumpkin/partitions.avb_ab.yaml
-else
-MTK_PARTITIONS_YAML := device/mediatek/board/i500_pumpkin/partitions_ab.yaml
-endif
-else # TARGET_USE_AB_SLOT == false
 ifeq ($(TARGET_AVB_ENABLE), true)
 MTK_PARTITIONS_YAML := device/mediatek/board/i500_pumpkin/partitions.avb.yaml
 else
 MTK_PARTITIONS_YAML := device/mediatek/board/i500_pumpkin/partitions.yaml
-endif
 endif
 
 # Please keep this list fixed: add new files in the end of the list

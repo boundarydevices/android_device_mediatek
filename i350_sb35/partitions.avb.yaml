@@ -1,6 +1,7 @@
 eMMCSize: 29820M
 blockSize: 512
 type: 0FC63DAF-8483-4772-8E79-3D69D8477DE4
+abPartitions: true
 partitions:
   bootloaders:
     start: 512K
@@ -11,21 +12,18 @@ partitions:
   vbmeta:
     size: 64K
     file: vbmeta.img
+    ab: true
   misc:
     size: 512K
   boot:
     start: 64M
     size: 0
     file: boot.img
+    ab: true
   dtbo:
     size: 0
     file: dtbo.img
-  recovery:
-    size: 0
-    file: recovery.img
-  cache:
-    size: 0
-    file: cache.img
+    ab: true
   metadata:
     size: 512K
   super:

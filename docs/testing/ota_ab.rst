@@ -15,7 +15,7 @@ documentation <https://source.android.com/devices/tech/ota/tools>`__
    cd ~/src/rita/
    source build/envsetup.sh
    lunch i300a_pumpkin-userdebug
-   TARGET_USE_AB_SLOT=true TARGET_AVB_ENABLE=true make dist
+   TARGET_AVB_ENABLE=true make dist
 
 make dist generate by default OTA package you can find it here :
 

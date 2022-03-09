@@ -87,6 +87,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     audio.usb.default
 
+# Camera HAL
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/libcamera/camera_hal.yaml:$(TARGET_COPY_OUT_VENDOR)/etc/libcamera/camera_hal.yaml
+
 # Add support of Mali GPU
 PRODUCT_SOONG_NAMESPACES += vendor/mediatek/prebuilts/egl/mali/i500
 

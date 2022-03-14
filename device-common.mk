@@ -53,11 +53,6 @@ PRODUCT_PACKAGES += \
     android.hardware.health@2.1-service \
     android.hardware.health@2.1-impl-batteryless
 
-ifneq ($(TARGET_USE_AB_SLOT), true)
-# For non-A/B devices, install default passthrough implementation to recovery.
-PRODUCT_PACKAGES += android.hardware.health@2.1-impl-batteryless.recovery
-endif
-
 # Backlight/brightness
 PRODUCT_PACKAGES += android.hardware.lights-service
 
@@ -176,8 +171,6 @@ PRODUCT_PACKAGES += \
 	android.hardware.fastboot@1.0-impl-mock \
 	fastbootd
 
-ifeq ($(TARGET_USE_AB_SLOT), true)
-# A/B Support
 PRODUCT_PACKAGES += \
     update_engine \
     update_engine_sideload \
@@ -192,7 +185,6 @@ PRODUCT_PACKAGES_DEBUG += \
     update_engine_client \
     SystemUpdaterSample
 
-endif # eq $(TARGET_USE_AB_SLOT), true
 PRODUCT_PACKAGES += \
     sg_write_buffer \
     f2fs_io \

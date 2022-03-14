@@ -39,16 +39,8 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/mediatek/common/mt8167/blu
 VENDOR_UEVENTD_FILES += device/mediatek/common/mt8167/ueventd.mt8167.rc
 
 # Recovery
-ifeq ($(TARGET_USE_AB_SLOT), true)
 ifeq ($(TARGET_AVB_ENABLE), true)
-TARGET_RECOVERY_FSTAB := device/mediatek/common/mt8167/fstab.mt8167.avb.ab
+TARGET_RECOVERY_FSTAB := device/mediatek/common/mt8167/fstab.mt8167.avb
 else
-TARGET_RECOVERY_FSTAB := device/mediatek/common/mt8167/fstab.mt8167.ab
-endif
-else
-ifeq ($(TARGET_AVB_ENABLE), true)
-TARGET_RECOVERY_FSTAB := device/mediatek/common/mt8167/fstab.recovery.mt8167.avb
-else
-TARGET_RECOVERY_FSTAB := device/mediatek/common/mt8167/fstab.recovery.mt8167
-endif
+TARGET_RECOVERY_FSTAB := device/mediatek/common/mt8167/fstab.mt8167
 endif

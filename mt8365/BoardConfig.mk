@@ -38,19 +38,11 @@ VENDOR_UEVENTD_FILES += device/mediatek/common/mt8365/ueventd.mt8365.rc
 TARGET_RELEASETOOLS_EXTENSIONS := device/mediatek/common/
 
 # Recovery
-ifeq ($(TARGET_USE_AB_SLOT), true)
 ifeq ($(TARGET_AVB_ENABLE), true)
-TARGET_RECOVERY_FSTAB := device/mediatek/common/mt8365/fstab.mt8365.avb.ab
+TARGET_RECOVERY_FSTAB := device/mediatek/common/mt8365/fstab.mt8365.avb
 else
-TARGET_RECOVERY_FSTAB := device/mediatek/common/mt8365/fstab.mt8365.ab
+TARGET_RECOVERY_FSTAB := device/mediatek/common/mt8365/fstab.mt8365
 endif
-else
-ifeq ($(TARGET_AVB_ENABLE), true)
-TARGET_RECOVERY_FSTAB := device/mediatek/common/mt8365/fstab.recovery.mt8365.avb
-else
-TARGET_RECOVERY_FSTAB := device/mediatek/common/mt8365/fstab.recovery.mt8365
-endif
-endif # eq $(TARGET_USE_AB_SLOT), true
 
 # Vulkan
 BOARD_INSTALL_VULKAN := true

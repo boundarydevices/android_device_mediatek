@@ -74,10 +74,8 @@ BOARD_SEPOLICY_DIRS := \
 BOARD_SEPOLICY_DIRS += \
         hardware/mediatek/usb/1.2/sepolicy
 
-# Boot control HAL for A/B
-ifeq ($(TARGET_USE_AB_SLOT), true)
+# Boot control HAL
 DEVICE_MANIFEST_FILE += device/mediatek/common/manifest_ab.xml
-endif
 
 ifeq ($(TARGET_KERNEL_USE), 5.4)
 DEVICE_MANIFEST_FILE += device/mediatek/common/manifest_kernel5.xml
@@ -106,11 +104,8 @@ else
 BOARD_AVB_ENABLE := false
 endif
 
-ifneq ($(TARGET_USE_AB_SLOT), true)
 BOARD_INCLUDE_RECOVERY_DTBO := true
-endif
 
-ifeq ($(TARGET_USE_AB_SLOT), true)
 AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS := \
         boot \
@@ -124,7 +119,6 @@ endif
 
 BOARD_USES_RECOVERY_AS_BOOT := true
 TARGET_NO_RECOVERY := true
-endif
 
 # Userdata
 TARGET_USERIMAGES_USE_F2FS := true

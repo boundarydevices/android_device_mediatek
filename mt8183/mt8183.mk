@@ -22,26 +22,14 @@ PRODUCT_COPY_FILES += \
 
 
 # fstab
-ifeq ($(TARGET_USE_AB_SLOT), true)
 ifeq ($(TARGET_AVB_ENABLE), true)
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/fstab.mt8183.avb.ab:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.mt8183 \
-    $(LOCAL_PATH)/fstab.mt8183.avb.ab:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8183
-else
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/fstab.mt8183.ab:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.mt8183 \
-    $(LOCAL_PATH)/fstab.mt8183.ab:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8183
-endif
-else
-ifeq ($(TARGET_AVB_ENABLE), true)
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/fstab.mt8183.avb:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt8183 \
+    $(LOCAL_PATH)/fstab.mt8183.avb:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.mt8183 \
     $(LOCAL_PATH)/fstab.mt8183.avb:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8183
 else
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/fstab.mt8183:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt8183 \
+    $(LOCAL_PATH)/fstab.mt8183:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.mt8183 \
     $(LOCAL_PATH)/fstab.mt8183:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8183
-endif
 endif
 
 # Flashing binaries
@@ -59,15 +47,9 @@ endif # neq $(TARGET_USE_PRODUCT_SPECIFIC_BL2), true)
 
 # U-Boot and env
 ifneq ($(TARGET_USE_PRODUCT_SPECIFIC_UBOOT), true)
-ifeq ($(TARGET_USE_AB_SLOT), true)
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/binaries/images/fip_$(TARGET_MODE_BL)_ab.bin:$(TARGET_OUT)/fip.bin \
-    $(LOCAL_PATH)/binaries/images/u-boot-initial-$(TARGET_MODE_BL)-env_ab:$(TARGET_OUT)/u-boot-initial-env
-else
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/binaries/images/fip_$(TARGET_MODE_BL)_noab.bin:$(TARGET_OUT)/fip.bin \
-    $(LOCAL_PATH)/binaries/images/u-boot-initial-$(TARGET_MODE_BL)-env_noab:$(TARGET_OUT)/u-boot-initial-env
-endif # eq $(TARGET_USE_AB_SLOT), true
+    $(LOCAL_PATH)/binaries/images/fip_$(TARGET_MODE_BL).bin:$(TARGET_OUT)/fip.bin \
+    $(LOCAL_PATH)/binaries/images/u-boot-initial-$(TARGET_MODE_BL)-env:$(TARGET_OUT)/u-boot-initial-env
 endif # neq $(TARGET_USE_PRODUCT_SPECIFIC_UBOOT), true)
 
 # Media configuration

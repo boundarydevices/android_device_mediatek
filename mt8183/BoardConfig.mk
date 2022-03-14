@@ -37,19 +37,11 @@ VENDOR_UEVENTD_FILES += device/mediatek/common/mt8183/ueventd.mt8183.rc
 TARGET_RELEASETOOLS_EXTENSIONS := device/mediatek/common/
 
 # Recovery
-ifeq ($(TARGET_USE_AB_SLOT), true)
 ifeq ($(TARGET_AVB_ENABLE), true)
-TARGET_RECOVERY_FSTAB := device/mediatek/common/mt8183/fstab.mt8183.avb.ab
+TARGET_RECOVERY_FSTAB := device/mediatek/common/mt8183/fstab.mt8183.avb
 else
-TARGET_RECOVERY_FSTAB := device/mediatek/common/mt8183/fstab.mt8183.ab
+TARGET_RECOVERY_FSTAB := device/mediatek/common/mt8183/fstab.mt8183
 endif
-else
-ifeq ($(TARGET_AVB_ENABLE), true)
-TARGET_RECOVERY_FSTAB := device/mediatek/common/mt8183/fstab.recovery.mt8183.avb
-else
-TARGET_RECOVERY_FSTAB := device/mediatek/common/mt8183/fstab.recovery.mt8183
-endif
-endif # eq $(TARGET_USE_AB_SLOT), true
 
 # Vulkan
 BOARD_INSTALL_VULKAN := true
@@ -69,7 +61,7 @@ SOONG_CONFIG_arm_gralloc += \
 		mali_gpu_support_afbc_wideblk \
 		mali_gpu_support_afbc_tiled_headers \
 		mali_gpu_support_afbc_yuv_write \
-		gralloc_arm_no_external_afbc 
+		gralloc_arm_no_external_afbc
 
 SOONG_CONFIG_arm_gralloc_mali_video_version := v550
 SOONG_CONFIG_arm_gralloc_mali_gpu_support_afbc_basic := false

@@ -20,12 +20,6 @@ INTERNAL_IMG_PACKAGE_FILES += \
 	$(PRODUCT_OUT)/vbmeta.img
 endif
 
-ifneq ($(TARGET_USE_AB_SLOT), true)
-INTERNAL_IMG_PACKAGE_FILES += \
-	$(PRODUCT_OUT)/cache.img \
-	$(PRODUCT_OUT)/recovery.img
-endif
-
 # The update package
 dbg :=
 ifeq ($(TARGET_BUILD_TYPE),debug)

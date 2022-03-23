@@ -35,30 +35,23 @@ For now we support all these boards:
 .. prompt:: bash $ auto
 
    $ cd bootloaders/
-   $ ./build/build_all.sh --config=build/config/boards/i300a_pumpkin.yaml
+   $ ./build/build_all.sh --config=build/config/boards/i350_sb35.yaml
    ...
-   $ tree out/i300a_pumpkin/
-   out/i300a_pumpkin/
-   ├── debug
-   │   ├── bl2-debug.img
-   │   ├── fip_debug_ab.bin
-   │   ├── fip_debug_noab.bin
-   │   ├── lk-debug.bin
-   │   ├── tee-debug.bin
-   │   ├── u-boot-debug-ab.bin
-   │   ├── u-boot-debug.bin
-   │   ├── u-boot-initial-debug-env_ab
-   │   └── u-boot-initial-debug-env_noab
+   $ tree out/i350_sb35/
+   out/i350_sb35/
    └── release
        ├── bl2-release.img
-       ├── fip_release_ab.bin
-       ├── fip_release_noab.bin
+       ├── fip_release.bin
        ├── lk-release.bin
        ├── tee-release.bin
-       ├── u-boot-initial-release-env_ab
-       ├── u-boot-initial-release-env_noab
-       ├── u-boot-release-ab.bin
+       ├── u-boot-initial-release-env
        └── u-boot-release.bin
+
+By default the build is incremental, if you want to build from clean state please add ``--clean`` argument to the command line.
+
+3 build modes are supported: **release** (default), **debug** and **factory**.
+
+The mode can be specified by adding the argument ``--mode=debug``.
 
 Each file can be generated separately, for more informations please look at the
 `README.md <https://gitlab.com/mediatek/aiot/bsp/build-bootloaders>`_.
@@ -68,19 +61,18 @@ Flashing
 
 1. Download ``aiot-bootrom`` from `AIOT tools <https://mediatek.gitlab.io/aiot/bsp/aiot-tools/>`_.
 
-2. Download the following files from `common <https://gitlab.com/mediatek/aiot/rita/device/mediatek/common>`__:
+2. Move the download agent (``lk.bin``) in the same directory:
 
-.. parsed-literal::
+.. prompt:: bash $ auto
 
-   mt8167/binaries/images/dl_addr.ini
-   mt8167/binaries/images/lk.bin
+   $ cp out/i350_sb35/release/lk-release.bin lk.bin
 
 3. Run ``aiot-bootrom``:
 
 .. prompt:: bash $ auto
 
-       $ aiot-bootrom
-       INFO:aiot:Looking for a MediaTek SoC matching USB 0e8d:0003
+   $ aiot-bootrom
+   INFO:aiot:Looking for a MediaTek SoC matching USB 0e8d:0003
 
 4. press the *reset* and *volume up* buttons **simultaneously**
 
@@ -91,23 +83,23 @@ Flashing
 
 .. prompt:: bash $ auto
 
-       $ aiot-bootrom
-       INFO:aiot:Looking for a MediaTek SoC matching USB 0e8d:0003
-       INFO:aiot:Opening /dev/ttyACM0 using baudate=115200
-       INFO:aiot:Connected to MediaTek SoC
-       INFO:aiot:Sending DA to address: 0x00201000
-       INFO:aiot:Jumping to DA at address 0x00201000
+   $ aiot-bootrom
+   INFO:aiot:Looking for a MediaTek SoC matching USB 0e8d:0003
+   INFO:aiot:Opening /dev/ttyACM0 using baudate=115200
+   INFO:aiot:Connected to MediaTek SoC
+   INFO:aiot:Sending DA to address: 0x00201000
+   INFO:aiot:Jumping to DA at address 0x00201000
 
 
 7. Flash bl2:
 
 .. prompt:: bash $ auto
 
-       $ fastboot flash mmc0boot0 out/i300a_pumpkin/release/bl2-release.img
+   $ fastboot flash mmc0boot0 out/i350_sb35/release/bl2-release.img
 
 8. Flash fip:
 
 .. prompt:: bash $ auto
 
-       $ fastboot flash bootloaders out/i300a_pumpkin/release/fip_release_ab.bin
+   $ fastboot flash bootloaders out/i350_sb35/release/fip_release.bin
 

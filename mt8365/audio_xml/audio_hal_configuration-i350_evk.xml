@@ -51,6 +51,9 @@ Note: not xml elements from TinyHAL are supported.
             </path>
         </device>
 
+	<device name="speaker">
+	</device>
+
         <stream type="pcm" dir="out" card="0" device="0" rate="48000">
         </stream>
 

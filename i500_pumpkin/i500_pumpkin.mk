@@ -33,3 +33,23 @@ $(call inherit-product, device/mediatek/board/i500_pumpkin/device.mk)
 # clean-up all unknown PRODUCT_PACKAGES
 allowed_list := product_manifest.xml
 $(call enforce-product-packages-exist, $(allowed_list))
+
+# OP-TEE Trusted Applications
+ifeq ($(OPTEE_ENABLE), true)# supp_plugin
+$(call optee-add-ta, device/mediatek/common/mt8183/binaries/images/optee-ta/380231ac-fb99-47ad-a689-9e017eb6e78a.ta)
+include device/mediatek/common/optee/device-optee.mk
+
+ifeq ($(TEE_KEYMASTER_GATEKEEPER_ENABLE), true)
+# gatekeeper
+$(call optee-add-ta, device/mediatek/common/mt8183/binaries/images/optee-ta/4d573443-6a56-4272-ac6f-2425af9ef9bb.ta)
+# keymaster
+$(call optee-add-ta, device/mediatek/common/mt8183/binaries/images/optee-ta/dba51a17-0563-11e7-93b1-6fa7b0071a51.ta)
+endif # eq ($(TEE_KEYMASTER_GATEKEEPER_ENABLE), true)
+
+ifeq (,$(filter userdebug eng, $(TARGET_MODE_BL)))
+# supp_plugin
+$(call optee-add-ta, device/mediatek/common/mt8183/binaries/images/optee-ta/380231ac-fb99-47ad-a689-9e017eb6e78a.ta)
+# xtest
+$(call optee-add-all-xtest-ta, device/mediatek/common/mt8183/binaries/images/optee-ta)
+endif # eq (,$(filter userdebug eng, $(TARGET_MODE_BL)))
+endif # eq ($(OPTEE_ENABLE), true)

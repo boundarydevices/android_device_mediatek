@@ -21,12 +21,10 @@ endif
 # gatekeeper
 PRODUCT_PROPERTY_OVERRIDES += ro.hardware.gatekeeper=optee
 PRODUCT_PACKAGES += \
-     android.hardware.gatekeeper@1.0-service.optee \
-     4d573443-6a56-4272-ac6f-2425af9ef9bb.ta
+     android.hardware.gatekeeper@1.0-service.optee
 
 # keymaster
 PRODUCT_PROPERTY_OVERRIDES += ro.hardware.keystore=optee
 PRODUCT_PACKAGES += \
      android.hardware.keymaster@3.0-service.optee \
-     wait_for_keymaster_optee \
-     dba51a17-0563-11e7-93b1-6fa7b0071a51.ta
+     wait_for_keymaster_optee

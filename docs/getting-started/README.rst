@@ -190,6 +190,8 @@ The following Device-Tree Overlays are supported:
 dtbo_index description
 ========== =========================
 0          HDMI only
+1          AP1302 ISP + Single Onsemi AR0144 sensor
+2          AP1302 ISP + Dual Onsemi AR0144 sensor
 ========== =========================
 
 Pumpkin i500

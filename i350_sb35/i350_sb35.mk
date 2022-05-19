@@ -24,19 +24,6 @@ $(call inherit-product, device/mediatek/common/mt8365/mt8365.mk)
 
 include device/mediatek/common/common-build-flags.mk
 
-TARGET_USE_PRODUCT_SPECIFIC_BL2 := true
-TARGET_USE_PRODUCT_SPECIFIC_LK := true
-TARGET_USE_PRODUCT_SPECIFIC_UBOOT := true
-PRODUCT_COPY_FILES += \
-    device/mediatek/board/i350_sb35/binaries/images/lk-$(TARGET_MODE_BL).bin:lk.bin \
-    device/mediatek/common/mt8365/binaries/images/dl_addr.ini:dl_addr.ini
-
-PRODUCT_COPY_FILES += \
-    device/mediatek/board/i350_sb35//binaries/images/fip_$(TARGET_MODE_BL).bin:$(TARGET_OUT)/fip.bin \
-    device/mediatek/board/i350_sb35//binaries/images/bl2-$(TARGET_MODE_BL).img:$(TARGET_OUT)/bl2.img \
-    device/mediatek/board/i350_sb35//binaries/images/u-boot-initial-$(TARGET_MODE_BL)-env:$(TARGET_OUT)/u-boot-initial-env
-
-
 PRODUCT_NAME := i350_sb35
 PRODUCT_DEVICE := i350_sb35
 PRODUCT_BRAND := Android
@@ -44,6 +31,9 @@ PRODUCT_MODEL := i350_sb35
 PRODUCT_MANUFACTURER := mediatek
 
 $(call inherit-product, device/mediatek/board/i350_sb35/device.mk)
+
+# bootloaders binaries
+$(call copy_bl_binaries, device/mediatek/board/i350_sb35//binaries/images)
 
 # clean-up all unknown PRODUCT_PACKAGES
 allowed_list := product_manifest.xml

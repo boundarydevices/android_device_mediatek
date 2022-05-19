@@ -20,26 +20,6 @@ $(call inherit-product, device/mediatek/common/device-common.mk)
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.mt8167.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.mt8167.rc
 
-# Flashing binaries
-ifneq ($(TARGET_USE_PRODUCT_SPECIFIC_LK), true)
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/binaries/images/lk-$(TARGET_MODE_BL).bin:$(TARGET_OUT)/lk.bin \
-    $(LOCAL_PATH)/binaries/images/dl_addr.ini:$(TARGET_OUT)/dl_addr.ini
-endif # neq $(TARGET_USE_PRODUCT_SPECIFIC_LK), true)
-
-# BL2
-ifneq ($(TARGET_USE_PRODUCT_SPECIFIC_BL2), true)
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/binaries/images/bl2-$(TARGET_MODE_BL).img:$(TARGET_OUT)/bl2.img
-endif # neq $(TARGET_USE_PRODUCT_SPECIFIC_BL2), true)
-
-# U-Boot and env
-ifneq ($(TARGET_USE_PRODUCT_SPECIFIC_UBOOT), true)
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/binaries/images/fip_$(TARGET_MODE_BL).bin:$(TARGET_OUT)/fip.bin \
-    $(LOCAL_PATH)/binaries/images/u-boot-initial-$(TARGET_MODE_BL)-env:$(TARGET_OUT)/u-boot-initial-env
-endif # neq $(TARGET_USE_PRODUCT_SPECIFIC_UBOOT), true)
-
 ifeq ($(PLATFORM_VERSION), 9)
 # graphics bringup with swiftshader from Q preview
 PRODUCT_COPY_FILES += \

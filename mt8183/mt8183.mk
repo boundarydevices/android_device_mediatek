@@ -32,26 +32,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/fstab.mt8183:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8183
 endif
 
-# Flashing binaries
-ifneq ($(TARGET_USE_PRODUCT_SPECIFIC_LK), true)
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/binaries/images/lk-$(TARGET_MODE_BL).bin:$(TARGET_OUT)/lk.bin \
-    $(LOCAL_PATH)/binaries/images/dl_addr.ini:$(TARGET_OUT)/dl_addr.ini
-endif # neq $(TARGET_USE_PRODUCT_SPECIFIC_LK), true)
-
-# BL2
-ifneq ($(TARGET_USE_PRODUCT_SPECIFIC_BL2), true)
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/binaries/images/bl2-$(TARGET_MODE_BL).img:$(TARGET_OUT)/bl2.img
-endif # neq $(TARGET_USE_PRODUCT_SPECIFIC_BL2), true)
-
-# U-Boot and env
-ifneq ($(TARGET_USE_PRODUCT_SPECIFIC_UBOOT), true)
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/binaries/images/fip_$(TARGET_MODE_BL).bin:$(TARGET_OUT)/fip.bin \
-    $(LOCAL_PATH)/binaries/images/u-boot-initial-$(TARGET_MODE_BL)-env:$(TARGET_OUT)/u-boot-initial-env
-endif # neq $(TARGET_USE_PRODUCT_SPECIFIC_UBOOT), true)
-
 # Media configuration
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media_xml/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \

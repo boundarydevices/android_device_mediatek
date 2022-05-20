@@ -43,17 +43,19 @@ $(call enforce-product-packages-exist, $(allowed_list))
 ifeq ($(OPTEE_ENABLE), true)
 include device/mediatek/common/optee/device-optee.mk
 
+I350_PUMPKIN_TA := device/mediatek/board/i350_pumpkin/binaries/images/optee-ta
+
 ifeq ($(TEE_KEYMASTER_GATEKEEPER_ENABLE), true)
 # gatekeeper
-$(call optee-add-ta, device/mediatek/board/i350_pumpkin/binaries/images/optee-ta/4d573443-6a56-4272-ac6f-2425af9ef9bb.ta)
+$(call optee-add-ta, $(I350_PUMPKIN_TA)/4d573443-6a56-4272-ac6f-2425af9ef9bb.ta)
 # keymaster
-$(call optee-add-ta, device/mediatek/board/i350_pumpkin/binaries/images/optee-ta/dba51a17-0563-11e7-93b1-6fa7b0071a51.ta)
+$(call optee-add-ta, $(I350_PUMPKIN_TA)/dba51a17-0563-11e7-93b1-6fa7b0071a51.ta)
 endif
 
 ifeq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 # supp_plugin
-$(call optee-add-ta, device/mediatek/board/i350_pumpkin/binaries/images/optee-ta/380231ac-fb99-47ad-a689-9e017eb6e78a.ta)
+$(call optee-add-ta, $(I350_PUMPKIN_TA)/380231ac-fb99-47ad-a689-9e017eb6e78a.ta)
 # xtest
-$(call optee-add-all-xtest-ta, device/mediatek/board/i350_pumpkin/binaries/images/optee-ta)
+$(call optee-add-all-xtest-ta, $(I350_PUMPKIN_TA))
 endif
 endif

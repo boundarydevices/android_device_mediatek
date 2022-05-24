@@ -112,7 +112,7 @@ VENDOR_UEVENTD_FILES += device/mediatek/common/ueventd/ueventd.vpud.rc
 
 # Secure Companion Processor (SCP) firmware
 PRODUCT_COPY_FILES += \
-    device/mediatek/common/mt8183/binaries/scp/scp.img:$(TARGET_COPY_OUT_VENDOR)/firmware/scp.img
+    device/mediatek/common/mt8183/binaries/scp/scp.img:$(TARGET_COPY_OUT_VENDOR)/firmware/mediatek/mt8183/scp.img
 
 # OP-TEE
 OPTEE_PLATFORM := mediatek-mt8183

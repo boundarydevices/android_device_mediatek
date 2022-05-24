@@ -20,6 +20,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 OPTEE_ENABLE := true
 TEE_KEYMASTER_GATEKEEPER_ENABLE := true
 
+include device/mediatek/common/common-build-flags.mk
+
 $(call inherit-product, device/mediatek/common/mt8167/mt8167.mk)
 
 PRODUCT_NAME := i300a_sb30

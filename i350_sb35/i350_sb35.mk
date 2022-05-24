@@ -20,9 +20,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 OPTEE_ENABLE := true
 TEE_KEYMASTER_GATEKEEPER_ENABLE := true
 
-$(call inherit-product, device/mediatek/common/mt8365/mt8365.mk)
-
 include device/mediatek/common/common-build-flags.mk
+
+$(call inherit-product, device/mediatek/common/mt8365/mt8365.mk)
 
 PRODUCT_NAME := i350_sb35
 PRODUCT_DEVICE := i350_sb35

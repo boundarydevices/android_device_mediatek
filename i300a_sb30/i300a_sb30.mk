@@ -52,7 +52,7 @@ $(call optee-add-ta, $(I300A_SB30_TA)/4d573443-6a56-4272-ac6f-2425af9ef9bb.ta)
 $(call optee-add-ta, $(I300A_SB30_TA)/dba51a17-0563-11e7-93b1-6fa7b0071a51.ta)
 endif
 
-ifeq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
+ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 # supp_plugin
 $(call optee-add-ta, $(I300A_SB30_TA)/380231ac-fb99-47ad-a689-9e017eb6e78a.ta)
 # xtest

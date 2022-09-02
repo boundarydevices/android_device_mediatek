@@ -34,3 +34,7 @@ scan_dev_for_boot_part=part list ${devtype} ${devnum} -bootable devplist; env ex
 scan_dev_for_extlinux=if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${boot_syslinux_conf}; then echo Found ${prefix}${boot_syslinux_conf}; run boot_extlinux; echo SCRIPT FAILED: continuing...; fi
 scan_dev_for_scripts=for script in ${boot_scripts}; do if test -e ${devtype} ${devnum}:${distro_bootpart} ${prefix}${script}; then echo Found U-Boot script ${prefix}${script}; run boot_a_script; echo SCRIPT FAILED: continuing...; fi; done
 serial#=i350sb35
+splashdevpart=0#splashscreen
+splashimage=0x60000000
+splashpos=m,m
+splashsource=mmc_raw

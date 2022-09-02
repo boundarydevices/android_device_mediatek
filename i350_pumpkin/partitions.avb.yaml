@@ -15,6 +15,9 @@ partitions:
     ab: true
   misc:
     size: 512K
+  splashscreen:
+    size: 2M
+    file: splashscreen.img
   boot:
     start: 64M
     size: 0

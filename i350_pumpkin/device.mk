@@ -40,3 +40,6 @@ $(call inherit-product, hardware/mediatek/camera/uvc/uvc.mk)
 $(call inherit-product, hardware/mediatek/camera/csi/csi.mk)
 
 $(call inherit-product, vendor/mediatek/wireless/mt7663.mk)
+
+# splashscreen
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/splashscreen.img:splashscreen.img

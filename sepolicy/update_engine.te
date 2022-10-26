@@ -1,0 +1,3 @@
+allow update_engine mnt_media_rw_file:dir { search };
+allow update_engine vfat:dir { search };
+allow update_engine vfat:file { read open getattr };

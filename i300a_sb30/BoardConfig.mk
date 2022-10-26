@@ -35,6 +35,7 @@ BOARD_BOOTIMAGE_PARTITION_SIZE     := 67108864
 BOARD_DB_DYNAMIC_PARTITIONS_SIZE   := 2411724800
 
 BOARD_SEPOLICY_DIRS += \
+    device/mediatek/board/sepolicy \
     device/mediatek/board/i300a_sb30/sepolicy
 
 ifeq ($(TARGET_AVB_ENABLE), true)

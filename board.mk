@@ -1,5 +1,5 @@
 #
-# Copyright 2014 The Android Open-Source Project
+# Copyright 2022 BayLibre SAS
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,18 +14,9 @@
 # limitations under the License.
 #
 
-# Shipping API level to Android 12 (S)
-PRODUCT_SHIPPING_API_LEVEL := 31
+PRODUCT_PACKAGES += \
+    update_engine_client \
+    SystemUpdaterSample
 
-# common mediatek board
-$(call inherit-product, device/mediatek/board/board.mk)
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=180
-
-DEVICE_PACKAGE_OVERLAYS := device/mediatek/board/i350_sb35/overlay
-
-# UVC camera
-$(call inherit-product, hardware/mediatek/camera/uvc/uvc.mk)
-
-$(call inherit-product, vendor/mediatek/wireless/mt7663.mk)
+PRODUCT_COPY_FILES += \
+    device/mediatek/board/privapp-permissions.xml:system/etc/permissions/privapp-permissions.xml

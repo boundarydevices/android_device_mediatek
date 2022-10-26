@@ -18,6 +18,9 @@
 # Shipping API level to Android 12 (S)
 PRODUCT_SHIPPING_API_LEVEL := 31
 
+# common mediatek board
+$(call inherit-product, device/mediatek/board/board.mk)
+
 # Audio: use default hal configuration with TinyHAL
 PRODUCT_PACKAGES += audio.primary.i300a_sb30
 PRODUCT_COPY_FILES += \

@@ -41,6 +41,7 @@ BOARD_DB_DYNAMIC_PARTITIONS_SIZE   := 2411724800
 BOARD_USES_METADATA_PARTITION := true
 
 BOARD_SEPOLICY_DIRS += \
+    device/mediatek/board/sepolicy \
     device/mediatek/board/i500_pumpkin/sepolicy
 
 ifeq ($(TARGET_AVB_ENABLE), true)

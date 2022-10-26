@@ -14,6 +14,9 @@
 # limitations under the License.
 #
 
+# common mediatek board
+$(call inherit-product, device/mediatek/board/board.mk)
+
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=360
 

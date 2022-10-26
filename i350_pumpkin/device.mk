@@ -17,6 +17,9 @@
 # Shipping API level to Android 12 (S)
 PRODUCT_SHIPPING_API_LEVEL := 31
 
+# common mediatek board
+$(call inherit-product, device/mediatek/board/board.mk)
+
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=180
 

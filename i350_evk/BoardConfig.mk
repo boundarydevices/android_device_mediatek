@@ -20,6 +20,7 @@ TARGET_BOOTLOADER_BOARD_NAME := i350_evk
 TARGET_SCREEN_DENSITY := 360
 
 BOARD_SEPOLICY_DIRS += \
+    device/mediatek/board/sepolicy \
     device/mediatek/board/i350_evk/sepolicy
 
 # kernel commandline

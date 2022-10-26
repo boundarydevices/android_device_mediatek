@@ -181,9 +181,7 @@ PRODUCT_PACKAGES += \
     bootctrl.default
 
 PRODUCT_PACKAGES_DEBUG += \
-    bootctl \
-    update_engine_client \
-    SystemUpdaterSample
+    bootctl
 
 PRODUCT_PACKAGES += \
     sg_write_buffer \
@@ -216,11 +214,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Enable project quotas and casefolding for emulated storage without sdcardfs
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
-
-ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
-PRODUCT_COPY_FILES += \
-    device/mediatek/common/privapp-permissions.xml:system/etc/permissions/privapp-permissions.xml
-endif
 
 # Enable activities on secondary displays
 PRODUCT_COPY_FILES += \

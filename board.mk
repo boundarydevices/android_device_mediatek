@@ -19,4 +19,4 @@ PRODUCT_PACKAGES += \
     SystemUpdaterSample
 
 PRODUCT_COPY_FILES += \
-    device/mediatek/board/privapp-permissions.xml:system/etc/permissions/privapp-permissions.xml
+    $(LOCAL_PATH)/privapp-permissions.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions.xml

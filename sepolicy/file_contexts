@@ -1,0 +1,2 @@
+# mediatek data files
+/data/mediatek(/.*)?      u:object_r:mediatek_data_file:s0

@@ -1,3 +1,5 @@
 allow update_engine mnt_media_rw_file:dir { search };
 allow update_engine vfat:dir { search };
 allow update_engine vfat:file { read open getattr };
+allow update_engine mediatek_data_file:file r_file_perms;
+allow update_engine mediatek_data_file:dir r_dir_perms;

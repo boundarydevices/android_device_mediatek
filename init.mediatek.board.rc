@@ -1,0 +1,2 @@
+on post-fs-data
+    mkdir /data/mediatek/ 0775 shell shell

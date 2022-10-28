@@ -20,3 +20,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/privapp-permissions.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions.xml
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/init.mediatek.board.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/init.mediatek.board.rc

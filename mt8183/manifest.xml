@@ -48,16 +48,6 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <hal>
-        <name>android.hardware.neuralnetworks</name>
-        <transport>hwbinder</transport>
-        <version>1.3</version>
-        <interface>
-            <name>IDevice</name>
-            <instance>google-armnn</instance>
-        </interface>
-        <fqname>@1.3::IDevice/google-armnn</fqname>
-    </hal>
     <hal format="hidl">
         <name>android.hardware.graphics.allocator</name>
         <transport>hwbinder</transport>

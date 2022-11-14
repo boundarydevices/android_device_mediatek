@@ -91,21 +91,6 @@ PRODUCT_PACKAGES +=  vulkan.mali
 VENDOR_UEVENTD_FILES += \
     vendor/mediatek/prebuilts/egl/mali/ueventd.rc
 
-PRODUCT_PACKAGES += \
-    android.hardware.neuralnetworks@1.3-service-armnn
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    Armnn.operandTypeTensorQuant8AsymmPerformance.execTime=2 \
-    Armnn.operandTypeTensorQuant8AsymmPerformance.powerUsage=2 \
-    Armnn.operandTypeTensorQuant8SymmPerformance.execTime=2 \
-    Armnn.operandTypeTensorQuant8SymmPerformance.powerUsage=2 \
-    Armnn.operandTypeTensorQuant8SymmPerChannelPerformance.execTime=2 \
-    Armnn.operandTypeTensorQuant8SymmPerChannelPerformance.powerUsage=2
-
-# Install gpu tuning file
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/armnn/gpu-tuner-file.csv:$(TARGET_COPY_OUT_VENDOR)/etc/gpu-tuner-file.csv
-
 PRODUCT_SOONG_NAMESPACES += device/mediatek/common/mt8183/binaries/vpud
 PRODUCT_PACKAGES += vpud.mt8183
 VENDOR_UEVENTD_FILES += device/mediatek/common/ueventd/ueventd.vpud.rc
@@ -118,15 +103,3 @@ PRODUCT_COPY_FILES += \
 OPTEE_PLATFORM := mediatek-mt8183
 OPTEE_PLATFORM_FLAVOR := mt8183
 OPTEE_CFG_DRAM_SIZE := 0x80000000
-
-# NeuralNetworks
-GPU_PREBUILD_PRESENT := $(wildcard vendor/mediatek/prebuilts/egl/mali/i500)
-ifneq "$(GPU_PREBUILD_PRESENT)" ""
-ARMNN_COMPUTE_CL_ENABLE := 1
-else
-ARMNN_COMPUTE_CL_ENABLE := 0
-endif
-
-# Cadence Neural Networks HAL for VP6 acceleration
-# This requires NDA to get access
-$(call inherit-product-if-exists, vendor/cadence/prebuilts/i500/vp6.mk)

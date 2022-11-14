@@ -98,18 +98,3 @@ PRODUCT_PACKAGES += \
 OPTEE_PLATFORM := mediatek-mt8175
 OPTEE_PLATFORM_FLAVOR := mt8175
 OPTEE_CFG_DRAM_SIZE := 0x80000000
-
-# NEURAL NETWORKS
-PRODUCT_PACKAGES += \
-    android.hardware.neuralnetworks@1.3-service-armnn
-
-GPU_PREBUILD_PRESENT := $(wildcard vendor/mediatek/prebuilts/egl/mali/i350)
-ifneq "$(GPU_PREBUILD_PRESENT)" ""
-ARMNN_COMPUTE_CL_ENABLE := 1
-else
-ARMNN_COMPUTE_CL_ENABLE := 0
-endif
-
-# Cadence Neural Networks HAL for VP6 acceleration
-# This requires NDA to get access
-$(call inherit-product-if-exists, vendor/cadence/prebuilts/i350/vp6.mk)

@@ -33,7 +33,7 @@ PRODUCT_MANUFACTURER := mediatek
 $(call inherit-product, device/mediatek/board/i500_pumpkin/device.mk)
 
 # bootloaders binaries
-$(call copy_bl_binaries, device/mediatek/common/mt8183/binaries/images)
+$(call copy_bl_binaries, device/mediatek/boards-binaries/i500_pumpkin)
 
 # clean-up all unknown PRODUCT_PACKAGES
 allowed_list := product_manifest.xml
@@ -43,7 +43,7 @@ $(call enforce-product-packages-exist, $(allowed_list))
 ifeq ($(OPTEE_ENABLE), true)
 include device/mediatek/common/optee/device-optee.mk
 
-I500_PUMPKIN_TA := device/mediatek/common/mt8183/binaries/images/optee-ta
+I500_PUMPKIN_TA := device/mediatek/boards-binaries/i500_pumpkin/optee-ta
 
 ifeq ($(TEE_KEYMASTER_GATEKEEPER_ENABLE), true)
 # gatekeeper

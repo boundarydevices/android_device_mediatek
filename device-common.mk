@@ -75,7 +75,7 @@ PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-service.software
 endif
 
-# mt8183 and mt8167 both have the same OpenGL ES version (3.2)
+# mt8183 has OpenGL ES version (3.2)
 # this value should be moved in specific soc folder if it's not aligned in next deliveries
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196610

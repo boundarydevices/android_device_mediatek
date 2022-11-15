@@ -1,2 +1,0 @@
-libPVROCL.so
-vulkan.powervr.so

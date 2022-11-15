@@ -41,13 +41,13 @@ BOARD_DB_DYNAMIC_PARTITIONS_SIZE   := 2411724800
 BOARD_USES_METADATA_PARTITION := true
 
 BOARD_SEPOLICY_DIRS += \
-    device/mediatek/board/sepolicy \
-    device/mediatek/board/i500_pumpkin/sepolicy
+    device/mediatek/boards/sepolicy \
+    device/mediatek/boards/i500_pumpkin/sepolicy
 
 ifeq ($(TARGET_AVB_ENABLE), true)
-MTK_PARTITIONS_YAML := device/mediatek/board/i500_pumpkin/partitions.avb.yaml
+MTK_PARTITIONS_YAML := device/mediatek/boards/i500_pumpkin/partitions.avb.yaml
 else
-MTK_PARTITIONS_YAML := device/mediatek/board/i500_pumpkin/partitions.yaml
+MTK_PARTITIONS_YAML := device/mediatek/boards/i500_pumpkin/partitions.yaml
 endif
 
 # Please keep this list fixed: add new files in the end of the list

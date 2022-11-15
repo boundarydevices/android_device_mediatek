@@ -15,7 +15,7 @@
 #
 
 # common mediatek board
-$(call inherit-product, device/mediatek/board/board.mk)
+$(call inherit-product, device/mediatek/boards/board.mk)
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=360
@@ -30,14 +30,14 @@ PRODUCT_COPY_FILES += \
      device/mediatek/common/mt8183/audio_xml/audio_hal_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio.i500_pumpkin.xml
 
 PRODUCT_COPY_FILES += \
-     device/mediatek/board/i500_pumpkin/ILI210x_Touchscreen.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/ILI210x_Touchscreen.idc
+     device/mediatek/boards/i500_pumpkin/ILI210x_Touchscreen.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/ILI210x_Touchscreen.idc
 
 PRODUCT_COPY_FILES += \
-    device/mediatek/board/i500_pumpkin/init.i500_pumpkin.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.i500_pumpkin.rc
+    device/mediatek/boards/i500_pumpkin/init.i500_pumpkin.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.i500_pumpkin.rc
 
 # Key Layout files
 PRODUCT_COPY_FILES += \
-     device/mediatek/board/i500_pumpkin/mtk-pmic-keys.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/mtk-pmic-keys.kl
+     device/mediatek/boards/i500_pumpkin/mtk-pmic-keys.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/mtk-pmic-keys.kl
 
 # Camera firmwares
 PRODUCT_COPY_FILES += \
@@ -54,7 +54,7 @@ PRODUCT_SHIPPING_API_LEVEL := 31
 ifdef DEVICE_PACKAGE_OVERLAYS
 $(warning Overlays defined in '$(DEVICE_PACKAGE_OVERLAYS)' will override '$(PRODUCT_HARDWARE)' overlays)
 endif
-DEVICE_PACKAGE_OVERLAYS += device/mediatek/board/i500_pumpkin/overlay
+DEVICE_PACKAGE_OVERLAYS += device/mediatek/boards/i500_pumpkin/overlay
 
 # Additional hardware features
 $(call inherit-product-if-exists, vendor/mediatek/wireless/mt7668.mk)

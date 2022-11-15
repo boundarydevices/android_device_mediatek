@@ -18,12 +18,12 @@
 PRODUCT_SHIPPING_API_LEVEL := 31
 
 # common mediatek board
-$(call inherit-product, device/mediatek/board/board.mk)
+$(call inherit-product, device/mediatek/boards/board.mk)
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=180
 
-DEVICE_PACKAGE_OVERLAYS := device/mediatek/board/i350_sb35/overlay
+DEVICE_PACKAGE_OVERLAYS := device/mediatek/boards/i350_sb35/overlay
 
 # UVC camera
 $(call inherit-product, hardware/mediatek/camera/uvc/uvc.mk)

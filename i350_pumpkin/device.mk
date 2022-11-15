@@ -18,7 +18,7 @@
 PRODUCT_SHIPPING_API_LEVEL := 31
 
 # common mediatek board
-$(call inherit-product, device/mediatek/board/board.mk)
+$(call inherit-product, device/mediatek/boards/board.mk)
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=180
@@ -29,7 +29,7 @@ PRODUCT_COPY_FILES += \
      device/mediatek/common/mt8365/audio_xml/audio_policy_configuration-i350_pumpkin.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
      device/mediatek/common/mt8365/audio_xml/audio_hal_configuration-i350_pumpkin.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio.i350_pumpkin.xml
 
-DEVICE_PACKAGE_OVERLAYS := device/mediatek/board/i350_pumpkin/overlay
+DEVICE_PACKAGE_OVERLAYS := device/mediatek/boards/i350_pumpkin/overlay
 
 # Camera + ISP Firmwares:
 PRODUCT_COPY_FILES += \

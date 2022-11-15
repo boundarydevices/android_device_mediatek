@@ -20,8 +20,8 @@ TARGET_BOOTLOADER_BOARD_NAME := i350_evk
 TARGET_SCREEN_DENSITY := 360
 
 BOARD_SEPOLICY_DIRS += \
-    device/mediatek/board/sepolicy \
-    device/mediatek/board/i350_evk/sepolicy
+    device/mediatek/boards/sepolicy \
+    device/mediatek/boards/i350_evk/sepolicy
 
 # kernel commandline
 BOARD_KERNEL_CMDLINE := \
@@ -46,9 +46,9 @@ BOARD_DB_DYNAMIC_PARTITIONS_SIZE   := 2411724800
 BOARD_USES_METADATA_PARTITION      := true
 
 ifeq ($(TARGET_AVB_ENABLE), true)
-MTK_PARTITIONS_YAML := device/mediatek/board/i350_evk/partitions.avb.yaml
+MTK_PARTITIONS_YAML := device/mediatek/boards/i350_evk/partitions.avb.yaml
 else
-MTK_PARTITIONS_YAML := device/mediatek/board/i350_evk/partitions.yaml
+MTK_PARTITIONS_YAML := device/mediatek/boards/i350_evk/partitions.yaml
 endif
 
 # Please keep this list fixed: add new files in the end of the list

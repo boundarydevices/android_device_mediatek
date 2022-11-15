@@ -19,8 +19,8 @@ include device/mediatek/common/mt8365/BoardConfig.mk
 TARGET_BOOTLOADER_BOARD_NAME := i350_sb35
 
 BOARD_SEPOLICY_DIRS += \
-    device/mediatek/board/sepolicy \
-    device/mediatek/board/i350_sb35/sepolicy
+    device/mediatek/boards/sepolicy \
+    device/mediatek/boards/i350_sb35/sepolicy
 
 # kernel commandline
 BOARD_KERNEL_CMDLINE := \
@@ -60,9 +60,9 @@ BOARD_DB_DYNAMIC_PARTITIONS_SIZE   := 2411724800
 BOARD_USES_METADATA_PARTITION      := true
 
 ifeq ($(TARGET_AVB_ENABLE), true)
-MTK_PARTITIONS_YAML := device/mediatek/board/i350_sb35/partitions.avb.yaml
+MTK_PARTITIONS_YAML := device/mediatek/boards/i350_sb35/partitions.avb.yaml
 else
-MTK_PARTITIONS_YAML := device/mediatek/board/i350_sb35/partitions.yaml
+MTK_PARTITIONS_YAML := device/mediatek/boards/i350_sb35/partitions.yaml
 endif
 
 

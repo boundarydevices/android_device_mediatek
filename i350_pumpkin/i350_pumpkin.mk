@@ -30,7 +30,7 @@ PRODUCT_BRAND := Android
 PRODUCT_MODEL := i350_pumpkin
 PRODUCT_MANUFACTURER := mediatek
 
-$(call inherit-product, device/mediatek/board/i350_pumpkin/device.mk)
+$(call inherit-product, device/mediatek/boards/i350_pumpkin/device.mk)
 
 # bootloaders binaries
 $(call copy_bl_binaries, device/mediatek/boards-binaries/i350_pumpkin)

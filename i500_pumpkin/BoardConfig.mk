@@ -27,7 +27,7 @@ BOARD_KERNEL_CMDLINE := \
 
 # kernel modules required for ap1302 isp
 BOARD_VENDOR_KERNEL_MODULES += \
-    device/mediatek/kernel-binaries/$(TARGET_KERNEL_USE)/ap1302.ko
+    device/mediatek/boards-binaries/$(TARGET_KERNEL_USE)/ap1302.ko
 
 # FS configuration
 BOARD_SUPER_PARTITION_SIZE         := 4831838208

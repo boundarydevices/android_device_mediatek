@@ -30,22 +30,22 @@ BOARD_KERNEL_CMDLINE := \
     androidboot.boot_devices=soc/11230000.mmc
 
 BOARD_VENDOR_KERNEL_MODULES += \
-    device/mediatek/kernel-binaries/$(TARGET_KERNEL_USE)/panel-rpi-pumpkin-touchscreen.ko
+    device/mediatek/boards-binaries/$(TARGET_KERNEL_USE)/panel-rpi-pumpkin-touchscreen.ko
 
 BOARD_RECOVERY_KERNEL_MODULES += \
-    device/mediatek/kernel-binaries/$(TARGET_KERNEL_USE)/panel-rpi-pumpkin-touchscreen.ko
+    device/mediatek/boards-binaries/$(TARGET_KERNEL_USE)/panel-rpi-pumpkin-touchscreen.ko
 
 ifeq ($(TARGET_KERNEL_USE), 5.4)
 BOARD_VENDOR_KERNEL_MODULES += \
-    device/mediatek/kernel-binaries/$(TARGET_KERNEL_USE)/lt9611.ko
+    device/mediatek/boards-binaries/$(TARGET_KERNEL_USE)/lt9611.ko
 BOARD_RECOVERY_KERNEL_MODULES += \
-    device/mediatek/kernel-binaries/$(TARGET_KERNEL_USE)/lt9611.ko
+    device/mediatek/boards-binaries/$(TARGET_KERNEL_USE)/lt9611.ko
 # 5.10 and higher have a different module name for lontium
 else
 BOARD_VENDOR_KERNEL_MODULES += \
-    device/mediatek/kernel-binaries/$(TARGET_KERNEL_USE)/lontium-lt9611.ko
+    device/mediatek/boards-binaries/$(TARGET_KERNEL_USE)/lontium-lt9611.ko
 BOARD_RECOVERY_KERNEL_MODULES += \
-    device/mediatek/kernel-binaries/$(TARGET_KERNEL_USE)/lontium-lt9611.ko
+    device/mediatek/boards-binaries/$(TARGET_KERNEL_USE)/lontium-lt9611.ko
 endif
 
 # FS configuration

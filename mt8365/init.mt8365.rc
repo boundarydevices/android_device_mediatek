@@ -3,7 +3,11 @@ on late-fs
     # In such case, init won't responce the property_set from hwservicemanager and then
     # cause services for bootanim not running.
     wait_for_prop hwservicemanager.ready true
-	
+
+on early-init
+    exec u:r:vendor_modprobe:s0 -- \
+         /vendor/bin/modprobe -d /vendor/lib/modules --all=/vendor/lib/modules/modules.load
+
 on init
     # configure cpuset for our CPUs:
     # 0-3 are our little cores (a53)

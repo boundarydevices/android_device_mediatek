@@ -27,6 +27,10 @@ else
 LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
 
+# Specify the manufacturer
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.soc.manufacturer=mediatek
+
 PRODUCT_COPY_FILES := \
 	$(LOCAL_KERNEL):kernel
 

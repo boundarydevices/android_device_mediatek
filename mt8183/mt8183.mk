@@ -17,6 +17,10 @@ include device/mediatek/common/common-build-flags.mk
 
 $(call inherit-product, device/mediatek/common/device-common.mk)
 
+# Specify the model
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.soc.model=i500
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.mt8183.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.mt8183.rc \
 

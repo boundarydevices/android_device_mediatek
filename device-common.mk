@@ -229,3 +229,6 @@ PRODUCT_COPY_FILES += \
 
 #Add CameraDemo package
 PRODUCT_PACKAGES += CameraDemo
+
+# GPIO utils
+PRODUCT_PACKAGES_DEBUG += gpioinfo gpioget gpioset

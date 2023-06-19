@@ -224,8 +224,5 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 PRODUCT_COPY_FILES += \
     device/mediatek/common/etc/display_settings.xml:$(TARGET_COPY_OUT_VENDOR)/etc/display_settings.xml
 
-#Add CameraDemo package
-PRODUCT_PACKAGES += CameraDemo
-
 # GPIO utils
 PRODUCT_PACKAGES_DEBUG += gpioinfo gpioget gpioset

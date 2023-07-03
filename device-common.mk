@@ -53,9 +53,7 @@ TARGET_AVB_ENABLE := true
 endif
 
 # Health: Install default binderized implementation to vendor.
-PRODUCT_PACKAGES += \
-    android.hardware.health@2.1-service \
-    android.hardware.health@2.1-impl-batteryless
+PRODUCT_PACKAGES += android.hardware.health-service.batteryless
 
 # Backlight/brightness
 PRODUCT_PACKAGES += android.hardware.lights-service

@@ -1,6 +1,9 @@
 #necessary files for aiot-flash
 INTERNAL_IMG_PACKAGE_FILES := \
+	$(PRODUCT_OUT)/android-info.txt \
 	$(PRODUCT_OUT)/bl2.img \
+	$(PRODUCT_OUT)/boot.img \
+	$(PRODUCT_OUT)/dtbo.img \
 	$(PRODUCT_OUT)/fip.bin \
 	$(PRODUCT_OUT)/flashproc.py \
 	$(PRODUCT_OUT)/lk.bin \
@@ -8,11 +11,8 @@ INTERNAL_IMG_PACKAGE_FILES := \
 	$(PRODUCT_OUT)/partitions.yaml \
 	$(PRODUCT_OUT)/persist.img \
 	$(PRODUCT_OUT)/splashscreen.raw \
-	$(PRODUCT_OUT)/u-boot-initial-env \
-	$(PRODUCT_OUT)/android-info.txt \
-	$(PRODUCT_OUT)/boot.img \
-	$(PRODUCT_OUT)/dtbo.img \
 	$(PRODUCT_OUT)/super.img \
+	$(PRODUCT_OUT)/u-boot-initial-env \
 	$(PRODUCT_OUT)/userdata.img \
 
 ifeq ($(TARGET_AVB_ENABLE), true)

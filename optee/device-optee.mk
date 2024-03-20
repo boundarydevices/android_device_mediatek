@@ -27,6 +27,9 @@ CFG_TEE_CLIENT_LOAD_PATH := /vendor/lib/
 
 BUILD_OPTEE_MK := $(LOCAL_PATH)/build_optee.mk
 
+# optee-client (libteec and tee-supplicant)
+include vendor/linaro/optee_client/optee_client.device.mk
+
 PRODUCT_PACKAGES += \
     libteec \
     tee-supplicant

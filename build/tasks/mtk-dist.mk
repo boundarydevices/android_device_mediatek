@@ -24,7 +24,7 @@ dbg :=
 ifeq ($(TARGET_BUILD_TYPE),debug)
   dbg := "_debug"
 endif
-name := $(TARGET_PRODUCT)$(dbg)-img-mtk-$(FILE_NAME_TAG)
+name := $(TARGET_PRODUCT)$(dbg)-img-mtk
 
 MTK_INTERNAL_UPDATE_PACKAGE_TARGET := $(PRODUCT_OUT)/$(name).zip
 $(MTK_INTERNAL_UPDATE_PACKAGE_TARGET): $(INTERNAL_IMG_PACKAGE_FILES)
@@ -32,3 +32,5 @@ $(MTK_INTERNAL_UPDATE_PACKAGE_TARGET): $(INTERNAL_IMG_PACKAGE_FILES)
 	$(hide) $(SOONG_ZIP) -o $@ -C $(dir $<) $(addprefix -f ,$^)
 .PHONY: mtk-dist
 mtk-dist: $(MTK_INTERNAL_UPDATE_PACKAGE_TARGET)
+
+$(call dist-for-goals-with-filenametag, mtk-dist, $(MTK_INTERNAL_UPDATE_PACKAGE_TARGET))

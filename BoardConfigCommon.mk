@@ -28,7 +28,6 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 
 TARGET_IS_64_BIT := true
-TARGET_USES_64_BIT_BINDER := true
 
 # Enable vndk
 BOARD_VNDK_VERSION := current

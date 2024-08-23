@@ -61,7 +61,6 @@ PRODUCT_SOONG_NAMESPACES += vendor/mediatek/prebuilts/egl/mali/i350
 PRODUCT_PACKAGES += \
     libGLES_mali \
     hwcomposer.drm \
-    arm.graphics \
     liblibarm_mali_config_sysprops
 
 # Public Libraries

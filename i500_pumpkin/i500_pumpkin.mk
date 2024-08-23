@@ -35,10 +35,6 @@ $(call inherit-product, device/mediatek/boards/i500_pumpkin/device.mk)
 # bootloaders binaries
 $(call copy_bl_binaries, device/mediatek/boards-binaries/i500_pumpkin)
 
-# clean-up all unknown PRODUCT_PACKAGES
-allowed_list := product_manifest.xml
-$(call enforce-product-packages-exist, $(allowed_list))
-
 # OP-TEE Trusted Applications
 ifeq ($(OPTEE_ENABLE), true)
 include device/mediatek/common/optee/device-optee.mk

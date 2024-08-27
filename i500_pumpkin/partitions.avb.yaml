@@ -1,5 +1,6 @@
 eMMCSize: 14952M
 blockSize: 512
+eraseGroupSize: 512K
 type: 0FC63DAF-8483-4772-8E79-3D69D8477DE4
 abPartitions: true
 partitions:

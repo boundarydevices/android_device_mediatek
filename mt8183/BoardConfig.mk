@@ -77,7 +77,3 @@ SOONG_CONFIG_arm_gralloc_gralloc_hwc_force_bgra_8888 := false
 SOONG_CONFIG_arm_gralloc_gralloc_use_ion_dmabuf_sync := true
 SOONG_CONFIG_arm_gralloc_gralloc_hwc_fb_disable_afbc := true
 SOONG_CONFIG_arm_gralloc_gralloc_camera_write_raw16 := false
-
-# Cadence Neural Networks HAL for VP6 acceleration
-# This requires NDA to get access
--include vendor/cadence/prebuilts/i500/BoardConfig-vp6.mk

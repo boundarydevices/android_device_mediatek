@@ -25,6 +25,7 @@ PRODUCT_PACKAGES += \
 
 # keymaster
 PRODUCT_PROPERTY_OVERRIDES += ro.hardware.keystore=optee
-PRODUCT_PACKAGES += \
-     android.hardware.keymaster@3.0-service.optee \
-     wait_for_keymaster_optee
+PRODUCT_PACKAGES += android.hardware.security.keymint-service.optee
+
+PRODUCT_COPY_FILES += \
+        device/mediatek/common/optee/android.hardware.hardware_keystore.optee-keymint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.hardware_keystore.optee-keymint.xml

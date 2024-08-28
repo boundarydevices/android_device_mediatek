@@ -37,8 +37,6 @@ RPMB_EMU := 0
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.optee.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.optee.rc
 
-VENDOR_UEVENTD_FILES += device/mediatek/common/optee/ueventd.optee.rc
-
 # xtest
 PRODUCT_PACKAGES_DEBUG += xtest
 

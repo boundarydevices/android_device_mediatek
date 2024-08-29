@@ -7,6 +7,9 @@
 # custom thermal HAL
 /vendor/bin/hw/android\.hardware\.thermal@2\.0-service\.mediatek              u:object_r:hal_thermal_default_exec:s0
 
+# custom health HAL
+/vendor/bin/hw/android\.hardware\.health-service\.batteryless       u:object_r:hal_health_default_exec:s0
+
 # vpud (media encoding/decoding using HW accelerators)
 /vendor/bin/vpud\.mt[0-9]*                                          u:object_r:vpud_exec:s0
 

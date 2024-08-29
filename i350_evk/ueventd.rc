@@ -1,7 +1,7 @@
 # bluetooth
 /dev/rfkill                     0660  bluetooth  net_bt
-/sys/class/rfkill/rfkill0/type  0660  bluetooth  net_bt
-/sys/class/rfkill/rfkill0/state 0660  bluetooth  net_bt
+/sys/class/rfkill/rfkill0 type  0660  bluetooth  net_bt
+/sys/class/rfkill/rfkill0 state 0660  bluetooth  net_bt
 
 # camera
 /dev/media*       0660  system  camera

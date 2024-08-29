@@ -41,3 +41,7 @@ $(call inherit-product, vendor/mediatek/wireless/mt7663.mk)
 
 # splashscreen
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/splashscreen.img:splashscreen.img
+
+# ueventd
+PRODUCT_COPY_FILES += \
+    device/mediatek/boards/i350_evk/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc

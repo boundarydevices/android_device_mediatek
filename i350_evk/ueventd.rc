@@ -1,0 +1,28 @@
+# bluetooth
+/dev/rfkill                     0660  bluetooth  net_bt
+/sys/class/rfkill/rfkill0/type  0660  bluetooth  net_bt
+/sys/class/rfkill/rfkill0/state 0660  bluetooth  net_bt
+
+# camera
+/dev/media*       0660  system  camera
+/dev/v4l-subdev*  0660  system  camera
+/dev/video*       0660  system  camera
+/dev/vpu1         0660  system  camera
+
+# gpu
+/dev/graphics/fb0  0666  system  graphics
+/dev/ion           0666  system  graphics
+/dev/mali*         0666  system  graphics
+/dev/pvr_sync      0666  system  graphics
+/dev/pvrsrvkm      0666  system  graphics
+
+# optee
+/dev/tee0      0660  system  system
+/dev/teepriv0  0660  system  system
+
+# usb
+subsystem usbmisc
+    devname uevent_devname
+
+# vcu
+/dev/vcu1  0660  system  system

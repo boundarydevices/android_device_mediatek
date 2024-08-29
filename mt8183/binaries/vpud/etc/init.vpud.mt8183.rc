@@ -1,4 +1,0 @@
-service mediatek.vpud /vendor/bin/vpud.mt8183
-    class hal
-    user system
-    group system

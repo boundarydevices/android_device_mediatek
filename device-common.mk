@@ -77,11 +77,6 @@ PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-service.software
 endif
 
-# mt8183 has OpenGL ES version (3.2)
-# this value should be moved in specific soc folder if it's not aligned in next deliveries
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.opengles.version=196610
-
 #enforce permission allowlists for system apps.
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.control_privapp_permissions=enforce

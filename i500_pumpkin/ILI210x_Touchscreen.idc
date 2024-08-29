@@ -1,2 +1,0 @@
-touch.wake = 1
-

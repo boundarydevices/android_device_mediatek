@@ -216,3 +216,6 @@ PRODUCT_COPY_FILES += \
 
 # GPIO utils
 PRODUCT_PACKAGES_DEBUG += gpioinfo gpioget gpioset
+
+# Use not updatable APEXes
+PRODUCT_PROPERTY_OVERRIDES += ro.apex.updatable=false

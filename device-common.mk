@@ -67,19 +67,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_PRODUCT_PROPERTIES += ro.incremental.enable=yes
 
-# Audio:
-# NOTE: each product should also add audio.primary.$(TARGET_DEVICE) to its PRODUCT_PACKAGES
-PRODUCT_PACKAGES += \
-    audio.r_submix.default \
-    android.hardware.audio.service \
-    android.hardware.audio@6.0-impl \
-    android.hardware.audio.effect@6.0-impl
-
-PRODUCT_COPY_FILES += \
-    frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:vendor/etc/a2dp_audio_policy_configuration.xml \
-    frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:vendor/etc/r_submix_audio_policy_configuration.xml \
-    frameworks/av/media/libeffects/data/audio_effects.xml:vendor/etc/audio_effects.xml
-
 # CTS
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.cts.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.cts.xml
@@ -197,3 +184,6 @@ $(call inherit-product, device/mediatek/common/fs/device.mk)
 
 # Recovery
 $(call inherit-product, device/mediatek/common/recovery/device.mk)
+
+# Audio
+$(call inherit-product, device/mediatek/common/audio/device.mk)

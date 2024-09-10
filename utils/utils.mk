@@ -11,9 +11,3 @@ endif
 
 PRODUCT_PACKAGES_DEBUG += \
     stressapptest
-
-# Low level audio tools for debugging
-PRODUCT_PACKAGES_DEBUG += \
-    tinymix \
-    tinyplay \
-    tinycap

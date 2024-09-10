@@ -58,11 +58,6 @@ else
 BOARD_AVB_ENABLE := false
 endif
 
-# Audio HAL
-BOARD_USES_TINYHAL_AUDIO := true
-TINYALSA_NO_ADD_NEW_CTRLS := true
-TINYALSA_NO_CTL_GET_ID := true
-
 # Kernel
 include device/mediatek/common/kernel/BoardConfig.mk
 
@@ -71,3 +66,6 @@ include device/mediatek/common/fs/BoardConfig.mk
 
 # Recovery
 include device/mediatek/common/recovery/BoardConfig.mk
+
+# Audio
+include device/mediatek/common/audio/BoardConfig.mk

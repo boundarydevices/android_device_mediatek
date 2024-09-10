@@ -14,25 +14,9 @@
 # limitations under the License.
 #
 
-ifndef TARGET_KERNEL_USE
-TARGET_KERNEL_USE=5.10
-endif
-
-# Disable kernel config check for now
-PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := false
-
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-LOCAL_KERNEL := device/mediatek/boards-binaries/$(TARGET_KERNEL_USE)/Image
-else
-LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
-
 # Specify the manufacturer
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.soc.manufacturer=mediatek
-
-PRODUCT_COPY_FILES := \
-	$(LOCAL_KERNEL):kernel
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.mediatek.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.mediatek.rc \
@@ -219,3 +203,6 @@ PRODUCT_PACKAGES_DEBUG += gpioinfo gpioget gpioset
 
 # Use not updatable APEXes
 PRODUCT_PROPERTY_OVERRIDES += ro.apex.updatable=false
+
+# Kernel
+$(call inherit-product, device/mediatek/common/kernel/device.mk)

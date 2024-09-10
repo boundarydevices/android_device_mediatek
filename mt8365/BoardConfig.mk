@@ -18,12 +18,6 @@ include device/mediatek/common/BoardConfigCommon.mk
 
 TARGET_CPU_VARIANT := cortex-a53
 
-BOARD_MKBOOTIMG_ARGS := \
-  --kernel_offset $(BOARD_KERNEL_OFFSET) \
-  --ramdisk_offset $(BOARD_RAMDISK_OFFSET) \
-  --tags_offset $(BOARD_TAGS_OFFSET) \
-  --header_version 2
-
 BOARD_SEPOLICY_DIRS += \
         device/mediatek/common/mt8365/sepolicy
 

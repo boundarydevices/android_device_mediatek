@@ -35,9 +35,6 @@ BOARD_VNDK_VERSION := current
 # Android 12 bringup, should be removed
 BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE := true
 
-# Use mke2fs to create ext4 images
-TARGET_USES_MKE2FS := true
-
 ifneq ($(BOARD_SEPOLICY_DIRS),)
 $(error device/mediatek/common/BoardConfigCommon.mk should be included first)
 endif
@@ -61,31 +58,8 @@ else
 BOARD_AVB_ENABLE := false
 endif
 
-AB_OTA_UPDATER := true
-AB_OTA_PARTITIONS := \
-        boot \
-        dtbo \
-        system \
-        vendor
-
-ifeq ($(TARGET_AVB_ENABLE), true)
-AB_OTA_PARTITIONS += vbmeta
-endif
-
 BOARD_USES_RECOVERY_AS_BOOT := true
 TARGET_NO_RECOVERY := true
-
-# Userdata
-TARGET_USERIMAGES_USE_F2FS := true
-BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
-
-# Super partition
-TARGET_USE_DYNAMIC_PARTITIONS := true
-BOARD_BUILD_SUPER_IMAGE_BY_DEFAULT := true
-BOARD_SUPER_PARTITION_GROUPS := db_dynamic_partitions
-BOARD_DB_DYNAMIC_PARTITIONS_PARTITION_LIST := system vendor
-BOARD_SUPER_PARTITION_METADATA_DEVICE := super
-BOARD_SUPER_IMAGE_IN_UPDATE_PACKAGE := true
 
 # Recovery
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
@@ -101,24 +75,8 @@ BOARD_USES_TINYHAL_AUDIO := true
 TINYALSA_NO_ADD_NEW_CTRLS := true
 TINYALSA_NO_CTL_GET_ID := true
 
-# WARNING: do *NOT* edit BOARD_USERDATAIMAGE_PARTITION_SIZE
-# the userdata partition will automatically take the remaining eMMC space
-# since it's the last partition in the partitioning table, userdata
-# partition must align 64KiB to comply with the flasher (LK) specifications
-MTK_PRODUCT_OUT := $(OUT_DIR)/target/product/$(PRODUCT_DEVICE)
-BOARD_USERDATAIMAGE_PARTITION_SIZE = $(shell \
-	mkdir -p $(MTK_PRODUCT_OUT); \
-	python3  vendor/mediatek/tools/mbr/gen_partition_xml.py \
-	$(MTK_PARTITIONS_YAML) $(MTK_PRODUCT_OUT) \
-	--cache $(BOARD_CACHEIMAGE_PARTITION_SIZE) \
-	--boot $(BOARD_BOOTIMAGE_PARTITION_SIZE) \
-	--recovery $(BOARD_RECOVERYIMAGE_PARTITION_SIZE) \
-	--product $(BOARD_PRODUCTIMAGE_PARTITION_SIZE) \
-	--oem $(BOARD_OEMIMAGE_PARTITION_SIZE) \
-	--dtbo $(BOARD_DTBOIMG_PARTITION_SIZE) \
-	--super $(BOARD_SUPER_PARTITION_SIZE); \
-	awk '/userdata:/ || /userdata_a:/ {flag=1} flag && /size:/{print $$NF;flag="";exit}' \
-	${MTK_PRODUCT_OUT}/partitions.yaml)
-
 # Kernel
 include device/mediatek/common/kernel/BoardConfig.mk
+
+# Filesystems
+include device/mediatek/common/fs/BoardConfig.mk

@@ -139,11 +139,6 @@ VENDOR_SECURITY_PATCH = $(PLATFORM_SECURITY_PATCH)
 # Set boot SPL
 BOOT_SECURITY_PATCH = $(PLATFORM_SECURITY_PATCH)
 
-# Dynamic partitions
-PRODUCT_BUILD_SUPER_PARTITION := true
-PRODUCT_USE_DYNAMIC_PARTITIONS := true
-PRODUCT_USE_DYNAMIC_PARTITION_SIZE := true
-
 PRODUCT_PACKAGES += \
 	android.hardware.fastboot@1.0 \
 	android.hardware.fastboot@1.0-impl-mock \
@@ -160,11 +155,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES_DEBUG += \
     bootctl
-
-PRODUCT_PACKAGES += \
-    sg_write_buffer \
-    f2fs_io \
-    check_f2fs
 
 # Copy xml file to support backup function
 PRODUCT_COPY_FILES += \
@@ -206,3 +196,6 @@ PRODUCT_PROPERTY_OVERRIDES += ro.apex.updatable=false
 
 # Kernel
 $(call inherit-product, device/mediatek/common/kernel/device.mk)
+
+# Filesystems
+$(call inherit-product, device/mediatek/common/fs/device.mk)

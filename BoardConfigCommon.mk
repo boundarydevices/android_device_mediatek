@@ -122,10 +122,6 @@ BOARD_SEPOLICY_DIRS := \
 BOARD_SEPOLICY_DIRS += \
         hardware/mediatek/usb/1.2/sepolicy
 
-ifeq ($(TARGET_KERNEL_USE), 5.4)
-DEVICE_MANIFEST_FILE += device/mediatek/common/manifest_kernel5.xml
-endif
-
 BOARD_VENDOR_MEDIATEK := true
 
 # Set location of DTB/DTBO files

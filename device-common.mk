@@ -118,11 +118,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.vulkan.level-1.xml:vendor/etc/permissions/android.hardware.vulkan.level.xml \
     frameworks/native/data/etc/android.software.vulkan.deqp.level-2020-03-01.xml:vendor/etc/permissions/android.software.vulkan.deqp.level.xml
 
-
-# RecoveryOS
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init.recovery.mediatek.rc:recovery/root/vendor/etc/init/init.recovery.mediatek.rc
-
 # Copy media codecs config file
 PRODUCT_COPY_FILES += \
     hardware/mediatek/media_xml/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
@@ -199,3 +194,6 @@ $(call inherit-product, device/mediatek/common/kernel/device.mk)
 
 # Filesystems
 $(call inherit-product, device/mediatek/common/fs/device.mk)
+
+# Recovery
+$(call inherit-product, device/mediatek/common/recovery/device.mk)

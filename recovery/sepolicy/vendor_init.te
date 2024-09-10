@@ -1,0 +1,4 @@
+recovery_only(`
+	allow vendor_init rootfs:dir { read };
+	allow vendor_init rootfs:system { module_load };
+');

@@ -58,18 +58,6 @@ else
 BOARD_AVB_ENABLE := false
 endif
 
-BOARD_USES_RECOVERY_AS_BOOT := true
-TARGET_NO_RECOVERY := true
-
-# Recovery
-TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
-ifeq ($(TARGET_AVB_ENABLE), true)
-BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
-BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA2048
-BOARD_AVB_RECOVERY_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
-BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 2
-endif
-
 # Audio HAL
 BOARD_USES_TINYHAL_AUDIO := true
 TINYALSA_NO_ADD_NEW_CTRLS := true
@@ -80,3 +68,6 @@ include device/mediatek/common/kernel/BoardConfig.mk
 
 # Filesystems
 include device/mediatek/common/fs/BoardConfig.mk
+
+# Recovery
+include device/mediatek/common/recovery/BoardConfig.mk

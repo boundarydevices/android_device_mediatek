@@ -41,10 +41,6 @@ endif
 BOARD_SEPOLICY_DIRS := \
         device/mediatek/common/sepolicy/30.0/vendor
 
-# USB Hal
-BOARD_SEPOLICY_DIRS += \
-        hardware/mediatek/usb/1.2/sepolicy
-
 BOARD_VENDOR_MEDIATEK := true
 
 # AVB
@@ -69,3 +65,6 @@ include device/mediatek/common/recovery/BoardConfig.mk
 
 # Audio
 include device/mediatek/common/audio/BoardConfig.mk
+
+# USB
+include device/mediatek/common/usb/BoardConfig.mk

@@ -20,7 +20,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.mediatek.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.mediatek.rc \
-    $(LOCAL_PATH)/init.mediatek.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.mediatek.usb.rc \
     $(LOCAL_PATH)/init.lights.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.lights.rc \
 
 # persist.img
@@ -78,16 +77,6 @@ PRODUCT_PACKAGES += \
 # DRM (Digital Rights Management)
 PRODUCT_PACKAGES += \
     android.hardware.drm@latest-service.clearkey
-
-# USB
-PRODUCT_PACKAGES += \
-    android.hardware.usb@1.2-service.mtk
-
-PRODUCT_COPY_FILES += \
-    hardware/mediatek/usb/1.2/init.gadgethal.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.gadgethal.sh
-
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.usb.accessory.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.usb.accessory.xml \
 
 # app widget, needed for default launcher3
 PRODUCT_COPY_FILES += \
@@ -187,3 +176,6 @@ $(call inherit-product, device/mediatek/common/recovery/device.mk)
 
 # Audio
 $(call inherit-product, device/mediatek/common/audio/device.mk)
+
+# USB
+$(call inherit-product, device/mediatek/common/usb/device.mk)

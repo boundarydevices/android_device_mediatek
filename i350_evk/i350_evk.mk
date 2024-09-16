@@ -35,6 +35,12 @@ $(call inherit-product, device/mediatek/boards/i350_evk/device.mk)
 # bootloaders binaries
 $(call copy_bl_binaries, device/mediatek/boards-binaries/i350_evk)
 
+# clean-up all unknown PRODUCT_PACKAGES
+allowed_list := product_manifest.xml
+allowed_list += android.hardware.health@2.0-impl-default.recovery
+allowed_list += DeviceDiagnostics
+$(call enforce-product-packages-exist, $(allowed_list))
+
 # OP-TEE Trusted Applications
 ifeq ($(OPTEE_ENABLE), true)
 include device/mediatek/common/security/optee/device.mk

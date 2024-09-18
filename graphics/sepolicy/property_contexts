@@ -1,0 +1,3 @@
+ro.boot.hardware.egl 	    u:object_r:vendor_cf_graphics_config_prop:s0 exact string
+ro.boot.hardware.gralloc    u:object_r:vendor_cf_graphics_config_prop:s0 exact string
+ro.boot.hardware.vulkan     u:object_r:vendor_cf_graphics_config_prop:s0 exact string

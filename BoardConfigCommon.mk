@@ -68,3 +68,6 @@ include device/mediatek/common/audio/BoardConfig.mk
 
 # USB
 include device/mediatek/common/usb/BoardConfig.mk
+
+# Graphics
+include device/mediatek/common/graphics/BoardConfig.mk

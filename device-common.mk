@@ -113,10 +113,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Enable project quotas and casefolding for emulated storage without sdcardfs
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
-# Display settings (windowing, system decorations, IME ...)
-PRODUCT_COPY_FILES += \
-    device/mediatek/common/etc/display_settings.xml:$(TARGET_COPY_OUT_VENDOR)/etc/display_settings.xml
-
 # Use not updatable APEXes
 PRODUCT_PROPERTY_OVERRIDES += ro.apex.updatable=false
 
@@ -146,3 +142,6 @@ $(call inherit-product, device/mediatek/common/media/device.mk)
 
 # Utils
 $(call inherit-product, device/mediatek/common/utils/device.mk)
+
+# Display
+$(call inherit-product, device/mediatek/common/display/device.mk)

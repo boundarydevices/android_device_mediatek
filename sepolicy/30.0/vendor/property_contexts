@@ -1,10 +1,2 @@
 ro.vendor.init.mount.cache	        u:object_r:vendor_boottime_public_prop:s0 exact string
 ro.vendor.boottime.init.fsck.cache      u:object_r:vendor_boottime_public_prop:s0 exact string
-
-# hwc
-ro.boot.hardware.hwcomposer 		u:object_r:vendor_cf_graphics_config_prop:s0 exact string
-vendor.hwc.drm.device 				u:object_r:vendor_cf_graphics_config_prop:s0 exact string
-vendor.hwc.drm.exclude_non_hwfb_imports 	u:object_r:vendor_cf_graphics_config_prop:s0 exact int
-vendor.hwc.drm.primary_display_order 		u:object_r:vendor_cf_graphics_config_prop:s0 exact string
-vendor.hwc.drm.scale_with_gpu 			u:object_r:vendor_cf_graphics_config_prop:s0 exact int
-vendor.hwc.drm.use_overlay_planes 		u:object_r:vendor_cf_graphics_config_prop:s0 exact int

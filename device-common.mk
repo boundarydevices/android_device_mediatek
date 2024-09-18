@@ -44,22 +44,6 @@ PRODUCT_PACKAGES += android.hardware.lights-service
 # Thermal
 PRODUCT_PACKAGES += android.hardware.thermal@2.0-service.mediatek
 
-# Security
-ifeq ($(OPTEE_ENABLE), true)
-$(call inherit-product, $(LOCAL_PATH)/optee/device-optee.mk)
-else
-PRODUCT_PROPERTY_OVERRIDES += ro.vendor.keymaster.optee=disabled
-endif
-
-ifeq ($(TEE_KEYMASTER_GATEKEEPER_ENABLE), true)
-$(call inherit-product, $(LOCAL_PATH)/optee/kmgk.mk)
-else
-PRODUCT_PACKAGES += \
-    android.hardware.keymaster@3.0-impl \
-    android.hardware.keymaster@3.0-service \
-    android.hardware.gatekeeper@1.0-service.software
-endif
-
 #enforce permission allowlists for system apps.
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.control_privapp_permissions=enforce
@@ -164,3 +148,6 @@ $(call inherit-product, device/mediatek/common/usb/device.mk)
 
 # Graphics
 $(call inherit-product, device/mediatek/common/graphics/device.mk)
+
+# Security
+$(call inherit-product, device/mediatek/common/security/device.mk)

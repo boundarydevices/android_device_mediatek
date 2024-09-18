@@ -7,11 +7,6 @@
 # custom health HAL
 /vendor/bin/hw/android\.hardware\.health-service\.batteryless       u:object_r:hal_health_default_exec:s0
 
-# vpud (media encoding/decoding using HW accelerators)
-/vendor/bin/vpud\.mt[0-9]*                                          u:object_r:vpud_exec:s0
-
-/dev/vpu                                                            u:object_r:vpu_device:s0
-
 # devices
 /dev/block/zram0				    u:object_r:swap_block_device:s0
 

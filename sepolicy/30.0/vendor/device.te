@@ -1,4 +1,3 @@
 type vbmeta_block_device, dev_type;
 type splashscreen_block_device, dev_type;
 type bootloaders_block_device, dev_type;
-type vpu_device, dev_type;

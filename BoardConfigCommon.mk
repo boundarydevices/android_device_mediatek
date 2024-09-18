@@ -74,3 +74,6 @@ include device/mediatek/common/graphics/BoardConfig.mk
 
 # Security
 include device/mediatek/common/security/BoardConfig.mk
+
+# Media
+include device/mediatek/common/media/BoardConfig.mk

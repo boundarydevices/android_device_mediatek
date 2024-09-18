@@ -66,11 +66,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.app_widgets.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.app_widgets.xml \
 
-# Copy media codecs config file
-PRODUCT_COPY_FILES += \
-    hardware/mediatek/media_xml/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml
-
 # Power HAL
 PRODUCT_PACKAGES += android.hardware.power-service.example
 
@@ -151,3 +146,6 @@ $(call inherit-product, device/mediatek/common/graphics/device.mk)
 
 # Security
 $(call inherit-product, device/mediatek/common/security/device.mk)
+
+# Media
+$(call inherit-product, device/mediatek/common/media/device.mk)

@@ -69,9 +69,6 @@ PRODUCT_COPY_FILES += \
 # Power HAL
 PRODUCT_PACKAGES += android.hardware.power-service.example
 
-# Add support for common utils
-$(call inherit-product, device/mediatek/common/utils/utils.mk)
-
 # Set Vendor SPL to match platform
 VENDOR_SECURITY_PATCH = $(PLATFORM_SECURITY_PATCH)
 # Set boot SPL
@@ -120,9 +117,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 PRODUCT_COPY_FILES += \
     device/mediatek/common/etc/display_settings.xml:$(TARGET_COPY_OUT_VENDOR)/etc/display_settings.xml
 
-# GPIO utils
-PRODUCT_PACKAGES_DEBUG += gpioinfo gpioget gpioset
-
 # Use not updatable APEXes
 PRODUCT_PROPERTY_OVERRIDES += ro.apex.updatable=false
 
@@ -149,3 +143,6 @@ $(call inherit-product, device/mediatek/common/security/device.mk)
 
 # Media
 $(call inherit-product, device/mediatek/common/media/device.mk)
+
+# Utils
+$(call inherit-product, device/mediatek/common/utils/device.mk)

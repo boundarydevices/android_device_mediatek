@@ -77,14 +77,7 @@ BOOT_SECURITY_PATCH = $(PLATFORM_SECURITY_PATCH)
 PRODUCT_PACKAGES += \
     update_engine \
     update_engine_sideload \
-    update_verifier \
-    android.hardware.boot@1.2-impl \
-    android.hardware.boot@1.2-impl.recovery \
-    android.hardware.boot@1.2-service \
-    bootctrl.default
-
-PRODUCT_PACKAGES_DEBUG += \
-    bootctl
+    update_verifier
 
 # Copy xml file to support backup function
 PRODUCT_COPY_FILES += \
@@ -143,3 +136,6 @@ $(call inherit-product, device/mediatek/common/display/device.mk)
 
 # Fastboot
 $(call inherit-product, device/mediatek/common/fastboot/device.mk)
+
+# Boot
+$(call inherit-product, device/mediatek/common/boot/device.mk)

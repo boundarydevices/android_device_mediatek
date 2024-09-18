@@ -83,3 +83,6 @@ include device/mediatek/common/display/BoardConfig.mk
 
 # Fastboot
 include device/mediatek/common/fastboot/BoardConfig.mk
+
+# Boot
+include device/mediatek/common/boot/BoardConfig.mk

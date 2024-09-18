@@ -75,11 +75,6 @@ VENDOR_SECURITY_PATCH = $(PLATFORM_SECURITY_PATCH)
 BOOT_SECURITY_PATCH = $(PLATFORM_SECURITY_PATCH)
 
 PRODUCT_PACKAGES += \
-	android.hardware.fastboot@1.0 \
-	android.hardware.fastboot@1.0-impl-mock \
-	fastbootd
-
-PRODUCT_PACKAGES += \
     update_engine \
     update_engine_sideload \
     update_verifier \
@@ -145,3 +140,6 @@ $(call inherit-product, device/mediatek/common/utils/device.mk)
 
 # Display
 $(call inherit-product, device/mediatek/common/display/device.mk)
+
+# Fastboot
+$(call inherit-product, device/mediatek/common/fastboot/device.mk)

@@ -35,12 +35,6 @@ BOARD_VNDK_VERSION := current
 # Android 12 bringup, should be removed
 BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE := true
 
-ifneq ($(BOARD_SEPOLICY_DIRS),)
-$(error device/mediatek/common/BoardConfigCommon.mk should be included first)
-endif
-BOARD_SEPOLICY_DIRS := \
-        device/mediatek/common/sepolicy/30.0/vendor
-
 BOARD_VENDOR_MEDIATEK := true
 
 # AVB
@@ -53,6 +47,12 @@ BOARD_AVB_ENABLE := true
 else
 BOARD_AVB_ENABLE := false
 endif
+
+# Sepolicy
+ifneq ($(BOARD_SEPOLICY_DIRS),)
+$(error device/mediatek/common/BoardConfigCommon.mk should be included first)
+endif
+BOARD_SEPOLICY_DIRS := device/mediatek/common/sepolicy
 
 # Kernel
 include device/mediatek/common/kernel/BoardConfig.mk

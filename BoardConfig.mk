@@ -14,6 +14,9 @@
 # limitations under the License.
 #
 
+# custom mediatek flag
+BOARD_VENDOR_MEDIATEK := true
+
 # Primary Arch
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -27,6 +30,7 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 
+# use 64 bits libraries
 TARGET_IS_64_BIT := true
 
 # Enable vndk
@@ -34,8 +38,6 @@ BOARD_VNDK_VERSION := current
 
 # Android 12 bringup, should be removed
 BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE := true
-
-BOARD_VENDOR_MEDIATEK := true
 
 # AVB
 ifeq ($(TARGET_BUILD_VARIANT), user)

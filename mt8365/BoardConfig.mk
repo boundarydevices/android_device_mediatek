@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-include device/mediatek/common/BoardConfigCommon.mk
+include device/mediatek/common/BoardConfig.mk
 
 TARGET_CPU_VARIANT := cortex-a53
 

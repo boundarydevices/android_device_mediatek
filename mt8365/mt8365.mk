@@ -15,7 +15,7 @@
 #
 include device/mediatek/common/common-build-flags.mk
 
-$(call inherit-product, device/mediatek/common/device-common.mk)
+$(call inherit-product, device/mediatek/common/device.mk)
 
 # Specify the model
 PRODUCT_PRODUCT_PROPERTIES += \

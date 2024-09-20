@@ -37,7 +37,7 @@ $(call copy_bl_binaries, device/mediatek/boards-binaries/i350_evk)
 
 # OP-TEE Trusted Applications
 ifeq ($(OPTEE_ENABLE), true)
-include device/mediatek/common/optee/device-optee.mk
+include device/mediatek/common/security/optee/device.mk
 
 I350_EVK_TA := device/mediatek/boards-binaries/i350_evk/optee-ta
 

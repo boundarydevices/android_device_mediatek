@@ -13,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-include device/mediatek/common/common-build-flags.mk
 
 $(call inherit-product, device/mediatek/common/device.mk)
 

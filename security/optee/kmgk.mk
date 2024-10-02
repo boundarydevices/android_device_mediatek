@@ -18,13 +18,19 @@ ifneq ($(OPTEE_ENABLE),true)
 $(error OP-TEE: Cannot compile Keymaster/Gatekeeper, OPTEE_ENABLE is not set to true)
 endif
 
+include $(LOCAL_PATH)/macros.mk
+
 # gatekeeper
 PRODUCT_PROPERTY_OVERRIDES += ro.hardware.gatekeeper=optee
 PRODUCT_PACKAGES += android.hardware.gatekeeper@1.0-service.optee
 
+$(call optee-add-ta, 4d573443-6a56-4272-ac6f-2425af9ef9bb.ta)
+
 # keymaster
 PRODUCT_PROPERTY_OVERRIDES += ro.hardware.keystore=optee
 PRODUCT_PACKAGES += android.hardware.security.keymint-service.optee
+
+$(call optee-add-ta, dba51a17-0563-11e7-93b1-6fa7b0071a51.ta)
 
 PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/android.hardware.hardware_keystore.optee-keymint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.hardware_keystore.optee-keymint.xml

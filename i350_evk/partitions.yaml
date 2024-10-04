@@ -10,6 +10,11 @@ partitions:
   persist:
     size: 32M
     file: persist.img
+  vbmeta:
+    size: 64K
+    file: vbmeta.img
+    ab: true
+    ignoreFileNotFound: true
   misc:
     size: 512K
   splashscreen:

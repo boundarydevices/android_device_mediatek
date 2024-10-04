@@ -42,14 +42,9 @@ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_DTBOIMG_PARTITION_SIZE       := 4194304
 BOARD_BOOTIMAGE_PARTITION_SIZE     := 67108864
 BOARD_DB_DYNAMIC_PARTITIONS_SIZE   := 2411724800
-
 BOARD_USES_METADATA_PARTITION      := true
 
-ifeq ($(TARGET_AVB_ENABLE), true)
-MTK_PARTITIONS_YAML := device/mediatek/boards/i350_evk/partitions.avb.yaml
-else
 MTK_PARTITIONS_YAML := device/mediatek/boards/i350_evk/partitions.yaml
-endif
 
 # Please keep this list fixed: add new files in the end of the list
 DTB_FILES := \

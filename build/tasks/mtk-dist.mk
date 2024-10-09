@@ -6,7 +6,7 @@ INTERNAL_IMG_PACKAGE_FILES := \
 	$(PRODUCT_OUT)/da.bin \
 	$(PRODUCT_OUT)/dtbo.img \
 	$(PRODUCT_OUT)/MBR_EMMC \
-	$(PRODUCT_OUT)/mmcboot.bin \
+	$(PRODUCT_OUT)/mtk-boot.bin \
 	$(PRODUCT_OUT)/partitions.yaml \
 	$(PRODUCT_OUT)/persist.img \
 	$(PRODUCT_OUT)/splashscreen.img \

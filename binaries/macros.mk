@@ -14,7 +14,7 @@ define copy_bl_binaries
 $(eval PRODUCT_COPY_FILES += \
            $(1)/bootloaders-$(TARGET_MODE_BL).img:$(TARGET_OUT)/bootloaders.img \
            $(1)/da-$(TARGET_MODE_BL).bin:$(TARGET_OUT)/da.bin \
-           $(1)/mmcboot-$(TARGET_MODE_BL).bin:$(TARGET_OUT)/mmcboot.bin \
+           $(1)/mtk-boot-$(TARGET_MODE_BL).bin:$(TARGET_OUT)/mtk-boot.bin \
            $(1)/u-boot-initial-$(TARGET_MODE_BL)-env:$(TARGET_OUT)/u-boot-initial-env) \
 $(if $(filter factory,$(TARGET_MODE_BL)),\
   $(eval PRODUCT_COPY_FILES += \

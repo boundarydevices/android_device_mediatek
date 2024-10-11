@@ -21,3 +21,9 @@ $(if $(filter factory,$(TARGET_MODE_BL)),\
              $(1)/auth_sv5.auth:$(TARGET_OUT)/auth_sv5.auth \
              $(1)/da-$(TARGET_MODE_BL).sign:$(TARGET_OUT)/da.sign))
 endef
+
+ifndef BOOTLOADERS_BINARIES
+$(error BOOTLOADERS_BINARIES not defined)
+endif
+
+$(call copy_bl_binaries, $(BOOTLOADERS_BINARIES))

@@ -55,6 +55,9 @@ $(call inherit-product, device/mediatek/common/fastboot/device.mk)
 # Boot
 $(call inherit-product, device/mediatek/common/boot/device.mk)
 
+# Binaries
+$(call inherit-product, device/mediatek/common/binaries/device.mk)
+
 #######################################################################
 #  Configs, properties, rc/xml files, modules/packages ...            #
 #  not related to any feature folder are placed here.                 #

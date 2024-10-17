@@ -16,3 +16,5 @@
 
 # Sepolicy
 BOARD_SEPOLICY_DIRS += device/mediatek/common/security/soft/sepolicy
+
+DEVICE_MANIFEST_FILE += device/mediatek/common/security/soft/keymaster.xml

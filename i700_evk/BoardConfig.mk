@@ -25,7 +25,8 @@ BOARD_KERNEL_CMDLINE := \
     init=/init \
     androidboot.boot_devices=soc/11230000.mmc \
     androidboot.hardware=mt8390 \
-    androidboot.serialno=i700evk
+    androidboot.serialno=i700evk \
+    androidboot.selinux=permissive
 
 # FS configuration
 # FIXME: This should be adjusted to i700_evk

@@ -59,7 +59,6 @@ PRODUCT_SOONG_NAMESPACES += vendor/mediatek/prebuilts/egl/mali/i350
 
 PRODUCT_PACKAGES += \
     libGLES_mali \
-    hwcomposer.drm \
     liblibarm_mali_config_sysprops
 
 # Public Libraries
@@ -68,8 +67,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.egl=mali \
-    ro.hardware.vulkan=mali \
-    ro.hardware.hwcomposer=drm
+    ro.hardware.vulkan=mali
 
 ifeq ($(TARGET_VKMS_ENABLED), true)
 PRODUCT_PROPERTY_OVERRIDES += \

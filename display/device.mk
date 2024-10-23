@@ -14,6 +14,10 @@
 # limitations under the License.
 #
 
+# drm hwcomposer
+PRODUCT_PACKAGES += hwcomposer.drm
+PRODUCT_VENDOR_PROPERTIES += ro.hardware.hwcomposer=drm
+
 # Display settings (windowing, system decorations, IME ...)
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/display_settings.xml:$(TARGET_COPY_OUT_VENDOR)/etc/display_settings.xml

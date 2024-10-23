@@ -14,6 +14,10 @@
 # limitations under the License.
 #
 
+# Grahics software rendering with VKMS on /dev/dri/card0
+GRAPHICS_SOFT_ENABLE := true
+PRODUCT_VENDOR_PROPERTIES += vendor.hwc.drm.device=/dev/dri/card0
+
 $(call inherit-product, device/mediatek/common/device.mk)
 
 # Specify the model

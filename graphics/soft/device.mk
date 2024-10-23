@@ -14,12 +14,13 @@
 # limitations under the License.
 #
 
-# Sepolicy
-BOARD_SEPOLICY_DIRS += device/mediatek/common/graphics/sepolicy
+# Minigbm mapper/allocator
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.allocator-service.minigbm \
+    mapper.minigbm
 
-# GPU / Soft
-ifeq ($(GRAPHICS_SOFT_ENABLE), true)
-include device/mediatek/common/graphics/soft/BoardConfig.mk
-else
-include device/mediatek/common/graphics/gpu/BoardConfig.mk
-endif
+# scrcpy
+PRODUCT_VENDOR_PROPERTIES += debug.stagefright.c2inputsurface=-1
+
+# SwAngle
+$(call inherit-product, device/linaro/dragonboard/shared/graphics/swangle/device.mk)

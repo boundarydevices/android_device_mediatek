@@ -57,18 +57,6 @@ PRODUCT_COPY_FILES += \
 # Add support of Mali GPU
 PRODUCT_SOONG_NAMESPACES += vendor/mediatek/prebuilts/egl/mali/i350
 
-PRODUCT_PACKAGES += \
-    libGLES_mali \
-    liblibarm_mali_config_sysprops
-
-# Public Libraries
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.hardware.egl=mali \
-    ro.hardware.vulkan=mali
-
 ifeq ($(TARGET_VKMS_ENABLED), true)
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.hwc.drm.device=/dev/dri/card0
@@ -77,14 +65,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.hwc.drm.device=/dev/dri/card2
 endif
 
-# 3D CPU renderer
-PRODUCT_PACKAGES += \
-    android.hardware.graphics.composer@2.4-service \
-    android.hardware.graphics.mapper@4.0-impl-arm \
-    android.hardware.graphics.allocator@4.0-impl-arm \
-    android.hardware.graphics.allocator@4.0-service
-
-PRODUCT_PACKAGES +=  vulkan.mali
+# Public Libraries
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
 # MDP support
 PRODUCT_PACKAGES += \

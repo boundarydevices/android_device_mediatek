@@ -14,12 +14,8 @@
 # limitations under the License.
 #
 
-# Sepolicy
-BOARD_SEPOLICY_DIRS += device/mediatek/common/graphics/sepolicy
+# SwAngle Sepolicy
+BOARD_SEPOLICY_DIRS += device/linaro/dragonboard/shared/graphics/swangle/sepolicy
 
-# GPU / Soft
-ifeq ($(GRAPHICS_SOFT_ENABLE), true)
-include device/mediatek/common/graphics/soft/BoardConfig.mk
-else
-include device/mediatek/common/graphics/gpu/BoardConfig.mk
-endif
+# Soft Sepolicy
+BOARD_SEPOLICY_DIRS += device/mediatek/common/graphics/soft/sepolicy

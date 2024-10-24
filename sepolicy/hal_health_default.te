@@ -1,1 +1,2 @@
-allow hal_health_default sysfs_power_supply:dir { open read };
+allow hal_health_default sysfs_power_supply:dir { open read search };
+allow hal_health_default sysfs:file { open read getattr };

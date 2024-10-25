@@ -17,8 +17,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
 # All OP-TEE vars MUST be set before including common/mt*
-OPTEE_ENABLE := false
-TEE_KEYMASTER_GATEKEEPER_ENABLE := false
+OPTEE_ENABLE := true
+TEE_KEYMASTER_GATEKEEPER_ENABLE := true
 
 BOOTLOADERS_BINARIES := device/mediatek/boards-binaries/i700_evk
 

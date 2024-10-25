@@ -1,1 +1,2 @@
 allow system_app gpu_device:chr_file { open read write ioctl map };
+allow system_app graphics_device:chr_file rw_file_perms;

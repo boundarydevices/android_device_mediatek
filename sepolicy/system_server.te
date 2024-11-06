@@ -1,1 +1,2 @@
 allow system_server gpu_device:chr_file { open read write ioctl map };
+allow system_server zygote_tmpfs:file write;

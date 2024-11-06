@@ -1,3 +1,4 @@
 allow shell sysfs_power_supply:dir { open read search };
 
 get_prop(shell, device_config_runtime_native_boot_prop)
+get_prop(shell, qemu_sf_lcd_density_prop)

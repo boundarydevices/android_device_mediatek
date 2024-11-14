@@ -5,3 +5,4 @@ allow init debugfs_mmc:file { read open setattr };
 allow init mnt_vendor_file:dir mounton;
 allow init nativetest_data_file:dir { getattr read open search };
 allow init nativetest_data_file:file { getattr };
+allow init sysfs_devices_mmc:file { open write };

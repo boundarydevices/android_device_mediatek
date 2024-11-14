@@ -19,7 +19,7 @@ include device/mediatek/common/mt8390/BoardConfig.mk
 TARGET_BOOTLOADER_BOARD_NAME := i700_evk
 
 # kernel commandline
-BOARD_KERNEL_CMDLINE := \
+BOARD_KERNEL_CMDLINE += \
     firmware_class.path=/vendor/firmware \
     printk.devkmsg=on \
     init=/init \

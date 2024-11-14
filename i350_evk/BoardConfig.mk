@@ -24,7 +24,7 @@ BOARD_SEPOLICY_DIRS += \
     device/mediatek/boards/i350_evk/sepolicy
 
 # kernel commandline
-BOARD_KERNEL_CMDLINE := \
+BOARD_KERNEL_CMDLINE += \
     firmware_class.path=/vendor/firmware \
     printk.devkmsg=on \
     init=/init \

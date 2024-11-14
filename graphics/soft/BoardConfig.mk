@@ -14,6 +14,13 @@
 # limitations under the License.
 #
 
+# Swiftshader needs to create executable memory and cannot be executed
+# with SELinux as enforcing.
+ifneq (,$(filter userdebug eng,$(TARGET_BUILD_VARIANT)))
+$(warning SELinux set as permissive)
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+endif
+
 # SwAngle Sepolicy
 BOARD_SEPOLICY_DIRS += device/linaro/dragonboard/shared/graphics/swangle/sepolicy
 

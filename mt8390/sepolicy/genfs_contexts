@@ -1,0 +1,7 @@
+# USB
+genfscon sysfs /devices/platform/soc/112b1000.usb/wakeup/wakeup4  u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/112b1000.usb/112b1000.usb:connector/power_supply/usb-charger/wakeup5 u:object_r:sysfs_wakeup:s0
+
+# PMIC
+genfscon sysfs /devices/platform/soc/10024000.pwrap/10024000.pwrap:pmic/mt6359-rtc/wakeup/wakeup0  u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/10024000.pwrap/10024000.pwrap:pmic/mt6359-rtc/rtc/rtc0/alarmtimer.0.auto/wakeup/wakeup1 u:object_r:sysfs_wakeup:s0

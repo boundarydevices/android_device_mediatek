@@ -27,3 +27,6 @@ DEVICE_MANIFEST_FILE += device/mediatek/common/mt8390/manifest.xml
 TARGET_RELEASETOOLS_EXTENSIONS := device/mediatek/common/
 
 TARGET_RECOVERY_FSTAB := device/mediatek/common/mt8390/fstab.mt8390
+
+# sepolicy
+BOARD_SEPOLICY_DIRS += device/mediatek/common/mt8390/sepolicy

@@ -14,13 +14,17 @@
 # limitations under the License.
 #
 
-# Grahics software rendering with VKMS on /dev/dri/card0
-GRAPHICS_SOFT_ENABLE := true
-PRODUCT_VENDOR_PROPERTIES += vendor.hwc.drm.device=/dev/dri/card0
+$(call inherit-product, device/mediatek/common/mt8188/mt8188.mk)
 
-$(call inherit-product, device/mediatek/common/device.mk)
+# Specify the model
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.soc.manufacturer=mediatek \
+    ro.soc.model=mt8370
 
-# OP-TEE
-OPTEE_PLATFORM := mediatek-mt8188
-OPTEE_PLATFORM_FLAVOR := mt8188
-OPTEE_CFG_DRAM_SIZE := 0xc0000000
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/init.mt8188.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.mt8370.rc
+
+# fstab
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/fstab.mt8188:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.mt8370 \
+    $(LOCAL_PATH)/fstab.mt8188:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8370

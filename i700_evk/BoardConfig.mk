@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-include device/mediatek/common/mt8390/BoardConfig.mk
+include device/mediatek/common/mt8188/BoardConfig.mk
 
 TARGET_BOOTLOADER_BOARD_NAME := i700_evk
 

@@ -24,13 +24,14 @@ $(call inherit-product, device/mediatek/common/device.mk)
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.soc.model=i700
 
+# The U-Boot target use the real SoC name and not the common platform
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init.mt8390.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.mt8390.rc
+    $(LOCAL_PATH)/init.mt8188.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.mt8390.rc
 
 # fstab
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/fstab.mt8390:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.mt8390 \
-    $(LOCAL_PATH)/fstab.mt8390:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8390
+    $(LOCAL_PATH)/fstab.mt8188:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.mt8390 \
+    $(LOCAL_PATH)/fstab.mt8188:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8390
 
 # OP-TEE
 OPTEE_PLATFORM := mediatek-mt8188

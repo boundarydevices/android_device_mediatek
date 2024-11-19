@@ -21,12 +21,12 @@ TARGET_2ND_CPU_VARIANT := cortex-a55
 TARGET_ARCH_VARIANT := armv8-2a
 TARGET_2ND_ARCH_VARIANT := armv8-2a
 
-DEVICE_MANIFEST_FILE += device/mediatek/common/mt8390/manifest.xml
+DEVICE_MANIFEST_FILE += device/mediatek/common/mt8188/manifest.xml
 
 # RecoveryOS
 TARGET_RELEASETOOLS_EXTENSIONS := device/mediatek/common/
-
-TARGET_RECOVERY_FSTAB := device/mediatek/common/mt8390/fstab.mt8390
+TARGET_RECOVERY_FSTAB := device/mediatek/common/mt8188/fstab.mt8188
 
 # sepolicy
-BOARD_SEPOLICY_DIRS += device/mediatek/common/mt8390/sepolicy
+BOARD_SEPOLICY_DIRS += device/mediatek/common/mt8188/sepolicy
+

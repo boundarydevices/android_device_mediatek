@@ -1,0 +1,10 @@
+# optee
+/dev/tee0      0660  system  system
+/dev/teepriv0  0660  system  system
+
+# gpu
+/dev/ion       0666  system  graphics
+
+# usb
+subsystem usbmisc
+    devname uevent_devname

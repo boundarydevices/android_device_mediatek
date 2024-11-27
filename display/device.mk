@@ -14,8 +14,8 @@
 # limitations under the License.
 #
 
-# drm hwcomposer
-PRODUCT_PACKAGES += hwcomposer.drm
+# drm hwcomposer v3
+PRODUCT_PACKAGES += android.hardware.composer.hwc3-service.drm
 PRODUCT_VENDOR_PROPERTIES += ro.hardware.hwcomposer=drm
 
 # Display settings (windowing, system decorations, IME ...)

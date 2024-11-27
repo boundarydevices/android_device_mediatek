@@ -21,9 +21,6 @@ else
 $(call inherit-product, device/mediatek/common/graphics/gpu/device.mk)
 endif
 
-# Graphics composer
-PRODUCT_PACKAGES += android.hardware.graphics.composer@2.4-service
-
 # Vulkan
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.vulkan.version-1_1.xml:vendor/etc/permissions/android.hardware.vulkan.version.xml \

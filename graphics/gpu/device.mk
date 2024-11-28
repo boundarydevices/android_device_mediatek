@@ -17,8 +17,11 @@
 # ARM mapper/allocator
 PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@4.0-impl-arm \
-    android.hardware.graphics.allocator@4.0-impl-arm \
-    android.hardware.graphics.allocator@4.0-service
+    android.hardware.graphics.allocator-service \
+    mapper.arm
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/capabilities.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gralloc/capabilities.xml
 
 # Mali
 PRODUCT_PACKAGES += \

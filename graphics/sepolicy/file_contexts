@@ -6,5 +6,9 @@
 /vendor/lib(64)?/android\.hardware\.graphics\.allocator@3\.0\.so  u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/android\.hardware\.graphics\.allocator@4\.0\.so  u:object_r:same_process_hal_file:s0
 
+# mapper
+/vendor/lib(64)?/android\.hardware\.graphics\.mapper@2.0.so       u:object_r:same_process_hal_file:s0
+
 # libui
 /vendor/lib(64)?/libui\.so                                        u:object_r:same_process_hal_file:s0
+

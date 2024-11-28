@@ -17,37 +17,5 @@
 # Sepolicy
 BOARD_SEPOLICY_DIRS += device/mediatek/common/graphics/gpu/sepolicy
 
-# Vulkan
-BOARD_INSTALL_VULKAN := true
-
-SOONG_CONFIG_NAMESPACES += arm_gralloc
-SOONG_CONFIG_arm_gralloc += \
-    gralloc_hwc_force_bgra_8888 \
-    gralloc_hwc_fb_disable_afbc \
-    gralloc_camera_write_raw16 \
-    gralloc_use_ion_dma_heap \
-    gralloc_use_ion_compound_page_heap \
-    gralloc_init_afbc \
-    gralloc_use_ion_dmabuf_sync \
-    mali_video_version \
-    mali_gpu_support_afbc_basic \
-    mali_gpu_support_afbc_splitblk \
-    mali_gpu_support_afbc_wideblk \
-    mali_gpu_support_afbc_tiled_headers \
-    mali_gpu_support_afbc_yuv_write \
-    gralloc_arm_no_external_afbc
-
-SOONG_CONFIG_arm_gralloc_mali_video_version := v550
-SOONG_CONFIG_arm_gralloc_mali_gpu_support_afbc_basic := false
-SOONG_CONFIG_arm_gralloc_mali_gpu_support_afbc_splitblk := false
-SOONG_CONFIG_arm_gralloc_mali_gpu_support_afbc_wideblk := false
-SOONG_CONFIG_arm_gralloc_mali_gpu_support_afbc_tiled_headers := false
-SOONG_CONFIG_arm_gralloc_mali_gpu_support_afbc_yuv_write := false
-SOONG_CONFIG_arm_gralloc_gralloc_arm_no_external_afbc := true
-SOONG_CONFIG_arm_gralloc_gralloc_use_ion_dma_heap := true
-SOONG_CONFIG_arm_gralloc_gralloc_use_ion_compound_page_heap := false
-SOONG_CONFIG_arm_gralloc_gralloc_init_afbc := false
-SOONG_CONFIG_arm_gralloc_gralloc_hwc_force_bgra_8888 := false
-SOONG_CONFIG_arm_gralloc_gralloc_use_ion_dmabuf_sync := true
-SOONG_CONFIG_arm_gralloc_gralloc_hwc_fb_disable_afbc := true
-SOONG_CONFIG_arm_gralloc_gralloc_camera_write_raw16 := false
+# ARM gralloc
+include vendor/arm/android-gralloc/android/gralloc.device.mk

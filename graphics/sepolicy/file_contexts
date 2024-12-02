@@ -1,2 +1,3 @@
 # graphics cards
+/dev/dri               u:object_r:dri_device:s0
 /dev/dri/card[0-9]*    u:object_r:dri_device:s0

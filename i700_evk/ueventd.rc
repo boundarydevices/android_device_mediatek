@@ -3,8 +3,12 @@
 /dev/teepriv0  0660  system  system
 
 # gpu
-/dev/ion       0666  system  graphics
 /dev/dri/card0 0666  system  graphics
+
+# dma
+/dev/dma_heap/reserved         0666  system  graphics
+/dev/dma_heap/system           0666  system  graphics
+/dev/dma_heap/system-uncached  0666  system  graphics
 
 # usb
 subsystem usbmisc

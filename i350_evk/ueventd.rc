@@ -11,10 +11,14 @@
 
 # gpu
 /dev/graphics/fb0  0666  system  graphics
-/dev/ion           0666  system  graphics
 /dev/mali*         0666  system  graphics
 /dev/pvr_sync      0666  system  graphics
 /dev/pvrsrvkm      0666  system  graphics
+
+# dma
+/dev/dma_heap/reserved         0666  system  graphics
+/dev/dma_heap/system           0666  system  graphics
+/dev/dma_heap/system-uncached  0666  system  graphics
 
 # optee
 /dev/tee0      0660  system  system

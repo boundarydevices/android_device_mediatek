@@ -14,16 +14,18 @@
 # limitations under the License.
 #
 
-# Sepolicy
-BOARD_SEPOLICY_DIRS += device/mediatek/common/graphics/egl/sepolicy
+# Mesa
+PRODUCT_PACKAGES += \
+    libGLES_mesa \
+    libgallium_dri \
+    libglapi \
+    vulkan.mesa
 
-# Backend
-ifeq ($(TARGET_GPU_BACKEND), mali)
-include device/mediatek/common/graphics/egl/mali/BoardConfig.mk
-else ifeq ($(TARGET_GPU_BACKEND), mesa)
-include device/mediatek/common/graphics/egl/mesa/BoardConfig.mk
-else ifeq ($(TARGET_GPU_BACKEND), swangle)
-include device/mediatek/common/graphics/egl/swangle/BoardConfig.mk
-else
-$(error TARGET_GPU_BACKEND not supported)
-endif
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.hardware.egl=mesa \
+    ro.hardware.vulkan=mesa
+
+# opengles features
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.opengles.aep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.opengles.aep.xml \
+    frameworks/native/data/etc/android.software.opengles.deqp.level-2021-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.opengles.deqp.level.xml

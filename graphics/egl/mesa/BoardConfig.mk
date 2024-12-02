@@ -15,15 +15,4 @@
 #
 
 # Sepolicy
-BOARD_SEPOLICY_DIRS += device/mediatek/common/graphics/egl/sepolicy
-
-# Backend
-ifeq ($(TARGET_GPU_BACKEND), mali)
-include device/mediatek/common/graphics/egl/mali/BoardConfig.mk
-else ifeq ($(TARGET_GPU_BACKEND), mesa)
-include device/mediatek/common/graphics/egl/mesa/BoardConfig.mk
-else ifeq ($(TARGET_GPU_BACKEND), swangle)
-include device/mediatek/common/graphics/egl/swangle/BoardConfig.mk
-else
-$(error TARGET_GPU_BACKEND not supported)
-endif
+BOARD_SEPOLICY_DIRS += device/mediatek/common/graphics/egl/mesa/sepolicy

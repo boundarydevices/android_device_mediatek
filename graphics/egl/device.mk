@@ -18,6 +18,8 @@
 TARGET_GPU_BACKEND ?= mali
 ifeq ($(TARGET_GPU_BACKEND), mali)
 $(call inherit-product, device/mediatek/common/graphics/egl/mali/device.mk)
+else ifeq ($(TARGET_GPU_BACKEND), mesa)
+$(call inherit-product, device/mediatek/common/graphics/egl/mesa/device.mk)
 else ifeq ($(TARGET_GPU_BACKEND), swangle)
 $(call inherit-product, device/mediatek/common/graphics/egl/swangle/device.mk)
 else

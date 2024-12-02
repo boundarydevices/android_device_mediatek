@@ -14,15 +14,12 @@
 # limitations under the License.
 #
 
-# Swiftshader needs to create executable memory and cannot be executed
-# with SELinux as enforcing.
-ifneq (,$(filter userdebug eng,$(TARGET_BUILD_VARIANT)))
-$(warning SELinux set as permissive)
-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+# Backend
+TARGET_ALLOCATOR_BACKEND ?= arm
+ifeq ($(TARGET_ALLOCATOR_BACKEND), arm)
+$(call inherit-product, device/mediatek/common/graphics/allocator/arm/device.mk)
+else ifeq ($(TARGET_ALLOCATOR_BACKEND), minigbm)
+$(call inherit-product, device/mediatek/common/graphics/allocator/minigbm/device.mk)
+else
+$(error TARGET_ALLOCATOR_BACKEND not supported)
 endif
-
-# SwAngle Sepolicy
-BOARD_SEPOLICY_DIRS += device/linaro/dragonboard/shared/graphics/swangle/sepolicy
-
-# Soft Sepolicy
-BOARD_SEPOLICY_DIRS += device/mediatek/common/graphics/soft/sepolicy

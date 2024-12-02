@@ -14,8 +14,10 @@
 # limitations under the License.
 #
 
-# Sepolicy
-BOARD_SEPOLICY_DIRS += device/mediatek/common/graphics/gpu/sepolicy
+# SwAngle
+$(call inherit-product, device/linaro/dragonboard/shared/graphics/swangle/device.mk)
 
-# ARM gralloc
-include vendor/arm/android-gralloc/android/gralloc.device.mk
+# SwAngle on vendor
+$(call soong_config_set,angle,angle_on_system,false)
+
+PRODUCT_VENDOR_PROPERTIES += ro.gfx.angle.supported=true

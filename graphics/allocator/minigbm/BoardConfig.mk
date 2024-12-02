@@ -14,9 +14,9 @@
 # limitations under the License.
 #
 
+ifneq (,$(filter userdebug eng,$(TARGET_BUILD_VARIANT)))
+$(warning Minigbm works only with SELinux as permissive)
+endif
 
-$(call inherit-product, device/mediatek/common/graphics/allocator/device.mk)
-
-$(call inherit-product, device/mediatek/common/graphics/composer/device.mk)
-
-$(call inherit-product, device/mediatek/common/graphics/egl/device.mk)
+# Sepolicy
+BOARD_SEPOLICY_DIRS += device/mediatek/common/graphics/allocator/minigbm/sepolicy

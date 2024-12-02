@@ -46,9 +46,6 @@ $(call inherit-product, device/mediatek/common/media/device.mk)
 # Utils
 $(call inherit-product, device/mediatek/common/utils/device.mk)
 
-# Display
-$(call inherit-product, device/mediatek/common/display/device.mk)
-
 # Fastboot
 $(call inherit-product, device/mediatek/common/fastboot/device.mk)
 

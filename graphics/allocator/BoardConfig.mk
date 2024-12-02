@@ -14,9 +14,11 @@
 # limitations under the License.
 #
 
-
-$(call inherit-product, device/mediatek/common/graphics/allocator/device.mk)
-
-$(call inherit-product, device/mediatek/common/graphics/composer/device.mk)
-
-$(call inherit-product, device/mediatek/common/graphics/egl/device.mk)
+# Backend
+ifeq ($(TARGET_ALLOCATOR_BACKEND), arm)
+include device/mediatek/common/graphics/allocator/arm/BoardConfig.mk
+else ifeq ($(TARGET_ALLOCATOR_BACKEND), minigbm)
+include device/mediatek/common/graphics/allocator/minigbm/BoardConfig.mk
+else
+$(error TARGET_ALLOCATOR_BACKEND not supported)
+endif

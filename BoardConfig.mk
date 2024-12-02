@@ -72,9 +72,6 @@ include device/mediatek/common/security/BoardConfig.mk
 # Media
 include device/mediatek/common/media/BoardConfig.mk
 
-# Display
-include device/mediatek/common/display/BoardConfig.mk
-
 # Fastboot
 include device/mediatek/common/fastboot/BoardConfig.mk
 

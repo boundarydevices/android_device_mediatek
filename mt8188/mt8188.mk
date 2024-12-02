@@ -15,7 +15,8 @@
 #
 
 # Grahics software rendering with VKMS on /dev/dri/card0
-GRAPHICS_SOFT_ENABLE := true
+TARGET_GPU_BACKEND := swangle
+TARGET_ALLOCATOR_BACKEND := minigbm
 PRODUCT_VENDOR_PROPERTIES += vendor.hwc.drm.device=/dev/dri/card0
 
 $(call inherit-product, device/mediatek/common/device.mk)

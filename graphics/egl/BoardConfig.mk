@@ -14,9 +14,14 @@
 # limitations under the License.
 #
 
+# Sepolicy
+BOARD_SEPOLICY_DIRS += device/mediatek/common/graphics/egl/sepolicy
 
-$(call inherit-product, device/mediatek/common/graphics/allocator/device.mk)
-
-$(call inherit-product, device/mediatek/common/graphics/composer/device.mk)
-
-$(call inherit-product, device/mediatek/common/graphics/egl/device.mk)
+# Backend
+ifeq ($(TARGET_GPU_BACKEND), mali)
+include device/mediatek/common/graphics/egl/mali/BoardConfig.mk
+else ifeq ($(TARGET_GPU_BACKEND), swangle)
+include device/mediatek/common/graphics/egl/swangle/BoardConfig.mk
+else
+$(error TARGET_GPU_BACKEND not supported)
+endif

@@ -14,5 +14,12 @@
 # limitations under the License.
 #
 
-# sepolicy
-BOARD_SEPOLICY_DIRS += device/mediatek/common/display/sepolicy
+# Minigbm mapper/allocator
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.allocator-service.minigbm \
+    android.hardware.graphics.mapper@4.0-impl.minigbm \
+    gralloc.minigbm \
+    libminigbm_gralloc \
+    mapper.minigbm
+
+PRODUCT_VENDOR_PROPERTIES += ro.hardware.gralloc=minigbm

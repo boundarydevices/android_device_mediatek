@@ -14,18 +14,5 @@
 # limitations under the License.
 #
 
-# Minigbm mapper/allocator
-PRODUCT_PACKAGES += \
-    android.hardware.graphics.allocator-service.minigbm \
-    mapper.minigbm
-
-# scrcpy
-PRODUCT_VENDOR_PROPERTIES += debug.stagefright.c2inputsurface=-1
-
-# SwAngle
-$(call inherit-product, device/linaro/dragonboard/shared/graphics/swangle/device.mk)
-
-# SwAngle on vendor
-$(call soong_config_set,angle,angle_on_system,false)
-
-PRODUCT_VENDOR_PROPERTIES += ro.gfx.angle.supported=true
+# Sepolicy
+BOARD_SEPOLICY_DIRS += device/mediatek/common/graphics/egl/mali/sepolicy

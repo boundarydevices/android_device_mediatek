@@ -14,12 +14,11 @@
 # limitations under the License.
 #
 
+include device/mediatek/common/graphics/allocator/BoardConfig.mk
+
+include device/mediatek/common/graphics/composer/BoardConfig.mk
+
+include device/mediatek/common/graphics/egl/BoardConfig.mk
+
 # Sepolicy
 BOARD_SEPOLICY_DIRS += device/mediatek/common/graphics/sepolicy
-
-# GPU / Soft
-ifeq ($(GRAPHICS_SOFT_ENABLE), true)
-include device/mediatek/common/graphics/soft/BoardConfig.mk
-else
-include device/mediatek/common/graphics/gpu/BoardConfig.mk
-endif

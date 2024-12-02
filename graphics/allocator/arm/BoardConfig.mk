@@ -14,9 +14,8 @@
 # limitations under the License.
 #
 
+# Sepolicy
+BOARD_SEPOLICY_DIRS += device/mediatek/common/graphics/allocator/arm/sepolicy
 
-$(call inherit-product, device/mediatek/common/graphics/allocator/device.mk)
-
-$(call inherit-product, device/mediatek/common/graphics/composer/device.mk)
-
-$(call inherit-product, device/mediatek/common/graphics/egl/device.mk)
+# ARM gralloc
+include vendor/arm/android-gralloc/android/gralloc.device.mk

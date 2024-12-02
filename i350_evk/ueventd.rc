@@ -10,10 +10,7 @@
 /dev/vpu1         0660  system  camera
 
 # gpu
-/dev/graphics/fb0  0666  system  graphics
 /dev/mali*         0666  system  graphics
-/dev/pvr_sync      0666  system  graphics
-/dev/pvrsrvkm      0666  system  graphics
 
 # dma
 /dev/dma_heap/reserved         0666  system  graphics

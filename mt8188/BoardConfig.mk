@@ -17,9 +17,7 @@
 include device/mediatek/common/BoardConfig.mk
 
 TARGET_CPU_VARIANT := cortex-a55
-TARGET_2ND_CPU_VARIANT := cortex-a55
 TARGET_ARCH_VARIANT := armv8-2a
-TARGET_2ND_ARCH_VARIANT := armv8-2a
 
 DEVICE_MANIFEST_FILE += device/mediatek/common/mt8188/manifest.xml
 

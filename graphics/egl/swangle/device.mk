@@ -15,7 +15,17 @@
 #
 
 # SwAngle
-$(call inherit-product, device/linaro/dragonboard/shared/graphics/swangle/device.mk)
+PRODUCT_REQUIRES_INSECURE_EXECMEM_FOR_SWIFTSHADER := true
+
+PRODUCT_PACKAGES := \
+    libEGL_angle \
+    libGLESv1_CM_angle \
+    libGLESv2_angle \
+    vulkan.pastel
+
+PRODUCT_VENDOR_PROPERTIES := \
+    ro.hardware.egl=angle \
+    ro.hardware.vulkan=pastel
 
 # SwAngle on vendor
 $(call soong_config_set,angle,angle_on_system,false)

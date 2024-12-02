@@ -10,7 +10,12 @@
 /dev/vpu1         0660  system  camera
 
 # gpu
-/dev/mali*         0666  system  graphics
+/dev/mali*           0666  system  graphics
+/dev/dri/card0       0666  system  graphics
+/dev/dri/card1       0666  system  graphics
+/dev/dri/card2       0666  system  graphics
+/dev/dri/card3       0666  system  graphics
+/dev/dri/renderD128  0666  system  graphics
 
 # dma
 /dev/dma_heap/reserved         0666  system  graphics

@@ -1,0 +1,4 @@
+genfscon sysfs /devices/platform/soc/14000000.syscon/mediatek-drm.1.auto/uevent u:object_r:sysfs_display:s0
+genfscon sysfs /devices/platform/soc/13040000.mali/uevent u:object_r:sysfs_display:s0
+genfscon sysfs /devices/platform/vkms/uevent u:object_r:sysfs_display:s0
+genfscon sysfs /devices/platform/apu@0/uevent u:object_r:sysfs_display:s0

@@ -15,4 +15,4 @@
 #
 
 # Sepolicy
-BOARD_SEPOLICY_DIRS += device/mediatek/common/graphics/composer/sepolicy
+BOARD_SEPOLICY_DIRS += device/mediatek/graphics/composer/sepolicy

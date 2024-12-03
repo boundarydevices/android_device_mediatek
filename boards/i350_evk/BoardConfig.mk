@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-include device/mediatek/common/mt8365/BoardConfig.mk
+include device/mediatek/mt8365/BoardConfig.mk
 
 TARGET_BOOTLOADER_BOARD_NAME := i350_evk
 TARGET_SCREEN_DENSITY := 360
@@ -35,7 +35,7 @@ BOARD_KERNEL_CMDLINE += \
 
 # kernel modules required for ap1302 isp
 BOARD_VENDOR_KERNEL_MODULES += \
-    device/mediatek/boards-binaries/$(TARGET_KERNEL_USE)/ap1302.ko
+    vendor/mediatek/prebuilts/kernel/$(TARGET_KERNEL_USE)/ap1302.ko
 
 # FS configuration
 BOARD_SUPER_PARTITION_SIZE         := 4831838208

@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-$(call inherit-product, device/mediatek/common/device.mk)
+$(call inherit-product, device/mediatek/device.mk)
 
 # Specify the model
 PRODUCT_PRODUCT_PROPERTIES += \

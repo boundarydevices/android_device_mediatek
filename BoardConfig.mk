@@ -44,36 +44,36 @@ endif
 
 # Sepolicy
 ifneq ($(BOARD_SEPOLICY_DIRS),)
-$(error device/mediatek/common/BoardConfigCommon.mk should be included first)
+$(error device/mediatek/BoardConfigCommon.mk should be included first)
 endif
-BOARD_SEPOLICY_DIRS := device/mediatek/common/sepolicy
+BOARD_SEPOLICY_DIRS := device/mediatek/sepolicy
 
 # Kernel
-include device/mediatek/common/kernel/BoardConfig.mk
+include device/mediatek/kernel/BoardConfig.mk
 
 # Filesystems
-include device/mediatek/common/fs/BoardConfig.mk
+include device/mediatek/fs/BoardConfig.mk
 
 # Recovery
-include device/mediatek/common/recovery/BoardConfig.mk
+include device/mediatek/recovery/BoardConfig.mk
 
 # Audio
-include device/mediatek/common/audio/BoardConfig.mk
+include device/mediatek/audio/BoardConfig.mk
 
 # USB
-include device/mediatek/common/usb/BoardConfig.mk
+include device/mediatek/usb/BoardConfig.mk
 
 # Graphics
-include device/mediatek/common/graphics/BoardConfig.mk
+include device/mediatek/graphics/BoardConfig.mk
 
 # Security
-include device/mediatek/common/security/BoardConfig.mk
+include device/mediatek/security/BoardConfig.mk
 
 # Media
-include device/mediatek/common/media/BoardConfig.mk
+include device/mediatek/media/BoardConfig.mk
 
 # Fastboot
-include device/mediatek/common/fastboot/BoardConfig.mk
+include device/mediatek/fastboot/BoardConfig.mk
 
 # Boot
-include device/mediatek/common/boot/BoardConfig.mk
+include device/mediatek/boot/BoardConfig.mk

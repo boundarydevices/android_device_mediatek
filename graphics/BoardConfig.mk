@@ -14,11 +14,11 @@
 # limitations under the License.
 #
 
-include device/mediatek/common/graphics/allocator/BoardConfig.mk
+include device/mediatek/graphics/allocator/BoardConfig.mk
 
-include device/mediatek/common/graphics/composer/BoardConfig.mk
+include device/mediatek/graphics/composer/BoardConfig.mk
 
-include device/mediatek/common/graphics/egl/BoardConfig.mk
+include device/mediatek/graphics/egl/BoardConfig.mk
 
 # Sepolicy
-BOARD_SEPOLICY_DIRS += device/mediatek/common/graphics/sepolicy
+BOARD_SEPOLICY_DIRS += device/mediatek/graphics/sepolicy

@@ -19,4 +19,4 @@ $(warning Minigbm works only with SELinux as permissive)
 endif
 
 # Sepolicy
-BOARD_SEPOLICY_DIRS += device/mediatek/common/graphics/allocator/minigbm/sepolicy
+BOARD_SEPOLICY_DIRS += device/mediatek/graphics/allocator/minigbm/sepolicy

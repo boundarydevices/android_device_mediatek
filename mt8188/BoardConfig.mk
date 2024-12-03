@@ -14,17 +14,17 @@
 # limitations under the License.
 #
 
-include device/mediatek/common/BoardConfig.mk
+include device/mediatek/BoardConfig.mk
 
 TARGET_CPU_VARIANT := cortex-a55
 TARGET_ARCH_VARIANT := armv8-2a
 
-DEVICE_MANIFEST_FILE += device/mediatek/common/mt8188/manifest.xml
+DEVICE_MANIFEST_FILE += device/mediatek/mt8188/manifest.xml
 
 # RecoveryOS
-TARGET_RELEASETOOLS_EXTENSIONS := device/mediatek/common/
-TARGET_RECOVERY_FSTAB := device/mediatek/common/mt8188/fstab.mt8188
+TARGET_RELEASETOOLS_EXTENSIONS := device/mediatek/
+TARGET_RECOVERY_FSTAB := device/mediatek/mt8188/fstab.mt8188
 
 # sepolicy
-BOARD_SEPOLICY_DIRS += device/mediatek/common/mt8188/sepolicy
+BOARD_SEPOLICY_DIRS += device/mediatek/mt8188/sepolicy
 

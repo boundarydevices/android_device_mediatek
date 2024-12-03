@@ -19,7 +19,7 @@ TARGET_GPU_BACKEND := swangle
 TARGET_ALLOCATOR_BACKEND := minigbm
 PRODUCT_VENDOR_PROPERTIES += vendor.hwc.drm.device=/dev/dri/card0
 
-$(call inherit-product, device/mediatek/common/device.mk)
+$(call inherit-product, device/mediatek/device.mk)
 
 # OP-TEE
 OPTEE_PLATFORM := mediatek-mt8188

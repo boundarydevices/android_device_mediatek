@@ -21,7 +21,7 @@ BOARD_USES_RECOVERY_AS_BOOT := true
 TARGET_NO_RECOVERY := true
 
 # sepolicy
-BOARD_SEPOLICY_DIRS += device/mediatek/common/recovery/sepolicy
+BOARD_SEPOLICY_DIRS += device/mediatek/recovery/sepolicy
 
 # Pixel format
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888

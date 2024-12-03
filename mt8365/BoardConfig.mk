@@ -14,21 +14,21 @@
 # limitations under the License.
 #
 
-include device/mediatek/common/BoardConfig.mk
+include device/mediatek/BoardConfig.mk
 
 TARGET_CPU_VARIANT := cortex-a53
 
 BOARD_SEPOLICY_DIRS += \
-        device/mediatek/common/mt8365/sepolicy
+        device/mediatek/mt8365/sepolicy
 
-DEVICE_MANIFEST_FILE += device/mediatek/common/mt8365/manifest.xml
+DEVICE_MANIFEST_FILE += device/mediatek/mt8365/manifest.xml
 
 # RecoveryOS
-TARGET_RELEASETOOLS_EXTENSIONS := device/mediatek/common/
+TARGET_RELEASETOOLS_EXTENSIONS := device/mediatek/
 
 # Recovery
 ifeq ($(TARGET_AVB_ENABLE), true)
-TARGET_RECOVERY_FSTAB := device/mediatek/common/mt8365/fstab.mt8365.avb
+TARGET_RECOVERY_FSTAB := device/mediatek/mt8365/fstab.mt8365.avb
 else
-TARGET_RECOVERY_FSTAB := device/mediatek/common/mt8365/fstab.mt8365
+TARGET_RECOVERY_FSTAB := device/mediatek/mt8365/fstab.mt8365
 endif

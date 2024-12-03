@@ -19,7 +19,7 @@ TARGET_KERNEL_USE=5.10
 endif
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-LOCAL_KERNEL := device/mediatek/boards-binaries/$(TARGET_KERNEL_USE)/Image
+LOCAL_KERNEL := vendor/mediatek/prebuilts/kernel/$(TARGET_KERNEL_USE)/Image
 else
 LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif

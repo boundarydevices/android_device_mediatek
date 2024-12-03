@@ -17,9 +17,9 @@
 # Backend
 TARGET_ALLOCATOR_BACKEND ?= arm
 ifeq ($(TARGET_ALLOCATOR_BACKEND), arm)
-$(call inherit-product, device/mediatek/common/graphics/allocator/arm/device.mk)
+$(call inherit-product, device/mediatek/graphics/allocator/arm/device.mk)
 else ifeq ($(TARGET_ALLOCATOR_BACKEND), minigbm)
-$(call inherit-product, device/mediatek/common/graphics/allocator/minigbm/device.mk)
+$(call inherit-product, device/mediatek/graphics/allocator/minigbm/device.mk)
 else
 $(error TARGET_ALLOCATOR_BACKEND not supported)
 endif

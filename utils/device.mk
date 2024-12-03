@@ -1,6 +1,6 @@
 # Warning: this is actually a product definition, to be inherited from
 # To add this to board, add this to your <product>.mk:
-#     $(call inherit-product, device/mediatek/common/utils/utils.mk)
+#     $(call inherit-product, device/mediatek/utils/utils.mk)
 
 # userdebug rc
 ifneq (,$(filter userdebug eng,$(TARGET_BUILD_VARIANT)))

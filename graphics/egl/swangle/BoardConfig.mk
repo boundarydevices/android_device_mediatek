@@ -15,4 +15,4 @@
 #
 
 # Sepolicy
-BOARD_SEPOLICY_DIRS += device/mediatek/common/graphics/egl/swangle/sepolicy
+BOARD_SEPOLICY_DIRS += device/mediatek/graphics/egl/swangle/sepolicy

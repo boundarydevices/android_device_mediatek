@@ -15,8 +15,8 @@
 #
 
 
-$(call inherit-product, device/mediatek/common/graphics/allocator/device.mk)
+$(call inherit-product, device/mediatek/graphics/allocator/device.mk)
 
-$(call inherit-product, device/mediatek/common/graphics/composer/device.mk)
+$(call inherit-product, device/mediatek/graphics/composer/device.mk)
 
-$(call inherit-product, device/mediatek/common/graphics/egl/device.mk)
+$(call inherit-product, device/mediatek/graphics/egl/device.mk)

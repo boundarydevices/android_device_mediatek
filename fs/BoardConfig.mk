@@ -15,7 +15,7 @@
 #
 
 # sepolicy
-BOARD_SEPOLICY_DIRS += device/mediatek/common/fs/sepolicy
+BOARD_SEPOLICY_DIRS += device/mediatek/fs/sepolicy
 
 # Use mke2fs to create ext4 images
 TARGET_USES_MKE2FS := true

@@ -20,9 +20,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 OPTEE_ENABLE := true
 TEE_KEYMASTER_GATEKEEPER_ENABLE := true
 
-BOOTLOADERS_BINARIES := device/mediatek/boards-binaries/i700_evk
+BOOTLOADERS_BINARIES := vendor/mediatek/prebuilts/boards/i700_evk
 
-$(call inherit-product, device/mediatek/common/mt8188/mt8390.mk)
+$(call inherit-product, device/mediatek/mt8188/mt8390.mk)
 
 PRODUCT_NAME := i700_evk
 PRODUCT_DEVICE := i700_evk

@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-include device/mediatek/common/mt8188/BoardConfig.mk
+include device/mediatek/mt8188/BoardConfig.mk
 
 TARGET_BOOTLOADER_BOARD_NAME := i510_evk
 

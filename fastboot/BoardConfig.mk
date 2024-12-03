@@ -15,4 +15,4 @@
 #
 
 # sepolicy
-BOARD_SEPOLICY_DIRS += device/mediatek/common/fastboot/sepolicy
+BOARD_SEPOLICY_DIRS += device/mediatek/fastboot/sepolicy

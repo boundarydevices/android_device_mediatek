@@ -16,9 +16,9 @@
 
 # Backend
 ifeq ($(TARGET_ALLOCATOR_BACKEND), arm)
-include device/mediatek/common/graphics/allocator/arm/BoardConfig.mk
+include device/mediatek/graphics/allocator/arm/BoardConfig.mk
 else ifeq ($(TARGET_ALLOCATOR_BACKEND), minigbm)
-include device/mediatek/common/graphics/allocator/minigbm/BoardConfig.mk
+include device/mediatek/graphics/allocator/minigbm/BoardConfig.mk
 else
 $(error TARGET_ALLOCATOR_BACKEND not supported)
 endif

@@ -16,7 +16,7 @@
 
 # OP-TEE
 ifeq ($(OPTEE_ENABLE), true)
-include device/mediatek/common/security/optee/BoardConfig.mk
+include device/mediatek/security/optee/BoardConfig.mk
 else
-include device/mediatek/common/security/soft/BoardConfig.mk
+include device/mediatek/security/soft/BoardConfig.mk
 endif

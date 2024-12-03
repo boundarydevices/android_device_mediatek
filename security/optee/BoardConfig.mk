@@ -15,4 +15,4 @@
 #
 
 # Sepolicy
-BOARD_SEPOLICY_DIRS += device/mediatek/common/security/optee/sepolicy
+BOARD_SEPOLICY_DIRS += device/mediatek/security/optee/sepolicy

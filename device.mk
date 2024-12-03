@@ -20,40 +20,40 @@ TARGET_AVB_ENABLE := true
 endif
 
 # Kernel
-$(call inherit-product, device/mediatek/common/kernel/device.mk)
+$(call inherit-product, device/mediatek/kernel/device.mk)
 
 # Filesystems
-$(call inherit-product, device/mediatek/common/fs/device.mk)
+$(call inherit-product, device/mediatek/fs/device.mk)
 
 # Recovery
-$(call inherit-product, device/mediatek/common/recovery/device.mk)
+$(call inherit-product, device/mediatek/recovery/device.mk)
 
 # Audio
-$(call inherit-product, device/mediatek/common/audio/device.mk)
+$(call inherit-product, device/mediatek/audio/device.mk)
 
 # USB
-$(call inherit-product, device/mediatek/common/usb/device.mk)
+$(call inherit-product, device/mediatek/usb/device.mk)
 
 # Graphics
-$(call inherit-product, device/mediatek/common/graphics/device.mk)
+$(call inherit-product, device/mediatek/graphics/device.mk)
 
 # Security
-$(call inherit-product, device/mediatek/common/security/device.mk)
+$(call inherit-product, device/mediatek/security/device.mk)
 
 # Media
-$(call inherit-product, device/mediatek/common/media/device.mk)
+$(call inherit-product, device/mediatek/media/device.mk)
 
 # Utils
-$(call inherit-product, device/mediatek/common/utils/device.mk)
+$(call inherit-product, device/mediatek/utils/device.mk)
 
 # Fastboot
-$(call inherit-product, device/mediatek/common/fastboot/device.mk)
+$(call inherit-product, device/mediatek/fastboot/device.mk)
 
 # Boot
-$(call inherit-product, device/mediatek/common/boot/device.mk)
+$(call inherit-product, device/mediatek/boot/device.mk)
 
 # Binaries
-$(call inherit-product, device/mediatek/common/binaries/device.mk)
+$(call inherit-product, device/mediatek/binaries/device.mk)
 
 #######################################################################
 #  Configs, properties, rc/xml files, modules/packages ...            #
@@ -114,10 +114,10 @@ PRODUCT_PACKAGES += \
 
 # Persist prebuilt image
 PRODUCT_CUSTOM_IMAGE_MAKEFILES += \
-    device/mediatek/common/build/custom_images/persist.mk
+    device/mediatek/build/custom_images/persist.mk
 
 PRODUCT_COPY_FILES += \
-    device/mediatek/common/binaries/persist.img:$(TARGET_OUT)/persist.img
+    device/mediatek/binaries/persist.img:$(TARGET_OUT)/persist.img
 
 # CTS
 PRODUCT_COPY_FILES += \

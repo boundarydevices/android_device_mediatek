@@ -15,4 +15,4 @@
 #
 
 # Sepolicy
-BOARD_SEPOLICY_DIRS += device/mediatek/common/graphics/egl/mali/sepolicy
+BOARD_SEPOLICY_DIRS += device/mediatek/graphics/egl/mali/sepolicy

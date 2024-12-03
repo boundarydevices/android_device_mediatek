@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-$(call inherit-product, device/mediatek/common/mt8188/mt8188.mk)
+$(call inherit-product, device/mediatek/mt8188/mt8188.mk)
 
 # Specify the model
 PRODUCT_PRODUCT_PROPERTIES += \

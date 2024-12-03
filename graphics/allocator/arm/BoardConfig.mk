@@ -15,7 +15,7 @@
 #
 
 # Sepolicy
-BOARD_SEPOLICY_DIRS += device/mediatek/common/graphics/allocator/arm/sepolicy
+BOARD_SEPOLICY_DIRS += device/mediatek/graphics/allocator/arm/sepolicy
 
 # ARM gralloc
 include vendor/arm/android-gralloc/android/gralloc.device.mk

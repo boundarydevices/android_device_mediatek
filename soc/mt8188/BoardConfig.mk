@@ -14,17 +14,17 @@
 # limitations under the License.
 #
 
-$(call inherit-product, device/mediatek/mt8188/mt8188.mk)
+include device/mediatek/BoardConfig.mk
 
-# Specify the model
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.soc.manufacturer=mediatek \
-    ro.soc.model=mt8390
+TARGET_CPU_VARIANT := cortex-a55
+TARGET_ARCH_VARIANT := armv8-2a
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init.mt8188.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.mt8390.rc
+DEVICE_MANIFEST_FILE += device/mediatek/soc/mt8188/manifest.xml
 
-# fstab
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/fstab.mt8188:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.mt8390 \
-    $(LOCAL_PATH)/fstab.mt8188:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8390
+# RecoveryOS
+TARGET_RELEASETOOLS_EXTENSIONS := device/mediatek/
+TARGET_RECOVERY_FSTAB := device/mediatek/soc/mt8188/fstab.mt8188
+
+# sepolicy
+BOARD_SEPOLICY_DIRS += device/mediatek/soc/mt8188/sepolicy
+

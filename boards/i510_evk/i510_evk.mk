@@ -22,7 +22,7 @@ TEE_KEYMASTER_GATEKEEPER_ENABLE := true
 
 BOOTLOADERS_BINARIES := vendor/mediatek/prebuilts/boards/i510_evk
 
-$(call inherit-product, device/mediatek/mt8188/mt8370.mk)
+$(call inherit-product, device/mediatek/soc/mt8188/mt8370.mk)
 
 PRODUCT_NAME := i510_evk
 PRODUCT_DEVICE := i510_evk

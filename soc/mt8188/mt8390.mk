@@ -14,17 +14,17 @@
 # limitations under the License.
 #
 
-$(call inherit-product, device/mediatek/mt8188/mt8188.mk)
+$(call inherit-product, device/mediatek/soc/mt8188/mt8188.mk)
 
 # Specify the model
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.soc.manufacturer=mediatek \
-    ro.soc.model=mt8370
+    ro.soc.model=mt8390
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init.mt8188.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.mt8370.rc
+    $(LOCAL_PATH)/init.mt8188.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.mt8390.rc
 
 # fstab
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/fstab.mt8188:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.mt8370 \
-    $(LOCAL_PATH)/fstab.mt8188:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8370
+    $(LOCAL_PATH)/fstab.mt8188:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.mt8390 \
+    $(LOCAL_PATH)/fstab.mt8188:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8390

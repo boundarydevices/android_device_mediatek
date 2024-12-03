@@ -22,7 +22,7 @@ TEE_KEYMASTER_GATEKEEPER_ENABLE := true
 
 BOOTLOADERS_BINARIES := vendor/mediatek/prebuilts/boards/i700_evk
 
-$(call inherit-product, device/mediatek/mt8188/mt8390.mk)
+$(call inherit-product, device/mediatek/soc/mt8188/mt8390.mk)
 
 PRODUCT_NAME := i700_evk
 PRODUCT_DEVICE := i700_evk

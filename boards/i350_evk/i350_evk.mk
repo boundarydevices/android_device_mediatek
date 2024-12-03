@@ -22,7 +22,7 @@ TEE_KEYMASTER_GATEKEEPER_ENABLE := true
 
 BOOTLOADERS_BINARIES := vendor/mediatek/prebuilts/boards/i350_evk
 
-$(call inherit-product, device/mediatek/mt8365/mt8365.mk)
+$(call inherit-product, device/mediatek/soc/mt8365/mt8365.mk)
 
 PRODUCT_NAME := i350_evk
 PRODUCT_DEVICE := i350_evk

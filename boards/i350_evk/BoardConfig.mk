@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-include device/mediatek/mt8365/BoardConfig.mk
+include device/mediatek/soc/mt8365/BoardConfig.mk
 
 TARGET_BOOTLOADER_BOARD_NAME := i350_evk
 TARGET_SCREEN_DENSITY := 360

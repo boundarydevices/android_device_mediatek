@@ -14,6 +14,9 @@
 # limitations under the License.
 #
 
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
+
 # AVB
 ifeq ($(TARGET_BUILD_VARIANT), user)
 TARGET_AVB_ENABLE := true

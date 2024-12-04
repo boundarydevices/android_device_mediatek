@@ -23,8 +23,6 @@ PRODUCT_COPY_FILES += \
      device/mediatek/soc/mt8365/audio_xml/audio_policy_configuration-i350_evk.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
      device/mediatek/soc/mt8365/audio_xml/audio_hal_configuration-i350_evk.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio.i350_evk.xml
 
-DEVICE_PACKAGE_OVERLAYS := device/mediatek/boards/i350_evk/overlay
-
 # Camera + ISP Firmwares:
 PRODUCT_COPY_FILES += \
      external/onsemi/MediaTek_AIoT_i350_EVK/ap1302_ar0430_single_fw.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/ap1302_ar0430_single_fw.bin

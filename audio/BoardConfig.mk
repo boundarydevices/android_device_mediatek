@@ -18,3 +18,6 @@
 BOARD_USES_TINYHAL_AUDIO := true
 TINYALSA_NO_ADD_NEW_CTRLS := true
 TINYALSA_NO_CTL_GET_ID := true
+
+# Manifest fragment (HIDL)
+DEVICE_MANIFEST_FILE += device/mediatek/audio/manifest.xml

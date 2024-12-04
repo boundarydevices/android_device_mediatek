@@ -19,8 +19,6 @@ include device/mediatek/BoardConfig.mk
 TARGET_CPU_VARIANT := cortex-a55
 TARGET_ARCH_VARIANT := armv8-2a
 
-DEVICE_MANIFEST_FILE += device/mediatek/soc/mt8188/manifest.xml
-
 # RecoveryOS
 TARGET_RELEASETOOLS_EXTENSIONS := device/mediatek/
 TARGET_RECOVERY_FSTAB := device/mediatek/soc/mt8188/fstab.mt8188

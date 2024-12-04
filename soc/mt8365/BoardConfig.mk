@@ -21,8 +21,6 @@ TARGET_CPU_VARIANT := cortex-a53
 BOARD_SEPOLICY_DIRS += \
         device/mediatek/soc/mt8365/sepolicy
 
-DEVICE_MANIFEST_FILE += device/mediatek/soc/mt8365/manifest.xml
-
 # RecoveryOS
 TARGET_RELEASETOOLS_EXTENSIONS := device/mediatek/
 

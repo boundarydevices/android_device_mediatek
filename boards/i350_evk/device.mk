@@ -27,11 +27,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
      external/onsemi/MediaTek_AIoT_i350_EVK/ap1302_ar0430_single_fw.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/ap1302_ar0430_single_fw.bin
 
-# UVC camera
-$(call inherit-product, hardware/mediatek/camera/uvc/uvc.mk)
-# CSI camera
-$(call inherit-product, hardware/mediatek/camera/csi/csi.mk)
-
 $(call inherit-product, vendor/mediatek/wireless/mt7663.mk)
 
 # splashscreen

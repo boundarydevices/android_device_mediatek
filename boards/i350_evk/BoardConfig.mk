@@ -59,8 +59,3 @@ DTBO_FILES := \
         $(LOCAL_DTB)/mt8365-evk-android-ap1302-ar0430-dual.dtb
 
 include vendor/mediatek/wireless/BoardConfig-mt7663.mk
-# UVC Camera
-include hardware/mediatek/camera/uvc/BoardConfig.mk
-# CSI Camera
-include hardware/mediatek/camera/csi/BoardConfig.mk
-DEVICE_MANIFEST_FILE += hardware/mediatek/camera/manifest-uvc-csi.xml

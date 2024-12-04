@@ -25,9 +25,6 @@ BOARD_SEPOLICY_DIRS += \
 
 # kernel commandline
 BOARD_KERNEL_CMDLINE += \
-    firmware_class.path=/vendor/firmware \
-    printk.devkmsg=on \
-    init=/init \
     androidboot.boot_devices=soc/11230000.mmc \
     androidboot.hardware=mt8365 \
     androidboot.serialno=i350evk

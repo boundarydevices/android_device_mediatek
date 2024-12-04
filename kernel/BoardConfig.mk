@@ -24,6 +24,12 @@ BOARD_RAMDISK_OFFSET = 0x15000000
 BOARD_TAGS_OFFSET = 0x14000000
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 
+# commandline
+BOARD_KERNEL_CMDLINE += \
+    firmware_class.path=/vendor/firmware \
+    printk.devkmsg=on \
+    init=/init
+
 # mkbootimg arguments
 BOARD_MKBOOTIMG_ARGS := \
   --kernel_offset $(BOARD_KERNEL_OFFSET) \

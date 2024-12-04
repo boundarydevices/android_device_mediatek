@@ -20,9 +20,6 @@ TARGET_BOOTLOADER_BOARD_NAME := i700_evk
 
 # kernel commandline
 BOARD_KERNEL_CMDLINE += \
-    firmware_class.path=/vendor/firmware \
-    printk.devkmsg=on \
-    init=/init \
     androidboot.boot_devices=soc/11230000.mmc \
     androidboot.hardware=mt8390 \
     androidboot.serialno=i700evk

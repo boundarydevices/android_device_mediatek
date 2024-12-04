@@ -19,10 +19,7 @@ include device/mediatek/soc/mt8188/BoardConfig.mk
 TARGET_BOOTLOADER_BOARD_NAME := i510_evk
 
 # kernel commandline
-BOARD_KERNEL_CMDLINE := \
-    firmware_class.path=/vendor/firmware \
-    printk.devkmsg=on \
-    init=/init \
+BOARD_KERNEL_CMDLINE += \
     androidboot.boot_devices=soc/11230000.mmc \
     androidboot.hardware=mt8370 \
     androidboot.serialno=i510evk \

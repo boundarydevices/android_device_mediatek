@@ -14,9 +14,6 @@
 # limitations under the License.
 #
 
-# Shipping API level to Android 13 (T)
-PRODUCT_SHIPPING_API_LEVEL := 33
-
 # common mediatek board
 $(call inherit-product, device/mediatek/boards/board.mk)
 

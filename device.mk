@@ -60,6 +60,9 @@ $(call inherit-product, device/mediatek/binaries/device.mk)
 #  not related to any feature folder are placed here.                 #
 #######################################################################
 
+# Shipping API level to Android 13 (T)
+PRODUCT_SHIPPING_API_LEVEL := 33
+
 # Set Vendor SPL to match platform
 VENDOR_SECURITY_PATCH = $(PLATFORM_SECURITY_PATCH)
 

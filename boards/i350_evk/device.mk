@@ -20,8 +20,8 @@ $(call inherit-product, device/mediatek/boards/board.mk)
 # Audio: use a specific i350-evk hal configuration with TinyHAL
 PRODUCT_PACKAGES += audio.primary.i350_evk
 PRODUCT_COPY_FILES += \
-     device/mediatek/soc/mt8365/audio_xml/audio_policy_configuration-i350_evk.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
-     device/mediatek/soc/mt8365/audio_xml/audio_hal_configuration-i350_evk.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio.i350_evk.xml
+     $(LOCAL_PATH)/xml/audio_policy_configuration-i350_evk.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
+     $(LOCAL_PATH)/xml/audio_hal_configuration-i350_evk.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio.i350_evk.xml
 
 # Camera + ISP Firmwares:
 PRODUCT_COPY_FILES += \

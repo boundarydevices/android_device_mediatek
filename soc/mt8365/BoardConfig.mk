@@ -21,9 +21,6 @@ TARGET_CPU_VARIANT := cortex-a53
 BOARD_SEPOLICY_DIRS += \
         device/mediatek/soc/mt8365/sepolicy
 
-# RecoveryOS
-TARGET_RELEASETOOLS_EXTENSIONS := device/mediatek/
-
 # Recovery
 ifeq ($(TARGET_AVB_ENABLE), true)
 TARGET_RECOVERY_FSTAB := device/mediatek/soc/mt8365/fstab.mt8365.avb

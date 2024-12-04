@@ -24,7 +24,8 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     android.hardware.audio.service \
     android.hardware.audio@7.0-impl \
-    android.hardware.audio.effect@7.0-impl
+    android.hardware.audio.effect@7.0-impl \
+    android.hardware.soundtrigger@2.3-impl
 
 # Audio policy configuration
 USE_XML_AUDIO_POLICY_CONF := 1

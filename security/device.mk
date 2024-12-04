@@ -22,7 +22,7 @@ PRODUCT_PROPERTY_OVERRIDES += ro.vendor.keymaster.optee=disabled
 endif
 
 # Keyaster / Gatekeeper
-ifeq ($(TEE_KEYMASTER_GATEKEEPER_ENABLE), true)
+ifeq ($(OPTEE_KEYMASTER_GATEKEEPER_ENABLE), true)
 $(call inherit-product, $(LOCAL_PATH)/optee/kmgk.mk)
 else
 $(call inherit-product, $(LOCAL_PATH)/soft/kmgk.mk)

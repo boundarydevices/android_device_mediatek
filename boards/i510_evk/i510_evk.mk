@@ -16,7 +16,7 @@
 
 # All OP-TEE vars MUST be set before including common/mt*
 OPTEE_ENABLE := true
-TEE_KEYMASTER_GATEKEEPER_ENABLE := true
+OPTEE_KEYMASTER_GATEKEEPER_ENABLE := true
 
 BOOTLOADERS_BINARIES := vendor/mediatek/prebuilts/boards/i510_evk
 

@@ -7,25 +7,8 @@
 # custom health HAL
 /vendor/bin/hw/android\.hardware\.health-service\.batteryless       u:object_r:hal_health_default_exec:s0
 
-# devices
-/dev/block/zram0				    u:object_r:swap_block_device:s0
-
 # sysfs files
 /sys/devices/platform/backlight_lcd0/backlight(/.*)?                u:object_r:sysfs_leds:s0
 
 # drm
 /vendor/bin/hw/android\.hardware\.drm@[0-9]+\.[0-9]+-service\.clearkey     u:object_r:hal_drm_clearkey_exec:s0
-
-# Block devices
-/dev/block/platform/soc/11230000.mmc/by-name/userdata 		    u:object_r:userdata_block_device:s0
-/dev/block/platform/soc/11230000.mmc/by-name/cache   		    u:object_r:cache_block_device:s0
-/dev/block/platform/soc/11230000.mmc/by-name/misc   		    u:object_r:misc_block_device:s0
-/dev/block/platform/soc/11230000.mmc/by-name/super   		    u:object_r:super_block_device:s0
-/dev/block/platform/soc/11230000.mmc/by-name/recovery 		    u:object_r:recovery_block_device:s0
-/dev/block/platform/soc/11230000.mmc/by-name/splashscreen	    u:object_r:splashscreen_block_device:s0
-/dev/block/platform/soc/11230000.mmc/by-name/bootloaders	    u:object_r:bootloaders_block_device:s0
-/dev/block/platform/soc/11230000.mmc/by-name/boot(_[ab])?	    u:object_r:boot_block_device:s0
-/dev/block/platform/soc/11230000.mmc/by-name/dtbo(_[ab])?	    u:object_r:dtbo_block_device:s0
-/dev/block/platform/soc/11230000.mmc/by-name/vbmeta(_[ab])?	    u:object_r:vbmeta_block_device:s0
-/dev/block/platform/soc/11230000.mmc/by-name/persist            u:object_r:persist_block_device:s0
-/dev/block/platform/soc/11230000.mmc/by-name/metadata		u:object_r:metadata_block_device:s0

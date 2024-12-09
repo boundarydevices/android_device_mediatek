@@ -17,32 +17,46 @@
 # sepolicy
 BOARD_SEPOLICY_DIRS += device/mediatek/fs/sepolicy
 
+# user images ext4
+TARGET_USERIMAGES_USE_EXT4 := true
+
 # Use mke2fs to create ext4 images
 TARGET_USES_MKE2FS := true
 
-# Super partition
+# A/B OTA support
+AB_OTA_UPDATER := true
+AB_OTA_PARTITIONS := boot dtbo
+
+# Dynamic partitions
 TARGET_USE_DYNAMIC_PARTITIONS := true
+
+# Super
 BOARD_BUILD_SUPER_IMAGE_BY_DEFAULT := true
 BOARD_SUPER_PARTITION_GROUPS := db_dynamic_partitions
-BOARD_DB_DYNAMIC_PARTITIONS_PARTITION_LIST := system vendor
 BOARD_SUPER_PARTITION_METADATA_DEVICE := super
 BOARD_SUPER_IMAGE_IN_UPDATE_PACKAGE := true
+
+# System
+BOARD_DB_DYNAMIC_PARTITIONS_PARTITION_LIST += system
+AB_OTA_PARTITIONS += system
+
+# Vendor
+TARGET_COPY_OUT_VENDOR := vendor
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+AB_OTA_PARTITIONS += vendor
+BOARD_DB_DYNAMIC_PARTITIONS_PARTITION_LIST += vendor
+
+# Metadata
+BOARD_USES_METADATA_PARTITION := true
+
+# vbmeta
+ifeq ($(TARGET_AVB_ENABLE), true)
+AB_OTA_PARTITIONS += vbmeta
+endif
 
 # Userdata
 TARGET_USERIMAGES_USE_F2FS := true
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
-
-# A/B OTA support
-AB_OTA_UPDATER := true
-AB_OTA_PARTITIONS := \
-        boot \
-        dtbo \
-        system \
-        vendor
-
-ifeq ($(TARGET_AVB_ENABLE), true)
-AB_OTA_PARTITIONS += vbmeta
-endif
 
 # WARNING: do *NOT* edit BOARD_USERDATAIMAGE_PARTITION_SIZE
 # the userdata partition will automatically take the remaining eMMC space

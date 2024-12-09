@@ -24,7 +24,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.mt8188.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.mt8370.rc
 
-# fstab
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/fstab.mt8188:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.mt8370 \
-    $(LOCAL_PATH)/fstab.mt8188:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8370
+# Fstab
+MTK_FSTAB := fstab.mt8370
+

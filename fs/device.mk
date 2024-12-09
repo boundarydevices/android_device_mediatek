@@ -24,3 +24,18 @@ PRODUCT_PACKAGES += \
     sg_write_buffer \
     f2fs_io \
     check_f2fs
+
+# fstab
+ifeq ($(MTK_FSTAB),)
+$(error MTK_FSTAB not set)
+endif
+
+ifeq ($(TARGET_AVB_ENABLE), true)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/fstab.avb:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/$(MTK_FSTAB).avb \
+    $(LOCAL_PATH)/fstab.avb:$(TARGET_COPY_OUT_VENDOR)/etc/$(MTK_FSTAB).avb
+else
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/fstab:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/$(MTK_FSTAB) \
+    $(LOCAL_PATH)/fstab:$(TARGET_COPY_OUT_VENDOR)/etc/$(MTK_FSTAB)
+endif

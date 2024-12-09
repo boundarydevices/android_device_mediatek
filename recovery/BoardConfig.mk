@@ -26,6 +26,13 @@ BOARD_SEPOLICY_DIRS += device/mediatek/recovery/sepolicy
 # Pixel format
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 
+# Fstab
+ifeq ($(TARGET_AVB_ENABLE), true)
+TARGET_RECOVERY_FSTAB := device/mediatek/fs/fstab.avb
+else
+TARGET_RECOVERY_FSTAB := device/mediatek/fs/fstab
+endif
+
 # AVB
 ifeq ($(TARGET_AVB_ENABLE), true)
 BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem

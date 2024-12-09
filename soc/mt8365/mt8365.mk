@@ -23,16 +23,8 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.mt8365.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.mt8365.rc
 
-# fstab
-ifeq ($(TARGET_AVB_ENABLE), true)
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/fstab.mt8365.avb:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.mt8365 \
-    $(LOCAL_PATH)/fstab.mt8365.avb:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8365
-else
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/fstab.mt8365:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.mt8365 \
-    $(LOCAL_PATH)/fstab.mt8365:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8365
-endif
+# Fstab
+MTK_FSTAB := fstab.mt8365
 
 # Media configuration
 PRODUCT_COPY_FILES += \

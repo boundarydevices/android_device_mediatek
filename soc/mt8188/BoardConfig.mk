@@ -19,9 +19,6 @@ include device/mediatek/BoardConfig.mk
 TARGET_CPU_VARIANT := cortex-a55
 TARGET_ARCH_VARIANT := armv8-2a
 
-# RecoveryOS
-TARGET_RECOVERY_FSTAB := device/mediatek/soc/mt8188/fstab.mt8188
-
 # sepolicy
 BOARD_SEPOLICY_DIRS += device/mediatek/soc/mt8188/sepolicy
 

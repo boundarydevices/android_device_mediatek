@@ -15,10 +15,8 @@
 #
 
 # no dedicated recovery partition
-BOARD_USES_RECOVERY_AS_BOOT := true
-
-# don't build recovery.img
 TARGET_NO_RECOVERY := true
+BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
 
 # sepolicy
 BOARD_SEPOLICY_DIRS += device/mediatek/recovery/sepolicy

@@ -20,25 +20,11 @@ BOARD_SEPOLICY_DIRS += device/mediatek/kernel/sepolicy
 # No GKI support
 BOARD_USES_GENERIC_KERNEL_IMAGE := false
 
-# bootimage generation
-BOARD_KERNEL_BASE = 0x40000000
-BOARD_KERNEL_OFFSET = 0x00200000
-BOARD_RAMDISK_OFFSET = 0x15000000
-BOARD_TAGS_OFFSET = 0x14000000
-BOARD_INCLUDE_DTB_IN_BOOTIMG := true
-
 # commandline
 BOARD_KERNEL_CMDLINE += \
     firmware_class.path=/vendor/firmware \
     printk.devkmsg=on \
     init=/init
-
-# mkbootimg arguments
-BOARD_MKBOOTIMG_ARGS := \
-  --kernel_offset $(BOARD_KERNEL_OFFSET) \
-  --ramdisk_offset $(BOARD_RAMDISK_OFFSET) \
-  --tags_offset $(BOARD_TAGS_OFFSET) \
-  --header_version 2
 
 # DTB
 LOCAL_DTB := vendor/mediatek/prebuilts/kernel/$(TARGET_KERNEL_USE)
@@ -49,20 +35,8 @@ DTBO_UNSIGNED := dtbo-unsigned.img
 BOARD_PREBUILT_DTBOIMAGE = $(PRODUCT_OUT)/$(DTBO_UNSIGNED)
 
 # kernel modules
-ifneq ($(BOARD_VENDOR_KERNEL_MODULES),)
-$(error device/mediatek/kernel/BoardConfig.mk should be included first)
-endif
-
-BOARD_VENDOR_KERNEL_MODULES := \
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES += \
     vendor/mediatek/prebuilts/kernel/$(TARGET_KERNEL_USE)/mediatek-drm.ko \
     vendor/mediatek/prebuilts/kernel/$(TARGET_KERNEL_USE)/snd-soc-hdmi-codec.ko \
     vendor/mediatek/prebuilts/kernel/$(TARGET_KERNEL_USE)/mediatek-drm-hdmi.ko \
     vendor/mediatek/prebuilts/kernel/$(TARGET_KERNEL_USE)/ntc_thermistor.ko
-
-ifneq ($(BOARD_RECOVERY_KERNEL_MODULES),)
-$(error device/mediatek/kernel/BoardConfig.mk should be included first)
-endif
-
-BOARD_RECOVERY_KERNEL_MODULES := \
-    vendor/mediatek/prebuilts/kernel/$(TARGET_KERNEL_USE)/mediatek-drm.ko \
-    vendor/mediatek/prebuilts/kernel/$(TARGET_KERNEL_USE)/mediatek-drm-hdmi.ko

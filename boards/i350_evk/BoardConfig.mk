@@ -31,7 +31,7 @@ BOARD_KERNEL_CMDLINE += \
 
 
 # kernel modules required for ap1302 isp
-BOARD_VENDOR_RAMDISK_KERNEL_MODULES += \
+BOARD_VENDOR_KERNEL_MODULES += \
     vendor/mediatek/prebuilts/kernel/$(TARGET_KERNEL_USE)/ap1302.ko
 
 # FS configuration

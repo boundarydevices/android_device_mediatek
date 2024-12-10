@@ -63,12 +63,19 @@ BOARD_DB_DYNAMIC_PARTITIONS_PARTITION_LIST += vendor
 # Vendor Boot
 AB_OTA_PARTITIONS += vendor_boot
 
+# Vendor DLKM
+BOARD_USES_VENDOR_DLKMIMAGE := true
+BOARD_VENDOR_DLKMIMAGE_FILE_SYSTEM_TYPE := ext4
+TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
+BOARD_DB_DYNAMIC_PARTITIONS_PARTITION_LIST += vendor_dlkm
+AB_OTA_PARTITIONS += vendor_dlkm
+
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
 
 # vbmeta
 ifeq ($(TARGET_AVB_ENABLE), true)
-AB_OTA_PARTITIONS += vbmeta
+AB_OTA_PARTITIONS += vbmeta vbmeta_vendor_dlkm
 endif
 
 # Userdata

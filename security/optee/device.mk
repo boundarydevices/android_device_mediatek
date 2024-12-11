@@ -13,16 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-# optee
-OPTEE_OS_DIR := vendor/linaro/optee-os
-OPTEE_TA_TARGETS := ta_arm64
-OPTEE_CFG_ARM64_CORE := y
-OPTEE_CFG_CORE_HEAP_SIZE=131072
 
-CFG_SECSTOR_TA_MGMT_PTA := y
-CFG_SECURE_DATA_PATH := y
-
-BUILD_OPTEE_MK := $(LOCAL_PATH)/build_optee.mk
+# optee TA dev kit
+TA_DEV_KIT_DIR := $(BOOTLOADERS_BINARIES)/optee-ta/export-ta_arm64
 
 # optee-client (libteec and tee-supplicant)
 include vendor/linaro/optee_client/optee_client.device.mk

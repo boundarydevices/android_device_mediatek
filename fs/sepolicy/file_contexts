@@ -3,6 +3,7 @@
 /dev/block/platform/soc/11230000.mmc/by-name/bootloaders          u:object_r:bootloaders_block_device:s0
 /dev/block/platform/soc/11230000.mmc/by-name/cache                u:object_r:cache_block_device:s0
 /dev/block/platform/soc/11230000.mmc/by-name/dtbo(_[ab])?         u:object_r:dtbo_block_device:s0
+/dev/block/platform/soc/11230000.mmc/by-name/init_boot_(_[ab])?   u:object_r:boot_block_device:s0
 /dev/block/platform/soc/11230000.mmc/by-name/metadata             u:object_r:metadata_block_device:s0
 /dev/block/platform/soc/11230000.mmc/by-name/misc                 u:object_r:misc_block_device:s0
 /dev/block/platform/soc/11230000.mmc/by-name/persist              u:object_r:persist_block_device:s0

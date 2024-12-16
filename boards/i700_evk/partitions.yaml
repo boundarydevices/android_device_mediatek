@@ -25,6 +25,10 @@ partitions:
     size: 0
     file: boot.img
     ab: true
+  init_boot:
+    size: 0
+    file: init_boot.img
+    ab: true
   vendor_boot:
     size: 0
     file: vendor_boot.img

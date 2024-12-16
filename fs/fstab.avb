@@ -5,6 +5,7 @@ system                                                    /system              e
 vendor                                                    /vendor              ext4    ro,barrier=1                                                          wait,avb,slotselect,logical,first_stage_mount
 vendor_dlkm                                               /vendor_dlkm         ext4    noatime,ro,errors=panic                                               wait,avb=vbmeta_vendor_dlkm,slotselect,logical,first_stage_mount
 /dev/block/platform/soc/11230000.mmc/by-name/boot         /boot                emmc    defaults                                                              recoveryonly,slotselect,first_stage_mount,avb=boot
+/dev/block/platform/soc/11230000.mmc/by-name/init_boot    /init_boot           emmc    defaults                                                              recoveryonly,slotselect,first_stage_mount,avb=init_boot
 /dev/block/platform/soc/11230000.mmc/by-name/vendor_boot  /vendor_boot         emmc    defaults                                                              recoveryonly,slotselect
 /dev/block/platform/soc/11230000.mmc/by-name/metadata     /metadata            ext4    noatime,nosuid,nodev,discard                                          wait,check,formattable
 /dev/block/platform/soc/11230000.mmc/by-name/persist      /mnt/vendor/persist  ext4    noatime,nosuid,nodev,barrier=1,data=ordered,nodelalloc,errors=panic   wait,check,formattable

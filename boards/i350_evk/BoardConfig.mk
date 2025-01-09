@@ -46,14 +46,14 @@ MTK_PARTITIONS_YAML := device/mediatek/boards/i350_evk/partitions.yaml
 
 # Please keep this list fixed: add new files in the end of the list
 DTB_FILES := \
-        $(LOCAL_DTB)/mt8365-evk.dtb
+        $(MTK_KERNEL_DIST)/mt8365-evk.dtb
 
 # Please keep this list fixed: add new files in the end of the list
 DTBO_FILES := \
-        $(LOCAL_DTB)/mt8365-evk-android.dtb \
-        $(LOCAL_DTB)/mt8365-evk-android-dsi.dtb \
-        $(LOCAL_DTB)/mt8365-evk-android-ap1302-ar0430-single-csi0.dtb \
-        $(LOCAL_DTB)/mt8365-evk-android-ap1302-ar0430-single-csi1.dtb \
-        $(LOCAL_DTB)/mt8365-evk-android-ap1302-ar0430-dual.dtb
+        $(MTK_KERNEL_DIST)/mt8365-evk-android.dtb \
+        $(MTK_KERNEL_DIST)/mt8365-evk-android-dsi.dtb \
+        $(MTK_KERNEL_DIST)/mt8365-evk-android-ap1302-ar0430-single-csi0.dtb \
+        $(MTK_KERNEL_DIST)/mt8365-evk-android-ap1302-ar0430-single-csi1.dtb \
+        $(MTK_KERNEL_DIST)/mt8365-evk-android-ap1302-ar0430-dual.dtb
 
 include vendor/mediatek/wireless/BoardConfig-mt7663.mk

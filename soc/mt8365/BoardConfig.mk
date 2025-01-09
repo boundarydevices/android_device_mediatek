@@ -20,3 +20,6 @@ TARGET_CPU_VARIANT := cortex-a53
 
 BOARD_SEPOLICY_DIRS += \
         device/mediatek/soc/mt8365/sepolicy
+
+# kernel
+include device/mediatek/soc/mt8365/kernel.mk

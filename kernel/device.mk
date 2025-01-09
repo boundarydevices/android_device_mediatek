@@ -14,17 +14,13 @@
 # limitations under the License.
 #
 
-ifndef TARGET_KERNEL_USE
-TARGET_KERNEL_USE=5.10
-endif
+# Kernel version
+TARGET_KERNEL_USE ?= 5.10
 
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-LOCAL_KERNEL := vendor/mediatek/prebuilts/kernel/$(TARGET_KERNEL_USE)/Image
-else
-LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
-
-PRODUCT_COPY_FILES := $(LOCAL_KERNEL):kernel
+# Kernel Image
+MTK_KERNEL_DIST := vendor/mediatek/prebuilts/kernel/$(TARGET_KERNEL_USE)
+LOCAL_KERNEL := $(MTK_KERNEL_DIST)/Image
+PRODUCT_COPY_FILES += $(LOCAL_KERNEL):kernel
 
 # Disable kernel config check for now
 PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := false

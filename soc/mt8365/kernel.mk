@@ -14,19 +14,9 @@
 # limitations under the License.
 #
 
-# sepolicy
-BOARD_SEPOLICY_DIRS += device/mediatek/kernel/sepolicy
-
-# No GKI support
-BOARD_USES_GENERIC_KERNEL_IMAGE := false
-
-# commandline
-BOARD_KERNEL_CMDLINE += \
-    firmware_class.path=/vendor/firmware \
-    printk.devkmsg=on \
-    init=/init
-
-# DTBO
-BOARD_INCLUDE_RECOVERY_DTBO := true
-DTBO_UNSIGNED := dtbo-unsigned.img
-BOARD_PREBUILT_DTBOIMAGE = $(PRODUCT_OUT)/$(DTBO_UNSIGNED)
+# Kernel modules
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES += \
+    $(MTK_KERNEL_DIST)/mediatek-drm.ko \
+    $(MTK_KERNEL_DIST)/snd-soc-hdmi-codec.ko \
+    $(MTK_KERNEL_DIST)/mediatek-drm-hdmi.ko \
+    $(MTK_KERNEL_DIST)/ntc_thermistor.ko

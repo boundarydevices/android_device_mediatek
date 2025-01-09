@@ -38,8 +38,8 @@ MTK_PARTITIONS_YAML := device/mediatek/boards/i510_evk/partitions.yaml
 
 # Please keep this list fixed: add new files in the end of the list
 DTB_FILES := \
-    $(LOCAL_DTB)/mt8370-genio-510-evk.dtb
+    $(MTK_KERNEL_DIST)/mt8370-genio-510-evk.dtb
 
 # Please keep this list fixed: add new files in the end of the list
 DTBO_FILES := \
-    $(LOCAL_DTB)/mt8370-genio-510-evk-android.dtb
+    $(MTK_KERNEL_DIST)/mt8370-genio-510-evk-android.dtb

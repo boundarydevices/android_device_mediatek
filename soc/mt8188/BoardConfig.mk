@@ -22,3 +22,5 @@ TARGET_ARCH_VARIANT := armv8-2a
 # sepolicy
 BOARD_SEPOLICY_DIRS += device/mediatek/soc/mt8188/sepolicy
 
+# kernel
+include device/mediatek/soc/mt8188/kernel.mk

@@ -17,9 +17,18 @@
 # Kernel version
 TARGET_KERNEL_USE ?= 5.10
 
+# Kernel GKI (disabled by default)
+MTK_USES_GKI ?= false
+
 # Kernel Image
+ifeq ($(MTK_USES_GKI), true)
+MTK_KERNEL_DIST := vendor/mediatek/prebuilts/kernel/$(TARGET_KERNEL_USE)/mtk
+GOOGLE_KERNEL_DIST := vendor/mediatek/prebuilts/kernel/$(TARGET_KERNEL_USE)/google
+LOCAL_KERNEL := $(GOOGLE_KERNEL_DIST)/Image
+else
 MTK_KERNEL_DIST := vendor/mediatek/prebuilts/kernel/$(TARGET_KERNEL_USE)
 LOCAL_KERNEL := $(MTK_KERNEL_DIST)/Image
+endif
 PRODUCT_COPY_FILES += $(LOCAL_KERNEL):kernel
 
 # Disable kernel config check for now

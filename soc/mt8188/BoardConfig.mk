@@ -23,4 +23,8 @@ TARGET_ARCH_VARIANT := armv8-2a
 BOARD_SEPOLICY_DIRS += device/mediatek/soc/mt8188/sepolicy
 
 # kernel
+ifeq ($(MTK_USES_GKI), true)
+include device/mediatek/soc/mt8188/kernel-gki.mk
+else
 include device/mediatek/soc/mt8188/kernel.mk
+endif

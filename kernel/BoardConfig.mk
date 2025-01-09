@@ -17,8 +17,8 @@
 # sepolicy
 BOARD_SEPOLICY_DIRS += device/mediatek/kernel/sepolicy
 
-# No GKI support
-BOARD_USES_GENERIC_KERNEL_IMAGE := false
+# GKI support
+BOARD_USES_GENERIC_KERNEL_IMAGE := $(MTK_USES_GKI)
 
 # commandline
 BOARD_KERNEL_CMDLINE += \

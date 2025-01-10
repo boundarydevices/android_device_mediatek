@@ -20,8 +20,3 @@ TARGET_ALLOCATOR_BACKEND := minigbm
 PRODUCT_VENDOR_PROPERTIES += vendor.hwc.drm.device=/dev/dri/card0
 
 $(call inherit-product, device/mediatek/device.mk)
-
-# OP-TEE
-OPTEE_PLATFORM := mediatek-mt8188
-OPTEE_PLATFORM_FLAVOR := mt8188
-OPTEE_CFG_DRAM_SIZE := 0xc0000000

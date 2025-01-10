@@ -22,8 +22,7 @@ TARGET_BOOTLOADER_BOARD_NAME := i510_evk
 BOARD_KERNEL_CMDLINE += \
     androidboot.boot_devices=soc/11230000.mmc \
     androidboot.hardware=mt8370 \
-    androidboot.serialno=i510evk \
-    androidboot.selinux=permissive
+    androidboot.serialno=i510evk
 
 # FS configuration
 # FIXME: This should be adjusted to i510_evk

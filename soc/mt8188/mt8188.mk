@@ -18,5 +18,6 @@
 TARGET_GPU_BACKEND := swangle
 TARGET_ALLOCATOR_BACKEND := minigbm
 PRODUCT_VENDOR_PROPERTIES += vendor.hwc.drm.device=/dev/dri/card0
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 $(call inherit-product, device/mediatek/device.mk)

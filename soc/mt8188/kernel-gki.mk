@@ -36,6 +36,10 @@ BOARD_VENDOR_RAMDISK_KERNEL_MODULES += \
     $(MTK_KERNEL_DIST)/clk-mt8188-infra_ao.ko \
     $(MTK_KERNEL_DIST)/clk-mt8188-peri_ao.ko \
     $(MTK_KERNEL_DIST)/clk-mt8188-imp_iic_wrap.ko \
+    $(MTK_KERNEL_DIST)/clk-mt8188-vdo0.ko \
+    $(MTK_KERNEL_DIST)/clk-mt8188-vdo1.ko \
+    $(MTK_KERNEL_DIST)/clk-mt8188-vpp0.ko \
+    $(MTK_KERNEL_DIST)/clk-mt8188-vpp1.ko \
     $(MTK_KERNEL_DIST)/mtk-eint.ko \
     $(MTK_KERNEL_DIST)/pinctrl-mtk-common-v2.ko \
     $(MTK_KERNEL_DIST)/pinctrl-paris.ko \
@@ -53,6 +57,7 @@ BOARD_VENDOR_RAMDISK_KERNEL_MODULES += \
     $(MTK_KERNEL_DIST)/mtk-pmic-wrap.ko \
     $(MTK_KERNEL_DIST)/mtk-pm-domains.ko \
     $(MTK_KERNEL_DIST)/mtk-scpsys.ko \
+    $(MTK_KERNEL_DIST)/mtk-smi.ko \
     $(MTK_KERNEL_DIST)/8250_mtk.ko \
     $(MTK_KERNEL_DIST)/mediatek-cpufreq-hw.ko \
     $(MTK_KERNEL_DIST)/cqhci.ko \
@@ -66,4 +71,12 @@ BOARD_VENDOR_RAMDISK_KERNEL_MODULES += \
     $(MTK_KERNEL_DIST)/tee.ko \
     $(MTK_KERNEL_DIST)/optee.ko \
     $(MTK_KERNEL_DIST)/system_heap.ko \
-    $(MTK_KERNEL_DIST)/vkms.ko
+    $(MTK_KERNEL_DIST)/vkms.ko \
+    $(MTK_KERNEL_DIST)/mtk_iommu.ko \
+    $(MTK_KERNEL_DIST)/phy-mtk-mipi-dsi-drv.ko \
+    $(MTK_KERNEL_DIST)/drm_display_helper.ko \
+    $(MTK_KERNEL_DIST)/mediatek-drm.ko \
+    $(MTK_KERNEL_DIST)/pwm-mtk-disp.ko \
+    $(MTK_KERNEL_DIST)/pwm_bl.ko \
+    $(MTK_KERNEL_DIST)/goodix_ts.ko \
+    $(MTK_KERNEL_DIST)/panel-startek-kd070fhfid078.ko

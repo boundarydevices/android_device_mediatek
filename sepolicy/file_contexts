@@ -1,9 +1,6 @@
 # custom lights HAL (backlight)
 /vendor/bin/hw/android\.hardware\.lights-service                        u:object_r:hal_light_default_exec:s0
 
-# custom thermal HAL
-/vendor/bin/hw/android\.hardware\.thermal@2\.0-service\.mediatek              u:object_r:hal_thermal_default_exec:s0
-
 # custom health HAL
 /vendor/bin/hw/android\.hardware\.health-service\.batteryless       u:object_r:hal_health_default_exec:s0
 

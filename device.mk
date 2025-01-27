@@ -101,7 +101,7 @@ PRODUCT_PACKAGES += android.hardware.health-service.batteryless
 PRODUCT_PACKAGES += android.hardware.lights-service
 
 # Thermal
-PRODUCT_PACKAGES += android.hardware.thermal@2.0-service.mediatek
+PRODUCT_PACKAGES += com.android.hardware.thermal.mediatek
 
 # Memtrack
 PRODUCT_PACKAGES += android.hardware.memtrack-service.example

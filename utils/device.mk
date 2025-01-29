@@ -14,3 +14,6 @@ PRODUCT_PACKAGES_DEBUG += \
 
 # GPIO utils
 PRODUCT_PACKAGES_DEBUG += gpioinfo gpioget gpioset
+
+# DRM utils
+PRODUCT_PACKAGES_DEBUG += modetest

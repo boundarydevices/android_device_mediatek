@@ -17,7 +17,14 @@
 # Grahics software rendering with VKMS on /dev/dri/card0
 TARGET_GPU_BACKEND := swangle
 TARGET_ALLOCATOR_BACKEND := minigbm
-PRODUCT_VENDOR_PROPERTIES += vendor.hwc.drm.device=/dev/dri/card0
+ifeq ($(TARGET_VKMS_ENABLED), true)
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.hwc.drm.device=/dev/dri/card0
+else
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.hwc.drm.device=/dev/dri/card1
+endif
+
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 $(call inherit-product, device/mediatek/device.mk)

@@ -22,4 +22,8 @@ BOARD_SEPOLICY_DIRS += \
         device/mediatek/soc/mt8365/sepolicy
 
 # kernel
+ifeq ($(MTK_USES_GKI), true)
+include device/mediatek/soc/mt8365/kernel-gki.mk
+else
 include device/mediatek/soc/mt8365/kernel.mk
+endif

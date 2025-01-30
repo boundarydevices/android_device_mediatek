@@ -52,8 +52,10 @@ BOARD_VENDOR_RAMDISK_KERNEL_MODULES += \
     $(MTK_KERNEL_DIST)/i2c-mt65xx.ko \
     $(MTK_KERNEL_DIST)/mt6359-auxadc.ko \
     $(MTK_KERNEL_DIST)/rtc-mt6397.ko \
+    $(MTK_KERNEL_DIST)/mt6315-regulator.ko \
     $(MTK_KERNEL_DIST)/mt6359-regulator.ko \
     $(MTK_KERNEL_DIST)/mt6397.ko \
+    $(MTK_KERNEL_DIST)/spmi-mtk-pmif.ko \
     $(MTK_KERNEL_DIST)/mtk-pmic-wrap.ko \
     $(MTK_KERNEL_DIST)/mtk-pm-domains.ko \
     $(MTK_KERNEL_DIST)/mtk-scpsys.ko \

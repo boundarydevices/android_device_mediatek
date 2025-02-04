@@ -92,4 +92,8 @@ ifeq ($(TARGET_GPU_BACKEND), mesa)
 BOARD_VENDOR_KERNEL_MODULES += \
     $(MTK_KERNEL_DIST)/gpu-sched.ko \
     $(MTK_KERNEL_DIST)/panfrost.ko
+else ifeq ($(TARGET_GPU_BACKEND), mali)
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES += \
+    $(MTK_KERNEL_DIST)/mali_mt8183_corex.ko \
+    $(MTK_KERNEL_DIST)/mali_kbase.ko
 endif

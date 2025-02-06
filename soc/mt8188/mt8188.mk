@@ -27,4 +27,7 @@ endif
 
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
+# Mesa
+PRODUCT_SOONG_NAMESPACES += vendor/mediatek/prebuilts/egl/mesa/panfrost/a55
+
 $(call inherit-product, device/mediatek/device.mk)

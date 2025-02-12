@@ -23,6 +23,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.hwc.drm.device=/dev/dri/card1
 endif
 
+# Mali GPU backend
+ifeq ($(TARGET_GPU_BACKEND), mali)
+MALI_PREBUILT_PATH = vendor/mediatek/prebuilts/egl/mali/mt8188
+PRODUCT_SOONG_NAMESPACES += $(MALI_PREBUILT_PATH)
+
+PRODUCT_COPY_FILES += \
+    $(MALI_PREBUILT_PATH)/firmware/valhall-1691526.wa:$(TARGET_COPY_OUT_VENDOR)/firmware/valhall-1691526.wa
+endif
+
 # Mesa GPU backend
 TARGET_GPU_BACKEND := mesa
 PRODUCT_SOONG_NAMESPACES += vendor/mediatek/prebuilts/egl/mesa/panfrost/a55

@@ -3,6 +3,7 @@
 /dev/teepriv0  0660  system  system
 
 # gpu
+/dev/mali*           0666  system  graphics
 /dev/dri/card*       0666  system  graphics
 /dev/dri/renderD128  0666  system  graphics
 

@@ -17,7 +17,6 @@
 # Mali
 PRODUCT_PACKAGES += \
     libGLES_mali \
-    liblibarm_mali_config_sysprops \
     vulkan.mali
 
 PRODUCT_PROPERTY_OVERRIDES += \

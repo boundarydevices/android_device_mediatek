@@ -17,6 +17,9 @@
 # common mediatek board
 $(call inherit-product, device/mediatek/boards/board.mk)
 
+# WiFi
+$(call inherit-product, device/mediatek/wifi/mt7921/mt7921.mk)
+
 # ueventd
 PRODUCT_COPY_FILES += \
     device/mediatek/boards/i700_evk/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc

@@ -1,0 +1,30 @@
+# Stack config files
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/wpa_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant.conf \
+    $(LOCAL_PATH)/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
+
+# Install regulatory files
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/regulatory.db:$(TARGET_COPY_OUT_VENDOR)/firmware/regulatory.db \
+    $(LOCAL_PATH)/regulatory.db.p7s:$(TARGET_COPY_OUT_VENDOR)/firmware/regulatory.db.p7s
+
+# Init script
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/init.wifi.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.wifi.rc
+
+# Framework config files
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.wifi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.xml
+
+# Packages
+PRODUCT_PACKAGES += \
+    libwpa_client \
+    wpa_supplicant \
+    hostapd \
+    wificond \
+    wpa_cli
+
+# Properties
+PRODUCT_PROPERTY_OVERRIDES := \
+    wifi.interface=wlan0 \
+    wifi.supplicant_scan_interval=15

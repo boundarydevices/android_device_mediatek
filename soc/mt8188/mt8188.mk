@@ -14,9 +14,7 @@
 # limitations under the License.
 #
 
-# Grahics software rendering with VKMS on /dev/dri/card0
-TARGET_GPU_BACKEND := swangle
-TARGET_ALLOCATOR_BACKEND := minigbm
+# Display on DSI (card1) or VKMS
 ifeq ($(TARGET_VKMS_ENABLED), true)
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.hwc.drm.device=/dev/dri/card0
@@ -25,9 +23,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.hwc.drm.device=/dev/dri/card1
 endif
 
-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
-
-# Mesa
+# Mesa GPU backend
+TARGET_GPU_BACKEND := mesa
 PRODUCT_SOONG_NAMESPACES += vendor/mediatek/prebuilts/egl/mesa/panfrost/a55
+ifeq ($(TARGET_VKMS_ENABLED), true)
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.mesa.drm.device=/dev/dri/card0
+else
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.mesa.drm.device=/dev/dri/card1
+endif
 
 $(call inherit-product, device/mediatek/device.mk)

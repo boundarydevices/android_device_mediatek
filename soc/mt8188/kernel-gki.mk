@@ -35,6 +35,7 @@ BOARD_VENDOR_RAMDISK_KERNEL_MODULES += \
     $(MTK_KERNEL_DIST)/clk-mt8188-topckgen.ko \
     $(MTK_KERNEL_DIST)/clk-mt8188-infra_ao.ko \
     $(MTK_KERNEL_DIST)/clk-mt8188-peri_ao.ko \
+    $(MTK_KERNEL_DIST)/clk-mt8188-mfg.ko \
     $(MTK_KERNEL_DIST)/clk-mt8188-imp_iic_wrap.ko \
     $(MTK_KERNEL_DIST)/clk-mt8188-vdo0.ko \
     $(MTK_KERNEL_DIST)/clk-mt8188-vdo1.ko \
@@ -48,6 +49,8 @@ BOARD_VENDOR_RAMDISK_KERNEL_MODULES += \
     $(MTK_KERNEL_DIST)/mtk-cmdq-helper.ko \
     $(MTK_KERNEL_DIST)/mtk-infracfg.ko \
     $(MTK_KERNEL_DIST)/mtk-mmsys.ko \
+    $(MTK_KERNEL_DIST)/mtk-socinfo.ko \
+    $(MTK_KERNEL_DIST)/mtk-regulator-coupler.ko \
     $(MTK_KERNEL_DIST)/mtk-mutex.ko \
     $(MTK_KERNEL_DIST)/i2c-mt65xx.ko \
     $(MTK_KERNEL_DIST)/mt6359-auxadc.ko \
@@ -74,6 +77,7 @@ BOARD_VENDOR_RAMDISK_KERNEL_MODULES += \
     $(MTK_KERNEL_DIST)/optee.ko \
     $(MTK_KERNEL_DIST)/system_heap.ko \
     $(MTK_KERNEL_DIST)/vkms.ko \
+    $(MTK_KERNEL_DIST)/nvmem_mtk-efuse.ko \
     $(MTK_KERNEL_DIST)/mtk_iommu.ko \
     $(MTK_KERNEL_DIST)/phy-mtk-mipi-dsi-drv.ko \
     $(MTK_KERNEL_DIST)/drm_display_helper.ko \
@@ -82,3 +86,10 @@ BOARD_VENDOR_RAMDISK_KERNEL_MODULES += \
     $(MTK_KERNEL_DIST)/pwm_bl.ko \
     $(MTK_KERNEL_DIST)/goodix_ts.ko \
     $(MTK_KERNEL_DIST)/panel-startek-kd070fhfid078.ko
+
+# Graphics modules
+ifeq ($(TARGET_GPU_BACKEND), mesa)
+BOARD_VENDOR_KERNEL_MODULES += \
+    $(MTK_KERNEL_DIST)/gpu-sched.ko \
+    $(MTK_KERNEL_DIST)/panfrost.ko
+endif

@@ -7,3 +7,8 @@ on late-fs
 on early-init
     exec u:r:vendor_modprobe:s0 -- \
          /vendor/bin/modprobe -d /vendor/lib/modules --all=/vendor/lib/modules/modules.load
+
+on init
+    # Force performance governor
+    write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor performance
+    write /sys/devices/system/cpu/cpufreq/policy6/scaling_governor performance

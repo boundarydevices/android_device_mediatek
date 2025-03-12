@@ -15,6 +15,11 @@ partitions:
     file: vbmeta.img
     ab: true
     ignoreFileNotFound: true
+  vbmeta_vendor_dlkm:
+    size: 64K
+    file: vbmeta_vendor_dlkm.img
+    ab: true
+    ignoreFileNotFound: true
   misc:
     size: 512K
   splashscreen:

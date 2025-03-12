@@ -50,8 +50,8 @@ DTB_FILES := \
 
 # Please keep this list fixed: add new files in the end of the list
 DTBO_FILES := \
-        $(MTK_KERNEL_DIST)/mt8365-evk-android.dtb \
         $(MTK_KERNEL_DIST)/mt8365-evk-android-dsi.dtb \
+        $(MTK_KERNEL_DIST)/mt8365-evk-android.dtb \
         $(MTK_KERNEL_DIST)/mt8365-evk-android-ap1302-ar0430-single-csi0.dtb \
         $(MTK_KERNEL_DIST)/mt8365-evk-android-ap1302-ar0430-single-csi1.dtb \
         $(MTK_KERNEL_DIST)/mt8365-evk-android-ap1302-ar0430-dual.dtb

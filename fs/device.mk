@@ -32,8 +32,8 @@ endif
 
 ifeq ($(TARGET_AVB_ENABLE), true)
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/fstab.avb:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/$(MTK_FSTAB).avb \
-    $(LOCAL_PATH)/fstab.avb:$(TARGET_COPY_OUT_VENDOR)/etc/$(MTK_FSTAB).avb
+    $(LOCAL_PATH)/fstab.avb:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/$(MTK_FSTAB) \
+    $(LOCAL_PATH)/fstab.avb:$(TARGET_COPY_OUT_VENDOR)/etc/$(MTK_FSTAB)
 else
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/fstab:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/$(MTK_FSTAB) \

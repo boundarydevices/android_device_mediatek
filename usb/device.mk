@@ -16,14 +16,10 @@
 
 # HAL
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.2-service.mtk
+    com.android.hardware.usb.generic
 
 PRODUCT_COPY_FILES += \
-    hardware/mediatek/usb/1.2/init.gadgethal.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.gadgethal.sh
-
-# USB accessory
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.usb.accessory.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.usb.accessory.xml
+    hardware/mediatek/usb/aidl/init.gadgethal.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.gadgethal.sh
 
 # mediatek rc
 PRODUCT_COPY_FILES += \

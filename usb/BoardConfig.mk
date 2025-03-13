@@ -15,4 +15,4 @@
 #
 
 # Sepolicy
-BOARD_SEPOLICY_DIRS += hardware/mediatek/usb/1.2/sepolicy
+BOARD_SEPOLICY_DIRS += hardware/mediatek/usb/aidl/sepolicy

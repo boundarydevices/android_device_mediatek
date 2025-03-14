@@ -16,10 +16,8 @@
 
 # HAL and bootctl
 PRODUCT_PACKAGES += \
-    android.hardware.boot@1.2-impl \
-    android.hardware.boot@1.2-impl.recovery \
-    android.hardware.boot@1.2-service \
-    bootctrl.default
+    com.android.hardware.boot \
+    android.hardware.boot-service.default_recovery
 
 PRODUCT_PACKAGES_DEBUG += \
     bootctl

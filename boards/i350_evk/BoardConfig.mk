@@ -56,4 +56,9 @@ DTBO_FILES := \
         $(MTK_KERNEL_DIST)/mt8365-evk-android-ap1302-ar0430-single-csi1.dtb \
         $(MTK_KERNEL_DIST)/mt8365-evk-android-ap1302-ar0430-dual.dtb
 
-include vendor/mediatek/wireless/BoardConfig-mt7663.mk
+# Bluetooth support
+# Note: btmtksdio needs to be loaded before WiFi drivers modules
+include device/mediatek/bluetooth/mt7663/BoardConfig.mk
+
+# WiFi support
+include device/mediatek/wifi/mt7663/BoardConfig.mk

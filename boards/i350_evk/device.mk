@@ -27,7 +27,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
      external/onsemi/MediaTek_AIoT_i350_EVK/ap1302_ar0430_single_fw.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/ap1302_ar0430_single_fw.bin
 
-$(call inherit-product, vendor/mediatek/wireless/mt7663.mk)
+# Bluetooth Support
+$(call inherit-product, device/mediatek/bluetooth/mt7663/mt7663.mk)
+
+# WiFi Support
+$(call inherit-product, device/mediatek/wifi/mt7663/mt7663.mk)
 
 # splashscreen
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/splashscreen.img:splashscreen.img

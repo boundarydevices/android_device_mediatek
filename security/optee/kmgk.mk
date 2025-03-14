@@ -22,7 +22,7 @@ include $(LOCAL_PATH)/macros.mk
 
 # gatekeeper
 PRODUCT_PROPERTY_OVERRIDES += ro.hardware.gatekeeper=optee
-PRODUCT_PACKAGES += android.hardware.gatekeeper@1.0-service.optee
+PRODUCT_PACKAGES += android.hardware.gatekeeper-service.optee
 
 $(call optee-add-ta, 4d573443-6a56-4272-ac6f-2425af9ef9bb.ta)
 

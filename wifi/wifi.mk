@@ -5,8 +5,8 @@ PRODUCT_COPY_FILES += \
 
 # Install regulatory files
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/regulatory.db:$(TARGET_COPY_OUT_VENDOR)/firmware/regulatory.db \
-    $(LOCAL_PATH)/regulatory.db.p7s:$(TARGET_COPY_OUT_VENDOR)/firmware/regulatory.db.p7s
+    vendor/mediatek/prebuilts/kernel/regulatory.db:$(TARGET_COPY_OUT_VENDOR)/firmware/regulatory.db \
+    vendor/mediatek/prebuilts/kernel/regulatory.db.p7s:$(TARGET_COPY_OUT_VENDOR)/firmware/regulatory.db.p7s
 
 # Init script
 PRODUCT_COPY_FILES += \

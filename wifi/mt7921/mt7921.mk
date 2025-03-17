@@ -18,5 +18,5 @@ $(call inherit-product, device/mediatek/wifi/wifi.mk)
 
 # Firmware (from linux-firmware)
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/WIFI_MT7961_patch_mcu_1_2_hdr.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/mediatek/WIFI_MT7961_patch_mcu_1_2_hdr.bin \
-    $(LOCAL_PATH)/WIFI_RAM_CODE_MT7961_1.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/mediatek/WIFI_RAM_CODE_MT7961_1.bin
+    vendor/mediatek/prebuilts/linux-firmware/WIFI_MT7961_patch_mcu_1_2_hdr.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/mediatek/WIFI_MT7961_patch_mcu_1_2_hdr.bin \
+    vendor/mediatek/prebuilts/linux-firmware/WIFI_RAM_CODE_MT7961_1.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/mediatek/WIFI_RAM_CODE_MT7961_1.bin

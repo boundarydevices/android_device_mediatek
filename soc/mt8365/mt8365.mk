@@ -38,12 +38,13 @@ PRODUCT_COPY_FILES += \
 # Add support of Mali GPU
 PRODUCT_SOONG_NAMESPACES += vendor/mediatek/prebuilts/egl/mali/i350
 
+# Display on DSI (card1) or VKMS
 ifeq ($(TARGET_VKMS_ENABLED), true)
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.hwc.drm.device=/dev/dri/card0
 else
 PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.hwc.drm.device=/dev/dri/card2
+    vendor.hwc.drm.device=/dev/dri/card1
 endif
 
 # Public Libraries

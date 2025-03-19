@@ -29,11 +29,6 @@ BOARD_KERNEL_CMDLINE += \
     androidboot.hardware=mt8365 \
     androidboot.serialno=i350evk
 
-
-# kernel modules required for ap1302 isp
-BOARD_VENDOR_KERNEL_MODULES += \
-    vendor/mediatek/prebuilts/kernel/$(TARGET_KERNEL_USE)/ap1302.ko
-
 # FS configuration
 BOARD_SUPER_PARTITION_SIZE            := 4831838208
 BOARD_DTBOIMG_PARTITION_SIZE          := 4194304
@@ -51,10 +46,7 @@ DTB_FILES := \
 # Please keep this list fixed: add new files in the end of the list
 DTBO_FILES := \
         $(MTK_KERNEL_DIST)/mt8365-evk-android-dsi.dtb \
-        $(MTK_KERNEL_DIST)/mt8365-evk-android.dtb \
-        $(MTK_KERNEL_DIST)/mt8365-evk-android-ap1302-ar0430-single-csi0.dtb \
-        $(MTK_KERNEL_DIST)/mt8365-evk-android-ap1302-ar0430-single-csi1.dtb \
-        $(MTK_KERNEL_DIST)/mt8365-evk-android-ap1302-ar0430-dual.dtb
+        $(MTK_KERNEL_DIST)/mt8365-evk-android.dtb
 
 # Bluetooth support
 # Note: btmtksdio needs to be loaded before WiFi drivers modules

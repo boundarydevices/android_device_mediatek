@@ -23,10 +23,6 @@ PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/xml/audio_policy_configuration-i350_evk.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
      $(LOCAL_PATH)/xml/audio_hal_configuration-i350_evk.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio.i350_evk.xml
 
-# Camera + ISP Firmwares:
-PRODUCT_COPY_FILES += \
-     external/onsemi/MediaTek_AIoT_i350_EVK/ap1302_ar0430_single_fw.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/ap1302_ar0430_single_fw.bin
-
 # Bluetooth Support
 $(call inherit-product, device/mediatek/bluetooth/mt7663/mt7663.mk)
 

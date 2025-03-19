@@ -78,4 +78,12 @@ BOARD_VENDOR_RAMDISK_KERNEL_MODULES += \
     $(MTK_KERNEL_DIST)/mediatek-drm.ko \
     $(MTK_KERNEL_DIST)/pwm-mtk-disp.ko \
     $(MTK_KERNEL_DIST)/pwm_bl.ko \
+    $(MTK_KERNEL_DIST)/goodix_ts.ko \
     $(MTK_KERNEL_DIST)/panel-startek-kd070fhfid015.ko
+
+# Graphics modules
+ifeq ($(TARGET_GPU_BACKEND), mali)
+BOARD_VENDOR_KERNEL_MODULES += \
+    $(MTK_KERNEL_DIST)/mali_mt8183_corex.ko \
+    $(MTK_KERNEL_DIST)/mali_kbase.ko
+endif

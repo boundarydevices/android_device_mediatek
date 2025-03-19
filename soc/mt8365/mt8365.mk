@@ -49,7 +49,3 @@ endif
 # Public Libraries
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
-
-# MDP support
-PRODUCT_PACKAGES += \
-    libmdp.mt8365 mdpd

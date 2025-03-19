@@ -57,7 +57,7 @@ BOARD_VENDOR_RAMDISK_KERNEL_MODULES += \
     $(MTK_KERNEL_DIST)/mtk-scpsys.ko \
     $(MTK_KERNEL_DIST)/mtk-smi.ko \
     $(MTK_KERNEL_DIST)/8250_mtk.ko \
-    $(MTK_KERNEL_DIST)/mediatek-cpufreq-hw.ko \
+    $(MTK_KERNEL_DIST)/mediatek-cpufreq.ko \
     $(MTK_KERNEL_DIST)/cqhci.ko \
     $(MTK_KERNEL_DIST)/mtk-sd.ko \
     $(MTK_KERNEL_DIST)/rpmb-core.ko \

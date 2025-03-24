@@ -41,7 +41,8 @@ DTB_FILES := \
 
 # Please keep this list fixed: add new files in the end of the list
 DTBO_FILES := \
-    $(MTK_KERNEL_DIST)/mt8390-genio-700-evk-android-dsi.dtb \
+    $(MTK_KERNEL_DIST)/mt8390-genio-700-evk-android-dsi-kd070fhfid078.dtb \
+    $(MTK_KERNEL_DIST)/mt8390-genio-700-evk-android-dsi-kd070fhfid015.dtb \
     $(MTK_KERNEL_DIST)/mt8390-genio-700-evk-android.dtb
 
 # Bluetooth

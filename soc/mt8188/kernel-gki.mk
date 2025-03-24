@@ -85,7 +85,8 @@ BOARD_VENDOR_RAMDISK_KERNEL_MODULES += \
     $(MTK_KERNEL_DIST)/pwm-mtk-disp.ko \
     $(MTK_KERNEL_DIST)/pwm_bl.ko \
     $(MTK_KERNEL_DIST)/goodix_ts.ko \
-    $(MTK_KERNEL_DIST)/panel-startek-kd070fhfid078.ko
+    $(MTK_KERNEL_DIST)/panel-startek-kd070fhfid078.ko \
+    $(MTK_KERNEL_DIST)/panel-startek-kd070fhfid015.ko
 
 # Graphics modules
 ifeq ($(TARGET_GPU_BACKEND), mesa)

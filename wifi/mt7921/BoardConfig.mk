@@ -18,11 +18,7 @@ include device/mediatek/wifi/BoardConfig.mk
 
 # Kernel modules
 BOARD_VENDOR_KERNEL_MODULES += \
-    $(GOOGLE_KERNEL_DIST)/libarc4.ko \
-    $(GOOGLE_KERNEL_DIST)/rfkill.ko \
     $(MTK_KERNEL_DIST)/pcie-mediatek-gen3.ko \
-    $(MTK_KERNEL_DIST)/cfg80211.ko \
-    $(MTK_KERNEL_DIST)/mac80211.ko \
     $(MTK_KERNEL_DIST)/mt76.ko \
     $(MTK_KERNEL_DIST)/mt76-connac-lib.ko \
     $(MTK_KERNEL_DIST)/mt792x-lib.ko \

@@ -17,9 +17,16 @@
 include device/mediatek/wifi/BoardConfig.mk
 
 # Kernel modules
+BOARD_VENDOR_KERNEL_MODULES += $(MTK_KERNEL_DIST)/mt76.ko
+
+ifeq ($(TARGET_KERNEL_USE), 6.12)
 BOARD_VENDOR_KERNEL_MODULES += \
-    vendor/mediatek/prebuilts/kernel/$(TARGET_KERNEL_USE)/mt76.ko \
-    vendor/mediatek/prebuilts/kernel/$(TARGET_KERNEL_USE)/mt76-sdio.ko \
-    vendor/mediatek/prebuilts/kernel/$(TARGET_KERNEL_USE)/mt7615-common.ko \
-    vendor/mediatek/prebuilts/kernel/$(TARGET_KERNEL_USE)/mt7663-usb-sdio-common.ko \
-    vendor/mediatek/prebuilts/kernel/$(TARGET_KERNEL_USE)/mt7663s.ko
+    $(MTK_KERNEL_DIST)/mt76-connac-lib.ko \
+    $(MTK_KERNEL_DIST)/mt792x-lib.ko
+endif
+
+BOARD_VENDOR_KERNEL_MODULES += \
+    $(MTK_KERNEL_DIST)/mt76-sdio.ko \
+    $(MTK_KERNEL_DIST)/mt7615-common.ko \
+    $(MTK_KERNEL_DIST)/mt7663-usb-sdio-common.ko \
+    $(MTK_KERNEL_DIST)/mt7663s.ko

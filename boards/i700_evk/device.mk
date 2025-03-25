@@ -17,6 +17,9 @@
 # common mediatek board
 $(call inherit-product, device/mediatek/boards/board.mk)
 
+# Bluetooth
+$(call inherit-product, device/mediatek/bluetooth/mt7921/mt7921.mk)
+
 # WiFi
 $(call inherit-product, device/mediatek/wifi/mt7921/mt7921.mk)
 

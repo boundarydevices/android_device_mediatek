@@ -44,5 +44,8 @@ DTBO_FILES := \
     $(MTK_KERNEL_DIST)/mt8390-genio-700-evk-android-dsi.dtb \
     $(MTK_KERNEL_DIST)/mt8390-genio-700-evk-android.dtb
 
+# Bluetooth
+include device/mediatek/bluetooth/mt7921/BoardConfig.mk
+
 # WiFi
 include device/mediatek/wifi/mt7921/BoardConfig.mk

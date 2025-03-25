@@ -23,18 +23,22 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.1-service.btlinux
 
-# Enable all supported Bluetooth profiles
+# Disable LeAudio related profile as there is no support for it
+PRODUCT_PROPERTY_OVERRIDES += \
+    bluetooth.profile.asha.central.enabled=false \
+    bluetooth.profile.bap.broadcast.assist.enabled=false \
+    bluetooth.profile.bap.unicast.client.enabled=false \
+    bluetooth.profile.bas.client.enabled=false \
+    bluetooth.profile.ccp.server.enabled=false \
+    bluetooth.profile.hap.client.enabled=false \
+    bluetooth.profile.csip.set_coordinator.enabled=false \
+    bluetooth.profile.vcp.controller.enabled=false
+
+# Enable supported Bluetooth profiles
 PRODUCT_PROPERTY_OVERRIDES += \
     bluetooth.profile.a2dp.source.enabled=true \
-    bluetooth.profile.asha.central.enabled=true \
     bluetooth.profile.avrcp.target.enabled=true \
-    bluetooth.profile.bap.broadcast.assist.enabled=true \
-    bluetooth.profile.bap.unicast.client.enabled=true \
-    bluetooth.profile.bas.client.enabled=true \
-    bluetooth.profile.ccp.server.enabled=true \
-    bluetooth.profile.csip.set_coordinator.enabled=true \
     bluetooth.profile.gatt.enabled=true \
-    bluetooth.profile.hap.client.enabled=true \
     bluetooth.profile.hfp.ag.enabled=true \
     bluetooth.profile.hid.device.enabled=true \
     bluetooth.profile.hid.host.enabled=true \
@@ -43,5 +47,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
     bluetooth.profile.opp.enabled=true \
     bluetooth.profile.pan.nap.enabled=true \
     bluetooth.profile.pan.panu.enabled=true \
-    bluetooth.profile.pbap.server.enabled=true \
-    bluetooth.profile.vcp.controller.enabled=true
+    bluetooth.profile.pbap.server.enabled=true

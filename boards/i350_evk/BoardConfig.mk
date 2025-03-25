@@ -50,7 +50,9 @@ DTBO_FILES := \
 
 # Bluetooth support
 # Note: btmtksdio needs to be loaded before WiFi drivers modules
+ifeq ($(TARGET_KERNEL_USE), 5.10)
 include device/mediatek/bluetooth/mt7663/BoardConfig.mk
+endif
 
 # WiFi support
 include device/mediatek/wifi/mt7663/BoardConfig.mk

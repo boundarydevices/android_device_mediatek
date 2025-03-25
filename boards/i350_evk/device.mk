@@ -24,7 +24,9 @@ PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/xml/audio_hal_configuration-i350_evk.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio.i350_evk.xml
 
 # Bluetooth Support
+ifeq ($(TARGET_KERNEL_USE), 5.10)
 $(call inherit-product, device/mediatek/bluetooth/mt7663/mt7663.mk)
+endif
 
 # WiFi Support
 $(call inherit-product, device/mediatek/wifi/mt7663/mt7663.mk)

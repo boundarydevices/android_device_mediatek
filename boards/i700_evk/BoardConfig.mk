@@ -41,9 +41,9 @@ DTB_FILES := \
 
 # Please keep this list fixed: add new files in the end of the list
 DTBO_FILES := \
-    $(MTK_KERNEL_DIST)/mt8390-genio-700-evk-android-dsi-kd070fhfid078.dtb \
+    $(MTK_KERNEL_DIST)/mt8390-genio-common-android-dsi-kd070fhfid078.dtb \
     $(MTK_KERNEL_DIST)/mt8390-genio-700-evk-android-dsi-kd070fhfid015.dtb \
-    $(MTK_KERNEL_DIST)/mt8390-genio-700-evk-android.dtb
+    $(MTK_KERNEL_DIST)/mt8390-genio-common-android.dtb
 
 # Bluetooth
 include device/mediatek/bluetooth/mt7921/BoardConfig.mk

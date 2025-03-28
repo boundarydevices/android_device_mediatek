@@ -9,6 +9,8 @@ allow kernel vendor_init:key { search };
 
 allow kernel self:capability { sys_admin };
 
+allow kernel vendor_modprobe:key { search };
+
 recovery_only(`
 	allow kernel device:blk_file { create getattr setattr unlink };
 	allow kernel device:dir { remove_name };

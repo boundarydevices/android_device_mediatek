@@ -17,8 +17,13 @@
 # Kernel version
 TARGET_KERNEL_USE ?= 5.10
 
-# Kernel GKI (disabled by default)
-MTK_USES_GKI ?= false
+ifeq ($(TARGET_KERNEL_USE), 5.10)
+# Kernel 5.10 does not support GKI
+MTK_USES_GKI := false
+else
+# By default, use GKI
+MTK_USES_GKI ?= true
+endif
 
 # Kernel Image
 ifeq ($(MTK_USES_GKI), true)

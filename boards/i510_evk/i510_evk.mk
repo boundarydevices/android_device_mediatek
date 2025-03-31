@@ -14,9 +14,8 @@
 # limitations under the License.
 #
 
-# Kernel 6.12 + GKI
+# Kernel 6.12
 TARGET_KERNEL_USE ?= 6.12
-MTK_USES_GKI ?= true
 
 # All OP-TEE vars MUST be set before including common/mt*
 OPTEE_ENABLE := true

@@ -14,6 +14,9 @@
 # limitations under the License.
 #
 
+# Kernel 5.10
+TARGET_KERNEL_USE ?= 5.10
+
 # All OP-TEE vars MUST be set before including common/mt*
 OPTEE_ENABLE := true
 OPTEE_KEYMASTER_GATEKEEPER_ENABLE := true

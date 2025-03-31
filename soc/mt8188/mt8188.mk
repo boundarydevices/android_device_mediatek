@@ -14,6 +14,16 @@
 # limitations under the License.
 #
 
+# Kernel 5.10 only suppports minigbm + swangle
+ifeq ($(TARGET_KERNEL_USE), 5.10)
+TARGET_ALLOCATOR_BACKEND := minigbm
+TARGET_GPU_BACKEND := swangle
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+else
+# By default, select mesa for kernel 6.12
+TARGET_GPU_BACKEND := mesa
+endif
+
 # Display on DSI (card1) or VKMS
 ifeq ($(TARGET_VKMS_ENABLED), true)
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -33,7 +43,7 @@ PRODUCT_COPY_FILES += \
 endif
 
 # Mesa GPU backend
-TARGET_GPU_BACKEND := mesa
+ifeq ($(TARGET_GPU_BACKEND), mesa)
 PRODUCT_SOONG_NAMESPACES += vendor/mediatek/prebuilts/egl/mesa/panfrost/a55
 ifeq ($(TARGET_VKMS_ENABLED), true)
 PRODUCT_SYSTEM_PROPERTIES += \
@@ -41,6 +51,7 @@ PRODUCT_SYSTEM_PROPERTIES += \
 else
 PRODUCT_SYSTEM_PROPERTIES += \
     ro.mesa.drm.device=/dev/dri/card1
-endif
+endif # TARGET_VKMS_ENABLED
+endif # TARGET_GPU_BACKEND
 
 $(call inherit-product, device/mediatek/device.mk)

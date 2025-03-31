@@ -40,13 +40,21 @@ DTB_FILES := \
     $(MTK_KERNEL_DIST)/mt8390-genio-700-evk.dtb
 
 # Please keep this list fixed: add new files in the end of the list
+ifeq ($(TARGET_KERNEL_USE), 5.10)
+DTBO_FILES := $(MTK_KERNEL_DIST)/mt8390-genio-700-evk-android.dtb
+else
+# kernel 6.12
 DTBO_FILES := \
     $(MTK_KERNEL_DIST)/mt8390-genio-common-android-dsi-kd070fhfid078.dtb \
     $(MTK_KERNEL_DIST)/mt8390-genio-700-evk-android-dsi-kd070fhfid015.dtb \
     $(MTK_KERNEL_DIST)/mt8390-genio-common-android.dtb
+endif
 
+# Features supported only for kernel 6.12
+ifeq ($(TARGET_KERNEL_USE), 6.12)
 # Bluetooth
 include device/mediatek/bluetooth/mt7921/BoardConfig.mk
 
 # WiFi
 include device/mediatek/wifi/mt7921/BoardConfig.mk
+endif

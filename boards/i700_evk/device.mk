@@ -17,11 +17,14 @@
 # common mediatek board
 $(call inherit-product, device/mediatek/boards/board.mk)
 
+# Features supported only for kernel 6.12
+ifeq ($(TARGET_KERNEL_USE), 6.12)
 # Bluetooth
 $(call inherit-product, device/mediatek/bluetooth/mt7921/mt7921.mk)
 
 # WiFi
 $(call inherit-product, device/mediatek/wifi/mt7921/mt7921.mk)
+endif
 
 # ueventd
 PRODUCT_COPY_FILES += \

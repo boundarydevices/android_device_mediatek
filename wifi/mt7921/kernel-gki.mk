@@ -20,6 +20,8 @@ BOARD_VENDOR_KERNEL_MODULES += \
     $(MTK_KERNEL_DIST)/pcie-mediatek-gen3.ko \
     $(MTK_KERNEL_DIST)/mt76.ko \
     $(MTK_KERNEL_DIST)/mt76-connac-lib.ko \
+    $(MTK_KERNEL_DIST)/mt76-sdio.ko \
     $(MTK_KERNEL_DIST)/mt792x-lib.ko \
     $(MTK_KERNEL_DIST)/mt7921-common.ko \
-    $(MTK_KERNEL_DIST)/mt7921e.ko
+    $(MTK_KERNEL_DIST)/mt7921e.ko \
+    $(MTK_KERNEL_DIST)/mt7921s.ko

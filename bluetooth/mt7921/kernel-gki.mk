@@ -20,4 +20,5 @@ BOARD_VENDOR_KERNEL_MODULES += \
     $(MTK_KERNEL_DIST)/btintel.ko \
     $(MTK_KERNEL_DIST)/btrtl.ko \
     $(MTK_KERNEL_DIST)/btmtk.ko \
+    $(MTK_KERNEL_DIST)/btmtksdio.ko \
     $(MTK_KERNEL_DIST)/btusb.ko

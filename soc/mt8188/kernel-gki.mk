@@ -55,6 +55,8 @@ BOARD_VENDOR_RAMDISK_KERNEL_MODULES += \
     $(MTK_KERNEL_DIST)/mtk-regulator-coupler.ko \
     $(MTK_KERNEL_DIST)/mtk-mutex.ko \
     $(MTK_KERNEL_DIST)/i2c-mt65xx.ko \
+    $(MTK_KERNEL_DIST)/i2c-mux.ko \
+    $(MTK_KERNEL_DIST)/i2c-mux-pca954x.ko \
     $(MTK_KERNEL_DIST)/mt6359-auxadc.ko \
     $(MTK_KERNEL_DIST)/rtc-mt6397.ko \
     $(MTK_KERNEL_DIST)/mt6315-regulator.ko \
@@ -68,6 +70,7 @@ BOARD_VENDOR_RAMDISK_KERNEL_MODULES += \
     $(MTK_KERNEL_DIST)/8250_mtk.ko \
     $(MTK_KERNEL_DIST)/mediatek-cpufreq-hw.ko \
     $(MTK_KERNEL_DIST)/cqhci.ko \
+    $(MTK_KERNEL_DIST)/pwrseq_simple.ko \
     $(MTK_KERNEL_DIST)/mtk-sd.ko \
     $(MTK_KERNEL_DIST)/rpmb-core.ko \
     $(MTK_KERNEL_DIST)/mmc_block.ko \
@@ -94,7 +97,13 @@ BOARD_VENDOR_RAMDISK_KERNEL_MODULES += \
     $(MTK_KERNEL_DIST)/pwm_bl.ko \
     $(MTK_KERNEL_DIST)/goodix_ts.ko \
     $(MTK_KERNEL_DIST)/panel-startek-kd070fhfid078.ko \
-    $(MTK_KERNEL_DIST)/panel-startek-kd070fhfid015.ko
+    $(MTK_KERNEL_DIST)/panel-startek-kd070fhfid015.ko \
+    $(MTK_KERNEL_DIST)/panel-simple.ko \
+    $(MTK_KERNEL_DIST)/panel-common-mipi.ko \
+    $(MTK_KERNEL_DIST)/ti-sn65dsi83.ko \
+    $(MTK_KERNEL_DIST)/micrel.ko \
+    $(MTK_KERNEL_DIST)/rtc-rv3028.ko \
+    $(MTK_KERNEL_DIST)/hd3ss3220.ko
 
 # Graphics modules
 ifeq ($(TARGET_GPU_BACKEND), mesa)

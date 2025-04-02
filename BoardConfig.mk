@@ -48,6 +48,10 @@ $(error device/mediatek/BoardConfigCommon.mk should be included first)
 endif
 BOARD_SEPOLICY_DIRS := device/mediatek/sepolicy
 
+ifeq ($(TARGET_BUILD_VARIANT), userdebug)
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+endif
+
 # Kernel
 include device/mediatek/kernel/BoardConfig.mk
 

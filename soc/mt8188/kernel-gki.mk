@@ -15,9 +15,10 @@
 #
 
 # commandline
+BOARD_KERNEL_SERIAL_SPEED ?= 921600
 BOARD_KERNEL_CMDLINE += \
     8250.nr_uarts=1 \
-    console=ttyS0,921600
+    console=ttyS0,$(BOARD_KERNEL_SERIAL_SPEED)
 
 # Kernel modules
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES += \

@@ -52,7 +52,7 @@ endif
 # Features supported only for kernel 6.12
 ifeq ($(TARGET_KERNEL_USE), 6.12)
 # Bluetooth
-include device/mediatek/bluetooth/mt7921/BoardConfig.mk
+include device/mediatek/bluetooth/BoardConfig.mk
 
 # WiFi
 include device/mediatek/wifi/mt7921/BoardConfig.mk

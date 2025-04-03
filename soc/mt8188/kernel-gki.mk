@@ -98,3 +98,6 @@ BOARD_VENDOR_RAMDISK_KERNEL_MODULES += \
     $(MTK_KERNEL_DIST)/mali_mt8183_corex.ko \
     $(MTK_KERNEL_DIST)/mali_kbase.ko
 endif
+
+# Bluetooth modules
+include device/mediatek/bluetooth/mt7921/kernel-gki.mk

@@ -1,4 +1,3 @@
-
 #
 # Copyright 2025 BayLibre SAS
 #
@@ -15,9 +14,6 @@
 # limitations under the License.
 #
 
-include device/mediatek/bluetooth/BoardConfig.mk
-
-# Kernel modules
 BOARD_VENDOR_KERNEL_MODULES += \
     $(GOOGLE_KERNEL_DIST)/bluetooth.ko \
     $(GOOGLE_KERNEL_DIST)/btbcm.ko \

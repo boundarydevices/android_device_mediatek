@@ -23,12 +23,3 @@ BOARD_HOSTAPD_DRIVER := NL80211
 
 # WiFi Configs
 WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
-
-# Common GKI kernel modules
-ifeq ($(MTK_USES_GKI), true)
-BOARD_VENDOR_KERNEL_MODULES += \
-    $(GOOGLE_KERNEL_DIST)/libarc4.ko \
-    $(GOOGLE_KERNEL_DIST)/rfkill.ko \
-    $(MTK_KERNEL_DIST)/cfg80211.ko \
-    $(MTK_KERNEL_DIST)/mac80211.ko
-endif

@@ -55,5 +55,5 @@ ifeq ($(TARGET_KERNEL_USE), 6.12)
 include device/mediatek/bluetooth/BoardConfig.mk
 
 # WiFi
-include device/mediatek/wifi/mt7921/BoardConfig.mk
+include device/mediatek/wifi/BoardConfig.mk
 endif

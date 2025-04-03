@@ -14,18 +14,10 @@
 # limitations under the License.
 #
 
-include device/mediatek/wifi/BoardConfig.mk
-
-# Kernel modules
-BOARD_VENDOR_KERNEL_MODULES += $(MTK_KERNEL_DIST)/mt76.ko
-
-ifeq ($(TARGET_KERNEL_USE), 6.12)
 BOARD_VENDOR_KERNEL_MODULES += \
+    $(MTK_KERNEL_DIST)/mt76.ko \
     $(MTK_KERNEL_DIST)/mt76-connac-lib.ko \
-    $(MTK_KERNEL_DIST)/mt792x-lib.ko
-endif
-
-BOARD_VENDOR_KERNEL_MODULES += \
+    $(MTK_KERNEL_DIST)/mt792x-lib.ko \
     $(MTK_KERNEL_DIST)/mt76-sdio.ko \
     $(MTK_KERNEL_DIST)/mt7615-common.ko \
     $(MTK_KERNEL_DIST)/mt7663-usb-sdio-common.ko \

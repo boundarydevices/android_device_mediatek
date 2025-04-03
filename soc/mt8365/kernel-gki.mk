@@ -87,3 +87,6 @@ BOARD_VENDOR_KERNEL_MODULES += \
     $(MTK_KERNEL_DIST)/mali_mt8183_corex.ko \
     $(MTK_KERNEL_DIST)/mali_kbase.ko
 endif
+
+# WiFi modules
+include device/mediatek/wifi/mt7663/kernel-gki.mk

@@ -1,5 +1,5 @@
 #
-# Copyright 2024 BayLibre SAS
+# Copyright 2025 BayLibre SAS
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,15 +14,8 @@
 # limitations under the License.
 #
 
-# Kernel modules
-BOARD_VENDOR_RAMDISK_KERNEL_MODULES += \
-    $(MTK_KERNEL_DIST)/mediatek-drm.ko \
-    $(MTK_KERNEL_DIST)/snd-soc-hdmi-codec.ko \
-    $(MTK_KERNEL_DIST)/mediatek-drm-hdmi.ko \
-    $(MTK_KERNEL_DIST)/ntc_thermistor.ko
-
-# Bluetooth modules
-include device/mediatek/bluetooth/mt7663/kernel.mk
-
-# WiFi modules
-include device/mediatek/wifi/mt7663/kernel.mk
+BOARD_VENDOR_KERNEL_MODULES += \
+    $(GOOGLE_KERNEL_DIST)/libarc4.ko \
+    $(GOOGLE_KERNEL_DIST)/rfkill.ko \
+    $(MTK_KERNEL_DIST)/cfg80211.ko \
+    $(MTK_KERNEL_DIST)/mac80211.ko

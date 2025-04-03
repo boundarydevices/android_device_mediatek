@@ -54,4 +54,4 @@ include device/mediatek/bluetooth/BoardConfig.mk
 endif
 
 # WiFi support
-include device/mediatek/wifi/mt7663/BoardConfig.mk
+include device/mediatek/wifi/BoardConfig.mk

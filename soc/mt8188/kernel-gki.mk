@@ -101,3 +101,6 @@ endif
 
 # Bluetooth modules
 include device/mediatek/bluetooth/mt7921/kernel-gki.mk
+
+# WiFi modules
+include device/mediatek/wifi/mt7921/kernel-gki.mk

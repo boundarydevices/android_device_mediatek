@@ -20,3 +20,6 @@ BOARD_VENDOR_RAMDISK_KERNEL_MODULES += \
     $(MTK_KERNEL_DIST)/snd-soc-hdmi-codec.ko \
     $(MTK_KERNEL_DIST)/mediatek-drm-hdmi.ko \
     $(MTK_KERNEL_DIST)/ntc_thermistor.ko
+
+# Bluetooth modules
+include device/mediatek/bluetooth/mt7663/kernel.mk

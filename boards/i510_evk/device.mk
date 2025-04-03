@@ -24,6 +24,13 @@ $(call inherit-product, device/mediatek/bluetooth/mt7921/mt7921.mk)
 
 # WiFi
 $(call inherit-product, device/mediatek/wifi/mt7921/mt7921.mk)
+
+# Audio
+$(call inherit-product, device/mediatek/audio/device.mk)
+PRODUCT_PACKAGES += audio.primary.i510_evk
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/xml/audio_policy_configuration-i510_evk.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
+    $(LOCAL_PATH)/xml/audio_hal_configuration-i510_evk.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio.i510_evk.xml
 endif
 
 # ueventd

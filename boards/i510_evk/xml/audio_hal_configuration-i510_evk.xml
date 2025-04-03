@@ -1,0 +1,61 @@
+<!--
+On the target device this file must be located in /vendor/etc and named
+audio_hal_configuration.xml
+
+Syntax is based on TinyHAL:
+  https://github.com/CirrusLogic/tinyhal/blob/master/audio.example.xml
+
+Note: not xml elements from TinyHAL are supported.
+-->
+<audiohal>
+    <!-- mixer element _must_ appear before any of the other definitions.
+    The 'card' attribute is optional and sets the ALSA card number of the mixer
+    device - if not given it defaults to 0 -->
+        <mixer name="mt8390evk">
+        <!-- init element lists control settings required to initialize the
+        hardware and driver. These settings are applied only once when primary HAL
+        is first loaded during boot -->
+        <init>
+            <!-- Playback -->
+            <ctl name="DAC In Mux" val="Normal Path" />
+            <!-- Jack Out -->
+            <ctl name="O176 I070 Switch" val="1" />
+            <ctl name="O177 I071 Switch" val="1" />
+            <!-- Jack Out Speaker -->
+            <ctl name="LOL Mux" val="Playback_L_DAC"/>
+            <ctl name="HP Mux" val="Open"/>
+            <ctl name="Lineout Volume" val="4"/>
+            <!-- Capture -->
+            <!-- DMIC In -->
+            <ctl name="O002 I004 Switch" val="1" />
+            <ctl name="O003 I006 Switch" val="1" />
+        </init>
+        </mixer>
+
+        <!-- Jack Out Speaker -->
+        <device name="speaker">
+        </device>
+
+	<!-- DMIC -->
+	<device name="mic">
+	    <path name="on">
+		<ctl name="DMIC1_HW_GAIN_EN" val="1"/>
+		<ctl name="DMIC1_HW_GAIN_CURRENT" val="524288"/>
+		<ctl name="DMIC1_HW_GAIN_TARGET" val="1657944"/>
+		<ctl name="DMIC2_HW_GAIN_EN" val="1"/>
+		<ctl name="DMIC2_HW_GAIN_CURRENT" val="524288"/>
+		<ctl name="DMIC2_HW_GAIN_TARGET" val="1657944"/>
+            </path>
+            <path name="off">
+                <ctl name="DMIC1_HW_GAIN_EN" val="0"/>
+                <ctl name="DMIC2_HW_GAIN_EN" val="0"/>
+            </path>
+	</device>
+
+        <stream type="pcm" dir="out" cardname="mt8390evk" device="0" rate="48000">
+        </stream>
+
+	<stream type="pcm" dir="in" cardname="mt8390evk" device="14" rate="48000">
+	</stream>
+
+</audiohal>

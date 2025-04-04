@@ -41,6 +41,7 @@ BOARD_VENDOR_RAMDISK_KERNEL_MODULES += \
     $(MTK_KERNEL_DIST)/clk-mt8188-vdo1.ko \
     $(MTK_KERNEL_DIST)/clk-mt8188-vpp0.ko \
     $(MTK_KERNEL_DIST)/clk-mt8188-vpp1.ko \
+    $(MTK_KERNEL_DIST)/clk-mt8188-adsp_audio26m.ko \
     $(MTK_KERNEL_DIST)/mtk-eint.ko \
     $(MTK_KERNEL_DIST)/pinctrl-mtk-common-v2.ko \
     $(MTK_KERNEL_DIST)/pinctrl-paris.ko \
@@ -104,3 +105,6 @@ include device/mediatek/bluetooth/mt7921/kernel-gki.mk
 
 # WiFi modules
 include device/mediatek/wifi/mt7921/kernel-gki.mk
+
+# Audio modules
+include device/mediatek/audio/mt8188/kernel-gki.mk

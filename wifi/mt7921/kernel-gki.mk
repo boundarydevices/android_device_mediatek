@@ -14,6 +14,8 @@
 # limitations under the License.
 #
 
+include device/mediatek/wifi/kernel-gki.mk
+
 BOARD_VENDOR_KERNEL_MODULES += \
     $(MTK_KERNEL_DIST)/pcie-mediatek-gen3.ko \
     $(MTK_KERNEL_DIST)/mt76.ko \

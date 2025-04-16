@@ -80,6 +80,12 @@ BOARD_VENDOR_RAMDISK_KERNEL_MODULES += \
     $(MTK_KERNEL_DIST)/vkms.ko \
     $(MTK_KERNEL_DIST)/nvmem_mtk-efuse.ko \
     $(MTK_KERNEL_DIST)/mtk_iommu.ko \
+    $(MTK_KERNEL_DIST)/pps_core.ko \
+    $(MTK_KERNEL_DIST)/ptp.ko \
+    $(MTK_KERNEL_DIST)/pcs_xpcs.ko \
+    $(MTK_KERNEL_DIST)/stmmac.ko \
+    $(MTK_KERNEL_DIST)/stmmac-platform.ko \
+    $(MTK_KERNEL_DIST)/dwmac-mediatek.ko \
     $(MTK_KERNEL_DIST)/phy-mtk-mipi-dsi-drv.ko \
     $(MTK_KERNEL_DIST)/drm_display_helper.ko \
     $(MTK_KERNEL_DIST)/mediatek-drm.ko \

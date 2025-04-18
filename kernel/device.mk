@@ -27,11 +27,11 @@ endif
 
 # Kernel Image
 ifeq ($(MTK_USES_GKI), true)
-MTK_KERNEL_DIST := vendor/mediatek/prebuilts/kernel/$(TARGET_KERNEL_USE)/mtk
+MTK_KERNEL_DIST ?= vendor/mediatek/prebuilts/kernel/$(TARGET_KERNEL_USE)/mtk
 GOOGLE_KERNEL_DIST := vendor/mediatek/prebuilts/kernel/$(TARGET_KERNEL_USE)/google
 LOCAL_KERNEL := $(GOOGLE_KERNEL_DIST)/Image
 else
-MTK_KERNEL_DIST := vendor/mediatek/prebuilts/kernel/$(TARGET_KERNEL_USE)
+MTK_KERNEL_DIST ?= vendor/mediatek/prebuilts/kernel/$(TARGET_KERNEL_USE)
 LOCAL_KERNEL := $(MTK_KERNEL_DIST)/Image
 endif
 PRODUCT_COPY_FILES += $(LOCAL_KERNEL):kernel

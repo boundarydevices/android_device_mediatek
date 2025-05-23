@@ -22,6 +22,8 @@ MTK_KERNEL_DIST := vendor/ezurio/prebuilts/kernel/$(TARGET_KERNEL_USE)/mtk
 # Bootloader configuration
 TARGET_MODE_BL := release
 BOOTLOADERS_BINARIES := vendor/ezurio/prebuilts/boards/tungsten700
+PRODUCT_COPY_FILES += \
+    $(BOOTLOADERS_BINARIES)/u-boot-env-$(TARGET_MODE_BL).bin:u-boot-env.bin
 
 # All OP-TEE vars MUST be set before including common/mt*
 OPTEE_ENABLE := true

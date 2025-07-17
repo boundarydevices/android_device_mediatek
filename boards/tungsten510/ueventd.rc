@@ -12,6 +12,10 @@
 /dev/dma_heap/system           0666  system  graphics
 /dev/dma_heap/system-uncached  0666  system  graphics
 
+# peripherals
+/dev/gpiochip*            0660   system     system
+/dev/i2c*                 0660   system     system
+
 # usb
 subsystem usbmisc
     devname uevent_devname

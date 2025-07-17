@@ -1,2 +1,5 @@
 # mediatek data files
 /data/mediatek(/.*)?      u:object_r:mediatek_data_file:s0
+
+/dev/gpiochip[0-9]*             u:object_r:gpio_device:s0
+/dev/i2c-[0-9]+                 u:object_r:i2c_device:s0

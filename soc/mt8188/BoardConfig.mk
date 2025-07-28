@@ -20,7 +20,9 @@ TARGET_CPU_VARIANT := cortex-a55
 TARGET_ARCH_VARIANT := armv8-2a
 
 # sepolicy
-BOARD_SEPOLICY_DIRS += device/mediatek/soc/mt8188/sepolicy
+BOARD_SEPOLICY_DIRS += \
+    device/mediatek/boards/sepolicy \
+    device/mediatek/soc/mt8390/sepolicy
 
 # kernel
 ifeq ($(MTK_USES_GKI), true)

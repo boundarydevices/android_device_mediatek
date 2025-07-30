@@ -16,6 +16,8 @@
 /dev/gpiochip*       0660  system  system
 /dev/i2c*            0660  system  system
 
+/sys/devices/platform/backlight*    brightness  0660  system system
+
 # usb
 subsystem usbmisc
     devname uevent_devname

@@ -1,0 +1,23 @@
+# optee
+/dev/tee0      0660  system  system
+/dev/teepriv0  0660  system  system
+
+# gpu
+/dev/mali*           0666  system  graphics
+/dev/dri/card*       0666  system  graphics
+/dev/dri/renderD128  0666  system  graphics
+
+# dma
+/dev/dma_heap/reserved         0666  system  graphics
+/dev/dma_heap/system           0666  system  graphics
+/dev/dma_heap/system-uncached  0666  system  graphics
+
+# peripherals
+/dev/gpiochip*       0660  system  system
+/dev/i2c*            0660  system  system
+
+/sys/devices/platform/backlight*    brightness  0660  system system
+
+# usb
+subsystem usbmisc
+    devname uevent_devname

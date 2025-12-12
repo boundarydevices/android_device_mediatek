@@ -1,5 +1,5 @@
 #
-# Copyright 2025 BayLibre SAS
+# Copyright 2014 The Android Open-Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,10 +14,8 @@
 # limitations under the License.
 #
 
-BOARD_VENDOR_KERNEL_MODULES += \
-    $(MTK_KERNEL_DIST)/snd-soc-dmic.ko \
-    $(MTK_KERNEL_DIST)/snd-soc-mtk-common.ko \
-    $(MTK_KERNEL_DIST)/snd-soc-mt8188-afe.ko \
-    $(MTK_KERNEL_DIST)/snd-soc-mt6359.ko \
-    $(MTK_KERNEL_DIST)/mt8188-mt6359.ko \
-    $(MTK_KERNEL_DIST)/snd-soc-tac5x1x.ko
+PRODUCT_MAKEFILES := $(LOCAL_DIR)/tungsten700hmi.mk
+
+COMMON_LUNCH_CHOICES := \
+		tungsten700hmi-userdebug \
+		tungsten700hmi-user

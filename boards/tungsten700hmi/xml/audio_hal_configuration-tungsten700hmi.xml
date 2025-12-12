@@ -1,0 +1,54 @@
+<!--
+On the target device this file must be located in /vendor/etc and named
+audio_hal_configuration.xml
+
+Syntax is based on TinyHAL:
+  https://github.com/CirrusLogic/tinyhal/blob/master/audio.example.xml
+
+Note: not xml elements from TinyHAL are supported.
+-->
+<audiohal>
+    <!-- mixer element _must_ appear before any of the other definitions.
+    The 'card' attribute is optional and sets the ALSA card number of the mixer
+    device - if not given it defaults to 0 -->
+        <mixer name="mt8390evk">
+        <!-- init element lists control settings required to initialize the
+        hardware and driver. These settings are applied only once when primary HAL
+        is first loaded during boot -->
+        <init>
+            <!-- Playback -->
+            <!-- DL2_FE to ETDM-out-1 -->
+            <ctl name="O072 I070 Switch" val="1" />
+            <ctl name="O073 I071 Switch" val="1" />
+            <!-- Jack Out Earphone -->
+            <ctl name="OUT1x Driver" val="Headphone"/>
+            <ctl name="OUT2x Driver" val="Headphone"/>
+            <ctl name="OUT1P Analog Level Playback Volume" val="5"/>
+            <ctl name="OUT2P Analog Level Playback Volume" val="5"/>
+            <!-- Capture -->
+            <!-- ETDM2-in to UL4_FE -->
+            <ctl name="O034 I012 Switch" val="1" />
+            <ctl name="O035 I013 Switch" val="1" />
+            <!-- Mic In  -->
+            <ctl name="ADC1 Config" val="Single-ended mux INxP"/>
+            <ctl name="ADC2 Config" val="Single-ended mux INxP"/>
+            <ctl name="ADC1 Common-mode Tolerance" val="AC Coupled with 100mVpp"/>
+            <ctl name="ADC2 Common-mode Tolerance" val="AC Coupled with 100mVpp"/>
+        </init>
+        </mixer>
+
+        <!-- Jack Out Earphone -->
+        <device name="headset">
+        </device>
+
+        <!-- Mic In -->
+        <device name="headset_in">
+        </device>
+
+        <stream type="pcm" dir="out" cardname="mt8390evk" device="0" rate="48000">
+        </stream>
+
+        <stream type="pcm" dir="in" cardname="mt8390evk" device="10" rate="48000">
+        </stream>
+
+</audiohal>

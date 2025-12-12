@@ -83,6 +83,7 @@ BOARD_VENDOR_RAMDISK_KERNEL_MODULES += \
     $(MTK_KERNEL_DIST)/system_heap.ko \
     $(MTK_KERNEL_DIST)/vkms.ko \
     $(MTK_KERNEL_DIST)/nvmem_mtk-efuse.ko \
+    $(MTK_KERNEL_DIST)/lan78xx.ko \
     $(MTK_KERNEL_DIST)/mtk_iommu.ko \
     $(MTK_KERNEL_DIST)/pps_core.ko \
     $(MTK_KERNEL_DIST)/ptp.ko \

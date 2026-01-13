@@ -18,6 +18,7 @@
 TARGET_KERNEL_USE := 6.12
 MTK_USES_GKI := true
 MTK_KERNEL_DIST := vendor/ezurio/prebuilts/kernel/$(TARGET_KERNEL_USE)/mtk
+GOOGLE_KERNEL_DIST := vendor/ezurio/prebuilts/kernel/$(TARGET_KERNEL_USE)/google
 
 # Bootloader configuration
 TARGET_MODE_BL := release

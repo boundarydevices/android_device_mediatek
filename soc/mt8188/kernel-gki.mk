@@ -43,6 +43,9 @@ BOARD_VENDOR_RAMDISK_KERNEL_MODULES += \
     $(MTK_KERNEL_DIST)/clk-mt8188-vpp0.ko \
     $(MTK_KERNEL_DIST)/clk-mt8188-vpp1.ko \
     $(MTK_KERNEL_DIST)/clk-mt8188-adsp_audio26m.ko \
+    $(MTK_KERNEL_DIST)/clk-mt8188-vdec.ko \
+    $(MTK_KERNEL_DIST)/clk-mt8188-venc.ko \
+    $(MTK_KERNEL_DIST)/clk-mt8188-wpe.ko \
     $(MTK_KERNEL_DIST)/mtk-eint.ko \
     $(MTK_KERNEL_DIST)/pinctrl-mtk-common-v2.ko \
     $(MTK_KERNEL_DIST)/pinctrl-paris.ko \
@@ -93,6 +96,7 @@ BOARD_VENDOR_RAMDISK_KERNEL_MODULES += \
     $(MTK_KERNEL_DIST)/dwmac-mediatek.ko \
     $(MTK_KERNEL_DIST)/phy-mtk-mipi-dsi-drv.ko \
     $(MTK_KERNEL_DIST)/drm_display_helper.ko \
+    $(MTK_KERNEL_DIST)/display-connector.ko \
     $(MTK_KERNEL_DIST)/mediatek-drm.ko \
     $(MTK_KERNEL_DIST)/pwm-mtk-disp.ko \
     $(MTK_KERNEL_DIST)/pwm_bl.ko \
@@ -106,6 +110,10 @@ BOARD_VENDOR_RAMDISK_KERNEL_MODULES += \
     $(MTK_KERNEL_DIST)/rtc-rv3028.ko \
     $(MTK_KERNEL_DIST)/hd3ss3220.ko
 
+# Thermal
+BOARD_VENDOR_KERNEL_MODULES += \
+    $(MTK_KERNEL_DIST)/lvts_thermal.ko
+
 # Graphics modules
 ifeq ($(TARGET_GPU_BACKEND), mesa)
 BOARD_VENDOR_KERNEL_MODULES += \
@@ -116,6 +124,15 @@ BOARD_VENDOR_RAMDISK_KERNEL_MODULES += \
     $(MTK_KERNEL_DIST)/mali_mt8183_corex.ko \
     $(MTK_KERNEL_DIST)/mali_kbase.ko
 endif
+
+# HDMI modules
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES += \
+    $(MTK_KERNEL_DIST)/phy-mtk-hdmi-drv.ko \
+    $(MTK_KERNEL_DIST)/mtk_hdmi_ddc_v2.ko \
+    $(MTK_KERNEL_DIST)/mtk_hdmi_common.ko \
+    $(MTK_KERNEL_DIST)/mtk_hdmi_v2.ko
+BOARD_VENDOR_KERNEL_MODULES += \
+    $(MTK_KERNEL_DIST)/snd-soc-hdmi-codec.ko
 
 # Bluetooth modules
 include device/mediatek/bluetooth/mt7921/kernel-gki.mk

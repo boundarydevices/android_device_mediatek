@@ -27,7 +27,7 @@ TARGET_BOOTLOADER_BOARD_NAME := tungsten510hmi
 # kernel commandline
 BOARD_KERNEL_CMDLINE += \
     androidboot.boot_devices=soc/11230000.mmc \
-    androidboot.hardware=mt8390 quiet \
+    androidboot.hardware=mt8370 quiet \
     androidboot.serialno=tungsten510hmi
 
 # FS configuration
